@@ -17,6 +17,16 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+
+
+private slots:
+    void on_actionClienti_triggered();
+    void on_actionGrammatura_triggered();
+    void on_actionFormato_triggered();
+    void on_actionTipo_triggered();
+    void on_actionPreventivi_triggered();
 };
 
 #endif // MAINWINDOW_H

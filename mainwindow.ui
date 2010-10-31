@@ -1,24 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>689</width>
+    <height>427</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QWidget" name="widget_benvenuto" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>benvenuto</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QWidget" name="widget_preventivi" native="true">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>preventivi</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QWidget" name="widget_clienti" native="true">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>clienti</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QWidget" name="widget_carta_tipo" native="true">
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>tipo carta</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QWidget" name="widget_carta_formato" native="true">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>formato carta</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QWidget" name="widget_carta_grammatura" native="true">
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>grammatura carta</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>689</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSalva">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSalva"/>
+    <addaction name="separator"/>
+    <addaction name="actionEsci"/>
+   </widget>
+   <widget class="QMenu" name="menuCarta">
+    <property name="title">
+     <string>Aggiungi/Modifica</string>
+    </property>
+    <widget class="QMenu" name="menuCarta_2">
+     <property name="title">
+      <string>Carta</string>
+     </property>
+     <addaction name="actionTipo"/>
+     <addaction name="actionFormato"/>
+     <addaction name="actionGrammatura"/>
+    </widget>
+    <addaction name="actionPreventivi"/>
+    <addaction name="separator"/>
+    <addaction name="actionClienti"/>
+    <addaction name="separator"/>
+    <addaction name="menuCarta_2"/>
+   </widget>
+   <addaction name="menuSalva"/>
+   <addaction name="menuCarta"/>
+  </widget>
+  <action name="actionSalva">
+   <property name="text">
+    <string>Salva</string>
+   </property>
+  </action>
+  <action name="actionEsci">
+   <property name="text">
+    <string>Esci</string>
+   </property>
+  </action>
+  <action name="actionPreventivi">
+   <property name="text">
+    <string>Preventivi</string>
+   </property>
+   <property name="toolTip">
+    <string>Visualizza, modifica e crea preventivi</string>
+   </property>
+  </action>
+  <action name="actionTipo">
+   <property name="text">
+    <string>Tipo</string>
+   </property>
+   <property name="toolTip">
+    <string>Visualizza, modifica e aggiungi tipi di carta</string>
+   </property>
+  </action>
+  <action name="actionFormato">
+   <property name="text">
+    <string>Formato</string>
+   </property>
+   <property name="toolTip">
+    <string>Visualizza, modifica e aggiungi formati di carta</string>
+   </property>
+  </action>
+  <action name="actionGrammatura">
+   <property name="text">
+    <string>Grammatura</string>
+   </property>
+   <property name="toolTip">
+    <string>Visualizza, modifica e aggiungi grammature della carta</string>
+   </property>
+  </action>
+  <action name="actionClienti">
+   <property name="text">
+    <string>Clienti</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
