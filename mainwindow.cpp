@@ -15,11 +15,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-   caricaDb("dboggetti.db");
-
+   caricaDb("dboggetti.db"); //carica il file del database dalla cartella stessa dell'eseguibile
 
 
     ui->setupUi(this);
+
+    //queste righe nascondono tutto tranne la schermata di benvenuto
     ui->widget_benvenuto->show();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -38,7 +39,7 @@ MainWindow::~MainWindow()
 
 
 
-
+// se esiste il database lo apre, altrimenti lo crea
 void MainWindow::caricaDb(char *nome)
 {
     if( esisteDb(nome) )
@@ -66,7 +67,7 @@ bool MainWindow::esisteDb(char *nome)
         return false;
     }
 }
-
+ //crea tutte le tabelle necessarie in caso di database vuoto
 void MainWindow::creaTabelle()
 {
     QSqlQuery creazione;
@@ -92,25 +93,9 @@ void MainWindow::apriDb(char *nome)
 
 
 
-/*void MainWindow::visualizzaRicerca(QString nome)
-{
-    if (nome.isEmpty())
-        queryModel.setQuery("SELECT * FROM oggetti");
-    else
-        queryModel.setQuery("SELECT * FROM oggetti WHERE nome = '"+nome+"'");
-    queryModel.setHeaderData(0,Qt::Horizontal, "Nome");
-    queryModel.setHeaderData(1, Qt::Horizontal, "Categoria");
-    queryModel.setHeaderData(2, Qt::Horizontal, "Colore");
-    queryModel.setHeaderData(3, Qt::Horizontal, "Posizione");
-    queryModel.setHeaderData(4, Qt::Horizontal, "Associato A");
-    queryModel.setHeaderData(5, Qt::Horizontal, "Quantita'");
-    queryModel.setHeaderData(6, Qt::Horizontal, "Descrizione");
-    ui->tableView->setModel(&queryModel);
-
-}
-*/
 void MainWindow::on_actionPreventivi_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->show();
     ui->widget_carta_formato->hide();
@@ -123,6 +108,7 @@ void MainWindow::on_actionPreventivi_triggered()
 
 void MainWindow::on_actionTipo_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -136,6 +122,7 @@ void MainWindow::on_actionTipo_triggered()
 
 void MainWindow::on_actionFormato_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->show();
@@ -149,6 +136,7 @@ void MainWindow::on_actionFormato_triggered()
 
 void MainWindow::on_actionGrammatura_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -162,6 +150,7 @@ void MainWindow::on_actionGrammatura_triggered()
 
 void MainWindow::on_actionClienti_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -175,6 +164,7 @@ void MainWindow::on_actionClienti_triggered()
 
 void MainWindow::on_actionSerigrafia_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -189,6 +179,7 @@ void MainWindow::on_actionSerigrafia_triggered()
 
 void MainWindow::on_actionPlastificazione_triggered()
 {
+    //nasconde tutto tranne la sezione voluta
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -198,6 +189,7 @@ void MainWindow::on_actionPlastificazione_triggered()
     ui->widget_plastificazione->show();
     ui->widget_serigrafia->hide();
 
+    //refresh di TUTTE le tabelle
     refreshTabelle();
 }
 
@@ -250,6 +242,8 @@ void MainWindow::on_pushButton_plastificazione_clicked()
 
 void MainWindow::refreshTabelle()
 {
+    /* Questa funzione fa ogni volta il refresh di tutte le tabelle.
+       In futuro sarebbe meglio fare il refresh solo di quella necessaria */
     QSqlTableModel *tabella_plastificazione = new QSqlTableModel;
     tabella_plastificazione->setTable("plastificazione");
     tabella_plastificazione->setEditStrategy(QSqlTableModel::OnFieldChange);
@@ -275,5 +269,6 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     query.bindValue(":opacabianca", 0);
     query.bindValue(":opacabiancavolta", 0);
     query.exec();
+    query.clear();
     refreshTabelle();
 }
