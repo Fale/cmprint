@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
 
 namespace Ui {
     class MainWindow;
@@ -18,10 +19,21 @@ public:
 private:
     Ui::MainWindow *ui;
 
-private slots:
+    QSqlDatabase database;
+    QSqlQueryModel queryModel;
+//   QSqlTableModel tabella_plastificazione;
+
+    bool esisteDb(char *nome);
+    void caricaDb(char *nome);
+    void creaTabelle();
+    void apriDb(char *nome);
+    void refreshTabelle();
+//void visualizzaRicerca(QString nome);
 
 
 private slots:
+    void on_bottone_plastificazione_salva_clicked();
+    void on_bottone_plastificazione_aggiungi_clicked();
     void on_pushButton_plastificazione_clicked();
     void on_pushButton_serigrafia_clicked();
     void on_actionPlastificazione_triggered();
