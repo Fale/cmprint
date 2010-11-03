@@ -1,6 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/* TO BE FIXED
+   - Sistemare stretch dell'ultima colonna
+   - Chiusura del db
+   - colonne multiple
+
+
+
+
+
+ */
+
 /*
  La gui è gestita a widget. Ogni volta che se ne mostra uno bisogna nascondere tutti gli altri.
 
@@ -36,8 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    database.removeDatabase("QSQLITE");
-    database.close();  //chiudo il database!
+    database.close();  //chiudo il database! ma non funziona
 
 
     delete ui;
