@@ -15,7 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-   caricaDb("dboggetti.db"); //carica il file del database dalla cartella stessa dell'eseguibile
+   //setAttribute(Qt::WA_DeleteOnClose);
+
+    caricaDb("dboggetti.db"); //carica il file del database dalla cartella stessa dell'eseguibile
 
 
     ui->setupUi(this);
@@ -34,6 +36,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    database.removeDatabase("QSQLITE");
+    database.close();  //chiudo il database!
+
+
     delete ui;
 }
 
@@ -271,4 +277,8 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     query.exec();
     query.clear();
     refreshTabelle();
+
+    /*ATTENZIONE BUG!
+Se viene creata più di una nuova riga contemporaneamente,
+prima che la precedente sia stata riempita il sistema le gestirà come se fosse una unica */
 }
