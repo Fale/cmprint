@@ -4,10 +4,11 @@
 /* TO BE FIXED
    - Sistemare stretch dell'ultima colonna
    - Chiusura del db
+   - FInire refresh tabelle e committare
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
-     bisogna valutare se ciò costituisce un problema
+     bisogna valutare se ciò costituisce un problema. Per ora appena avviato sono 4.3Mb e 5.2 dopo che carica il db
 
 */
 
@@ -85,6 +86,13 @@ void MainWindow::creaTabelle()
     creazione.exec();
     creazione.clear();
     query.clear();
+
+    query = "CREATE TABLE serigrafia (descrizione char(30), prezzo int)"; //occhio che il prezzo non è un intero, guardare altri tipi di dati
+    creazione.prepare(query);
+    creazione.exec();
+    creazione.clear();
+    query.clear();
+
 
     //Aggiungere qui le altre tabelle necessarie
 
@@ -187,6 +195,7 @@ void MainWindow::on_actionSerigrafia_triggered()
     ui->widget_plastificazione->hide();
     ui->widget_serigrafia->show();
 
+    refreshTabelle();
 
 }
 
@@ -256,8 +265,9 @@ void MainWindow::on_pushButton_plastificazione_clicked()
 
 void MainWindow::refreshTabelle()
 {
-    /* Questa funzione fa ogni volta il refresh di tutte le tabelle.
+    /* Questa funzione fa ogni volta il refresh di TUTTE le tabelle.
        In futuro sarebbe meglio fare il refresh solo di quella necessaria */
+
     QSqlTableModel *tabella_plastificazione = new QSqlTableModel;
     tabella_plastificazione->setTable("plastificazione");
     tabella_plastificazione->setEditStrategy(QSqlTableModel::OnFieldChange);
@@ -268,6 +278,15 @@ void MainWindow::refreshTabelle()
     tabella_plastificazione->setHeaderData(3, Qt::Horizontal, "Opaca Bianca");
     tabella_plastificazione->setHeaderData(4, Qt::Horizontal, "Opaca Bianca/Volta");
     ui->tableView_plastificazione->setModel(tabella_plastificazione);
+
+
+    QSqlTableModel *tabella_serigrafia = new QSqlTableModel;
+    tabella_serigrafia->setTable("serigrafia");
+    tabella_serigrafia->setEditStrategy(QSqlTableModel::OnFieldChange);
+    tabella_serigrafia->select();
+    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Descrizione");
+    tabella_serigrafia->setHeaderData(1, Qt::Horizontal, "Prezzo");
+    ui->tableView_serigrafia->setModel(tabella_serigrafia);
 
     //Aggiungere qui il refresh di altre tabelle
 }
@@ -290,6 +309,18 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
 /*WORKAROUND: numera le nuove righe*/
 }
 
+void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
+{
+    QSqlQuery query;
+    n=n+1;
+    query.prepare("INSERT INTO serigrafia (descrizione, prezzi)"
+                  "VALUES(:descrizione, :prezzi) ");
+    query.bindValue(":descrizione", "test");
+    query.bindValue(":prezzi", 0);
+    query.exec();
+    query.clear();
+    refreshTabelle();
+}
 void MainWindow::on_bottone_benvenuto_clicked()
 {
     //queste righe nascondono tutto tranne la schermata di benvenuto
@@ -303,3 +334,5 @@ void MainWindow::on_bottone_benvenuto_clicked()
     ui->widget_serigrafia->hide();
     ui->widget_navigazione->hide();
 }
+
+
