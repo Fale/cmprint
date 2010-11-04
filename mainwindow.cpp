@@ -6,7 +6,7 @@
    - Chiusura del db
 
    ANNOTAZIONI
-   - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram.
+   - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
      bisogna valutare se ciò costituisce un problema
 
 */
@@ -268,7 +268,7 @@ void MainWindow::refreshTabelle()
     tabella_plastificazione->setHeaderData(2, Qt::Horizontal, "Lucida Bianca/Volta");
     tabella_plastificazione->setHeaderData(3, Qt::Horizontal, "Opaca Bianca");
     tabella_plastificazione->setHeaderData(4, Qt::Horizontal, "Opaca Bianca/Volta");
-    ui->tableView_preventivi->setModel(tabella_plastificazione);
+    ui->tableView_plastificazione->setModel(tabella_plastificazione);
 
     //Aggiungere qui il refresh di altre tabelle
 }
