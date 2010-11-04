@@ -4,13 +4,12 @@
 /* TO BE FIXED
    - Sistemare stretch dell'ultima colonna
    - Chiusura del db
-   - colonne multiple
 
+   ANNOTAZIONI
+   - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram.
+     bisogna valutare se ciò costituisce un problema
 
-
-
-
- */
+*/
 
 /*
  La gui è gestita a widget. Ogni volta che se ne mostra uno bisogna nascondere tutti gli altri.
