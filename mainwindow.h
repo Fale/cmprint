@@ -33,6 +33,7 @@ private:
 
 
 private slots:
+    void on_bottone_benvenuto_clicked();
     void on_bottone_plastificazione_aggiungi_clicked();
     void on_pushButton_plastificazione_clicked();
     void on_pushButton_serigrafia_clicked();

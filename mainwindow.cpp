@@ -32,16 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-    //queste righe nascondono tutto tranne la schermata di benvenuto
-    ui->widget_benvenuto->show();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
 
+    MainWindow::on_bottone_benvenuto_clicked();
 }
 
 MainWindow::~MainWindow()
@@ -111,6 +103,7 @@ void MainWindow::apriDb(char *nome)
 void MainWindow::on_actionPreventivi_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->show();
     ui->widget_carta_formato->hide();
@@ -124,6 +117,7 @@ void MainWindow::on_actionPreventivi_triggered()
 void MainWindow::on_actionTipo_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -138,6 +132,7 @@ void MainWindow::on_actionTipo_triggered()
 void MainWindow::on_actionFormato_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->show();
@@ -152,6 +147,7 @@ void MainWindow::on_actionFormato_triggered()
 void MainWindow::on_actionGrammatura_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -166,6 +162,7 @@ void MainWindow::on_actionGrammatura_triggered()
 void MainWindow::on_actionClienti_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -180,6 +177,7 @@ void MainWindow::on_actionClienti_triggered()
 void MainWindow::on_actionSerigrafia_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -195,6 +193,7 @@ void MainWindow::on_actionSerigrafia_triggered()
 void MainWindow::on_actionPlastificazione_triggered()
 {
     //nasconde tutto tranne la sezione voluta
+    ui->widget_navigazione->show();
     ui->widget_benvenuto->hide();
     ui->widget_preventivi->hide();
     ui->widget_carta_formato->hide();
@@ -289,4 +288,18 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     refreshTabelle();
 
 /*WORKAROUND: numera le nuove righe*/
+}
+
+void MainWindow::on_bottone_benvenuto_clicked()
+{
+    //queste righe nascondono tutto tranne la schermata di benvenuto
+    ui->widget_benvenuto->show();
+    ui->widget_preventivi->hide();
+    ui->widget_carta_formato->hide();
+    ui->widget_carta_grammatura->hide();
+    ui->widget_carta_tipo->hide();
+    ui->widget_clienti->hide();
+    ui->widget_plastificazione->hide();
+    ui->widget_serigrafia->hide();
+    ui->widget_navigazione->hide();
 }
