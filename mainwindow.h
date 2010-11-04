@@ -21,6 +21,7 @@ private:
 
     QSqlDatabase database;
     QSqlQueryModel queryModel;
+    int n;
 //   QSqlTableModel tabella_plastificazione;
 
     bool esisteDb(char *nome);

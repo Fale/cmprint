@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
    //setAttribute(Qt::WA_DeleteOnClose);
 
     caricaDb("dboggetti.db"); //carica il file del database dalla cartella stessa dell'eseguibile
-
+    n=0;
 
     ui->setupUi(this);
 
@@ -277,9 +277,10 @@ void MainWindow::refreshTabelle()
 void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
 {
     QSqlQuery query;
+    n=n+1;
     query.prepare("INSERT INTO plastificazione (formati, lucidabianca, lucidabiancavolta, opacabianca, opacabiancavolta)"
                   "VALUES(:formati, :lucidabianca, :lucidabiancavolta, :opacabianca, :opacabiancavolta) ") ;
-    query.bindValue(":formati", "");
+    query.bindValue(":formati", n);
     query.bindValue(":lucidabianca", 0);
     query.bindValue(":lucidabiancavolta", 0);
     query.bindValue(":opacabianca", 0);
@@ -288,7 +289,5 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     query.clear();
     refreshTabelle();
 
-    /*ATTENZIONE BUG!
-Se viene creata più di una nuova riga contemporaneamente,
-prima che la precedente sia stata riempita il sistema le gestirà come se fosse una unica */
+/*WORKAROUND: numera le nuove righe*/
 }
