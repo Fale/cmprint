@@ -386,6 +386,11 @@ void MainWindow::on_bottone_carta_grammatura_aggiungi_clicked()
 
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
+/*
 
-    qDebug() << ui->tableView_clienti->selectedIndexes().first();
+ qDebug() << ui->tableView_clienti->selectedIndexes().first();
+
+sta roba non compila
+error: ‘virtual QModelIndexList QTableView::selectedIndexes() const’ is protected
+    */
 }
