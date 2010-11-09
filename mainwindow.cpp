@@ -2,9 +2,7 @@
 #include "ui_mainwindow.h"
 
 /* TO BE FIXED
-   - Sistemare stretch dell'ultima colonna
    - Chiusura del db
-   - FInire refresh tabelle e committare
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
@@ -26,25 +24,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
     caricaDb("dboggetti.db"); //carica il file del database dalla cartella stessa dell'eseguibile
     n=0;
-
     ui->setupUi(this);
-
     MainWindow::on_bottone_benvenuto_clicked();
 }
 
 MainWindow::~MainWindow()
 {
     database.close();  //chiudo il database! ma non funziona
-
-
     delete ui;
 }
 
 
 
-// se esiste il database lo apre, altrimenti lo crea
 void MainWindow::caricaDb(QString nome)
 {
+    // se esiste il database lo apre, altrimenti lo crea
     QFile db(nome);
     if( db.exists() )
         apriDb(nome);
@@ -56,9 +50,9 @@ void MainWindow::caricaDb(QString nome)
 }
 
 
- //crea tutte le tabelle necessarie in caso di database vuoto
 void MainWindow::creaTabelle()
 {
+     //crea tutte le tabelle necessarie in caso di database vuoto
     QSqlQuery creazione;
     QString query;
 
@@ -100,8 +94,6 @@ void MainWindow::creaTabelle()
     query.clear();
 
 
-
-
     //Aggiungere qui le altre tabelle necessarie
 
 }
@@ -118,6 +110,7 @@ void MainWindow::showHide(QString show)
 {
 
     ui->widget_navigazione->show();
+
     //refresh di TUTTE le tabelle
     refreshTabelle();
 

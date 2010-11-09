@@ -24,13 +24,10 @@ private:
     QSqlDatabase database;
     QSqlQueryModel queryModel;
     float n;
-//   QSqlTableModel tabella_plastificazione;
-
     void caricaDb(QString nome);
     void creaTabelle();
     void apriDb(QString nome);
     void refreshTabelle();
-//void visualizzaRicerca(QString nome);
     void showHide(QString show);
 
 
