@@ -35,6 +35,7 @@ private:
 
 
 private slots:
+    void on_bottone_carta_tipo_aggiungi_clicked();
     void on_bottone_serigrafia_aggiungi_clicked();
     void on_bottone_benvenuto_clicked();
     void on_bottone_plastificazione_aggiungi_clicked();

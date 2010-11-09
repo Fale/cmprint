@@ -74,6 +74,12 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
+    query = "CREATE TABLE cartatipo (descrizione char(30), prezzo real)";
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
+
 
 
 
@@ -133,6 +139,20 @@ void MainWindow::showHide(QString show)
 
 }
 
+void MainWindow::on_bottone_benvenuto_clicked()
+{
+    //queste righe nascondono tutto tranne la schermata di benvenuto
+    ui->widget_benvenuto->show();
+    ui->widget_preventivi->hide();
+    ui->widget_carta_formato->hide();
+    ui->widget_carta_grammatura->hide();
+    ui->widget_carta_tipo->hide();
+    ui->widget_clienti->hide();
+    ui->widget_plastificazione->hide();
+    ui->widget_serigrafia->hide();
+    ui->widget_navigazione->hide();
+}
+
 void MainWindow::on_actionPreventivi_triggered()
 {
     this->showHide("preventivi");
@@ -141,36 +161,36 @@ void MainWindow::on_actionPreventivi_triggered()
 void MainWindow::on_actionTipo_triggered()
 {
     this->showHide("carta_tipo");
-
+    refreshTabelle();
 }
 
 void MainWindow::on_actionFormato_triggered()
 {
     this->showHide("carta_formato");
+    refreshTabelle();
 }
 
 void MainWindow::on_actionGrammatura_triggered()
 {
     this->showHide("carta_grammatura");
+    refreshTabelle();
 }
 
 void MainWindow::on_actionClienti_triggered()
 {
      this->showHide("clienti");
-
+    refreshTabelle();
 }
 
 void MainWindow::on_actionSerigrafia_triggered()
 {
     this->showHide("serigrafia");
-
     refreshTabelle();
 }
 
 void MainWindow::on_actionPlastificazione_triggered()
 {
    this->showHide("plastificazione");
-
     //refresh di TUTTE le tabelle
     refreshTabelle();
 }
@@ -247,6 +267,14 @@ void MainWindow::refreshTabelle()
     tabella_serigrafia->setHeaderData(1, Qt::Horizontal, "Prezzo");
     ui->tableView_serigrafia->setModel(tabella_serigrafia);
 
+    QSqlTableModel *tabella_carta_tipo = new QSqlTableModel;
+    tabella_carta_tipo->setTable("cartatipo");
+    tabella_carta_tipo->setEditStrategy(QSqlTableModel::OnFieldChange);
+    tabella_carta_tipo->select();
+    tabella_carta_tipo->setHeaderData(0, Qt::Horizontal, "Descrizione");
+    tabella_carta_tipo->setHeaderData(1, Qt::Horizontal, "Prezzo");
+    ui->tableView_carta_tipo->setModel(tabella_carta_tipo);
+
     //Aggiungere qui il refresh di altre tabelle
 }
 
@@ -282,18 +310,19 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     refreshTabelle();
 
 }
-void MainWindow::on_bottone_benvenuto_clicked()
+
+
+void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
 {
-    //queste righe nascondono tutto tranne la schermata di benvenuto
-    ui->widget_benvenuto->show();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
-    ui->widget_navigazione->hide();
+
+    QSqlQuery query;
+    n=n+1.0;
+    qDebug() << query.prepare("INSERT INTO cartatipo (descrizione, prezzo)"
+                              "VALUES(:descrizione, :prezzo) ");
+    query.bindValue(":descrizione", "test");
+    query.bindValue(":prezzo", n);
+    qDebug() << query.exec();
+    query.clear();
+    refreshTabelle();
+
 }
-
-
