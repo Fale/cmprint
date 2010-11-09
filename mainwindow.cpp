@@ -18,11 +18,6 @@
  */
 
 
-#include <iostream>
-#include <fstream>
-#include <cstdio>
-using namespace std;
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -49,9 +44,10 @@ MainWindow::~MainWindow()
 
 
 // se esiste il database lo apre, altrimenti lo crea
-void MainWindow::caricaDb(char *nome)
+void MainWindow::caricaDb(QString nome)
 {
-    if( esisteDb(nome) )
+    QFile db(nome);
+    if( db.exists() )
         apriDb(nome);
     else
     {
@@ -61,26 +57,14 @@ void MainWindow::caricaDb(char *nome)
 }
 
 
-bool MainWindow::esisteDb(char *nome)
-{
-    fstream fileIn;
-    fileIn.open(nome, ios::in);
-    if ( fileIn.is_open() )
-    {
-        fileIn.close();
-        return true;
-    }
-    else
-    {
-        fileIn.close();
-        return false;
-    }
-}
  //crea tutte le tabelle necessarie in caso di database vuoto
 void MainWindow::creaTabelle()
 {
     QSqlQuery creazione;
     QString query;
+
+    QSqlQuery creazione2;
+    QString query2;
 
     query = "CREATE TABLE plastificazione (formati char(15), lucidabianca int, lucidabiancavolta int, opacabianca int, opacabiancavolta int)";
     creazione.prepare(query);
@@ -88,18 +72,18 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    query = "CREATE TABLE serigrafia (descrizione char(30), prezzo int)"; //occhio che il prezzo non è un intero, guardare altri tipi di dati
-    creazione.prepare(query);
-    creazione.exec();
-    creazione.clear();
-    query.clear();
+    query2 = "CREATE TABLE serigrafia (descrizione char(30), prezzo int)"; //occhio che il prezzo non è un intero, guardare altri tipi di dati
+    qDebug() << creazione2.prepare(query2);
+    qDebug() << creazione2.exec();
+    creazione2.clear();
+    query2.clear();
 
 
     //Aggiungere qui le altre tabelle necessarie
 
 }
 
-void MainWindow::apriDb(char *nome)
+void MainWindow::apriDb(QString nome)
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName(nome);
@@ -107,111 +91,81 @@ void MainWindow::apriDb(char *nome)
 }
 
 
+void MainWindow::showHide(QString show)
+{
 
+    //nasconde tutto tranne la sezione voluta
+    if ( show == "benvenuto" )
+        ui->widget_benvenuto->show();
+    else
+        ui->widget_benvenuto->hide();
+    if ( show == "preventivi" )
+        ui->widget_preventivi->show();
+    else
+        ui->widget_preventivi->hide();
+    if ( show == "carta_formato" )
+        ui->widget_carta_formato->show();
+    else
+        ui->widget_carta_formato->hide();
+    if ( show == "carta_grammatura" )
+        ui->widget_carta_grammatura->show();
+    else
+        ui->widget_carta_grammatura->hide();
+    if ( show == "carta_tipo" )
+        ui->widget_carta_tipo->show();
+    else
+        ui->widget_carta_tipo->hide();
+    if ( show == "clienti" )
+        ui->widget_clienti->show();
+    else
+        ui->widget_clienti->hide();
+    if ( show == "plastificazione" )
+        ui->widget_plastificazione->show();
+    else
+        ui->widget_plastificazione->hide();
+    if ( show == "serigrafia" )
+        ui->widget_serigrafia->show();
+    else
+        ui->widget_serigrafia->hide();
+}
 
 void MainWindow::on_actionPreventivi_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->show();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
+    this->showHide("preventivi");
 }
 
 void MainWindow::on_actionTipo_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->show();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
+    this->showHide("carta_tipo");
 
 }
 
 void MainWindow::on_actionFormato_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->show();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
-
+    this->showHide("carta_formato");
 }
 
 void MainWindow::on_actionGrammatura_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->show();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
-
+    this->showHide("carta_grammatura");
 }
 
 void MainWindow::on_actionClienti_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->show();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
+     this->showHide("clienti");
 
 }
 
 void MainWindow::on_actionSerigrafia_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->show();
+    this->showHide("serigrafia");
 
     refreshTabelle();
-
 }
 
 void MainWindow::on_actionPlastificazione_triggered()
 {
-    //nasconde tutto tranne la sezione voluta
-    ui->widget_navigazione->show();
-    ui->widget_benvenuto->hide();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->show();
-    ui->widget_serigrafia->hide();
+   this->showHide("plastificazione");
 
     //refresh di TUTTE le tabelle
     refreshTabelle();
@@ -303,7 +257,7 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     query.bindValue(":lucidabiancavolta", 0);
     query.bindValue(":opacabianca", 0);
     query.bindValue(":opacabiancavolta", 0);
-    query.exec();
+    qDebug() << query.exec();
     query.clear();
     refreshTabelle();
 
@@ -314,11 +268,11 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
 {
     QSqlQuery query;
     n=n+1;
-    query.prepare("INSERT INTO serigrafia (descrizione, prezzi)"
-                  "VALUES(:descrizione, :prezzi) ");
+    qDebug() << query.prepare("INSERT INTO serigrafia (descrizione, prezzi)"
+                              "VALUES(:descrizione, :prezzi) ");
     query.bindValue(":descrizione", "test");
     query.bindValue(":prezzi", 0);
-    query.exec();
+    qDebug() << query.exec();
     query.clear();
     refreshTabelle();
 }

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QtSql>
+#include <QFile>
+#include <QString>
 
 namespace Ui {
     class MainWindow;
@@ -24,12 +26,12 @@ private:
     int n;
 //   QSqlTableModel tabella_plastificazione;
 
-    bool esisteDb(char *nome);
-    void caricaDb(char *nome);
+    void caricaDb(QString nome);
     void creaTabelle();
-    void apriDb(char *nome);
+    void apriDb(QString nome);
     void refreshTabelle();
 //void visualizzaRicerca(QString nome);
+    void showHide(QString show);
 
 
 private slots:
