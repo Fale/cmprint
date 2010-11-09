@@ -383,3 +383,9 @@ void MainWindow::on_bottone_carta_grammatura_aggiungi_clicked()
     query.clear();
     refreshTabelle();
 }
+
+void MainWindow::on_bottone_clienti_rimuovi_clicked()
+{
+
+    qDebug() << ui->tableView_clienti->selectedIndexes().first();
+}

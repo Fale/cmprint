@@ -32,6 +32,7 @@ private:
 
 
 private slots:
+    void on_bottone_clienti_rimuovi_clicked();
     void on_bottone_carta_grammatura_aggiungi_clicked();
     void on_bottone_carta_formato_aggiungi_clicked();
     void on_bottone_clienti_aggiungi_clicked();
