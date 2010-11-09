@@ -68,18 +68,14 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    query = "CREATE TABLE serigrafia (descrizione char(15), prezzo int)"; //occhio che il prezzo non è un intero, guardare altri tipi di dati
+    query = "CREATE TABLE serigrafia (descrizione char(30), prezzo real)";
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
     creazione.clear();
     query.clear();
 
 
-    query = "CREATE TABLE plastificazione2 (formati char(15), lucidabianca int, lucidabiancavolta int, opacabianca int, opacabiancavolta int)";
-    creazione.prepare(query);
-    creazione.exec();
-    creazione.clear();
-    query.clear();
+
 
     //Aggiungere qui le altre tabelle necessarie
 
@@ -274,25 +270,13 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
 
 void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
 {
-    /*QSqlQuery query;
-    n=n+1;
-    query.prepare("INSERT INTO serigrafia (formati, lucidabianca, lucidabiancavolta, opacabianca, opacabiancavolta)"
-                  "VALUES(:formati, :lucidabianca, :lucidabiancavolta, :opacabianca, :opacabiancavolta) ") ;
-    query.bindValue(":formati", n);
-    query.bindValue(":lucidabianca", 0);
-    query.bindValue(":lucidabiancavolta", 0);
-    query.bindValue(":opacabianca", 0);
-    query.bindValue(":opacabiancavolta", 0);
-    qDebug() << query.exec();
-    query.clear();
-    refreshTabelle(); */
 
     QSqlQuery query;
-    n=n+1;
+    n=n+1.0;
     qDebug() << query.prepare("INSERT INTO serigrafia (descrizione, prezzo)"
                               "VALUES(:descrizione, :prezzo) ");
     query.bindValue(":descrizione", "test");
-    query.bindValue(":prezzo", 0);
+    query.bindValue(":prezzo", n);
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();

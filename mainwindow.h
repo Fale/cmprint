@@ -23,7 +23,7 @@ private:
 
     QSqlDatabase database;
     QSqlQueryModel queryModel;
-    int n;
+    float n;
 //   QSqlTableModel tabella_plastificazione;
 
     void caricaDb(QString nome);
