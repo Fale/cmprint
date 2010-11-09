@@ -155,16 +155,7 @@ void MainWindow::showHide(QString show)
 
 void MainWindow::on_bottone_benvenuto_clicked()
 {
-    //queste righe nascondono tutto tranne la schermata di benvenuto
-    ui->widget_benvenuto->show();
-    ui->widget_preventivi->hide();
-    ui->widget_carta_formato->hide();
-    ui->widget_carta_grammatura->hide();
-    ui->widget_carta_tipo->hide();
-    ui->widget_clienti->hide();
-    ui->widget_plastificazione->hide();
-    ui->widget_serigrafia->hide();
-    ui->widget_navigazione->hide();
+    this->showHide("benvenuto");
 }
 
 void MainWindow::on_actionPreventivi_triggered()
