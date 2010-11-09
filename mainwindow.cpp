@@ -68,6 +68,25 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
+    query = "CREATE TABLE clienti (nome char(30))";
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
+
+    query = "CREATE TABLE cartaformato (formato char(30))";
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
+
+
+    query = "CREATE TABLE cartagrammatura (grammatura int)";
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
+
     query = "CREATE TABLE serigrafia (descrizione char(30), prezzo real)";
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
@@ -99,6 +118,8 @@ void MainWindow::showHide(QString show)
 {
 
     ui->widget_navigazione->show();
+    //refresh di TUTTE le tabelle
+    refreshTabelle();
 
     //nasconde tutto tranne la sezione voluta
     if ( show == "benvenuto" )
@@ -161,38 +182,31 @@ void MainWindow::on_actionPreventivi_triggered()
 void MainWindow::on_actionTipo_triggered()
 {
     this->showHide("carta_tipo");
-    refreshTabelle();
 }
 
 void MainWindow::on_actionFormato_triggered()
 {
     this->showHide("carta_formato");
-    refreshTabelle();
 }
 
 void MainWindow::on_actionGrammatura_triggered()
 {
     this->showHide("carta_grammatura");
-    refreshTabelle();
 }
 
 void MainWindow::on_actionClienti_triggered()
 {
      this->showHide("clienti");
-    refreshTabelle();
 }
 
 void MainWindow::on_actionSerigrafia_triggered()
 {
     this->showHide("serigrafia");
-    refreshTabelle();
 }
 
 void MainWindow::on_actionPlastificazione_triggered()
 {
    this->showHide("plastificazione");
-    //refresh di TUTTE le tabelle
-    refreshTabelle();
 }
 
 void MainWindow::on_pushButton_preventivi_clicked()
@@ -258,6 +272,26 @@ void MainWindow::refreshTabelle()
     tabella_plastificazione->setHeaderData(4, Qt::Horizontal, "Opaca Bianca/Volta");
     ui->tableView_plastificazione->setModel(tabella_plastificazione);
 
+    QSqlTableModel *tabella_clienti = new QSqlTableModel;
+    tabella_clienti->setTable("clienti");
+    tabella_clienti->setEditStrategy(QSqlTableModel::OnFieldChange);
+    tabella_clienti->select();
+    tabella_clienti->setHeaderData(0, Qt::Horizontal, "Nome");
+    ui->tableView_clienti->setModel(tabella_clienti);
+
+    QSqlTableModel *tabella_carta_formato = new QSqlTableModel;
+    tabella_carta_formato->setTable("cartaformato");
+    tabella_carta_formato->setEditStrategy(QSqlTableModel::OnFieldChange);
+    tabella_carta_formato->select();
+    tabella_carta_formato->setHeaderData(0, Qt::Horizontal, "Formato");
+    ui->tableView_carta_formato->setModel(tabella_carta_formato);
+
+    QSqlTableModel *tabella_carta_grammatura = new QSqlTableModel;
+    tabella_carta_grammatura->setTable("cartagrammatura");
+    tabella_carta_grammatura->setEditStrategy(QSqlTableModel::OnFieldChange);
+    tabella_carta_grammatura->select();
+    tabella_carta_grammatura->setHeaderData(0, Qt::Horizontal, "Grammatura (g/m2)");
+    ui->tableView_carta_grammatura->setModel(tabella_carta_grammatura);
 
     QSqlTableModel *tabella_serigrafia = new QSqlTableModel;
     tabella_serigrafia->setTable("serigrafia");
@@ -325,4 +359,43 @@ void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
     query.clear();
     refreshTabelle();
 
+}
+
+void MainWindow::on_bottone_clienti_aggiungi_clicked()
+{
+
+    QSqlQuery query;
+    n=n+1;
+    qDebug() << query.prepare("INSERT INTO clienti (nome)"
+                              "VALUES(:nome) ");
+    query.bindValue(":nome", n);
+    qDebug() << query.exec();
+    query.clear();
+    refreshTabelle();
+}
+
+void MainWindow::on_bottone_carta_formato_aggiungi_clicked()
+{
+
+    QSqlQuery query;
+    n=n+1;
+    qDebug() << query.prepare("INSERT INTO cartaformato (formato)"
+                              "VALUES(:formato) ");
+    query.bindValue(":formato", n);
+    qDebug() << query.exec();
+    query.clear();
+    refreshTabelle();
+}
+
+void MainWindow::on_bottone_carta_grammatura_aggiungi_clicked()
+{
+
+    QSqlQuery query;
+    n=n+1;
+    qDebug() << query.prepare("INSERT INTO cartagrammatura (grammatura)"
+                              "VALUES(:grammatura) ");
+    query.bindValue(":grammatura", n);
+    qDebug() << query.exec();
+    query.clear();
+    refreshTabelle();
 }
