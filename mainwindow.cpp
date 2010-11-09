@@ -17,7 +17,6 @@
 
  */
 
-/*AGGIUNTO DAL DESKTOP */
 
 #include <iostream>
 #include <fstream>
