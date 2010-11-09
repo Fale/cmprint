@@ -94,10 +94,15 @@ void MainWindow::apriDb(QString nome)
 void MainWindow::showHide(QString show)
 {
 
+    ui->widget_navigazione->show();
+
     //nasconde tutto tranne la sezione voluta
     if ( show == "benvenuto" )
+    {
         ui->widget_benvenuto->show();
-    else
+        ui->widget_navigazione->hide(); //poco elegante il show/hide delle stesso widget ma molto più veloce nell'implementazione
+    }
+        else
         ui->widget_benvenuto->hide();
     if ( show == "preventivi" )
         ui->widget_preventivi->show();
@@ -127,6 +132,7 @@ void MainWindow::showHide(QString show)
         ui->widget_serigrafia->show();
     else
         ui->widget_serigrafia->hide();
+
 }
 
 void MainWindow::on_actionPreventivi_triggered()
