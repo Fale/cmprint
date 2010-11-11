@@ -3,7 +3,7 @@
 
 /* TO BE FIXED
    - Chiusura del db
-
+    - Eliminazione Righe
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
      bisogna valutare se ciò costituisce un problema. Per ora appena avviato sono 4.3Mb e 5.2 dopo che carica il db
@@ -392,7 +392,15 @@ void MainWindow::eliminaRiga(QString tabella, QString numero)
     stringa_query = "DELETE FROM "+tabella+" WHERE rowid="+numero;
     qDebug() << query.prepare(stringa_query);
     qDebug() << query.exec();
+
+    /*
+     BUG!
+     questa funzione utilizza l'id della riga, solo che quando elimino una riga
+     e poi ne creo un altra quell'id rimane inutlizzato
+
+     */
 }
+
 
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
