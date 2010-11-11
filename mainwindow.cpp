@@ -293,6 +293,7 @@ void MainWindow::refreshTabelle()
     tabella_carta_tipo->setHeaderData(1, Qt::Horizontal, "Prezzo");
     ui->tableView_carta_tipo->setModel(tabella_carta_tipo);
 
+
     //Aggiungere qui il refresh di altre tabelle
 }
 
@@ -384,13 +385,23 @@ void MainWindow::on_bottone_carta_grammatura_aggiungi_clicked()
     refreshTabelle();
 }
 
+void MainWindow::eliminaRiga(QString tabella, QString numero)
+{
+    QSqlQuery query;
+    QString stringa_query;
+    stringa_query = "DELETE FROM "+tabella+" WHERE rowid="+numero;
+    qDebug() << query.prepare(stringa_query);
+    qDebug() << query.exec();
+}
+
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
-/*
+    eliminaRiga("clienti",ui->line_edit_clienti->text());
+    refreshTabelle();
+}
 
- qDebug() << ui->tableView_clienti->selectedIndexes().first();
 
-sta roba non compila
-error: ‘virtual QModelIndexList QTableView::selectedIndexes() const’ is protected
-    */
+void MainWindow::on_line_edit_clienti_returnPressed()
+{
+    this->on_bottone_clienti_rimuovi_clicked();
 }

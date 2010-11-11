@@ -29,9 +29,11 @@ private:
     void apriDb(QString nome);
     void refreshTabelle();
     void showHide(QString show);
+    void eliminaRiga(QString tabella, QString numero);
 
 
 private slots:
+    void on_line_edit_clienti_returnPressed();
     void on_bottone_clienti_rimuovi_clicked();
     void on_bottone_carta_grammatura_aggiungi_clicked();
     void on_bottone_carta_formato_aggiungi_clicked();
