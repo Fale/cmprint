@@ -123,7 +123,10 @@ void MainWindow::showHide(QString show)
         else
         ui->widget_benvenuto->hide();
     if ( show == "preventivi" )
+        {
         ui->widget_preventivi->show();
+        ui->tabWidget_preventivi->hide();
+        }
     else
         ui->widget_preventivi->hide();
     if ( show == "carta_formato" )
@@ -412,4 +415,13 @@ void MainWindow::on_bottone_clienti_rimuovi_clicked()
 void MainWindow::on_line_edit_clienti_returnPressed()
 {
     this->on_bottone_clienti_rimuovi_clicked();
+}
+
+void MainWindow::on_bottone_preventivi_nuovo_clicked()
+{
+    ui->bottone_preventivi_cerca->hide();
+    ui->bottone_preventivi_nuovo->hide();
+    ui->lineEdit_preventivi_cerca->hide();
+    ui->tableView_preventivi->hide();
+    ui->tabWidget_preventivi->show();
 }

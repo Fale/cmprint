@@ -33,6 +33,7 @@ private:
 
 
 private slots:
+    void on_bottone_preventivi_nuovo_clicked();
     void on_line_edit_clienti_returnPressed();
     void on_bottone_clienti_rimuovi_clicked();
     void on_bottone_carta_grammatura_aggiungi_clicked();
