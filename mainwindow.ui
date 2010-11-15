@@ -187,27 +187,79 @@
          <property name="currentIndex">
           <number>0</number>
          </property>
-         <widget class="QWidget" name="primofoglio">
+         <widget class="QWidget" name="foglio1">
           <attribute name="title">
            <string>Foglio 1</string>
           </attribute>
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="1" column="1">
+            <widget class="QDateEdit" name="dateEdit"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_foglio1_data">
+             <property name="text">
+              <string>Data</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_foglio1_numero">
+             <property name="text">
+              <string>Numero</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBox"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_foglio1_cliente">
+             <property name="text">
+              <string>Cliente</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="comboBox"/>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPlainTextEdit" name="plainTextEdit"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_foglio1_descrizione">
+             <property name="text">
+              <string>Descrizione lavoro</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_foglio1_ncopie">
+             <property name="text">
+              <string>Numero copie</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QSpinBox" name="spinBox_2"/>
+           </item>
+          </layout>
          </widget>
-         <widget class="QWidget" name="secondofoglio">
+         <widget class="QWidget" name="foglio2">
           <attribute name="title">
            <string>Foglio 2</string>
           </attribute>
          </widget>
-         <widget class="QWidget" name="terzofoglio">
+         <widget class="QWidget" name="foglio3">
           <attribute name="title">
            <string>Foglio 3</string>
           </attribute>
          </widget>
-         <widget class="QWidget" name="quartofoglio">
+         <widget class="QWidget" name="foglio4">
           <attribute name="title">
            <string>Foglio 4</string>
           </attribute>
          </widget>
-         <widget class="QWidget" name="quintofoglio">
+         <widget class="QWidget" name="foglio5">
           <attribute name="title">
            <string>Foglio 5</string>
           </attribute>

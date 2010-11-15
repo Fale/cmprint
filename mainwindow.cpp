@@ -125,6 +125,10 @@ void MainWindow::showHide(QString show)
     if ( show == "preventivi" )
         {
         ui->widget_preventivi->show();
+        ui->bottone_preventivi_cerca->show();
+        ui->bottone_preventivi_nuovo->show();
+        ui->lineEdit_preventivi_cerca->show();
+        ui->tableView_preventivi->show();
         ui->tabWidget_preventivi->hide();
         }
     else
