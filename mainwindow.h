@@ -34,6 +34,7 @@ private:
 
 
 private slots:
+    void on_bottone_torna_preventivo_clicked();
     void on_spinBox_foglio1_ncopie_valueChanged(QString valore);
     void on_bottone_tab1_aggiungi_clienti_clicked();
     void on_bottone_preventivi_nuovo_clicked();

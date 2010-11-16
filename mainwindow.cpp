@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     MainWindow::on_bottone_benvenuto_clicked();
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
-
+    ui->bottone_torna_preventivo->hide();
     popolaComboBox();
 
 
@@ -454,6 +454,7 @@ void MainWindow::on_bottone_tab1_aggiungi_clienti_clicked()
 {
     this->showHide("clienti");
     this->on_bottone_clienti_aggiungi_clicked();
+    ui->bottone_torna_preventivo->show();
 }
 
 
@@ -464,4 +465,13 @@ void MainWindow::on_spinBox_foglio1_ncopie_valueChanged(QString valore)
     ui->label_foglio2_successivencopie->setText("Successive "+valore+" copie");
     ui->label_foglio3_ncopie->setText("Prime "+valore+" copie");
     ui->label_foglio3_successivencopie->setText("Successive "+valore+" copie");
+}
+
+
+void MainWindow::on_bottone_torna_preventivo_clicked()
+{
+    this->on_pushButton_preventivi_clicked();
+    this->on_bottone_preventivi_nuovo_clicked();
+    ui->comboBox_clienti_seleziona->setCurrentIndex(ui->comboBox_clienti_seleziona->count()-1);
+    ui->bottone_torna_preventivo->hide();
 }
