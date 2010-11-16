@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
+    <width>934</width>
     <height>30000</height>
    </rect>
   </property>
@@ -507,7 +507,10 @@
             </widget>
            </item>
            <item row="1" column="1" colspan="2">
-            <widget class="QDateEdit" name="dateEdit">
+            <widget class="QDateEdit" name="dateEdit_foglio1">
+             <property name="displayFormat">
+              <string>dd/MMM/yyyy</string>
+             </property>
              <property name="calendarPopup">
               <bool>true</bool>
              </property>
@@ -521,10 +524,10 @@
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QComboBox" name="comboBox"/>
+            <widget class="QComboBox" name="comboBox_clienti_seleziona"/>
            </item>
            <item row="2" column="2">
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="bottone_tab1_aggiungi_clienti">
              <property name="text">
               <string>Nuovo</string>
              </property>
@@ -567,7 +570,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>558</width>
+                <width>874</width>
                 <height>2017</height>
                </rect>
               </property>
@@ -603,19 +606,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="6">
-                <widget class="QLineEdit" name="lineEdit">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="8">
                 <widget class="QLabel" name="label_32">
                  <property name="text">
@@ -637,16 +627,6 @@
                 <widget class="QLabel" name="label_13">
                  <property name="text">
                   <string>X Euro</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="6">
-                <widget class="QLineEdit" name="lineEdit_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
                  </property>
                 </widget>
                </item>
@@ -697,19 +677,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="6">
-                <widget class="QLineEdit" name="lineEdit_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
                <item row="4" column="8">
                 <widget class="QLabel" name="label_33">
                  <property name="text">
@@ -731,19 +698,6 @@
                 <widget class="QLabel" name="label_18">
                  <property name="text">
                   <string>X Euro</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="6">
-                <widget class="QLineEdit" name="lineEdit_4">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
                  </property>
                 </widget>
                </item>
@@ -794,19 +748,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="7" column="6">
-                <widget class="QLineEdit" name="lineEdit_5">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
                <item row="7" column="8">
                 <widget class="QLabel" name="label_38">
                  <property name="text">
@@ -828,19 +769,6 @@
                 <widget class="QLabel" name="label_20">
                  <property name="text">
                   <string>X Euro</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="6">
-                <widget class="QLineEdit" name="lineEdit_6">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
                  </property>
                 </widget>
                </item>
@@ -891,19 +819,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="10" column="6">
-                <widget class="QLineEdit" name="lineEdit_38">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
                <item row="10" column="8">
                 <widget class="QLabel" name="label_115">
                  <property name="text">
@@ -925,16 +840,6 @@
                 <widget class="QLabel" name="label_111">
                  <property name="text">
                   <string>X Euro</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="6">
-                <widget class="QLineEdit" name="lineEdit_37">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
                  </property>
                 </widget>
                </item>
@@ -985,19 +890,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="13" column="6">
-                <widget class="QLineEdit" name="lineEdit_40">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
                <item row="13" column="8">
                 <widget class="QLabel" name="label_122">
                  <property name="text">
@@ -1019,16 +911,6 @@
                 <widget class="QLabel" name="label_118">
                  <property name="text">
                   <string>X Euro</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="6">
-                <widget class="QLineEdit" name="lineEdit_39">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
                  </property>
                 </widget>
                </item>
@@ -1079,19 +961,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="16" column="5" colspan="2">
-                <widget class="QLineEdit" name="lineEdit_42">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
                <item row="17" column="0" colspan="2">
                 <widget class="QLabel" name="label_130">
                  <property name="text">
@@ -1106,16 +975,6 @@
                 <widget class="QLabel" name="label_125">
                  <property name="text">
                   <string>X Euro</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="5" colspan="2">
-                <widget class="QLineEdit" name="lineEdit_41">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
                  </property>
                 </widget>
                </item>
@@ -1258,7 +1117,11 @@
                 </widget>
                </item>
                <item row="23" column="8" colspan="3">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                 <property name="value">
+                  <double>20.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="24" column="0" colspan="2">
                 <widget class="QLabel" name="label_29">
@@ -1302,6 +1165,90 @@
                  </property>
                 </widget>
                </item>
+               <item row="1" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+                 <property name="maximum">
+                  <double>9999.989999999999782</double>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </widget>
@@ -1312,7 +1259,438 @@
           <attribute name="title">
            <string>Foglio 3</string>
           </attribute>
-          <layout class="QGridLayout" name="gridLayout_13"/>
+          <layout class="QGridLayout" name="gridLayout_13">
+           <item row="0" column="0">
+            <widget class="QScrollArea" name="scrollArea">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>874</width>
+                <height>2017</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <item row="0" column="7">
+                <widget class="QLabel" name="label_131">
+                 <property name="text">
+                  <string>Prime # copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="8">
+                <widget class="QLabel" name="label_132">
+                 <property name="text">
+                  <string>Successive # copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_133">
+                 <property name="text">
+                  <string>Tipo di carta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBox_3"/>
+               </item>
+               <item row="1" column="2" colspan="3">
+                <widget class="QComboBox" name="comboBox_4"/>
+               </item>
+               <item row="1" column="5">
+                <widget class="QComboBox" name="comboBox_5"/>
+               </item>
+               <item row="1" column="6">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>259</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_134">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QSpinBox" name="spinBox"/>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_135">
+                 <property name="text">
+                  <string>Kg</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QLabel" name="label_136">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="4">
+                <widget class="QLabel" name="label_137">
+                 <property name="text">
+                  <string>X €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="5">
+                <widget class="QSpinBox" name="spinBox_28"/>
+               </item>
+               <item row="2" column="7">
+                <widget class="QLabel" name="label_165">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="8">
+                <widget class="QLabel" name="label_166">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <spacer name="verticalSpacer_15">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_147">
+                 <property name="text">
+                  <string>Tipo di carta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="comboBox_11"/>
+               </item>
+               <item row="4" column="2" colspan="3">
+                <widget class="QComboBox" name="comboBox_9"/>
+               </item>
+               <item row="4" column="5">
+                <widget class="QComboBox" name="comboBox_10"/>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_149">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QSpinBox" name="spinBox_32"/>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLabel" name="label_148">
+                 <property name="text">
+                  <string>Kg</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="3">
+                <widget class="QLabel" name="label_145">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="4">
+                <widget class="QLabel" name="label_146">
+                 <property name="text">
+                  <string>X €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="5">
+                <widget class="QSpinBox" name="spinBox_31"/>
+               </item>
+               <item row="5" column="7">
+                <widget class="QLabel" name="label_167">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="8">
+                <widget class="QLabel" name="label_168">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <spacer name="verticalSpacer_17">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_152">
+                 <property name="text">
+                  <string>Tipo di carta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QComboBox" name="comboBox_14"/>
+               </item>
+               <item row="7" column="2" colspan="3">
+                <widget class="QComboBox" name="comboBox_12"/>
+               </item>
+               <item row="7" column="5">
+                <widget class="QComboBox" name="comboBox_13"/>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_154">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="1">
+                <widget class="QSpinBox" name="spinBox_34"/>
+               </item>
+               <item row="8" column="2">
+                <widget class="QLabel" name="label_153">
+                 <property name="text">
+                  <string>Kg</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="3">
+                <widget class="QLabel" name="label_150">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="4">
+                <widget class="QLabel" name="label_151">
+                 <property name="text">
+                  <string>X €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="5">
+                <widget class="QSpinBox" name="spinBox_33"/>
+               </item>
+               <item row="8" column="7">
+                <widget class="QLabel" name="label_169">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="8">
+                <widget class="QLabel" name="label_170">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="1">
+                <spacer name="verticalSpacer_18">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="label_157">
+                 <property name="text">
+                  <string>Tipo di carta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="1">
+                <widget class="QComboBox" name="comboBox_17"/>
+               </item>
+               <item row="10" column="2" colspan="3">
+                <widget class="QComboBox" name="comboBox_15"/>
+               </item>
+               <item row="10" column="5">
+                <widget class="QComboBox" name="comboBox_16"/>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLabel" name="label_159">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="1">
+                <widget class="QSpinBox" name="spinBox_36"/>
+               </item>
+               <item row="11" column="2">
+                <widget class="QLabel" name="label_158">
+                 <property name="text">
+                  <string>Kg</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="3">
+                <widget class="QLabel" name="label_155">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="4">
+                <widget class="QLabel" name="label_156">
+                 <property name="text">
+                  <string>X €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="5">
+                <widget class="QSpinBox" name="spinBox_35"/>
+               </item>
+               <item row="11" column="7">
+                <widget class="QLabel" name="label_171">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="8">
+                <widget class="QLabel" name="label_172">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="1">
+                <spacer name="verticalSpacer_19">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="13" column="0">
+                <widget class="QLabel" name="label_162">
+                 <property name="text">
+                  <string>Tipo di carta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="1">
+                <widget class="QComboBox" name="comboBox_20"/>
+               </item>
+               <item row="13" column="2" colspan="3">
+                <widget class="QComboBox" name="comboBox_18"/>
+               </item>
+               <item row="13" column="5">
+                <widget class="QComboBox" name="comboBox_19"/>
+               </item>
+               <item row="14" column="0">
+                <widget class="QLabel" name="label_164">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="1">
+                <widget class="QSpinBox" name="spinBox_38"/>
+               </item>
+               <item row="14" column="2">
+                <widget class="QLabel" name="label_163">
+                 <property name="text">
+                  <string>Kg</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="3">
+                <widget class="QLabel" name="label_160">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="4">
+                <widget class="QLabel" name="label_161">
+                 <property name="text">
+                  <string>X €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="5">
+                <widget class="QSpinBox" name="spinBox_37"/>
+               </item>
+               <item row="14" column="7">
+                <widget class="QLabel" name="label_173">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="8">
+                <widget class="QLabel" name="label_174">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="foglio4">
           <attribute name="title">
@@ -1337,7 +1715,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>618</width>
+     <width>934</width>
      <height>25</height>
     </rect>
    </property>

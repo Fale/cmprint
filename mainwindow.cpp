@@ -26,6 +26,11 @@ MainWindow::MainWindow(QWidget *parent) :
     n=0;
     ui->setupUi(this);
     MainWindow::on_bottone_benvenuto_clicked();
+    ui->dateEdit_foglio1->setDate(QDate::currentDate());
+
+    popolaComboBox();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -103,6 +108,21 @@ void MainWindow::apriDb(QString nome)
     database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName(nome);
     database.open();
+}
+
+void MainWindow::popolaComboBox()
+{
+
+    QSqlQuery query("SELECT nome FROM clienti");
+    QSqlRecord campo= query.record();
+    ui->comboBox_clienti_seleziona->clear();
+    while ( query.next())
+    {
+        ui->comboBox_clienti_seleziona->insertItem(ui->comboBox_clienti_seleziona->count(),query.value(campo.indexOf("nome")).toString());
+    }
+
+
+
 }
 
 
@@ -300,7 +320,7 @@ void MainWindow::refreshTabelle()
     tabella_carta_tipo->setHeaderData(1, Qt::Horizontal, "Prezzo");
     ui->tableView_carta_tipo->setModel(tabella_carta_tipo);
 
-
+    popolaComboBox();
     //Aggiungere qui il refresh di altre tabelle
 }
 
@@ -429,3 +449,11 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     ui->tableView_preventivi->hide();
     ui->tabWidget_preventivi->show();
 }
+
+void MainWindow::on_bottone_tab1_aggiungi_clienti_clicked()
+{
+    this->showHide("clienti");
+    this->on_bottone_clienti_aggiungi_clicked();
+}
+
+

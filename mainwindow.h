@@ -30,9 +30,11 @@ private:
     void refreshTabelle();
     void showHide(QString show);
     void eliminaRiga(QString tabella, QString numero);
+    void popolaComboBox();
 
 
 private slots:
+    void on_bottone_tab1_aggiungi_clienti_clicked();
     void on_bottone_preventivi_nuovo_clicked();
     void on_line_edit_clienti_returnPressed();
     void on_bottone_clienti_rimuovi_clicked();
