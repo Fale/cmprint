@@ -551,7 +551,14 @@
             </widget>
            </item>
            <item row="4" column="1" colspan="2">
-            <widget class="QSpinBox" name="spinBox_2"/>
+            <widget class="QSpinBox" name="spinBox_foglio1_ncopie">
+             <property name="maximum">
+              <number>99999</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -576,16 +583,16 @@
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
                <item row="0" column="8">
-                <widget class="QLabel" name="label_11">
+                <widget class="QLabel" name="label_foglio2_ncopie">
                  <property name="text">
-                  <string>Prime # copie</string>
+                  <string>Prima copia</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="10">
-                <widget class="QLabel" name="label_12">
+                <widget class="QLabel" name="label_foglio2_successivencopie">
                  <property name="text">
-                  <string>Successive # copie</string>
+                  <string>Successiva copia</string>
                  </property>
                 </widget>
                </item>
@@ -1276,16 +1283,16 @@
               </property>
               <layout class="QGridLayout" name="gridLayout_18">
                <item row="0" column="7">
-                <widget class="QLabel" name="label_131">
+                <widget class="QLabel" name="label_foglio3_ncopie">
                  <property name="text">
-                  <string>Prime # copie</string>
+                  <string>Prima copia</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="8">
-                <widget class="QLabel" name="label_132">
+                <widget class="QLabel" name="label_foglio3_successivencopie">
                  <property name="text">
-                  <string>Successive # copie</string>
+                  <string>Successiva copia</string>
                  </property>
                 </widget>
                </item>

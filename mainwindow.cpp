@@ -457,3 +457,11 @@ void MainWindow::on_bottone_tab1_aggiungi_clienti_clicked()
 }
 
 
+
+void MainWindow::on_spinBox_foglio1_ncopie_valueChanged(QString valore)
+{
+    ui->label_foglio2_ncopie->setText("Prime "+valore+" copie");
+    ui->label_foglio2_successivencopie->setText("Successive "+valore+" copie");
+    ui->label_foglio3_ncopie->setText("Prime "+valore+" copie");
+    ui->label_foglio3_successivencopie->setText("Successive "+valore+" copie");
+}
