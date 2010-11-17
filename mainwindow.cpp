@@ -61,7 +61,7 @@ void MainWindow::creaTabelle()
     QSqlQuery creazione;
     QString query;
 
-    query = "CREATE TABLE plastificazione (formati char(15), lucidabianca int, lucidabiancavolta int, opacabianca int, opacabiancavolta int)";
+    query = "CREATE TABLE plastificazione (formato char(15), lucidabianca int, lucidabiancavolta int, opacabianca int, opacabiancavolta int)";
     creazione.prepare(query);
     creazione.exec();
     creazione.clear();
@@ -86,7 +86,7 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    query = "CREATE TABLE serigrafia (descrizione char(30), prezzo real)";
+    query = "CREATE TABLE serigrafia (formato char(30), prezzo real)";
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
     creazione.clear();
@@ -276,7 +276,7 @@ void MainWindow::refreshTabelle()
     tabella_plastificazione->setTable("plastificazione");
     tabella_plastificazione->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_plastificazione->select();
-    tabella_plastificazione->setHeaderData(0, Qt::Horizontal, "Formati");
+    tabella_plastificazione->setHeaderData(0, Qt::Horizontal, "Formato");
     tabella_plastificazione->setHeaderData(1, Qt::Horizontal, "Lucida Bianca");
     tabella_plastificazione->setHeaderData(2, Qt::Horizontal, "Lucida Bianca/Volta");
     tabella_plastificazione->setHeaderData(3, Qt::Horizontal, "Opaca Bianca");
@@ -308,7 +308,7 @@ void MainWindow::refreshTabelle()
     tabella_serigrafia->setTable("serigrafia");
     tabella_serigrafia->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_serigrafia->select();
-    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Descrizione");
+    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Formato");
     tabella_serigrafia->setHeaderData(1, Qt::Horizontal, "Prezzo");
     ui->tableView_serigrafia->setModel(tabella_serigrafia);
 
@@ -328,9 +328,9 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
 {
     QSqlQuery query;
     n=n+1;
-    query.prepare("INSERT INTO plastificazione (formati, lucidabianca, lucidabiancavolta, opacabianca, opacabiancavolta)"
-                  "VALUES(:formati, :lucidabianca, :lucidabiancavolta, :opacabianca, :opacabiancavolta) ") ;
-    query.bindValue(":formati", n);
+    query.prepare("INSERT INTO plastificazione (formato, lucidabianca, lucidabiancavolta, opacabianca, opacabiancavolta)"
+                  "VALUES(:formato, :lucidabianca, :lucidabiancavolta, :opacabianca, :opacabiancavolta) ") ;
+    query.bindValue(":formato", n);
     query.bindValue(":lucidabianca", 0);
     query.bindValue(":lucidabiancavolta", 0);
     query.bindValue(":opacabianca", 0);
@@ -347,9 +347,9 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
 
     QSqlQuery query;
     n=n+1.0;
-    qDebug() << query.prepare("INSERT INTO serigrafia (descrizione, prezzo)"
-                              "VALUES(:descrizione, :prezzo) ");
-    query.bindValue(":descrizione", "test");
+    qDebug() << query.prepare("INSERT INTO serigrafia (formato, prezzo)"
+                              "VALUES(:formato, :prezzo) ");
+    query.bindValue(":formato", "test");
     query.bindValue(":prezzo", n);
     qDebug() << query.exec();
     query.clear();
@@ -461,10 +461,28 @@ void MainWindow::on_bottone_tab1_aggiungi_clienti_clicked()
 
 void MainWindow::on_spinBox_foglio1_ncopie_valueChanged(QString valore)
 {
-    ui->label_foglio2_ncopie->setText("Prime "+valore+" copie");
+    if (valore=="1") //if necessario in caso che cambia il numero di copie ma poi lo riporta ad 1
+    {
+        ui->label_foglio2_ncopie->setText("Prima copia          ");
+        ui->label_foglio2_successivencopie->setText("Successiva copia");
+        ui->label_foglio3_ncopie->setText("Prima copia          ");
+        ui->label_foglio3_successivencopie->setText("Successiva copia");
+        ui->label_foglio4_ncopie->setText("Prima copia          ");
+        ui->label_foglio4_successivencopie->setText("Successiva copia");
+        ui->label_foglio5_ncopie->setText("Prima copia          ");
+        ui->label_foglio5_successivencopie->setText("Successiva copia");
+
+    } else
+    {
+    ui->label_foglio2_ncopie->setText("Prime "+valore+" copie          ");
     ui->label_foglio2_successivencopie->setText("Successive "+valore+" copie");
-    ui->label_foglio3_ncopie->setText("Prime "+valore+" copie");
+    ui->label_foglio3_ncopie->setText("Prime "+valore+" copie          ");
     ui->label_foglio3_successivencopie->setText("Successive "+valore+" copie");
+    ui->label_foglio4_ncopie->setText("Prime "+valore+" copie          ");
+    ui->label_foglio4_successivencopie->setText("Successive "+valore+" copie");
+    ui->label_foglio5_ncopie->setText("Prime "+valore+" copie          ");
+    ui->label_foglio5_successivencopie->setText("Successive "+valore+" copie");
+}
 }
 
 
