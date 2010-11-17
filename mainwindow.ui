@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>934</width>
-    <height>30000</height>
+    <height>45000</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -485,7 +485,7 @@
        <item row="3" column="0" colspan="2">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -595,18 +595,18 @@
                 <x>0</x>
                 <y>0</y>
                 <width>874</width>
-                <height>2017</height>
+                <height>3089</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
                <item row="0" column="8">
                 <widget class="QLabel" name="label_foglio2_ncopie">
                  <property name="text">
-                  <string>Prima copia</string>
+                  <string>Prima copia          </string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="10">
+               <item row="0" column="9">
                 <widget class="QLabel" name="label_foglio2_successivencopie">
                  <property name="text">
                   <string>Successiva copia</string>
@@ -661,7 +661,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="10">
+               <item row="2" column="9">
                 <widget class="QLabel" name="label_35">
                  <property name="text">
                   <string>0</string>
@@ -732,7 +732,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="5" column="10">
+               <item row="5" column="9">
                 <widget class="QLabel" name="label_37">
                  <property name="text">
                   <string>0</string>
@@ -803,7 +803,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="8" column="10">
+               <item row="8" column="9">
                 <widget class="QLabel" name="label_40">
                  <property name="text">
                   <string>0</string>
@@ -874,7 +874,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="11" column="10">
+               <item row="11" column="9">
                 <widget class="QLabel" name="label_112">
                  <property name="text">
                   <string>0</string>
@@ -945,7 +945,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="14" column="10">
+               <item row="14" column="9">
                 <widget class="QLabel" name="label_119">
                  <property name="text">
                   <string>0</string>
@@ -1022,26 +1022,6 @@
                  </property>
                 </spacer>
                </item>
-               <item row="19" column="8" colspan="2">
-                <widget class="QLineEdit" name="lineEdit_7">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="10">
-                <widget class="QLineEdit" name="lineEdit_8">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
                <item row="20" column="0" colspan="3">
                 <widget class="QLabel" name="label_24">
                  <property name="text">
@@ -1049,50 +1029,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="20" column="8" colspan="2">
-                <widget class="QLineEdit" name="lineEdit_10">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="10">
-                <widget class="QLineEdit" name="lineEdit_9">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
                <item row="21" column="0" colspan="4">
                 <widget class="QLabel" name="label_25">
                  <property name="text">
                   <string>Stampa Digitale</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="8" colspan="2">
-                <widget class="QLineEdit" name="lineEdit_12">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="10">
-                <widget class="QLineEdit" name="lineEdit_11">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
                  </property>
                 </widget>
                </item>
@@ -1110,7 +1050,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="23" column="10">
+               <item row="23" column="9">
                 <widget class="QLabel" name="label_27">
                  <property name="text">
                   <string>0</string>
@@ -1124,7 +1064,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="24" column="8" colspan="3">
+               <item row="24" column="8" colspan="2">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox">
                  <property name="value">
                   <double>20.000000000000000</double>
@@ -1145,14 +1085,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="25" column="10">
+               <item row="25" column="9">
                 <widget class="QLabel" name="label_30">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="17" column="10">
+               <item row="17" column="9">
                 <widget class="QLabel" name="label_126">
                  <property name="text">
                   <string>0</string>
@@ -1289,6 +1229,24 @@
                  </property>
                 </spacer>
                </item>
+               <item row="19" column="8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_48"/>
+               </item>
+               <item row="20" column="8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_49"/>
+               </item>
+               <item row="21" column="8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_50"/>
+               </item>
+               <item row="19" column="9">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_51"/>
+               </item>
+               <item row="20" column="9">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_52"/>
+               </item>
+               <item row="21" column="9">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_53"/>
+               </item>
               </layout>
              </widget>
             </widget>
@@ -1311,7 +1269,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>874</width>
-                <height>2017</height>
+                <height>3089</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -1389,9 +1347,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="5">
-                <widget class="QSpinBox" name="spinBox_28"/>
-               </item>
                <item row="2" column="7">
                 <widget class="QLabel" name="label_165">
                  <property name="text">
@@ -1452,9 +1407,6 @@
                   <string>X €</string>
                  </property>
                 </widget>
-               </item>
-               <item row="5" column="5">
-                <widget class="QSpinBox" name="spinBox_31"/>
                </item>
                <item row="5" column="7">
                 <widget class="QLabel" name="label_167">
@@ -1533,9 +1485,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="8" column="5">
-                <widget class="QSpinBox" name="spinBox_33"/>
-               </item>
                <item row="8" column="7">
                 <widget class="QLabel" name="label_169">
                  <property name="text">
@@ -1613,9 +1562,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="11" column="5">
-                <widget class="QSpinBox" name="spinBox_35"/>
-               </item>
                <item row="11" column="7">
                 <widget class="QLabel" name="label_171">
                  <property name="text">
@@ -1692,9 +1638,6 @@
                   <string>X €</string>
                  </property>
                 </widget>
-               </item>
-               <item row="14" column="5">
-                <widget class="QSpinBox" name="spinBox_37"/>
                </item>
                <item row="14" column="7">
                 <widget class="QLabel" name="label_173">
@@ -1792,7 +1735,11 @@
                 </widget>
                </item>
                <item row="23" column="7" colspan="2">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+                 <property name="value">
+                  <double>20.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="22" column="7">
                 <widget class="QLabel" name="label_55">
@@ -1805,66 +1752,6 @@
                 <widget class="QLabel" name="label_56">
                  <property name="text">
                   <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="7">
-                <widget class="QLineEdit" name="lineEdit_4">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="8">
-                <widget class="QLineEdit" name="lineEdit_5">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="8">
-                <widget class="QLineEdit" name="lineEdit_6">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="7">
-                <widget class="QLineEdit" name="lineEdit_13">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="7">
-                <widget class="QLineEdit" name="lineEdit_14">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="8">
-                <widget class="QLineEdit" name="lineEdit_15">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
                  </property>
                 </widget>
                </item>
@@ -1932,6 +1819,39 @@
                  </property>
                 </spacer>
                </item>
+               <item row="2" column="5">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_28"/>
+               </item>
+               <item row="5" column="5">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_31"/>
+               </item>
+               <item row="8" column="5">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_33"/>
+               </item>
+               <item row="11" column="5">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_35"/>
+               </item>
+               <item row="14" column="5">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_37"/>
+               </item>
+               <item row="16" column="7">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_38"/>
+               </item>
+               <item row="16" column="8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_43"/>
+               </item>
+               <item row="18" column="7">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_44"/>
+               </item>
+               <item row="18" column="8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_45"/>
+               </item>
+               <item row="20" column="8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_46"/>
+               </item>
+               <item row="20" column="7">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_47"/>
+               </item>
               </layout>
              </widget>
             </widget>
@@ -1942,6 +1862,1232 @@
           <attribute name="title">
            <string>Foglio 4</string>
           </attribute>
+          <layout class="QGridLayout" name="gridLayout_15">
+           <item row="0" column="0">
+            <widget class="QScrollArea" name="scrollArea_2">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>874</width>
+                <height>3089</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_16">
+               <item row="1" column="0" colspan="13">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>Plastificazione opaca in bianca</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QLabel" name="label_43">
+                 <property name="text">
+                  <string>Formato</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="5">
+                <widget class="QLabel" name="label_61">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0" colspan="13">
+                <widget class="QLabel" name="label_60">
+                 <property name="text">
+                  <string>Plastificazione opaca in bianca e volta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0" colspan="2">
+                <widget class="QLabel" name="label_58">
+                 <property name="text">
+                  <string>Formato</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0" colspan="13">
+                <widget class="QLabel" name="label_70">
+                 <property name="text">
+                  <string>Plastificazione lucida in bianca</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="0" colspan="2">
+                <widget class="QLabel" name="label_68">
+                 <property name="text">
+                  <string>Formato</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="2">
+                <widget class="QComboBox" name="comboBox_6"/>
+               </item>
+               <item row="13" column="0" colspan="5">
+                <widget class="QLabel" name="label_67">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="18" column="0" colspan="3">
+                <widget class="QLabel" name="label_74">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="21" column="0" colspan="13">
+                <widget class="QLabel" name="label_84">
+                 <property name="text">
+                  <string>Serigrafia</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="22" column="0">
+                <widget class="QLabel" name="label_82">
+                 <property name="text">
+                  <string>Formato</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="23" column="0" colspan="3">
+                <widget class="QLabel" name="label_81">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="24" column="0" colspan="3">
+                <widget class="QLabel" name="label_86">
+                 <property name="text">
+                  <string>Telaio</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="27" column="0" colspan="3">
+                <widget class="QLabel" name="label_88">
+                 <property name="text">
+                  <string>Confezione:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="28" column="0" colspan="3">
+                <widget class="QLabel" name="label_89">
+                 <property name="text">
+                  <string>Fustella</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="31" column="0">
+                <widget class="QLabel" name="label_93">
+                 <property name="text">
+                  <string>Fustellatura fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="33" column="0" colspan="3">
+                <widget class="QLabel" name="label_91">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="35" column="0" colspan="3">
+                <widget class="QLabel" name="label_95">
+                 <property name="text">
+                  <string>Cordonatura</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="36" column="0" colspan="3">
+                <widget class="QLabel" name="label_96">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="39" column="0">
+                <widget class="QLabel" name="label_100">
+                 <property name="text">
+                  <string>Accoppiatura</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="42" column="0" colspan="5">
+                <widget class="QLabel" name="label_101">
+                 <property name="text">
+                  <string>Stampa a caldo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="45" column="0" colspan="5">
+                <widget class="QLabel" name="label_102">
+                 <property name="text">
+                  <string>Cliche'</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="47" column="0" colspan="2">
+                <widget class="QLabel" name="label_106">
+                 <property name="text">
+                  <string>Piega copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="49" column="0" colspan="2">
+                <widget class="QLabel" name="label_131">
+                 <property name="text">
+                  <string>Taglio copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="49" column="18">
+                <widget class="QLabel" name="label_109">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="53" column="0" colspan="3">
+                <widget class="QLabel" name="label_139">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="56" column="0" colspan="2">
+                <widget class="QLabel" name="label_142">
+                 <property name="text">
+                  <string>Brosura fresata copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="56" column="18">
+                <widget class="QLabel" name="label_175">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="57" column="0" colspan="3">
+                <widget class="QLabel" name="label_144">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="60" column="0" colspan="2">
+                <widget class="QLabel" name="label_179">
+                 <property name="text">
+                  <string>Brosura filo refe copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="60" column="18">
+                <widget class="QLabel" name="label_178">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="61" column="0" colspan="3">
+                <widget class="QLabel" name="label_176">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="64" column="0" colspan="2">
+                <widget class="QLabel" name="label_184">
+                 <property name="text">
+                  <string>Cartonato copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="64" column="18">
+                <widget class="QLabel" name="label_183">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="65" column="0" colspan="3">
+                <widget class="QLabel" name="label_181">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="68" column="0" colspan="2">
+                <widget class="QLabel" name="label_186">
+                 <property name="text">
+                  <string>Spiralatura copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="69" column="18">
+                <widget class="QLabel" name="label_191">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="70" column="0" colspan="2">
+                <widget class="QLabel" name="label_194">
+                 <property name="text">
+                  <string>Trasporto</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="72" column="0" colspan="15">
+                <widget class="QLineEdit" name="lineEdit_16"/>
+               </item>
+               <item row="73" column="0" colspan="15">
+                <widget class="QLineEdit" name="lineEdit_17"/>
+               </item>
+               <item row="73" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_62"/>
+               </item>
+               <item row="74" column="0" colspan="15">
+                <widget class="QLineEdit" name="lineEdit_18"/>
+               </item>
+               <item row="74" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_64"/>
+               </item>
+               <item row="75" column="0" colspan="15">
+                <widget class="QLineEdit" name="lineEdit_19"/>
+               </item>
+               <item row="75" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_66"/>
+               </item>
+               <item row="76" column="0" colspan="15">
+                <widget class="QLineEdit" name="lineEdit_20"/>
+               </item>
+               <item row="76" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_68"/>
+               </item>
+               <item row="78" column="0" colspan="3">
+                <widget class="QLabel" name="label_288">
+                 <property name="text">
+                  <string>Totale</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="78" column="18">
+                <widget class="QLabel" name="label_286">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="18">
+                <widget class="QLabel" name="label_foglio3_successivencopie_2">
+                 <property name="text">
+                  <string>Successiva copia</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="17">
+                <widget class="QLabel" name="label_foglio3_ncopie_2">
+                 <property name="text">
+                  <string>Prima copia</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="18">
+                <widget class="QLabel" name="label_48">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="17">
+                <widget class="QLabel" name="label_47">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="18">
+                <widget class="QLabel" name="label_59">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="17">
+                <widget class="QLabel" name="label_57">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="18">
+                <widget class="QLabel" name="label_69">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="17">
+                <widget class="QLabel" name="label_66">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="18">
+                <widget class="QLabel" name="label_76">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="17">
+                <widget class="QLabel" name="label_75">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="22" column="18">
+                <widget class="QLabel" name="label_80">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="22" column="17">
+                <widget class="QLabel" name="label_85">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="28" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+               </item>
+               <item row="31" column="18">
+                <widget class="QLabel" name="label_90">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="31" column="17">
+                <widget class="QLabel" name="label_92">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="33" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_14"/>
+               </item>
+               <item row="35" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_18"/>
+               </item>
+               <item row="35" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_17"/>
+               </item>
+               <item row="36" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_19"/>
+               </item>
+               <item row="39" column="18">
+                <widget class="QLabel" name="label_99">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="39" column="17">
+                <widget class="QLabel" name="label_97">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="42" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_22"/>
+               </item>
+               <item row="42" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_21"/>
+               </item>
+               <item row="45" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_23"/>
+               </item>
+               <item row="47" column="18">
+                <widget class="QLabel" name="label_105">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="47" column="17">
+                <widget class="QLabel" name="label_103">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="49" column="17">
+                <widget class="QLabel" name="label_107">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="51" column="17">
+                <widget class="QLabel" name="label_132">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="53" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_27"/>
+               </item>
+               <item row="56" column="17">
+                <widget class="QLabel" name="label_141">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="57" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_29"/>
+               </item>
+               <item row="60" column="17">
+                <widget class="QLabel" name="label_180">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="61" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_31"/>
+               </item>
+               <item row="64" column="17">
+                <widget class="QLabel" name="label_185">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="65" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_33"/>
+               </item>
+               <item row="68" column="17">
+                <widget class="QLabel" name="label_189">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="68" column="18">
+                <widget class="QLabel" name="label_187">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="69" column="17">
+                <widget class="QLabel" name="label_193">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="70" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_36"/>
+               </item>
+               <item row="72" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_61"/>
+               </item>
+               <item row="72" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_60"/>
+               </item>
+               <item row="73" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_63"/>
+               </item>
+               <item row="74" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_65"/>
+               </item>
+               <item row="75" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_67"/>
+               </item>
+               <item row="76" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_69"/>
+               </item>
+               <item row="79" column="17" colspan="2">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_70">
+                 <property name="value">
+                  <double>20.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="80" column="18">
+                <widget class="QLabel" name="label_284">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="79" column="0">
+                <widget class="QLabel" name="label_283">
+                 <property name="text">
+                  <string>%</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="80" column="0">
+                <widget class="QLabel" name="label_289">
+                 <property name="text">
+                  <string>Totale</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="80" column="17">
+                <widget class="QLabel" name="label_285">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="78" column="17">
+                <widget class="QLabel" name="label_287">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <spacer name="verticalSpacer_21">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="8" column="0" colspan="5">
+                <widget class="QLabel" name="label_63">
+                 <property name="text">
+                  <string>Avviamento</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <spacer name="verticalSpacer_23">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="2">
+                <widget class="QComboBox" name="comboBox"/>
+               </item>
+               <item row="16" column="0" colspan="12">
+                <widget class="QLabel" name="label_77">
+                 <property name="text">
+                  <string>Plastificazione lucida in bianca e volta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="0" colspan="2">
+                <widget class="QLabel" name="label_72">
+                 <property name="text">
+                  <string>Formato</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="17" column="2">
+                <widget class="QComboBox" name="comboBox_7"/>
+               </item>
+               <item row="17" column="3">
+                <widget class="QLabel" name="label_73">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QLabel" name="label_46">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="4">
+                <widget class="QSpinBox" name="spinBox_2"/>
+               </item>
+               <item row="7" column="2">
+                <widget class="QComboBox" name="comboBox_2"/>
+               </item>
+               <item row="7" column="3">
+                <widget class="QLabel" name="label_49">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="4">
+                <widget class="QSpinBox" name="spinBox_4"/>
+               </item>
+               <item row="12" column="3">
+                <widget class="QLabel" name="label_65">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="4">
+                <widget class="QSpinBox" name="spinBox_5"/>
+               </item>
+               <item row="17" column="4">
+                <widget class="QSpinBox" name="spinBox_7"/>
+               </item>
+               <item row="22" column="3">
+                <widget class="QLabel" name="label_79">
+                 <property name="text">
+                  <string>Fogli</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="22" column="2">
+                <widget class="QComboBox" name="comboBox_8"/>
+               </item>
+               <item row="22" column="4">
+                <widget class="QSpinBox" name="spinBox_8"/>
+               </item>
+               <item row="31" column="2">
+                <widget class="QSpinBox" name="spinBox_13"/>
+               </item>
+               <item row="31" column="3">
+                <widget class="QLabel" name="label_94">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="31" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_16"/>
+               </item>
+               <item row="38" column="0">
+                <spacer name="verticalSpacer_27">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="30" column="0">
+                <spacer name="verticalSpacer_26">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="25" column="0">
+                <spacer name="verticalSpacer_25">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="19" column="0">
+                <spacer name="verticalSpacer_24">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="14" column="0">
+                <spacer name="verticalSpacer_22">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="40" column="0">
+                <spacer name="verticalSpacer_29">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="43" column="0">
+                <spacer name="verticalSpacer_30">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="46" column="0">
+                <spacer name="verticalSpacer_31">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="48" column="0">
+                <spacer name="verticalSpacer_32">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="59" column="0">
+                <spacer name="verticalSpacer_33">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="63" column="0">
+                <spacer name="verticalSpacer_35">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="39" column="2">
+                <widget class="QSpinBox" name="spinBox_14"/>
+               </item>
+               <item row="39" column="3">
+                <widget class="QLabel" name="label_98">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="39" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_20"/>
+               </item>
+               <item row="47" column="2">
+                <widget class="QSpinBox" name="spinBox_15"/>
+               </item>
+               <item row="47" column="3">
+                <widget class="QLabel" name="label_104">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="47" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_24"/>
+               </item>
+               <item row="49" column="2">
+                <widget class="QSpinBox" name="spinBox_16"/>
+               </item>
+               <item row="49" column="3">
+                <widget class="QLabel" name="label_108">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="49" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_25"/>
+               </item>
+               <item row="51" column="0" colspan="2">
+                <widget class="QLabel" name="label_140">
+                 <property name="text">
+                  <string>Punto metallico copie</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="51" column="2">
+                <widget class="QSpinBox" name="spinBox_17"/>
+               </item>
+               <item row="51" column="3">
+                <widget class="QLabel" name="label_138">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="51" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_26"/>
+               </item>
+               <item row="56" column="2">
+                <widget class="QSpinBox" name="spinBox_18"/>
+               </item>
+               <item row="56" column="3">
+                <widget class="QLabel" name="label_143">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="56" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_28"/>
+               </item>
+               <item row="60" column="2">
+                <widget class="QSpinBox" name="spinBox_19"/>
+               </item>
+               <item row="60" column="3">
+                <widget class="QLabel" name="label_177">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="60" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_30"/>
+               </item>
+               <item row="64" column="2">
+                <widget class="QSpinBox" name="spinBox_20"/>
+               </item>
+               <item row="64" column="3">
+                <widget class="QLabel" name="label_182">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="64" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_32"/>
+               </item>
+               <item row="68" column="2">
+                <widget class="QSpinBox" name="spinBox_21"/>
+               </item>
+               <item row="68" column="3">
+                <widget class="QLabel" name="label_188">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="68" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_34"/>
+               </item>
+               <item row="69" column="0" colspan="2">
+                <widget class="QLabel" name="label_190">
+                 <property name="text">
+                  <string>Pacchi politenati cp</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="69" column="2">
+                <widget class="QSpinBox" name="spinBox_29"/>
+               </item>
+               <item row="69" column="3">
+                <widget class="QLabel" name="label_192">
+                 <property name="text">
+                  <string>x €</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="69" column="4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_35"/>
+               </item>
+               <item row="72" column="15">
+                <spacer name="horizontalSpacer_9">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="73" column="15">
+                <spacer name="horizontalSpacer_10">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="74" column="15">
+                <spacer name="horizontalSpacer_12">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="75" column="15">
+                <spacer name="horizontalSpacer_13">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="76" column="15">
+                <spacer name="horizontalSpacer_14">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="67" column="0">
+                <spacer name="verticalSpacer_36">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="77" column="0">
+                <spacer name="verticalSpacer_37">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="71" column="0">
+                <spacer name="verticalSpacer_38">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="24" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_37"/>
+               </item>
+               <item row="23" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_42"/>
+               </item>
+               <item row="18" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_41"/>
+               </item>
+               <item row="13" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_40"/>
+               </item>
+               <item row="8" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_39"/>
+               </item>
+               <item row="3" column="17">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_30"/>
+               </item>
+               <item row="34" column="0">
+                <spacer name="verticalSpacer_28">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="50" column="0">
+                <spacer name="verticalSpacer_39">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="54" column="0">
+                <spacer name="verticalSpacer_40">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="foglio5">
           <attribute name="title">
