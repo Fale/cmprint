@@ -485,7 +485,7 @@
        <item row="3" column="0" colspan="2">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -1294,14 +1294,11 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_1"/>
-               </item>
                <item row="1" column="2" colspan="3">
                 <widget class="QComboBox" name="comboBox_foglio3_carta_formato_1"/>
                </item>
                <item row="1" column="5">
-                <widget class="QComboBox" name="comboBox_carta_grammatura_1"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_grammatura_1"/>
                </item>
                <item row="1" column="6">
                 <spacer name="horizontalSpacer_3">
@@ -1369,13 +1366,13 @@
                 </widget>
                </item>
                <item row="4" column="1">
-                <widget class="QComboBox" name="comboBox_11"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_2"/>
                </item>
                <item row="4" column="2" colspan="3">
-                <widget class="QComboBox" name="comboBox_9"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_formato_2"/>
                </item>
                <item row="4" column="5">
-                <widget class="QComboBox" name="comboBox_10"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_grammatura_2"/>
                </item>
                <item row="5" column="0">
                 <widget class="QLabel" name="label_149">
@@ -1446,13 +1443,13 @@
                 </widget>
                </item>
                <item row="7" column="1">
-                <widget class="QComboBox" name="comboBox_14"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_3"/>
                </item>
                <item row="7" column="2" colspan="3">
-                <widget class="QComboBox" name="comboBox_12"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_formato_3"/>
                </item>
                <item row="7" column="5">
-                <widget class="QComboBox" name="comboBox_13"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_grammatura_3"/>
                </item>
                <item row="8" column="0">
                 <widget class="QLabel" name="label_154">
@@ -1523,13 +1520,13 @@
                 </widget>
                </item>
                <item row="10" column="1">
-                <widget class="QComboBox" name="comboBox_17"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_4"/>
                </item>
                <item row="10" column="2" colspan="3">
-                <widget class="QComboBox" name="comboBox_15"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_formato_4"/>
                </item>
                <item row="10" column="5">
-                <widget class="QComboBox" name="comboBox_16"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_grammatura_4"/>
                </item>
                <item row="11" column="0">
                 <widget class="QLabel" name="label_159">
@@ -1600,13 +1597,13 @@
                 </widget>
                </item>
                <item row="13" column="1">
-                <widget class="QComboBox" name="comboBox_20"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_5"/>
                </item>
                <item row="13" column="2" colspan="3">
-                <widget class="QComboBox" name="comboBox_18"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_formato_5"/>
                </item>
                <item row="13" column="5">
-                <widget class="QComboBox" name="comboBox_19"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_grammatura_5"/>
                </item>
                <item row="14" column="0">
                 <widget class="QLabel" name="label_164">
@@ -1852,6 +1849,9 @@
                <item row="20" column="7">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_47"/>
                </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_1"/>
+               </item>
               </layout>
              </widget>
             </widget>
@@ -1928,7 +1928,7 @@
                 </widget>
                </item>
                <item row="12" column="2">
-                <widget class="QComboBox" name="comboBox_6"/>
+                <widget class="QComboBox" name="comboBox_foglio4_plastificazione_lucida_bianca"/>
                </item>
                <item row="13" column="0" colspan="5">
                 <widget class="QLabel" name="label_67">
@@ -2509,7 +2509,7 @@
                 </spacer>
                </item>
                <item row="2" column="2">
-                <widget class="QComboBox" name="comboBox"/>
+                <widget class="QComboBox" name="comboBox_foglio4_plastificazione_opaca_bianca"/>
                </item>
                <item row="16" column="0" colspan="12">
                 <widget class="QLabel" name="label_77">
@@ -2526,7 +2526,7 @@
                 </widget>
                </item>
                <item row="17" column="2">
-                <widget class="QComboBox" name="comboBox_7"/>
+                <widget class="QComboBox" name="comboBox_foglio4_plastificazione_lucida_bianca_volta"/>
                </item>
                <item row="17" column="3">
                 <widget class="QLabel" name="label_73">
@@ -2546,7 +2546,7 @@
                 <widget class="QSpinBox" name="spinBox_2"/>
                </item>
                <item row="7" column="2">
-                <widget class="QComboBox" name="comboBox_2"/>
+                <widget class="QComboBox" name="comboBox_foglio4_plastificazione_opaca_bianca_volta"/>
                </item>
                <item row="7" column="3">
                 <widget class="QLabel" name="label_49">
@@ -2579,7 +2579,7 @@
                 </widget>
                </item>
                <item row="22" column="2">
-                <widget class="QComboBox" name="comboBox_8"/>
+                <widget class="QComboBox" name="comboBox_foglio4_serigrafia"/>
                </item>
                <item row="22" column="4">
                 <widget class="QSpinBox" name="spinBox_8"/>

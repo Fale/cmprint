@@ -113,6 +113,13 @@ void MainWindow::apriDb(QString nome)
 void MainWindow::popolaComboBox()
 {
 
+
+    /*
+    POSSIBILE OTTIMIZZAZIONE PRESTAZIONALE!!
+    nel caso di riempimento di comboBox uguali non è necessario eseguire
+    di ognuna il count ma basta di una sola e utilizzare nelle altre il valore
+     */
+
     QSqlQuery query;
     QSqlRecord campo;
 
@@ -125,18 +132,107 @@ void MainWindow::popolaComboBox()
     {
         ui->comboBox_clienti_seleziona->insertItem(ui->comboBox_clienti_seleziona->count(),query.value(campo.indexOf("nome")).toString());
     }
-
     query.clear();
     campo.clear();
 
     query.prepare("SELECT descrizione FROM cartatipo");
     query.exec();
     campo= query.record();
+
     ui->comboBox_foglio3_carta_tipo_1->clear();
+    ui->comboBox_foglio3_carta_tipo_2->clear();
+    ui->comboBox_foglio3_carta_tipo_3->clear();
+    ui->comboBox_foglio3_carta_tipo_4->clear();
+    ui->comboBox_foglio3_carta_tipo_5->clear();
+
     while ( query.next())
     {
         ui->comboBox_foglio3_carta_tipo_1->insertItem(ui->comboBox_foglio3_carta_tipo_1->count(), query.value(campo.indexOf("descrizione")).toString());
+        ui->comboBox_foglio3_carta_tipo_2->insertItem(ui->comboBox_foglio3_carta_tipo_2->count(), query.value(campo.indexOf("descrizione")).toString());
+        ui->comboBox_foglio3_carta_tipo_3->insertItem(ui->comboBox_foglio3_carta_tipo_3->count(), query.value(campo.indexOf("descrizione")).toString());
+        ui->comboBox_foglio3_carta_tipo_4->insertItem(ui->comboBox_foglio3_carta_tipo_4->count(), query.value(campo.indexOf("descrizione")).toString());
+        ui->comboBox_foglio3_carta_tipo_5->insertItem(ui->comboBox_foglio3_carta_tipo_5->count(), query.value(campo.indexOf("descrizione")).toString());
     }
+    query.clear();
+    campo.clear();
+
+
+    query.prepare("SELECT formato FROM cartaformato");
+    query.exec();
+    campo= query.record();
+
+    ui->comboBox_foglio3_carta_formato_1->clear();
+    ui->comboBox_foglio3_carta_formato_2->clear();
+    ui->comboBox_foglio3_carta_formato_3->clear();
+    ui->comboBox_foglio3_carta_formato_4->clear();
+    ui->comboBox_foglio3_carta_formato_5->clear();
+
+    while ( query.next())
+    {
+        ui->comboBox_foglio3_carta_formato_1->insertItem(ui->comboBox_foglio3_carta_formato_1->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio3_carta_formato_2->insertItem(ui->comboBox_foglio3_carta_formato_2->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio3_carta_formato_3->insertItem(ui->comboBox_foglio3_carta_formato_3->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio3_carta_formato_4->insertItem(ui->comboBox_foglio3_carta_formato_4->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio3_carta_formato_5->insertItem(ui->comboBox_foglio3_carta_formato_5->count(), query.value(campo.indexOf("formato")).toString());
+    }
+    query.clear();
+    campo.clear();
+
+
+
+    query.prepare("SELECT grammatura FROM cartagrammatura");
+    query.exec();
+    campo= query.record();
+
+    ui->comboBox_foglio3_carta_grammatura_1->clear();
+    ui->comboBox_foglio3_carta_grammatura_2->clear();
+    ui->comboBox_foglio3_carta_grammatura_3->clear();
+    ui->comboBox_foglio3_carta_grammatura_4->clear();
+    ui->comboBox_foglio3_carta_grammatura_5->clear();
+
+    while ( query.next())
+    {
+        ui->comboBox_foglio3_carta_grammatura_1->insertItem(ui->comboBox_foglio3_carta_grammatura_1->count(), query.value(campo.indexOf("grammatura")).toString());
+        ui->comboBox_foglio3_carta_grammatura_2->insertItem(ui->comboBox_foglio3_carta_grammatura_2->count(), query.value(campo.indexOf("grammatura")).toString());
+        ui->comboBox_foglio3_carta_grammatura_3->insertItem(ui->comboBox_foglio3_carta_grammatura_3->count(), query.value(campo.indexOf("grammatura")).toString());
+        ui->comboBox_foglio3_carta_grammatura_4->insertItem(ui->comboBox_foglio3_carta_grammatura_4->count(), query.value(campo.indexOf("grammatura")).toString());
+        ui->comboBox_foglio3_carta_grammatura_5->insertItem(ui->comboBox_foglio3_carta_grammatura_5->count(), query.value(campo.indexOf("grammatura")).toString());
+    }
+    query.clear();
+    campo.clear();
+
+
+    query.prepare("SELECT formato FROM plastificazione");
+    query.exec();
+    campo= query.record();
+
+    ui->comboBox_foglio4_plastificazione_lucida_bianca->clear();
+    ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->clear();
+    ui->comboBox_foglio4_plastificazione_opaca_bianca->clear();
+    ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->clear();
+
+    while (query.next())
+    {
+        ui->comboBox_foglio4_plastificazione_lucida_bianca->insertItem(ui->comboBox_foglio4_plastificazione_lucida_bianca->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->insertItem(ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio4_plastificazione_opaca_bianca->insertItem(ui->comboBox_foglio4_plastificazione_opaca_bianca->count(), query.value(campo.indexOf("formato")).toString());
+        ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->insertItem(ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->count(), query.value(campo.indexOf("formato")).toString());
+    }
+     query.clear();
+     campo.clear();
+
+    query.prepare("SELECT formato FROM serigrafia");
+    query.exec();
+    campo=query.record();
+
+    ui->comboBox_foglio4_serigrafia->clear();
+    while (query.next())
+    {
+        ui->comboBox_foglio4_serigrafia->insertItem(ui->comboBox_foglio4_serigrafia->count(), query.value(campo.indexOf("formato")).toString());
+    }
+    query.clear();
+    campo.clear();
+
 
 
 
