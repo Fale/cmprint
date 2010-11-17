@@ -113,12 +113,29 @@ void MainWindow::apriDb(QString nome)
 void MainWindow::popolaComboBox()
 {
 
-    QSqlQuery query("SELECT nome FROM clienti");
-    QSqlRecord campo= query.record();
+    QSqlQuery query;
+    QSqlRecord campo;
+
+    query.prepare("SELECT nome FROM clienti");
+    query.exec();
+    campo= query.record();
+
     ui->comboBox_clienti_seleziona->clear();
     while ( query.next())
     {
         ui->comboBox_clienti_seleziona->insertItem(ui->comboBox_clienti_seleziona->count(),query.value(campo.indexOf("nome")).toString());
+    }
+
+    query.clear();
+    campo.clear();
+
+    query.prepare("SELECT descrizione FROM cartatipo");
+    query.exec();
+    campo= query.record();
+    ui->comboBox_foglio3_carta_tipo_1->clear();
+    while ( query.next())
+    {
+        ui->comboBox_foglio3_carta_tipo_1->insertItem(ui->comboBox_foglio3_carta_tipo_1->count(), query.value(campo.indexOf("descrizione")).toString());
     }
 
 
