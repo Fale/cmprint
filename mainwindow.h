@@ -36,6 +36,14 @@ private:
 
 private slots:
 
+
+    void on_doubleSpinBox_foglio2_percentuale_valueChanged(double );
+    void on_doubleSpinBox_foglio2_stampadigitale_successive_valueChanged(double );
+    void on_doubleSpinBox_foglio2_stampadigitale_prime_valueChanged(double );
+    void on_doubleSpinBox_foglio2_stampa_successive_valueChanged(double );
+    void on_doubleSpinBox_foglio2_stampa_prime_valueChanged(double );
+    void on_doubleSpinBox_foglio2_lastreavviamenti_successive_valueChanged(double );
+    void on_doubleSpinBox_foglio2_lastreavviamenti_prime_valueChanged(double );
     void on_bottone_torna_preventivo_clicked();
     void on_spinBox_foglio1_ncopie_valueChanged(QString valore);
     void on_bottone_tab1_aggiungi_clienti_clicked();
@@ -107,6 +115,7 @@ private slots:
 
     void on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double valore);
     void on_spinBox_foglio2_risme_n_6_valueChanged(int valore);
+
 
 
 };

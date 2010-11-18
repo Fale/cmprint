@@ -635,6 +635,38 @@ void MainWindow::refreshFoglio2()
    ui->label_foglio2_risme_successive_5->setText(ui->label_foglio2_risme_prime_5->text());
    ui->label_foglio2_risme_successive_6->setText(ui->label_foglio2_risme_prime_6->text());
 
+   ui->label_foglio2_pretotale_prime->setNum(  ui->label_foglio2_lastre_prime_1->text().toDouble()
+                                             + ui->label_foglio2_lastre_prime_2->text().toDouble()
+                                             + ui->label_foglio2_lastre_prime_3->text().toDouble()
+                                             + ui->label_foglio2_lastre_prime_4->text().toDouble()
+                                             + ui->label_foglio2_lastre_prime_5->text().toDouble()
+                                             + ui->label_foglio2_lastre_prime_6->text().toDouble()
+                                             + ui->label_foglio2_risme_prime_1->text().toDouble()
+                                             + ui->label_foglio2_risme_prime_2->text().toDouble()
+                                             + ui->label_foglio2_risme_prime_3->text().toDouble()
+                                             + ui->label_foglio2_risme_prime_4->text().toDouble()
+                                             + ui->label_foglio2_risme_prime_5->text().toDouble()
+                                             + ui->label_foglio2_risme_prime_6->text().toDouble()
+                                             + ui->doubleSpinBox_foglio2_lastreavviamenti_prime->value()
+                                             + ui->doubleSpinBox_foglio2_stampadigitale_prime->value()
+                                             + ui->doubleSpinBox_foglio2_stampa_prime->value()
+                                             );
+
+
+   ui->label_foglio2_pretotale_successive->setNum(  ui->label_foglio2_risme_successive_1->text().toDouble()
+                                                  + ui->label_foglio2_risme_successive_2->text().toDouble()
+                                                  + ui->label_foglio2_risme_successive_3->text().toDouble()
+                                                  + ui->label_foglio2_risme_successive_4->text().toDouble()
+                                                  + ui->label_foglio2_risme_successive_5->text().toDouble()
+                                                  + ui->label_foglio2_risme_successive_6->text().toDouble()
+                                                  + ui->doubleSpinBox_foglio2_lastreavviamenti_successive->value()
+                                                  + ui->doubleSpinBox_foglio2_stampadigitale_successive->value()
+                                                  + ui->doubleSpinBox_foglio2_stampa_successive->value()
+                                                  );
+
+   ui->label_foglio2_totale_prime->setNum(ui->label_foglio2_pretotale_prime->text().toInt() + (ui->label_foglio2_pretotale_prime->text().toDouble()/100 * ui->doubleSpinBox_foglio2_percentuale->value()));
+   ui->label_foglio2_totale_successive->setNum(ui->label_foglio2_pretotale_successive->text().toInt() + (ui->label_foglio2_pretotale_successive->text().toDouble()/100 * ui->doubleSpinBox_foglio2_percentuale->value()));
+
 }
 
 //lastre
@@ -767,3 +799,37 @@ void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double val
     refreshFoglio2();
 }
 
+void MainWindow::on_doubleSpinBox_foglio2_lastreavviamenti_prime_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastreavviamenti_successive_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_stampa_prime_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_stampa_successive_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_stampadigitale_prime_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_stampadigitale_successive_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_percentuale_valueChanged(double )
+{
+    refreshFoglio2();
+}
