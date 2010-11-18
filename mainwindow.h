@@ -31,6 +31,7 @@ private:
     void showHide(QString show);
     void eliminaRiga(QString tabella, QString numero);
     void popolaComboBox();
+    void refreshFoglio2();
 
 
 private slots:
@@ -68,6 +69,7 @@ private slots:
     //FUNZIONI PER I CALCOLI:
 
     //secondo foglio
+    //lastre
     void on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore);
     void on_spinBox_foglio2_lastre_n_1_valueChanged(int valore);
 
@@ -85,6 +87,26 @@ private slots:
 
     void on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore);
     void on_spinBox_foglio2_lastre_n_6_valueChanged(int valore);
+
+
+    //risme
+    void on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double valore);
+    void on_spinBox_foglio2_risme_n_1_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double valore);
+    void on_spinBox_foglio2_risme_n_2_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double valore);
+    void on_spinBox_foglio2_risme_n_3_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double valore);
+    void on_spinBox_foglio2_risme_n_4_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double valore);
+    void on_spinBox_foglio2_risme_n_5_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double valore);
+    void on_spinBox_foglio2_risme_n_6_valueChanged(int valore);
 
 
 };

@@ -612,66 +612,158 @@ void MainWindow::on_bottone_torna_preventivo_clicked()
 
 //foglio 2
 
+void MainWindow::refreshFoglio2()
+{
+    ui->label_foglio2_lastre_prime_1->setNum( ui->spinBox_foglio2_lastre_n_1->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_1->value());
+    ui->label_foglio2_lastre_prime_2->setNum( ui->spinBox_foglio2_lastre_n_2->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_2->value());
+    ui->label_foglio2_lastre_prime_3->setNum( ui->spinBox_foglio2_lastre_n_3->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_3->value());
+    ui->label_foglio2_lastre_prime_4->setNum( ui->spinBox_foglio2_lastre_n_4->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_4->value());
+    ui->label_foglio2_lastre_prime_5->setNum( ui->spinBox_foglio2_lastre_n_5->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_5->value());
+    ui->label_foglio2_lastre_prime_6->setNum( ui->spinBox_foglio2_lastre_n_6->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_6->value());
+
+    ui->label_foglio2_risme_prime_1->setNum( ui->spinBox_foglio2_risme_n_1->value() * ui->doubleSpinBox_foglio2_risme_prezzo_1->value());
+    ui->label_foglio2_risme_prime_2->setNum( ui->spinBox_foglio2_risme_n_2->value() * ui->doubleSpinBox_foglio2_risme_prezzo_2->value());
+    ui->label_foglio2_risme_prime_3->setNum( ui->spinBox_foglio2_risme_n_3->value() * ui->doubleSpinBox_foglio2_risme_prezzo_3->value());
+    ui->label_foglio2_risme_prime_4->setNum( ui->spinBox_foglio2_risme_n_4->value() * ui->doubleSpinBox_foglio2_risme_prezzo_4->value());
+    ui->label_foglio2_risme_prime_5->setNum( ui->spinBox_foglio2_risme_n_5->value() * ui->doubleSpinBox_foglio2_risme_prezzo_5->value());
+    ui->label_foglio2_risme_prime_6->setNum( ui->spinBox_foglio2_risme_n_6->value() * ui->doubleSpinBox_foglio2_risme_prezzo_6->value());
+
+   ui->label_foglio2_risme_successive_1->setText(ui->label_foglio2_risme_prime_1->text());
+   ui->label_foglio2_risme_successive_2->setText(ui->label_foglio2_risme_prime_2->text());
+   ui->label_foglio2_risme_successive_3->setText(ui->label_foglio2_risme_prime_3->text());
+   ui->label_foglio2_risme_successive_4->setText(ui->label_foglio2_risme_prime_4->text());
+   ui->label_foglio2_risme_successive_5->setText(ui->label_foglio2_risme_prime_5->text());
+   ui->label_foglio2_risme_successive_6->setText(ui->label_foglio2_risme_prime_6->text());
+
+}
+
+//lastre
 void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int valore)
 {
-    ui->label_foglio2_lastre_prime_1->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_1->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore)
 {
-    ui->label_foglio2_lastre_prime_1->setNum( valore * ui->spinBox_foglio2_lastre_n_1->value());
+    refreshFoglio2();
 }
 
 
 void MainWindow::on_spinBox_foglio2_lastre_n_2_valueChanged(int valore)
 {
-    ui->label_foglio2_lastre_prime_2->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_2->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double valore)
 {
-    ui->label_foglio2_lastre_prime_2->setNum( valore * ui->spinBox_foglio2_lastre_n_2->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_spinBox_foglio2_lastre_n_3_valueChanged(int valore)
 {
-    ui->label_foglio2_lastre_prime_3->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_3->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double valore)
 {
-    ui->label_foglio2_lastre_prime_3->setNum( valore * ui->spinBox_foglio2_lastre_n_3->value());
+   refreshFoglio2();
 }
 
 
 void MainWindow::on_spinBox_foglio2_lastre_n_4_valueChanged(int valore)
 {
-    ui->label_foglio2_lastre_prime_4->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_4->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double valore)
 {
-    ui->label_foglio2_lastre_prime_4->setNum( valore * ui->spinBox_foglio2_lastre_n_4->value());
+    refreshFoglio2();
 }
 
 
 void MainWindow::on_spinBox_foglio2_lastre_n_5_valueChanged(int valore)
 {
-    ui->label_foglio2_lastre_prime_5->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_5->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double valore)
 {
-    ui->label_foglio2_lastre_prime_5->setNum( valore * ui->spinBox_foglio2_lastre_n_5->value());
+    refreshFoglio2();
 }
 
 
 void MainWindow::on_spinBox_foglio2_lastre_n_6_valueChanged(int valore)
 {
-    ui->label_foglio2_lastre_prime_6->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_6->value());
+    refreshFoglio2();
 }
 
 void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore)
 {
-    ui->label_foglio2_lastre_prime_6->setNum( valore * ui->spinBox_foglio2_lastre_n_6->value());
+    refreshFoglio2();
 }
+
+//risme
+void MainWindow::on_spinBox_foglio2_risme_n_1_valueChanged(int valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double valore)
+{
+    refreshFoglio2();
+}
+
+
+void MainWindow::on_spinBox_foglio2_risme_n_2_valueChanged(int valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_spinBox_foglio2_risme_n_3_valueChanged(int valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double valore)
+{
+    refreshFoglio2();
+}
+
+
+void MainWindow::on_spinBox_foglio2_risme_n_4_valueChanged(int valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double valore)
+{
+    refreshFoglio2();
+}
+
+
+void MainWindow::on_spinBox_foglio2_risme_n_5_valueChanged(int valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double valore)
+{
+    refreshFoglio2();
+}
+
+
+void MainWindow::on_spinBox_foglio2_risme_n_6_valueChanged(int valore)
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double valore)
+{
+    refreshFoglio2();
+}
+
