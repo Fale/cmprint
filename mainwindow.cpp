@@ -614,6 +614,12 @@ void MainWindow::on_bottone_torna_preventivo_clicked()
 
 void MainWindow::refreshFoglio2()
 {
+
+    /*
+Questa funzione fa svolgere ogni volta un sacco di calcoli inutili ma garantisce la certezza
+che l'interfaccia sia sempre tutta aggiornata
+*/
+
     ui->label_foglio2_lastre_prime_1->setNum( ui->spinBox_foglio2_lastre_n_1->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_1->value());
     ui->label_foglio2_lastre_prime_2->setNum( ui->spinBox_foglio2_lastre_n_2->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_2->value());
     ui->label_foglio2_lastre_prime_3->setNum( ui->spinBox_foglio2_lastre_n_3->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_3->value());
