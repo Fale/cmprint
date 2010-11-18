@@ -34,6 +34,7 @@ private:
 
 
 private slots:
+
     void on_bottone_torna_preventivo_clicked();
     void on_spinBox_foglio1_ncopie_valueChanged(QString valore);
     void on_bottone_tab1_aggiungi_clienti_clicked();
@@ -63,6 +64,29 @@ private slots:
     void on_actionFormato_triggered();
     void on_actionTipo_triggered();
     void on_actionPreventivi_triggered();
+
+    //FUNZIONI PER I CALCOLI:
+
+    //secondo foglio
+    void on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore);
+    void on_spinBox_foglio2_lastre_n_1_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double valore);
+    void on_spinBox_foglio2_lastre_n_2_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double valore);
+    void on_spinBox_foglio2_lastre_n_3_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double valore);
+    void on_spinBox_foglio2_lastre_n_4_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double valore);
+    void on_spinBox_foglio2_lastre_n_5_valueChanged(int valore);
+
+    void on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore);
+    void on_spinBox_foglio2_lastre_n_6_valueChanged(int valore);
+
+
 };
 
 #endif // MAINWINDOW_H

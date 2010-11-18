@@ -606,3 +606,72 @@ void MainWindow::on_bottone_torna_preventivo_clicked()
     ui->comboBox_clienti_seleziona->setCurrentIndex(ui->comboBox_clienti_seleziona->count()-1);
     ui->bottone_torna_preventivo->hide();
 }
+
+
+// FUNZIONI PER I CALCOLI ( forse per tutta sta roba sarebbe utile un'altra classe..
+
+//foglio 2
+
+void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int valore)
+{
+    ui->label_foglio2_lastre_prime_1->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_1->value());
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore)
+{
+    ui->label_foglio2_lastre_prime_1->setNum( valore * ui->spinBox_foglio2_lastre_n_1->value());
+}
+
+
+void MainWindow::on_spinBox_foglio2_lastre_n_2_valueChanged(int valore)
+{
+    ui->label_foglio2_lastre_prime_2->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_2->value());
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double valore)
+{
+    ui->label_foglio2_lastre_prime_2->setNum( valore * ui->spinBox_foglio2_lastre_n_2->value());
+}
+
+void MainWindow::on_spinBox_foglio2_lastre_n_3_valueChanged(int valore)
+{
+    ui->label_foglio2_lastre_prime_3->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_3->value());
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double valore)
+{
+    ui->label_foglio2_lastre_prime_3->setNum( valore * ui->spinBox_foglio2_lastre_n_3->value());
+}
+
+
+void MainWindow::on_spinBox_foglio2_lastre_n_4_valueChanged(int valore)
+{
+    ui->label_foglio2_lastre_prime_4->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_4->value());
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double valore)
+{
+    ui->label_foglio2_lastre_prime_4->setNum( valore * ui->spinBox_foglio2_lastre_n_4->value());
+}
+
+
+void MainWindow::on_spinBox_foglio2_lastre_n_5_valueChanged(int valore)
+{
+    ui->label_foglio2_lastre_prime_5->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_5->value());
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double valore)
+{
+    ui->label_foglio2_lastre_prime_5->setNum( valore * ui->spinBox_foglio2_lastre_n_5->value());
+}
+
+
+void MainWindow::on_spinBox_foglio2_lastre_n_6_valueChanged(int valore)
+{
+    ui->label_foglio2_lastre_prime_6->setNum( valore * ui->doubleSpinBox_foglio2_lastre_prezzo_6->value());
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore)
+{
+    ui->label_foglio2_lastre_prime_6->setNum( valore * ui->spinBox_foglio2_lastre_n_6->value());
+}

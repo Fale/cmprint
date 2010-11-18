@@ -485,7 +485,7 @@
        <item row="3" column="0" colspan="2">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>3</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -621,7 +621,7 @@
                 </widget>
                </item>
                <item row="1" column="3">
-                <widget class="QSpinBox" name="spinBox_3"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_1"/>
                </item>
                <item row="1" column="4" colspan="2">
                 <widget class="QLabel" name="label_10">
@@ -631,7 +631,7 @@
                 </widget>
                </item>
                <item row="1" column="8">
-                <widget class="QLabel" name="label_32">
+                <widget class="QLabel" name="label_foglio2_lastre_prime_1">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -645,7 +645,7 @@
                 </widget>
                </item>
                <item row="2" column="3">
-                <widget class="QSpinBox" name="spinBox_6"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_1"/>
                </item>
                <item row="2" column="4" colspan="2">
                 <widget class="QLabel" name="label_13">
@@ -655,14 +655,14 @@
                 </widget>
                </item>
                <item row="2" column="8">
-                <widget class="QLabel" name="label_34">
+                <widget class="QLabel" name="label_foglio2_risme_prime_1">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="9">
-                <widget class="QLabel" name="label_35">
+                <widget class="QLabel" name="label_foglio2_risme_successive_1">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -692,7 +692,7 @@
                 </widget>
                </item>
                <item row="4" column="3">
-                <widget class="QSpinBox" name="spinBox_12"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_2"/>
                </item>
                <item row="4" column="4" colspan="2">
                 <widget class="QLabel" name="label_17">
@@ -702,7 +702,7 @@
                 </widget>
                </item>
                <item row="4" column="8">
-                <widget class="QLabel" name="label_33">
+                <widget class="QLabel" name="label_foglio2_lastre_prime_2">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -716,7 +716,7 @@
                 </widget>
                </item>
                <item row="5" column="3">
-                <widget class="QSpinBox" name="spinBox_11"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_2"/>
                </item>
                <item row="5" column="4" colspan="2">
                 <widget class="QLabel" name="label_18">
@@ -726,14 +726,14 @@
                 </widget>
                </item>
                <item row="5" column="8">
-                <widget class="QLabel" name="label_36">
+                <widget class="QLabel" name="label_foglio2_risme_prime_2">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="5" column="9">
-                <widget class="QLabel" name="label_37">
+                <widget class="QLabel" name="label_foglio2_risme_successive_2">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -763,7 +763,7 @@
                 </widget>
                </item>
                <item row="7" column="3">
-                <widget class="QSpinBox" name="spinBox_10"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_3"/>
                </item>
                <item row="7" column="4" colspan="2">
                 <widget class="QLabel" name="label_19">
@@ -773,7 +773,7 @@
                 </widget>
                </item>
                <item row="7" column="8">
-                <widget class="QLabel" name="label_38">
+                <widget class="QLabel" name="label_foglio2_lastre_prime_3">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -787,7 +787,7 @@
                 </widget>
                </item>
                <item row="8" column="3">
-                <widget class="QSpinBox" name="spinBox_9"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_3"/>
                </item>
                <item row="8" column="4" colspan="2">
                 <widget class="QLabel" name="label_20">
@@ -797,14 +797,14 @@
                 </widget>
                </item>
                <item row="8" column="8">
-                <widget class="QLabel" name="label_39">
+                <widget class="QLabel" name="label_foglio2_risme_prime_3">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="8" column="9">
-                <widget class="QLabel" name="label_40">
+                <widget class="QLabel" name="label_foglio2_risme_successive_3">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -834,7 +834,7 @@
                 </widget>
                </item>
                <item row="10" column="3">
-                <widget class="QSpinBox" name="spinBox_22"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_4"/>
                </item>
                <item row="10" column="4">
                 <widget class="QLabel" name="label_114">
@@ -844,7 +844,7 @@
                 </widget>
                </item>
                <item row="10" column="8">
-                <widget class="QLabel" name="label_115">
+                <widget class="QLabel" name="label_foglio2_lastre_prime_4">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -858,7 +858,7 @@
                 </widget>
                </item>
                <item row="11" column="3">
-                <widget class="QSpinBox" name="spinBox_23"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_4"/>
                </item>
                <item row="11" column="4">
                 <widget class="QLabel" name="label_111">
@@ -868,14 +868,14 @@
                 </widget>
                </item>
                <item row="11" column="8">
-                <widget class="QLabel" name="label_110">
+                <widget class="QLabel" name="label_foglio2_risme_prime_4">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="11" column="9">
-                <widget class="QLabel" name="label_112">
+                <widget class="QLabel" name="label_foglio2_risme_successive_4">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -905,7 +905,7 @@
                 </widget>
                </item>
                <item row="13" column="3">
-                <widget class="QSpinBox" name="spinBox_24"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_5"/>
                </item>
                <item row="13" column="4" colspan="2">
                 <widget class="QLabel" name="label_121">
@@ -915,7 +915,7 @@
                 </widget>
                </item>
                <item row="13" column="8">
-                <widget class="QLabel" name="label_122">
+                <widget class="QLabel" name="label_foglio2_lastre_prime_5">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -929,7 +929,7 @@
                 </widget>
                </item>
                <item row="14" column="3">
-                <widget class="QSpinBox" name="spinBox_25"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_5"/>
                </item>
                <item row="14" column="4" colspan="2">
                 <widget class="QLabel" name="label_118">
@@ -939,14 +939,14 @@
                 </widget>
                </item>
                <item row="14" column="8">
-                <widget class="QLabel" name="label_117">
+                <widget class="QLabel" name="label_foglio2_risme_prime_5">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="14" column="9">
-                <widget class="QLabel" name="label_119">
+                <widget class="QLabel" name="label_foglio2_risme_successive_5">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -976,7 +976,7 @@
                 </widget>
                </item>
                <item row="16" column="2" colspan="2">
-                <widget class="QSpinBox" name="spinBox_26"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_6"/>
                </item>
                <item row="16" column="4">
                 <widget class="QLabel" name="label_128">
@@ -993,7 +993,7 @@
                 </widget>
                </item>
                <item row="17" column="2" colspan="2">
-                <widget class="QSpinBox" name="spinBox_27"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_6"/>
                </item>
                <item row="17" column="4">
                 <widget class="QLabel" name="label_125">
@@ -1044,14 +1044,14 @@
                 </widget>
                </item>
                <item row="23" column="8">
-                <widget class="QLabel" name="label_41">
+                <widget class="QLabel" name="label_foglio2_pretotale_prime">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="23" column="9">
-                <widget class="QLabel" name="label_27">
+                <widget class="QLabel" name="label_foglio2_pretotale_successive">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -1065,7 +1065,7 @@
                 </widget>
                </item>
                <item row="24" column="8" colspan="2">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_percentuale">
                  <property name="value">
                   <double>20.000000000000000</double>
                  </property>
@@ -1079,119 +1079,119 @@
                 </widget>
                </item>
                <item row="25" column="8">
-                <widget class="QLabel" name="label_42">
+                <widget class="QLabel" name="label_foglio2_totale_prime">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="25" column="9">
-                <widget class="QLabel" name="label_30">
+                <widget class="QLabel" name="label_foglio2_totale_successive">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="17" column="9">
-                <widget class="QLabel" name="label_126">
+                <widget class="QLabel" name="label_foglio2_risme_successive_6">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="16" column="8">
-                <widget class="QLabel" name="label_129">
+                <widget class="QLabel" name="label_foglio2_lastre_prime_6">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="17" column="8">
-                <widget class="QLabel" name="label_124">
+                <widget class="QLabel" name="label_foglio2_risme_prime_6">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_1">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="2" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_1">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="4" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_2">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="5" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_2">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="7" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_3">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="8" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_3">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="10" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_4">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="11" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_4">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="13" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_5">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="14" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_5">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="16" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_6">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
                 </widget>
                </item>
                <item row="17" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_6">
                  <property name="maximum">
                   <double>9999.989999999999782</double>
                  </property>
@@ -1230,22 +1230,22 @@
                 </spacer>
                </item>
                <item row="19" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_48"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastreavviamenti_prime"/>
                </item>
                <item row="20" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_49"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampa_prime"/>
                </item>
                <item row="21" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_50"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_prime"/>
                </item>
                <item row="19" column="9">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_51"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastreavviamenti_successive"/>
                </item>
                <item row="20" column="9">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_52"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampa_successive"/>
                </item>
                <item row="21" column="9">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_53"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_successive"/>
                </item>
               </layout>
              </widget>
