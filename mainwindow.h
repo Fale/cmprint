@@ -32,6 +32,7 @@ private:
     void eliminaRiga(QString tabella, QString numero);
     void popolaComboBox();
     void refreshFoglio2();
+    double formatoASuperficie(QString formato);
 
 
 private slots:

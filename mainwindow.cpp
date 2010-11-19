@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
     ui->bottone_torna_preventivo->hide();
     popolaComboBox();
+    ui->label_2->setNum(MainWindow::formatoASuperficie("12X13"));
 
 
 }
@@ -238,6 +239,17 @@ void MainWindow::popolaComboBox()
 
 }
 
+
+double MainWindow::formatoASuperficie(QString formato)
+{
+
+    QString primoValore;
+    QString secondoValore;
+    primoValore = formato.section("X",0,0);
+    secondoValore = formato.section("X",1,1);
+    return ( ( primoValore.toDouble()*secondoValore.toDouble() ) /10000);
+
+}
 
 void MainWindow::showHide(QString show)
 {
