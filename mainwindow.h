@@ -39,6 +39,14 @@ private:
 private slots:
 
 
+    void on_comboBox_foglio3_carta_grammatura_5_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_formato_5_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_grammatura_3_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_formato_3_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_grammatura_2_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_formato_2_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_grammatura_4_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_formato_4_currentIndexChanged(QString );
     void on_comboBox_foglio3_carta_grammatura_1_currentIndexChanged(QString );
     void on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString formato);
     void on_doubleSpinBox_foglio2_percentuale_valueChanged(double );

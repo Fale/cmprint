@@ -687,8 +687,16 @@ che l'interfaccia sia sempre tutta aggiornata
 
 void MainWindow::refreshFoglio3()
 {
+    //calcolo kg
+
     ui->label_foglio3_kg_1->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_1->currentText() )) * ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble() /1000) );
-    ui->label_2->setNum(ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble());
+    ui->label_foglio3_kg_2->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_2->currentText() )) * ui->comboBox_foglio3_carta_grammatura_2->currentText().toDouble() /1000) );
+    ui->label_foglio3_kg_3->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_3->currentText() )) * ui->comboBox_foglio3_carta_grammatura_3->currentText().toDouble() /1000) );
+    ui->label_foglio3_kg_4->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_4->currentText() )) * ui->comboBox_foglio3_carta_grammatura_4->currentText().toDouble() /1000) );
+    ui->label_foglio3_kg_5->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_5->currentText() )) * ui->comboBox_foglio3_carta_grammatura_5->currentText().toDouble() /1000) );
+
+    //aggiungere qui tutti gli altri calcoli
+
 }
 
 //lastre
@@ -862,6 +870,46 @@ void MainWindow::on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString
 }
 
 void MainWindow::on_comboBox_foglio3_carta_grammatura_1_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_formato_4_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_grammatura_4_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_formato_2_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_grammatura_2_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_formato_3_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_grammatura_3_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_formato_5_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_grammatura_5_currentIndexChanged(QString )
 {
     refreshFoglio3();
 }
