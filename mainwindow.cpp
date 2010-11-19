@@ -29,8 +29,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
     ui->bottone_torna_preventivo->hide();
     popolaComboBox();
-    ui->label_2->setNum(MainWindow::formatoASuperficie("12X13"));
-
 
 }
 
@@ -245,8 +243,8 @@ double MainWindow::formatoASuperficie(QString formato)
 
     QString primoValore;
     QString secondoValore;
-    primoValore = formato.section("X",0,0);
-    secondoValore = formato.section("X",1,1);
+    primoValore = formato.section("x",0,0);
+    secondoValore = formato.section("x",1,1);
     return ( ( primoValore.toDouble()*secondoValore.toDouble() ) /10000);
 
 }
@@ -687,6 +685,12 @@ che l'interfaccia sia sempre tutta aggiornata
 
 }
 
+void MainWindow::refreshFoglio3()
+{
+    ui->label_foglio3_kg_1->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_1->currentText() )) * ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble() /1000) );
+    ui->label_2->setNum(ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble());
+}
+
 //lastre
 void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int valore)
 {
@@ -850,4 +854,14 @@ void MainWindow::on_doubleSpinBox_foglio2_stampadigitale_successive_valueChanged
 void MainWindow::on_doubleSpinBox_foglio2_percentuale_valueChanged(double )
 {
     refreshFoglio2();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString formato)
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_comboBox_foglio3_carta_grammatura_1_currentIndexChanged(QString )
+{
+    refreshFoglio3();
 }

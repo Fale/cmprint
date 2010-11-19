@@ -594,8 +594,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3089</height>
+                <width>517</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1331,7 +1331,7 @@
                 </widget>
                </item>
                <item row="2" column="3">
-                <widget class="QLabel" name="label_136">
+                <widget class="QLabel" name="label_foglio3_kg_1">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -1392,7 +1392,7 @@
                 </widget>
                </item>
                <item row="5" column="3">
-                <widget class="QLabel" name="label_145">
+                <widget class="QLabel" name="label_foglio3_kg_2">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -1469,7 +1469,7 @@
                 </widget>
                </item>
                <item row="8" column="3">
-                <widget class="QLabel" name="label_150">
+                <widget class="QLabel" name="label_foglio3_kg_3">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -1546,7 +1546,7 @@
                 </widget>
                </item>
                <item row="11" column="3">
-                <widget class="QLabel" name="label_155">
+                <widget class="QLabel" name="label_foglio3_kg_4">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -1623,7 +1623,7 @@
                 </widget>
                </item>
                <item row="14" column="3">
-                <widget class="QLabel" name="label_160">
+                <widget class="QLabel" name="label_foglio3_kg_5">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -1873,8 +1873,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3089</height>
+                <width>672</width>
+                <height>2193</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">

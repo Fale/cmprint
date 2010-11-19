@@ -32,12 +32,15 @@ private:
     void eliminaRiga(QString tabella, QString numero);
     void popolaComboBox();
     void refreshFoglio2();
+    void refreshFoglio3();
     double formatoASuperficie(QString formato);
 
 
 private slots:
 
 
+    void on_comboBox_foglio3_carta_grammatura_1_currentIndexChanged(QString );
+    void on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString formato);
     void on_doubleSpinBox_foglio2_percentuale_valueChanged(double );
     void on_doubleSpinBox_foglio2_stampadigitale_successive_valueChanged(double );
     void on_doubleSpinBox_foglio2_stampadigitale_prime_valueChanged(double );
