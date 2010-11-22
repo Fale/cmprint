@@ -1841,10 +1841,10 @@
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_2"/>
                </item>
                <item row="18" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_4"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_2"/>
                </item>
                <item row="20" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_5"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_3"/>
                </item>
                <item row="20" column="7">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_3"/>
@@ -1873,8 +1873,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>672</width>
-                <height>2193</height>
+                <width>874</width>
+                <height>3089</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">

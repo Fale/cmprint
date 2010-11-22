@@ -680,8 +680,8 @@ che l'interfaccia sia sempre tutta aggiornata
                                                   + ui->doubleSpinBox_foglio2_stampa_successive->value()
                                                   );
 
-   ui->label_foglio2_totale_prime->setNum(ui->label_foglio2_pretotale_prime->text().toInt() + (ui->label_foglio2_pretotale_prime->text().toDouble()/100 * ui->doubleSpinBox_foglio2_percentuale->value()));
-   ui->label_foglio2_totale_successive->setNum(ui->label_foglio2_pretotale_successive->text().toInt() + (ui->label_foglio2_pretotale_successive->text().toDouble()/100 * ui->doubleSpinBox_foglio2_percentuale->value()));
+   ui->label_foglio2_totale_prime->setNum(ui->label_foglio2_pretotale_prime->text().toDouble() + (ui->label_foglio2_pretotale_prime->text().toDouble()/100 * ui->doubleSpinBox_foglio2_percentuale->value()));
+   ui->label_foglio2_totale_successive->setNum(ui->label_foglio2_pretotale_successive->text().toDouble() + (ui->label_foglio2_pretotale_successive->text().toDouble()/100 * ui->doubleSpinBox_foglio2_percentuale->value()));
 
 }
 
@@ -696,6 +696,46 @@ void MainWindow::refreshFoglio3()
     ui->label_foglio3_kg_5->setNum(((formatoASuperficie( ui->comboBox_foglio3_carta_formato_5->currentText() )) * ui->comboBox_foglio3_carta_grammatura_5->currentText().toDouble() /1000) );
 
     //aggiungere qui tutti gli altri calcoli
+
+    //prime
+    ui->label_foglio3_primencopie_1->setNum( ui->spinBox_foglio3_nfogli_1->value() * ui->label_foglio3_kg_1->text().toDouble() * ui->doubleSpinBox_foglio3_euro_1->value() * ui->spinBox_foglio1_ncopie->value());
+    ui->label_foglio3_primencopie_2->setNum( ui->spinBox_foglio3_nfogli_2->value() * ui->label_foglio3_kg_2->text().toDouble() * ui->doubleSpinBox_foglio3_euro_2->value() * ui->spinBox_foglio1_ncopie->value());
+    ui->label_foglio3_primencopie_3->setNum( ui->spinBox_foglio3_nfogli_3->value() * ui->label_foglio3_kg_3->text().toDouble() * ui->doubleSpinBox_foglio3_euro_3->value() * ui->spinBox_foglio1_ncopie->value());
+    ui->label_foglio3_primencopie_4->setNum( ui->spinBox_foglio3_nfogli_4->value() * ui->label_foglio3_kg_4->text().toDouble() * ui->doubleSpinBox_foglio3_euro_4->value() * ui->spinBox_foglio1_ncopie->value());
+    ui->label_foglio3_primencopie_5->setNum( ui->spinBox_foglio3_nfogli_5->value() * ui->label_foglio3_kg_5->text().toDouble() * ui->doubleSpinBox_foglio3_euro_5->value() * ui->spinBox_foglio1_ncopie->value());
+
+    //successive
+    ui->label_foglio3_successivencopie_1->setText( ui->label_foglio3_primencopie_1->text() );
+    ui->label_foglio3_successivencopie_2->setText( ui->label_foglio3_primencopie_2->text() );
+    ui->label_foglio3_successivencopie_3->setText( ui->label_foglio3_primencopie_3->text() );
+    ui->label_foglio3_successivencopie_4->setText( ui->label_foglio3_primencopie_4->text() );
+    ui->label_foglio3_successivencopie_5->setText( ui->label_foglio3_primencopie_5->text() );
+
+
+    //pretotale prime
+    ui->label_foglio3_pretotale_primencopie->setNum( ui->label_foglio3_primencopie_1->text().toDouble()
+                                                     + ui->label_foglio3_primencopie_2->text().toDouble()
+                                                     + ui->label_foglio3_primencopie_3->text().toDouble()
+                                                     + ui->label_foglio3_primencopie_4->text().toDouble()
+                                                     + ui->label_foglio3_primencopie_5->text().toDouble()
+                                                     + ui->doubleSpinBox_foglio3_primencopie_1->value()
+                                                     + ui->doubleSpinBox_foglio3_primencopie_2->value()
+                                                     + ui->doubleSpinBox_foglio3_primencopie_3->value());
+
+    ui->label_foglio3_pretotale_successivencopie->setNum( ui->label_foglio3_successivencopie_1->text().toDouble()
+                                                     + ui->label_foglio3_successivencopie_2->text().toDouble()
+                                                     + ui->label_foglio3_successivencopie_3->text().toDouble()
+                                                     + ui->label_foglio3_successivencopie_4->text().toDouble()
+                                                     + ui->label_foglio3_successivencopie_5->text().toDouble()
+                                                     + ui->doubleSpinBox_foglio3_successivencopie_1->value()
+                                                     + ui->doubleSpinBox_foglio3_successivencopie_2->value()
+                                                     + ui->doubleSpinBox_foglio3_successivencopie_3->value());
+
+    ui->label_foglio3_totale_primencopie->setNum(ui->label_foglio3_pretotale_primencopie->text().toDouble() + (ui->label_foglio3_pretotale_primencopie->text().toDouble()/100 * ui->doubleSpinBox_foglio3_percentuale->value()));
+    ui->label_foglio3_totale_successivencopie->setNum(ui->label_foglio3_pretotale_successivencopie->text().toDouble() + (ui->label_foglio3_pretotale_successivencopie->text().toDouble()/100 * ui->doubleSpinBox_foglio3_percentuale->value()));
+
+
+
 
 }
 
@@ -910,6 +950,91 @@ void MainWindow::on_comboBox_foglio3_carta_formato_5_currentIndexChanged(QString
 }
 
 void MainWindow::on_comboBox_foglio3_carta_grammatura_5_currentIndexChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_spinBox_foglio3_nfogli_2_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_euro_2_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_spinBox_foglio3_nfogli_3_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_euro_3_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_spinBox_foglio3_nfogli_4_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_euro_4_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_spinBox_foglio3_nfogli_5_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_euro_5_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_primencopie_1_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_successivencopie_1_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_primencopie_2_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_successivencopie_2_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_successivencopie_3_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_percentuale_valueChanged(double )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_spinBox_foglio3_nfogli_1_valueChanged(QString )
+{
+    refreshFoglio3();
+}
+
+void MainWindow::on_doubleSpinBox_foglio3_euro_1_valueChanged(double )
 {
     refreshFoglio3();
 }
