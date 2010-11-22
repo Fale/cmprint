@@ -2113,7 +2113,7 @@
                 </widget>
                </item>
                <item row="65" column="18">
-                <widget class="QLabel" name="label_183">
+                <widget class="QLabel" name="label_foglio4_cartonato_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -2376,14 +2376,14 @@
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_avviamento"/>
                </item>
                <item row="65" column="17">
-                <widget class="QLabel" name="label_185">
+                <widget class="QLabel" name="label_foglio4_cartonato_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
                <item row="66" column="17">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_33"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_avviamento"/>
                </item>
                <item row="69" column="17">
                 <widget class="QLabel" name="label_foglio4_spiralatura_primencopie">
@@ -2426,13 +2426,6 @@
                </item>
                <item row="77" column="17">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_primencopie"/>
-               </item>
-               <item row="80" column="17" colspan="2">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_percentuale">
-                 <property name="value">
-                  <double>20.000000000000000</double>
-                 </property>
-                </widget>
                </item>
                <item row="81" column="18">
                 <widget class="QLabel" name="label_foglio4_totale_successivencopie">
@@ -2859,7 +2852,7 @@
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_euro"/>
                </item>
                <item row="65" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_spiralatura_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_cartonato_numero"/>
                </item>
                <item row="65" column="3">
                 <widget class="QLabel" name="label_182">
@@ -2869,10 +2862,10 @@
                 </widget>
                </item>
                <item row="65" column="4">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_32"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_euro"/>
                </item>
                <item row="69" column="2">
-                <widget class="QSpinBox" name="spinBox_21"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_spiralatura_numero"/>
                </item>
                <item row="69" column="3">
                 <widget class="QLabel" name="label_188">
@@ -3098,6 +3091,13 @@
                   </size>
                  </property>
                 </spacer>
+               </item>
+               <item row="80" column="17" colspan="2">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_percentuale">
+                 <property name="value">
+                  <double>20.000000000000000</double>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
