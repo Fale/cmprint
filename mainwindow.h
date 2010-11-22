@@ -40,7 +40,7 @@ private slots:
 
 
     void on_doubleSpinBox_foglio3_euro_1_valueChanged(double );
-    void on_spinBox_foglio3_nfogli_1_valueChanged(QString );
+    void on_spinBox_foglio3_nfogli_1_valueChanged(int );
     void on_doubleSpinBox_foglio3_percentuale_valueChanged(double );
     void on_doubleSpinBox_foglio3_successivencopie_3_valueChanged(double );
     void on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double );

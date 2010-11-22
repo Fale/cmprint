@@ -1029,7 +1029,7 @@ void MainWindow::on_doubleSpinBox_foglio3_percentuale_valueChanged(double )
     refreshFoglio3();
 }
 
-void MainWindow::on_spinBox_foglio3_nfogli_1_valueChanged(QString )
+void MainWindow::on_spinBox_foglio3_nfogli_1_valueChanged(int )
 {
     refreshFoglio3();
 }
