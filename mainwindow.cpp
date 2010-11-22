@@ -885,6 +885,34 @@ void MainWindow::refreshFoglio4()
 
 }
 
+void MainWindow::refreshFoglio5()
+{
+   ui->label_foglio5_stampa_primencopie->setText( ui->label_foglio2_totale_prime->text() );
+   ui->label_foglio5_stampa_successivencopie->setText(ui->label_foglio2_totale_successive->text());
+
+   ui->label_foglio5_carta_primencopie->setText( ui->label_foglio3_totale_primencopie->text());
+   ui->label_foglio5_carta_successivencopie->setText( ui->label_foglio3_totale_successivencopie->text());
+
+   ui->label_foglio5_lavorazioni_primencopie->setText( ui->label_foglio4_totale_primencopie->text());
+   ui->label_foglio5_lavorazioni_successivencopie->setText(ui->label_foglio4_totale_successivencopie->text());
+
+   ui->label_foglio5_prezzoacopia_primencopie->setNum( (ui->label_foglio5_stampa_primencopie->text().toDouble()
+                                                        + ui->label_foglio5_carta_primencopie->text().toDouble()
+                                                        + ui->label_foglio5_lavorazioni_primencopie->text().toDouble())
+                                                       / (ui->spinBox_foglio1_ncopie->value())
+                                                       );
+
+   ui->label_foglio5_prezzoacopia_successivencopie->setNum( (ui->label_foglio5_stampa_successivencopie->text().toDouble()
+                                                        + ui->label_foglio5_carta_successivencopie->text().toDouble()
+                                                        + ui->label_foglio5_lavorazioni_successivencopie->text().toDouble())
+                                                       / (ui->spinBox_foglio1_ncopie->value())
+                                                       );
+
+
+
+
+}
+
 //lastre
 void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int valore)
 {
@@ -1484,4 +1512,12 @@ void MainWindow::on_doubleSpinBox_foglio4_quinta_successivencopie_valueChanged(d
 void MainWindow::on_doubleSpinBox_foglio4_percentuale_valueChanged(double )
 {
     refreshFoglio4();
+}
+
+void MainWindow::on_tabWidget_preventivi_currentChanged(int index)
+{
+    if ( index == 4)
+    {
+       refreshFoglio5();
+    }
 }

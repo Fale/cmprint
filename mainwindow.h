@@ -34,12 +34,14 @@ private:
     void refreshFoglio2();
     void refreshFoglio3();
     void refreshFoglio4();
+    void refreshFoglio5();
     double formatoASuperficie(QString formato);
 
 
 private slots:
 
 
+    void on_tabWidget_preventivi_currentChanged(int index);
     void on_doubleSpinBox_foglio4_percentuale_valueChanged(double );
     void on_doubleSpinBox_foglio4_quinta_successivencopie_valueChanged(double );
     void on_doubleSpinBox_foglio4_quinta_primencopie_valueChanged(double );
