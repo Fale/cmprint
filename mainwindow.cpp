@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "slot.cpp"
 #include "ui_mainwindow.h"
 
 /* TO BE FIXED
@@ -107,7 +108,7 @@ void MainWindow::creaTabelle()
     //foglio3
     query.append("tipo1 char(30), tipo2 char(30), tipo3 char(30), tipo4 char(30), tipo5 char(30), tipo6 char(30), tipo7 char(30), tipo8 char(30), formato1 char(30), formato2 char(30), formato3 char(30), formato4 char(30), formato5 char(30), euro1 real, euro2 real, euro3 real, euro4 real, euro5 real, europrime1 real, europrime2 real, europrime3 real, eurosucc1 real, eurosucc2 real, eurosucc3 real, percf3 real, ");
     //foglio4
-    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturanfogli int, accoppiaturaeuro real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real,  riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real");
+    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturanfogli int, accoppiaturaeuro real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real, riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real");
     query.append(")");
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
@@ -248,9 +249,6 @@ void MainWindow::popolaComboBox()
     query.clear();
     campo.clear();
 
-
-
-
 }
 
 
@@ -319,92 +317,6 @@ void MainWindow::showHide(QString show)
 
 }
 
-void MainWindow::on_bottone_benvenuto_clicked()
-{
-    this->showHide("benvenuto");
-}
-
-void MainWindow::on_actionPreventivi_triggered()
-{
-    this->showHide("preventivi");
-}
-
-void MainWindow::on_actionTipo_triggered()
-{
-    this->showHide("carta_tipo");
-}
-
-void MainWindow::on_actionFormato_triggered()
-{
-    this->showHide("carta_formato");
-}
-
-void MainWindow::on_actionGrammatura_triggered()
-{
-    this->showHide("carta_grammatura");
-}
-
-void MainWindow::on_actionClienti_triggered()
-{
-     this->showHide("clienti");
-}
-
-void MainWindow::on_actionSerigrafia_triggered()
-{
-    this->showHide("serigrafia");
-}
-
-void MainWindow::on_actionPlastificazione_triggered()
-{
-   this->showHide("plastificazione");
-}
-
-void MainWindow::on_pushButton_preventivi_clicked()
-{
-    MainWindow::on_actionPreventivi_triggered();
-}
-
-void MainWindow::on_pushButton_clienti_clicked()
-{
-    MainWindow::on_actionClienti_triggered();
-}
-
-void MainWindow::on_pushButton_carta_tipo_clicked()
-{
-    MainWindow::on_actionTipo_triggered();
-}
-
-void MainWindow::on_pushButton_carta_formato_clicked()
-{
-    MainWindow::on_actionFormato_triggered();
-}
-
-void MainWindow::on_pushButton_carta_grammatura_clicked()
-{
-    MainWindow::on_actionGrammatura_triggered();
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    qApp->quit();
-}
-
-void MainWindow::on_actionEsci_triggered()
-{
-    qApp->quit();
-}
-
-
-void MainWindow::on_pushButton_serigrafia_clicked()
-{
-    MainWindow::on_actionSerigrafia_triggered();
-}
-
-
-void MainWindow::on_pushButton_plastificazione_clicked()
-{
-    MainWindow::on_actionPlastificazione_triggered();
-}
 
 void MainWindow::refreshTabelle()
 {
@@ -465,7 +377,6 @@ void MainWindow::refreshTabelle()
     tabella_preventivi->select();
     ui->tableView_preventivi->setModel(tabella_preventivi);
 
-
     popolaComboBox();
     //Aggiungere qui il refresh di altre tabelle
 }
@@ -500,13 +411,11 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
-
 }
 
 
 void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
 {
-
     QSqlQuery query;
     n=n+1.0;
     qDebug() << query.prepare("INSERT INTO cartatipo (descrizione, prezzo)"
@@ -516,7 +425,6 @@ void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
-
 }
 
 void MainWindow::on_bottone_clienti_aggiungi_clicked()
@@ -558,6 +466,144 @@ void MainWindow::on_bottone_carta_grammatura_aggiungi_clicked()
     refreshTabelle();
 }
 
+void MainWindow::on_bottone_salva_preventivo_clicked()
+{
+
+    //Ricordarsi che manca la data
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO preventivo (numero, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2 real, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturanfogli, accoppiaturaeuro, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
+                  "VALUES(:numero, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2 real, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturanfogli, :accoppiaturaeuro, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ") ;
+    query.bindValue(":numero", ui->label_npreventivo->text().toInt() );
+    query.bindValue(":cliente", ui->comboBox_clienti_seleziona->currentText() );
+    query.bindValue(":descrizione", ui->plainTextEdit_descrizione->toPlainText() );
+    query.bindValue(":ncopie", ui->spinBox_foglio1_ncopie->value());
+    query.bindValue(":lastren1", ui->spinBox_foglio2_lastre_n_1->value() );
+    query.bindValue(":lastren2", ui->spinBox_foglio2_lastre_n_2->value() );
+    query.bindValue(":lastren3", ui->spinBox_foglio2_lastre_n_3->value() );
+    query.bindValue(":lastren4", ui->spinBox_foglio2_lastre_n_4->value() );
+    query.bindValue(":lastren5", ui->spinBox_foglio2_lastre_n_5->value() );
+    query.bindValue(":lastren6", ui->spinBox_foglio2_lastre_n_6->value() );
+    query.bindValue(":rismen1", ui->spinBox_foglio2_risme_n_1->value() );
+    query.bindValue(":rismen2", ui->spinBox_foglio2_risme_n_2->value() );
+    query.bindValue(":rismen3", ui->spinBox_foglio2_risme_n_3->value() );
+    query.bindValue(":rismen4", ui->spinBox_foglio2_risme_n_4->value() );
+    query.bindValue(":rismen5", ui->spinBox_foglio2_risme_n_5->value() );
+    query.bindValue(":rismen6", ui->spinBox_foglio2_risme_n_6->value() );
+    query.bindValue(":lastreeuro1", ui->doubleSpinBox_foglio2_lastre_prezzo_1->value() );
+    query.bindValue(":lastreeuro2", ui->doubleSpinBox_foglio2_lastre_prezzo_2->value() );
+    query.bindValue(":lastreeuro3", ui->doubleSpinBox_foglio2_lastre_prezzo_3->value() );
+    query.bindValue(":lastreeuro4", ui->doubleSpinBox_foglio2_lastre_prezzo_4->value() );
+    query.bindValue(":lastreeuro5", ui->doubleSpinBox_foglio2_lastre_prezzo_5->value() );
+    query.bindValue(":lastreeuro6", ui->doubleSpinBox_foglio2_lastre_prezzo_6->value() );
+    query.bindValue(":rismeeuro1", ui->doubleSpinBox_foglio2_risme_prezzo_1->value() );
+    query.bindValue(":rismeeuro2", ui->doubleSpinBox_foglio2_risme_prezzo_2->value() );
+    query.bindValue(":rismeeuro3", ui->doubleSpinBox_foglio2_risme_prezzo_3->value() );
+    query.bindValue(":rismeeuro4", ui->doubleSpinBox_foglio2_risme_prezzo_4->value() );
+    query.bindValue(":rismeeuro5", ui->doubleSpinBox_foglio2_risme_prezzo_5->value() );
+    query.bindValue(":rismeeuro6", ui->doubleSpinBox_foglio2_risme_prezzo_6->value() );
+    query.bindValue(":lastravvprime", ui->doubleSpinBox_foglio2_lastreavviamenti_prime->value() );
+    query.bindValue(":lastravvsucc", ui->doubleSpinBox_foglio2_lastreavviamenti_successive->value() );
+    query.bindValue(":stampaprime", ui->doubleSpinBox_foglio2_stampa_prime->value() );
+    query.bindValue(":stampasucc", ui->doubleSpinBox_foglio2_stampa_successive->value() );
+    query.bindValue(":stampadigprime", ui->doubleSpinBox_foglio2_stampadigitale_prime->value() );
+    query.bindValue(":stampadigsucc", ui->doubleSpinBox_foglio2_stampadigitale_successive->value() );
+    query.bindValue(":percf2 real", ui->doubleSpinBox_foglio2_percentuale->value() );
+    query.bindValue(":tipo1", ui->comboBox_foglio3_carta_tipo_1->currentText() );
+    query.bindValue(":tipo2", ui->comboBox_foglio3_carta_tipo_2->currentText() );
+    query.bindValue(":tipo3", ui->comboBox_foglio3_carta_tipo_3->currentText() );
+    query.bindValue(":tipo4", ui->comboBox_foglio3_carta_tipo_4->currentText() );
+    query.bindValue(":tipo5", ui->comboBox_foglio3_carta_tipo_5->currentText() );
+    query.bindValue(":tipo6", ui->lineEdit_foglio3_tipocarta_1->text() );
+    query.bindValue(":tipo7", ui->lineEdit_foglio3_tipocarta_2->text() );
+    query.bindValue(":tipo8", ui->lineEdit_foglio3_tipocarta_3->text() );
+    query.bindValue(":formato1", ui->comboBox_foglio3_carta_formato_1->currentText() );
+    query.bindValue(":formato2", ui->comboBox_foglio3_carta_formato_2->currentText() );
+    query.bindValue(":formato3", ui->comboBox_foglio3_carta_formato_3->currentText() );
+    query.bindValue(":formato4", ui->comboBox_foglio3_carta_formato_4->currentText() );
+    query.bindValue(":formato5", ui->comboBox_foglio3_carta_formato_5->currentText() );
+    query.bindValue(":euro1", ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble() );
+    query.bindValue(":euro2", ui->comboBox_foglio3_carta_grammatura_2->currentText().toDouble() );
+    query.bindValue(":euro3", ui->comboBox_foglio3_carta_grammatura_3->currentText().toDouble() );
+    query.bindValue(":euro4", ui->comboBox_foglio3_carta_grammatura_4->currentText().toDouble() );
+    query.bindValue(":euro5", ui->comboBox_foglio3_carta_grammatura_5->currentText().toDouble() );
+    query.bindValue(":europrime1", ui->doubleSpinBox_foglio3_primencopie_1->value() );
+    query.bindValue(":europrime2", ui->doubleSpinBox_foglio3_primencopie_2->value() );
+    query.bindValue(":europrime3", ui->doubleSpinBox_foglio3_primencopie_3->value() );
+    query.bindValue(":eurosucc1", ui->doubleSpinBox_foglio3_successivencopie_1->value() );
+    query.bindValue(":eurosucc2", ui->doubleSpinBox_foglio3_successivencopie_2->value() );
+    query.bindValue(":eurosucc3", ui->doubleSpinBox_foglio3_successivencopie_3->value() );
+    query.bindValue(":percf3", ui->doubleSpinBox_foglio3_percentuale->value() );
+    query.bindValue(":plopbformato", ui->comboBox_foglio4_plastificazione_opaca_bianca->currentText() );
+    query.bindValue(":plopbnfogli", ui->spinBox_foglio4_plastificazione_opaca_bianca->value() );
+    query.bindValue(":plopbavv", ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento->value() );
+    query.bindValue(":plopbvformato", ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->currentText() );
+    query.bindValue(":plopbvnfogli", ui->spinBox_foglio4_plastificazione_opaca_bianca_volta->value() );
+    query.bindValue(":plopbvavv", ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento->value() );
+    query.bindValue(":pllubformato", ui->comboBox_foglio4_plastificazione_lucida_bianca->currentText() );
+    query.bindValue(":pllubnfogli", ui->spinBox_foglio4_plastificazione_lucida_bianca->value() );
+    query.bindValue(":pllubavv", ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento->value() );
+    query.bindValue(":pllubvformato", ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->currentText() );
+    query.bindValue(":pllubvnfogli", ui->spinBox_foglio4_plastificazione_lucida_bianca_volta->value() );
+    query.bindValue(":pllubvavv", ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento->value() );
+    query.bindValue(":serformato", ui->comboBox_foglio4_serigrafia->currentText() );
+    query.bindValue(":sernfogli", ui->spinBox_foglio4_serigrafia->value() );
+    query.bindValue(":seravv", ui->doubleSpinBox_foglio4_serigrafia_avviamento->value() );
+    query.bindValue(":sertelaio", ui->doubleSpinBox_foglio4_serigrafia_telaio->value() );
+    query.bindValue(":fustella", ui->doubleSpinBox_fustella_primencopie->value() );
+    query.bindValue(":fustellaturanfogli", ui->spinBox_foglio4_fustellatura_nfogli->value() );
+    query.bindValue(":fustellaturaeuro", ui->doubleSpinBox_spinBox_foglio4_fustellatura_euro->value() );
+    query.bindValue(":fustellaturaavv", ui->doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento->value() );
+    query.bindValue(":cordonaturaprime", ui->doubleSpinBox_cordonatura_primencopie->value() );
+    query.bindValue(":cordonaturasucc", ui->doubleSpinBox_cordonatura_successivencopie->value() );
+    query.bindValue(":cordonaturaavv", ui->doubleSpinBox_cordonatura_avviamento->value() );
+    query.bindValue(":accoppiaturanfogli", ui->spinBox_foglio4_accoppiatura_fogli->value() );
+    query.bindValue(":accoppiaturaeuro", ui->doubleSpinBox_foglio4_accoppiatura_euro->value() );
+    query.bindValue(":stampacaldoprime", ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->value() );
+    query.bindValue(":stampacaldosucc", ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->value() );
+    query.bindValue(":cliche", ui->doubleSpinBox_foglio4_cliche_primencopie->value() );
+    query.bindValue(":piegacopien", ui->spinBox_foglio4_piegacopie_numero->value() );
+    query.bindValue(":piegacopieeuro", ui->doubleSpinBox_foglio4_piegacopie_euro->value() );
+    query.bindValue(":tagliocopien", ui->spinBox_foglio4_tagliocopie_numero->value() );
+    query.bindValue(":tagliocopieeuro", ui->doubleSpinBox_foglio4_tagliocopie_euro->value() );
+    query.bindValue(":puntometncopie", ui->spinBox_foglio4_puntometallico_numero->value() );
+    query.bindValue(":puntometeuro", ui->doubleSpinBox_foglio4_puntometallico_euro->value() );
+    query.bindValue(":puntometavv", ui->doubleSpinBox_foglio4_puntometallico_avviamento->value() );
+    query.bindValue(":brosfresncopie", ui->spinBox_foglio4_brosurafresata_numero->value() );
+    query.bindValue(":brosfreseuro", ui->doubleSpinBox_foglio4_brosurafresata_euro->value() );
+    query.bindValue(":brosfresavv", ui->doubleSpinBox_foglio4_brosurafresata_avviamento->value() );
+    query.bindValue(":brosfiloncopie", ui->spinBox_foglio4_filo_numero->value() );
+    query.bindValue(":brosfiloeuro", ui->doubleSpinBox_foglio4_filo_euro->value() );
+    query.bindValue(":brosfiloavv", ui->doubleSpinBox_foglio4_filo_avviamento->value() );
+    query.bindValue(":cartncopie", ui->spinBox_foglio4_cartonato_numero->value() );
+    query.bindValue(":carteuro", ui->doubleSpinBox_foglio4_cartonato_euro->value() );
+    query.bindValue(":cartavv", ui->doubleSpinBox_foglio4_cartonato_avviamento->value() );
+    query.bindValue(":spirncopie", ui->spinBox_foglio4_spiralatura_numero->value() );
+    query.bindValue(":spireuro", ui->doubleSpinBox_foglio4_spiralatura_euro->value() );
+    query.bindValue(":pacchipolincopie", ui->spinBox_foglio4_pacchi_numero->value() );
+    query.bindValue(":pacchipolieuro", ui->doubleSpinBox_foglio4_pacchi_euro->value() );
+    query.bindValue(":trasporto", ui->doubleSpinBox_foglio4_trasporto->value() );
+    query.bindValue(":riga1", ui->lineEdit_foglio4_prima->text() );
+    query.bindValue(":riga2", ui->lineEdit_seconda->text() );
+    query.bindValue(":riga3", ui->lineEdit_foglio4_terza->text() );
+    query.bindValue(":riga4", ui->lineEdit_foglio4_quarta->text() );
+    query.bindValue(":riga5", ui->lineEdit_foglio4_quinta->text() );
+    query.bindValue(":riga1prime", ui->doubleSpinBox_foglio4_prima_primencopie->value() );
+    query.bindValue(":riga2prime", ui->doubleSpinBox_foglio4_seconda_primencopie->value() );
+    query.bindValue(":riga3prime", ui->doubleSpinBox_foglio4_terza_primencopie->value() );
+    query.bindValue(":riga4prime", ui->doubleSpinBox_foglio4_quarta_primencopie->value() );
+    query.bindValue(":riga5prime", ui->doubleSpinBox_foglio4_quinta_primencopie->value() );
+    query.bindValue(":riga1succ", ui->doubleSpinBox_foglio4_prima_successivencopie->value() );
+    query.bindValue(":riga2succ", ui->doubleSpinBox_foglio4_seconda_successivencopie->value() );
+    query.bindValue(":riga3succ", ui->doubleSpinBox_foglio4_terza_successivencopie->value() );
+    query.bindValue(":riga4succ", ui->doubleSpinBox_foglio4_quarta_successivencopie->value() );
+    query.bindValue(":riga5succ", ui->doubleSpinBox_foglio4_quinta_successivencopie->value() );
+    query.bindValue(":percf4", ui->doubleSpinBox_foglio4_percentuale->value() );
+    qDebug() << query.exec();
+    query.clear();
+    refreshTabelle();
+}
+
 void MainWindow::eliminaRiga(QString tabella, QString numero)
 {
     QSqlQuery query;
@@ -575,70 +621,7 @@ void MainWindow::eliminaRiga(QString tabella, QString numero)
 }
 
 
-void MainWindow::on_bottone_clienti_rimuovi_clicked()
-{
-    eliminaRiga("clienti",ui->line_edit_clienti->text());
-    refreshTabelle();
-}
 
-
-void MainWindow::on_line_edit_clienti_returnPressed()
-{
-    this->on_bottone_clienti_rimuovi_clicked();
-}
-
-void MainWindow::on_bottone_preventivi_nuovo_clicked()
-{
-    ui->bottone_preventivi_cerca->hide();
-    ui->bottone_preventivi_nuovo->hide();
-    ui->lineEdit_preventivi_cerca->hide();
-    ui->tableView_preventivi->hide();
-    ui->tabWidget_preventivi->show();
-}
-
-void MainWindow::on_bottone_tab1_aggiungi_clienti_clicked()
-{
-    this->showHide("clienti");
-    this->on_bottone_clienti_aggiungi_clicked();
-    ui->bottone_torna_preventivo->show();
-}
-
-
-
-void MainWindow::on_spinBox_foglio1_ncopie_valueChanged(QString valore)
-{
-    if (valore=="1") //if necessario in caso che cambia il numero di copie ma poi lo riporta ad 1
-    {
-        ui->label_foglio2_ncopie->setText("Prima copia          ");
-        ui->label_foglio2_successivencopie->setText("Successiva copia");
-        ui->label_foglio3_ncopie->setText("Prima copia          ");
-        ui->label_foglio3_successivencopie->setText("Successiva copia");
-        ui->label_foglio4_ncopie->setText("Prima copia          ");
-        ui->label_foglio4_successivencopie->setText("Successiva copia");
-        ui->label_foglio5_ncopie->setText("Prima copia          ");
-        ui->label_foglio5_successivencopie->setText("Successiva copia");
-
-    } else
-    {
-    ui->label_foglio2_ncopie->setText("Prime "+valore+" copie          ");
-    ui->label_foglio2_successivencopie->setText("Successive "+valore+" copie");
-    ui->label_foglio3_ncopie->setText("Prime "+valore+" copie          ");
-    ui->label_foglio3_successivencopie->setText("Successive "+valore+" copie");
-    ui->label_foglio4_ncopie->setText("Prime "+valore+" copie          ");
-    ui->label_foglio4_successivencopie->setText("Successive "+valore+" copie");
-    ui->label_foglio5_ncopie->setText("Prime "+valore+" copie          ");
-    ui->label_foglio5_successivencopie->setText("Successive "+valore+" copie");
-}
-}
-
-
-void MainWindow::on_bottone_torna_preventivo_clicked()
-{
-    this->on_pushButton_preventivi_clicked();
-    this->on_bottone_preventivi_nuovo_clicked();
-    ui->comboBox_clienti_seleziona->setCurrentIndex(ui->comboBox_clienti_seleziona->count()-1);
-    ui->bottone_torna_preventivo->hide();
-}
 
 
 // FUNZIONI PER I CALCOLI ( forse per tutta sta roba sarebbe utile un'altra classe..
@@ -936,750 +919,6 @@ void MainWindow::refreshFoglio5()
 
 }
 
-//lastre
-void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
 
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
 
 
-void MainWindow::on_spinBox_foglio2_lastre_n_2_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_spinBox_foglio2_lastre_n_3_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double valore)
-{
-   refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_lastre_n_4_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_lastre_n_5_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_lastre_n_6_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-//risme
-void MainWindow::on_spinBox_foglio2_risme_n_1_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_risme_n_2_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_spinBox_foglio2_risme_n_3_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_risme_n_4_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_risme_n_5_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_risme_n_6_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastreavviamenti_prime_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastreavviamenti_successive_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_stampa_prime_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_stampa_successive_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_stampadigitale_prime_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_stampadigitale_successive_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_percentuale_valueChanged(double )
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString formato)
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_grammatura_1_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_formato_4_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_grammatura_4_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_formato_2_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_grammatura_2_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_formato_3_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_grammatura_3_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_formato_5_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio3_carta_grammatura_5_currentIndexChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_spinBox_foglio3_nfogli_2_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_euro_2_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_spinBox_foglio3_nfogli_3_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_euro_3_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_spinBox_foglio3_nfogli_4_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_euro_4_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_spinBox_foglio3_nfogli_5_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_euro_5_valueChanged(QString )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_primencopie_1_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_successivencopie_1_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_primencopie_2_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_successivencopie_2_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_successivencopie_3_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_percentuale_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_spinBox_foglio3_nfogli_1_valueChanged(int )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_doubleSpinBox_foglio3_euro_1_valueChanged(double )
-{
-    refreshFoglio3();
-}
-
-void MainWindow::on_comboBox_foglio4_plastificazione_opaca_bianca_currentIndexChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_comboBox_foglio4_plastificazione_opaca_bianca_volta_currentIndexChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_comboBox_foglio4_plastificazione_lucida_bianca_currentIndexChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_comboBox_foglio4_plastificazione_lucida_bianca_volta_currentIndexChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_comboBox_foglio4_serigrafia_currentIndexChanged(QString )
-{
-    refreshFoglio4();
-}
-
-
-void MainWindow::on_spinBox_foglio4_plastificazione_opaca_bianca_valueChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_plastificazione_opaca_bianca_volta_valueChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_plastificazione_lucida_bianca_valueChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_plastificazione_lucida_bianca_volta_valueChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_serigrafia_valueChanged(QString )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_serigrafia_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_serigrafia_telaio_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_fustella_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_fustellatura_nfogli_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_spinBox_foglio4_fustellatura_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_cordonatura_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_cordonatura_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_cordonatura_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_accoppiatura_fogli_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_accoppiatura_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_stampaacaldo_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_stampaacaldo_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_cliche_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_piegacopie_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_piegacopie_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_tagliocopie_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_tagliocopie_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_puntometallico_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_puntometallico_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_puntometallico_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_brosurafresata_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_brosurafresata_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_brosurafresata_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_filo_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_filo_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_filo_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_cartonato_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_cartonato_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_cartonato_avviamento_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_spiralatura_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_spiralatura_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_spinBox_foglio4_pacchi_numero_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_pacchi_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_trasporto_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_prima_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_prima_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_seconda_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_seconda_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_terza_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_terza_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_quarta_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_quarta_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_quinta_primencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_quinta_successivencopie_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_percentuale_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_tabWidget_preventivi_currentChanged(int index)
-{
-    if ( index == 4)
-    {
-       refreshFoglio5();
-    }
-}
-
-void MainWindow::on_bottone_salva_preventivo_clicked()
-{
-
-    //Ricordarsi che manca la data
-
-    QSqlQuery query;
-    query.prepare("INSERT INTO preventivo (numero, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2 real, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturanfogli, accoppiaturaeuro, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
-                  "VALUES( :numero, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2 real, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturanfogli, :accoppiaturaeuro, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ") ;
-
-    query.bindValue(":numero", ui->label_npreventivo->text().toInt() );
-    query.bindValue(":cliente", ui->comboBox_clienti_seleziona->currentText() );
-    query.bindValue(":descrizione", ui->plainTextEdit_descrizione->toPlainText() );
-    query.bindValue(":ncopie", ui->spinBox_foglio1_ncopie->value());
-    query.bindValue(":lastren1", ui->spinBox_foglio2_lastre_n_1->value() );
-    query.bindValue(":lastren2", ui->spinBox_foglio2_lastre_n_2->value() );
-    query.bindValue(":lastren3", ui->spinBox_foglio2_lastre_n_3->value() );
-    query.bindValue(":lastren4", ui->spinBox_foglio2_lastre_n_4->value() );
-    query.bindValue(":lastren5", ui->spinBox_foglio2_lastre_n_5->value() );
-    query.bindValue(":lastren6", ui->spinBox_foglio2_lastre_n_6->value() );
-    query.bindValue(":rismen1", ui->spinBox_foglio2_risme_n_1->value() );
-    query.bindValue(":rismen2", ui->spinBox_foglio2_risme_n_2->value() );
-    query.bindValue(":rismen3", ui->spinBox_foglio2_risme_n_3->value() );
-    query.bindValue(":rismen4", ui->spinBox_foglio2_risme_n_4->value() );
-    query.bindValue(":rismen5", ui->spinBox_foglio2_risme_n_5->value() );
-    query.bindValue(":rismen6", ui->spinBox_foglio2_risme_n_6->value() );
-    query.bindValue(":lastreeuro1", ui->doubleSpinBox_foglio2_lastre_prezzo_1->value() );
-    query.bindValue(":lastreeuro2", ui->doubleSpinBox_foglio2_lastre_prezzo_2->value() );
-    query.bindValue(":lastreeuro3", ui->doubleSpinBox_foglio2_lastre_prezzo_3->value() );
-    query.bindValue(":lastreeuro4", ui->doubleSpinBox_foglio2_lastre_prezzo_4->value() );
-    query.bindValue(":lastreeuro5", ui->doubleSpinBox_foglio2_lastre_prezzo_5->value() );
-    query.bindValue(":lastreeuro6", ui->doubleSpinBox_foglio2_lastre_prezzo_6->value() );
-    query.bindValue(":rismeeuro1", ui->doubleSpinBox_foglio2_risme_prezzo_1->value() );
-    query.bindValue(":rismeeuro2", ui->doubleSpinBox_foglio2_risme_prezzo_2->value() );
-    query.bindValue(":rismeeuro3", ui->doubleSpinBox_foglio2_risme_prezzo_3->value() );
-    query.bindValue(":rismeeuro4", ui->doubleSpinBox_foglio2_risme_prezzo_4->value() );
-    query.bindValue(":rismeeuro5", ui->doubleSpinBox_foglio2_risme_prezzo_5->value() );
-    query.bindValue(":rismeeuro6", ui->doubleSpinBox_foglio2_risme_prezzo_6->value() );
-    query.bindValue(":lastravvprime", ui->doubleSpinBox_foglio2_lastreavviamenti_prime->value() );
-    query.bindValue(":lastravvsucc", ui->doubleSpinBox_foglio2_lastreavviamenti_successive->value() );
-    query.bindValue(":stampaprime", ui->doubleSpinBox_foglio2_stampa_prime->value() );
-    query.bindValue(":stampasucc", ui->doubleSpinBox_foglio2_stampa_successive->value() );
-    query.bindValue(":stampadigprime", ui->doubleSpinBox_foglio2_stampadigitale_prime->value() );
-    query.bindValue(":stampadigsucc", ui->doubleSpinBox_foglio2_stampadigitale_successive->value() );
-    query.bindValue(":percf2 real", ui->doubleSpinBox_foglio2_percentuale->value() );
-    query.bindValue(":tipo1", ui->comboBox_foglio3_carta_tipo_1->currentText() );
-    query.bindValue(":tipo2", ui->comboBox_foglio3_carta_tipo_2->currentText() );
-    query.bindValue(":tipo3", ui->comboBox_foglio3_carta_tipo_3->currentText() );
-    query.bindValue(":tipo4", ui->comboBox_foglio3_carta_tipo_4->currentText() );
-    query.bindValue(":tipo5", ui->comboBox_foglio3_carta_tipo_5->currentText() );
-    query.bindValue(":tipo6", ui->lineEdit_foglio3_tipocarta_1->text() );
-    query.bindValue(":tipo7", ui->lineEdit_foglio3_tipocarta_2->text() );
-    query.bindValue(":tipo8", ui->lineEdit_foglio3_tipocarta_3->text() );
-    query.bindValue(":formato1", ui->comboBox_foglio3_carta_formato_1->currentText() );
-    query.bindValue(":formato2", ui->comboBox_foglio3_carta_formato_2->currentText() );
-    query.bindValue(":formato3", ui->comboBox_foglio3_carta_formato_3->currentText() );
-    query.bindValue(":formato4", ui->comboBox_foglio3_carta_formato_4->currentText() );
-    query.bindValue(":formato5", ui->comboBox_foglio3_carta_formato_5->currentText() );
-    query.bindValue(":euro1", ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble() );
-    query.bindValue(":euro2", ui->comboBox_foglio3_carta_grammatura_2->currentText().toDouble() );
-    query.bindValue(":euro3", ui->comboBox_foglio3_carta_grammatura_3->currentText().toDouble() );
-    query.bindValue(":euro4", ui->comboBox_foglio3_carta_grammatura_4->currentText().toDouble() );
-    query.bindValue(":euro5", ui->comboBox_foglio3_carta_grammatura_5->currentText().toDouble() );
-    query.bindValue(":europrime1", ui->doubleSpinBox_foglio3_primencopie_1->value() );
-    query.bindValue(":europrime2", ui->doubleSpinBox_foglio3_primencopie_2->value() );
-    query.bindValue(":europrime3", ui->doubleSpinBox_foglio3_primencopie_3->value() );
-    query.bindValue(":eurosucc1", ui->doubleSpinBox_foglio3_successivencopie_1->value() );
-    query.bindValue(":eurosucc2", ui->doubleSpinBox_foglio3_successivencopie_2->value() );
-    query.bindValue(":eurosucc3", ui->doubleSpinBox_foglio3_successivencopie_3->value() );
-    query.bindValue(":percf3", ui->doubleSpinBox_foglio3_percentuale->value() );
-    query.bindValue(":plopbformato", ui->comboBox_foglio4_plastificazione_opaca_bianca->currentText() );
-    query.bindValue(":plopbnfogli", ui->spinBox_foglio4_plastificazione_opaca_bianca->value() );
-    query.bindValue(":plopbavv", ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento->value() );
-    query.bindValue(":plopbvformato", ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->currentText() );
-    query.bindValue(":plopbvnfogli", ui->spinBox_foglio4_plastificazione_opaca_bianca_volta->value() );
-    query.bindValue(":plopbvavv", ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento->value() );
-    query.bindValue(":pllubformato", ui->comboBox_foglio4_plastificazione_lucida_bianca->currentText() );
-    query.bindValue(":pllubnfogli", ui->spinBox_foglio4_plastificazione_lucida_bianca->value() );
-    query.bindValue(":pllubavv", ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento->value() );
-    query.bindValue(":pllubvformato", ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->currentText() );
-    query.bindValue(":pllubvnfogli", ui->spinBox_foglio4_plastificazione_lucida_bianca_volta->value() );
-    query.bindValue(":pllubvavv", ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento->value() );
-    query.bindValue(":serformato", ui->comboBox_foglio4_serigrafia->currentText() );
-    query.bindValue(":sernfogli", ui->spinBox_foglio4_serigrafia->value() );
-    query.bindValue(":seravv", ui->doubleSpinBox_foglio4_serigrafia_avviamento->value() );
-    query.bindValue(":sertelaio", ui->doubleSpinBox_foglio4_serigrafia_telaio->value() );
-    query.bindValue(":fustella", ui->doubleSpinBox_fustella_primencopie->value() );
-    query.bindValue(":fustellaturanfogli", ui->spinBox_foglio4_fustellatura_nfogli->value() );
-    query.bindValue(":fustellaturaeuro", ui->doubleSpinBox_spinBox_foglio4_fustellatura_euro->value() );
-    query.bindValue(":fustellaturaavv", ui->doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento->value() );
-    query.bindValue(":cordonaturaprime", ui->doubleSpinBox_cordonatura_primencopie->value() );
-    query.bindValue(":cordonaturasucc", ui->doubleSpinBox_cordonatura_successivencopie->value() );
-    query.bindValue(":cordonaturaavv", ui->doubleSpinBox_cordonatura_avviamento->value() );
-    query.bindValue(":accoppiaturanfogli", ui->spinBox_foglio4_accoppiatura_fogli->value() );
-    query.bindValue(":accoppiaturaeuro", ui->doubleSpinBox_foglio4_accoppiatura_euro->value() );
-    query.bindValue(":stampacaldoprime", ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->value() );
-    query.bindValue(":stampacaldosucc", ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->value() );
-    query.bindValue(":cliche", ui->doubleSpinBox_foglio4_cliche_primencopie->value() );
-    query.bindValue(":piegacopien", ui->spinBox_foglio4_piegacopie_numero->value() );
-    query.bindValue(":piegacopieeuro", ui->doubleSpinBox_foglio4_piegacopie_euro->value() );
-    query.bindValue(":tagliocopien", ui->spinBox_foglio4_tagliocopie_numero->value() );
-    query.bindValue(":tagliocopieeuro", ui->doubleSpinBox_foglio4_tagliocopie_euro->value() );
-    query.bindValue(":puntometncopie", ui->spinBox_foglio4_puntometallico_numero->value() );
-    query.bindValue(":puntometeuro", ui->doubleSpinBox_foglio4_puntometallico_euro->value() );
-    query.bindValue(":puntometavv", ui->doubleSpinBox_foglio4_puntometallico_avviamento->value() );
-    query.bindValue(":brosfresncopie", ui->spinBox_foglio4_brosurafresata_numero->value() );
-    query.bindValue(":brosfreseuro", ui->doubleSpinBox_foglio4_brosurafresata_euro->value() );
-    query.bindValue(":brosfresavv", ui->doubleSpinBox_foglio4_brosurafresata_avviamento->value() );
-    query.bindValue(":brosfiloncopie", ui->spinBox_foglio4_filo_numero->value() );
-    query.bindValue(":brosfiloeuro", ui->doubleSpinBox_foglio4_filo_euro->value() );
-    query.bindValue(":brosfiloavv", ui->doubleSpinBox_foglio4_filo_avviamento->value() );
-    query.bindValue(":cartncopie", ui->spinBox_foglio4_cartonato_numero->value() );
-    query.bindValue(":carteuro", ui->doubleSpinBox_foglio4_cartonato_euro->value() );
-    query.bindValue(":cartavv", ui->doubleSpinBox_foglio4_cartonato_avviamento->value() );
-    query.bindValue(":spirncopie", ui->spinBox_foglio4_spiralatura_numero->value() );
-    query.bindValue(":spireuro", ui->doubleSpinBox_foglio4_spiralatura_euro->value() );
-    query.bindValue(":pacchipolincopie", ui->spinBox_foglio4_pacchi_numero->value() );
-    query.bindValue(":pacchipolieuro", ui->doubleSpinBox_foglio4_pacchi_euro->value() );
-    query.bindValue(":trasporto", ui->doubleSpinBox_foglio4_trasporto->value() );
-    query.bindValue(":riga1", ui->lineEdit_foglio4_prima->text() );
-    query.bindValue(":riga2", ui->lineEdit_seconda->text() );
-    query.bindValue(":riga3", ui->lineEdit_foglio4_terza->text() );
-    query.bindValue(":riga4", ui->lineEdit_foglio4_quarta->text() );
-    query.bindValue(":riga5", ui->lineEdit_foglio4_quinta->text() );
-    query.bindValue(":riga1prime", ui->doubleSpinBox_foglio4_prima_primencopie->value() );
-    query.bindValue(":riga2prime", ui->doubleSpinBox_foglio4_seconda_primencopie->value() );
-    query.bindValue(":riga3prime", ui->doubleSpinBox_foglio4_terza_primencopie->value() );
-    query.bindValue(":riga4prime", ui->doubleSpinBox_foglio4_quarta_primencopie->value() );
-    query.bindValue(":riga5prime", ui->doubleSpinBox_foglio4_quinta_primencopie->value() );
-    query.bindValue(":riga1succ", ui->doubleSpinBox_foglio4_prima_successivencopie->value() );
-    query.bindValue(":riga2succ", ui->doubleSpinBox_foglio4_seconda_successivencopie->value() );
-    query.bindValue(":riga3succ", ui->doubleSpinBox_foglio4_terza_successivencopie->value() );
-    query.bindValue(":riga4succ", ui->doubleSpinBox_foglio4_quarta_successivencopie->value() );
-    query.bindValue(":riga5succ", ui->doubleSpinBox_foglio4_quinta_successivencopie->value() );
-    query.bindValue(":percf4", ui->doubleSpinBox_foglio4_percentuale->value() );
-    qDebug() << query.exec();
-    query.clear();
-    refreshTabelle();
-}
