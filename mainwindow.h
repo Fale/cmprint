@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QFile>
+#include <QPixmap>
 #include <QString>
 
 namespace Ui {

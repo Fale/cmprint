@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
     caricaDb("database.db"); //carica il file del database dalla cartella stessa dell'eseguibile
     n=0;
     ui->setupUi(this);
+    ui->logo->setPixmap(QPixmap("cmprint.png"));
     MainWindow::on_bottone_benvenuto_clicked();
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
     ui->bottone_torna_preventivo->hide();
