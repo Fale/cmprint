@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
    //setAttribute(Qt::WA_DeleteOnClose);
 
-    caricaDb("dboggetti.db"); //carica il file del database dalla cartella stessa dell'eseguibile
+    caricaDb("database.db"); //carica il file del database dalla cartella stessa dell'eseguibile
     n=0;
     ui->setupUi(this);
     MainWindow::on_bottone_benvenuto_clicked();
@@ -97,6 +97,22 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
+
+    //manca la data!!
+
+    //foglio1
+    query = "CREATE TABLE preventivo (numero int, cliente char(30), descrizione char(100), ncopie int, ";
+    //foglio2
+    query.append("lastren1 int, lastren2 int, lastren3 int, lastren4 int, lastren5 int, lastren6 int, rismen1 int, rismen2 int, rismen3 int, rismen4 int, rismen5 int, rismen6 int, lastreeuro1 real, lastreeuro2 real, lastreeuro3 real, lastreeuro4 real, lastreeuro5 real, lastreeuro6 real, rismeeuro1 real, rismeeuro2 real, rismeeuro3 real, rismeeuro4 real, rismeeuro5 real, rismeeuro6 real, lastravvprime real, lastravvsucc real, stampaprime real, stampasucc real, stampadigprime real, stampadigsucc real, percf2 real, ");
+    //foglio3
+    query.append("tipo1 char(30), tipo2 char(30), tipo3 char(30), tipo4 char(30), tipo5 char(30), tipo6 char(30), tipo7 char(30), tipo8 char(30), formato1 char(30), formato2 char(30), formato3 char(30), formato4 char(30), formato5 char(30), euro1 real, euro2 real, euro3 real, euro4 real, euro5 real, europrime1 real, europrime2 real, europrime3 real, eurosucc1 real, eurosucc2 real, eurosucc3 real, percf3 real, ");
+    //foglio4
+    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturanfogli int, accoppiaturaeuro real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real,  riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real");
+    query.append(")");
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
 
     //Aggiungere qui le altre tabelle necessarie
 
