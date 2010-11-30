@@ -51,6 +51,13 @@
          </property>
         </widget>
        </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="bottone_salva_preventivo">
+         <property name="text">
+          <string>Salva</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -485,7 +492,7 @@
        <item row="3" column="0" colspan="2">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -500,7 +507,7 @@
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLabel" name="label_31">
+            <widget class="QLabel" name="label_npreventivo">
              <property name="text">
               <string>0</string>
              </property>
@@ -558,7 +565,7 @@
             </widget>
            </item>
            <item row="3" column="1" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit"/>
+            <widget class="QPlainTextEdit" name="plainTextEdit_descrizione"/>
            </item>
            <item row="4" column="0">
             <widget class="QLabel" name="label_foglio1_ncopie">

@@ -41,6 +41,7 @@ private:
 private slots:
 
 
+    void on_bottone_salva_preventivo_clicked();
     void on_tabWidget_preventivi_currentChanged(int index);
     void on_doubleSpinBox_foglio4_percentuale_valueChanged(double );
     void on_doubleSpinBox_foglio4_quinta_successivencopie_valueChanged(double );
