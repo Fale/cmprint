@@ -26,9 +26,11 @@ MainWindow::MainWindow(QWidget *parent) :
     n=0;
     ui->setupUi(this);
     ui->logo->setPixmap(QPixmap("cmprint.png"));
+    ui->logo_grimp->setPixmap(QPixmap("grimp.png"));
     MainWindow::on_bottone_benvenuto_clicked();
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
     ui->bottone_torna_preventivo->hide();
+    ui->bottone_salva_preventivo->hide();
     popolaComboBox();
 
 }
@@ -274,6 +276,7 @@ void MainWindow::showHide(QString show)
     //nasconde tutto tranne la sezione voluta
     if ( show == "benvenuto" )
     {
+        ui->bottone_salva_preventivo->hide();
         ui->widget_benvenuto->show();
         ui->widget_navigazione->hide(); //poco elegante il show/hide delle stesso widget ma molto più veloce nell'implementazione
     }
@@ -303,7 +306,10 @@ void MainWindow::showHide(QString show)
     else
         ui->widget_carta_tipo->hide();
     if ( show == "clienti" )
+    {
         ui->widget_clienti->show();
+        ui->bottone_salva_preventivo->hide();
+    }
     else
         ui->widget_clienti->hide();
     if ( show == "plastificazione" )
@@ -936,9 +942,11 @@ void MainWindow::on_line_edit_clienti_returnPressed()
 
 void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
+
     ui->bottone_preventivi_cerca->hide();
     ui->bottone_preventivi_nuovo->hide();
     ui->lineEdit_preventivi_cerca->hide();
+    ui->bottone_salva_preventivo->show();
     ui->tableView_preventivi->hide();
     ui->tabWidget_preventivi->show();
 }
@@ -989,6 +997,7 @@ void MainWindow::on_bottone_torna_preventivo_clicked()
 
 void MainWindow::on_bottone_benvenuto_clicked()
 {
+
     this->showHide("benvenuto");
 }
 
