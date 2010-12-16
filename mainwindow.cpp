@@ -649,6 +649,17 @@ void MainWindow::eliminaRiga(QString tabella, int numero)
 
 }
 
+void MainWindow::eliminaRiga(QString tabella, QString colonna, QString valore)
+{
+
+    QSqlQuery query;
+    QString stringa_query;
+    stringa_query = "DELETE FROM "+tabella+" WHERE "+colonna+"="+valore;
+    qDebug() << query.prepare(stringa_query);
+    qDebug() << query.exec();
+    stringa_query.clear();
+    query.clear();
+}
 
 
 
@@ -953,7 +964,8 @@ void MainWindow::refreshFoglio5()
 
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
-    eliminaRiga("clienti", rigadacancellare+1);
+    //eliminaRiga("clienti", rigadacancellare+1);
+    eliminaRiga("clienti","nome",valoredacancellare);
     refreshTabelle();
 }
 
@@ -1717,4 +1729,5 @@ void MainWindow::on_tabWidget_preventivi_currentChanged(int index)
 void MainWindow::on_tableView_clienti_clicked(QModelIndex index)
 {
     rigadacancellare = index.row();
+    valoredacancellare = index.data(0).toString();
 }

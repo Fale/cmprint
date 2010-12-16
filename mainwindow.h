@@ -26,12 +26,15 @@ private:
     QSqlQueryModel queryModel;
     float n;
     int rigadacancellare;
+    QString valoredacancellare;
+
     void caricaDb(QString nome);
     void creaTabelle();
     void apriDb(QString nome);
     void refreshTabelle();
     void showHide(QString show);
     void eliminaRiga(QString tabella, int numero);
+    void eliminaRiga(QString tabella, QString colonna, QString valore);
     void popolaComboBox();
     void refreshFoglio2();
     void refreshFoglio3();
