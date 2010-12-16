@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
    //setAttribute(Qt::WA_DeleteOnClose);
-
+    rigadacancellare = 0;
     caricaDb("database.db"); //carica il file del database dalla cartella stessa dell'eseguibile
     n=0;
     ui->setupUi(this);
@@ -347,6 +347,7 @@ void MainWindow::refreshTabelle()
     tabella_clienti->setHeaderData(0, Qt::Horizontal, "Nome");
     ui->tableView_clienti->setModel(tabella_clienti);
 
+
     QSqlTableModel *tabella_carta_formato = new QSqlTableModel;
     tabella_carta_formato->setTable("cartaformato");
     tabella_carta_formato->setEditStrategy(QSqlTableModel::OnFieldChange);
@@ -610,20 +611,42 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     refreshTabelle();
 }
 
-void MainWindow::eliminaRiga(QString tabella, QString numero)
+void MainWindow::eliminaRiga(QString tabella, int numero)
 {
     QSqlQuery query;
     QString stringa_query;
-    stringa_query = "DELETE FROM "+tabella+" WHERE rowid="+numero;
+    QString str_numero;
+    QString str_numero2;
+    str_numero.setNum(numero);
+    str_numero2.setNum(numero+1);
+
+    int numtotale(0);
+    stringa_query = "SELECT rowid FROM "+tabella;
     qDebug() << query.prepare(stringa_query);
     qDebug() << query.exec();
 
-    /*
-     BUG!
-     questa funzione utilizza l'id della riga, solo che quando elimino una riga
-     e poi ne creo un altra quell'id rimane inutlizzato
+    while ( query.next())
+    {
+        numtotale++;
+    }
 
-     */
+    stringa_query.clear();
+    query.clear();
+
+    stringa_query = "DELETE FROM "+tabella+" WHERE rowid="+str_numero;
+    qDebug() << query.prepare(stringa_query);
+    qDebug() << query.exec();
+    stringa_query.clear();
+    query.clear();
+
+   for ( 1; str_numero.toInt() < numtotale; str_numero.setNum( str_numero.toInt()+1 ) )
+    {
+       str_numero2.setNum(str_numero.toInt()+1);
+       stringa_query= "UPDATE "+tabella+" SET rowid='"+str_numero+"'WHERE rowid='"+str_numero2+"'";
+       qDebug() << query.prepare(stringa_query);
+       qDebug() << query.exec();
+    }
+
 }
 
 
@@ -930,15 +953,11 @@ void MainWindow::refreshFoglio5()
 
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
-    eliminaRiga("clienti",ui->line_edit_clienti->text());
+    eliminaRiga("clienti", rigadacancellare+1);
     refreshTabelle();
 }
 
 
-void MainWindow::on_line_edit_clienti_returnPressed()
-{
-    this->on_bottone_clienti_rimuovi_clicked();
-}
 
 void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
@@ -1694,3 +1713,8 @@ void MainWindow::on_tabWidget_preventivi_currentChanged(int index)
 
 
 
+
+void MainWindow::on_tableView_clienti_clicked(QModelIndex index)
+{
+    rigadacancellare = index.row();
+}

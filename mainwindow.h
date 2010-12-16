@@ -25,12 +25,13 @@ private:
     QSqlDatabase database;
     QSqlQueryModel queryModel;
     float n;
+    int rigadacancellare;
     void caricaDb(QString nome);
     void creaTabelle();
     void apriDb(QString nome);
     void refreshTabelle();
     void showHide(QString show);
-    void eliminaRiga(QString tabella, QString numero);
+    void eliminaRiga(QString tabella, int numero);
     void popolaComboBox();
     void refreshFoglio2();
     void refreshFoglio3();
@@ -42,6 +43,7 @@ private:
 private slots:
 
 
+    void on_tableView_clienti_clicked(QModelIndex index);
     void on_bottone_salva_preventivo_clicked();
     void on_tabWidget_preventivi_currentChanged(int index);
     void on_doubleSpinBox_foglio4_percentuale_valueChanged(double );
@@ -142,7 +144,6 @@ private slots:
     void on_spinBox_foglio1_ncopie_valueChanged(QString valore);
     void on_bottone_tab1_aggiungi_clienti_clicked();
     void on_bottone_preventivi_nuovo_clicked();
-    void on_line_edit_clienti_returnPressed();
     void on_bottone_clienti_rimuovi_clicked();
     void on_bottone_carta_grammatura_aggiungi_clicked();
     void on_bottone_carta_formato_aggiungi_clicked();

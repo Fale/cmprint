@@ -561,7 +561,7 @@
     <item row="3" column="0">
      <widget class="QWidget" name="widget_clienti" native="true">
       <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0" colspan="5">
+       <item row="0" column="0" colspan="3">
         <widget class="QLabel" name="label_3">
          <property name="font">
           <font>
@@ -576,7 +576,7 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0" colspan="5">
+       <item row="1" column="0" colspan="3">
         <widget class="QTableView" name="tableView_clienti">
          <property name="selectionMode">
           <enum>QAbstractItemView::SingleSelection</enum>
@@ -619,16 +619,6 @@
         </spacer>
        </item>
        <item row="2" column="2">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Rimuovi riga numero:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QLineEdit" name="line_edit_clienti"/>
-       </item>
-       <item row="2" column="4">
         <widget class="QPushButton" name="bottone_clienti_rimuovi">
          <property name="text">
           <string>Rimuovi</string>
@@ -794,8 +784,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3085</height>
+                <width>509</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1468,8 +1458,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3085</height>
+                <width>611</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -2073,8 +2063,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3085</height>
+                <width>668</width>
+                <height>2193</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
@@ -3511,7 +3501,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string> </string>
+          <string/>
          </property>
         </widget>
        </item>
