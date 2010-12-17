@@ -42,6 +42,7 @@ private:
     void refreshFoglio3();
     void refreshFoglio4();
     void refreshFoglio5();
+    bool esisteElemento(QComboBox comboBox, QString elemento);
     double formatoASuperficie(QString formato);
 
 
