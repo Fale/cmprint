@@ -3,7 +3,8 @@
 
 /* TO BE FIXED
    - Chiusura del db
-    - Eliminazione Righe
+   - AGGIUNGERE IL SALVATAGGIO DELLA DATA!
+
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
      bisogna valutare se ciò costituisce un problema. Per ora appena avviato sono 4.3Mb e 5.2 dopo che carica il db
@@ -380,7 +381,7 @@ void MainWindow::refreshTabelle()
 
 
     QSqlTableModel *tabella_preventivi = new QSqlTableModel;
-    tabella_preventivi->setTable("preventivi");
+    tabella_preventivi->setTable("preventivo");
     tabella_preventivi->select();
     ui->tableView_preventivi->setModel(tabella_preventivi);
 
@@ -985,6 +986,23 @@ void MainWindow::on_bottone_clienti_rimuovi_clicked()
 
 void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
+    QString stringa_query;
+    QSqlQuery query;
+    int numtotale(0);
+
+
+
+
+    stringa_query = "SELECT numero FROM preventivo";
+    qDebug() << query.prepare(stringa_query);
+    qDebug() << query.exec();
+
+    while ( query.next())
+    {
+        numtotale++;
+    }
+
+    ui->label_npreventivo->setNum(numtotale);
 
     ui->bottone_preventivi_cerca->hide();
     ui->bottone_preventivi_nuovo->hide();
@@ -992,6 +1010,10 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     ui->bottone_salva_preventivo->show();
     ui->tableView_preventivi->hide();
     ui->tabWidget_preventivi->show();
+
+
+
+
 }
 
 void MainWindow::on_bottone_tab1_aggiungi_clienti_clicked()
