@@ -46,6 +46,16 @@ private:
 private slots:
 
 
+    void on_bottone_plastificazione_rimuovi_clicked();
+    void on_bottone_serigrafia_rimuovi_clicked();
+    void on_bottone_carta_grammatura_rimuovi_clicked();
+    void on_bottone_carta_tipo_rimuovi_clicked();
+    void on_bottone_carta_formato_rimuovi_clicked();
+    void on_tableView_plastificazione_clicked(QModelIndex index);
+    void on_tableView_serigrafia_clicked(QModelIndex index);
+    void on_tableView_carta_grammatura_clicked(QModelIndex index);
+    void on_tableView_carta_formato_clicked(QModelIndex index);
+    void on_tableView_carta_tipo_clicked(QModelIndex index);
     void on_tableView_clienti_clicked(QModelIndex index);
     void on_bottone_salva_preventivo_clicked();
     void on_tabWidget_preventivi_currentChanged(int index);

@@ -1743,3 +1743,63 @@ void MainWindow::on_tableView_clienti_clicked(QModelIndex index)
     rigadacancellare = index.row();
     valoredacancellare = index.data(0).toString();
 }
+
+void MainWindow::on_tableView_carta_tipo_clicked(QModelIndex index)
+{
+    rigadacancellare = index.row();
+    valoredacancellare = index.data(0).toString();
+}
+
+void MainWindow::on_tableView_carta_formato_clicked(QModelIndex index)
+{
+    rigadacancellare = index.row();
+    valoredacancellare = index.data(0).toString();
+}
+
+void MainWindow::on_tableView_carta_grammatura_clicked(QModelIndex index)
+{
+    rigadacancellare = index.row();
+    valoredacancellare = index.data(0).toString();
+}
+
+void MainWindow::on_tableView_serigrafia_clicked(QModelIndex index)
+{
+    rigadacancellare = index.row();
+    valoredacancellare = index.data(0).toString();
+}
+
+void MainWindow::on_tableView_plastificazione_clicked(QModelIndex index)
+{
+    rigadacancellare = index.row();
+    valoredacancellare = index.data(0).toString();
+}
+
+void MainWindow::on_bottone_carta_formato_rimuovi_clicked()
+{
+    eliminaRiga("cartaformato","formato",valoredacancellare);
+    refreshTabelle();
+}
+
+void MainWindow::on_bottone_carta_tipo_rimuovi_clicked()
+{
+    eliminaRiga("cartatipo","descrizione",valoredacancellare);
+    refreshTabelle();
+}
+
+void MainWindow::on_bottone_carta_grammatura_rimuovi_clicked()
+{
+    eliminaRiga("cartagrammatura","grammatura",valoredacancellare);
+    refreshTabelle();
+}
+
+void MainWindow::on_bottone_serigrafia_rimuovi_clicked()
+{
+    eliminaRiga("serigrafia","formato",valoredacancellare);
+    refreshTabelle();
+}
+
+void MainWindow::on_bottone_plastificazione_rimuovi_clicked()
+{
+    eliminaRiga("plastificazione","formato",valoredacancellare);
+    refreshTabelle();
+}
