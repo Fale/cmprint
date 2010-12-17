@@ -611,14 +611,14 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     refreshTabelle();
 }
 
-void MainWindow::eliminaRiga(QString tabella, int numero)
+void MainWindow::razionalizzaTabella(QString tabella, int nmancante)
 {
     QSqlQuery query;
     QString stringa_query;
     QString str_numero;
     QString str_numero2;
-    str_numero.setNum(numero);
-    str_numero2.setNum(numero+1);
+    str_numero.setNum(nmancante);
+    str_numero2.setNum(nmancante+1);
 
     int numtotale(0);
     stringa_query = "SELECT rowid FROM "+tabella;
@@ -633,19 +633,30 @@ void MainWindow::eliminaRiga(QString tabella, int numero)
     stringa_query.clear();
     query.clear();
 
+    for ( ; str_numero.toInt() < numtotale; str_numero.setNum( str_numero.toInt()+1 ) )
+     {
+        str_numero2.setNum(str_numero.toInt()+1);
+        stringa_query= "UPDATE "+tabella+" SET rowid='"+str_numero+"'WHERE rowid='"+str_numero2+"'";
+        qDebug() << query.prepare(stringa_query);
+        qDebug() << query.exec();
+     }
+
+
+}
+
+void MainWindow::eliminaRiga(QString tabella, int numero)
+{
+    QSqlQuery query;
+    QString stringa_query;
+    QString str_numero;
+    str_numero.setNum(numero);
+
     stringa_query = "DELETE FROM "+tabella+" WHERE rowid="+str_numero;
     qDebug() << query.prepare(stringa_query);
     qDebug() << query.exec();
     stringa_query.clear();
     query.clear();
 
-   for ( 1; str_numero.toInt() < numtotale; str_numero.setNum( str_numero.toInt()+1 ) )
-    {
-       str_numero2.setNum(str_numero.toInt()+1);
-       stringa_query= "UPDATE "+tabella+" SET rowid='"+str_numero+"'WHERE rowid='"+str_numero2+"'";
-       qDebug() << query.prepare(stringa_query);
-       qDebug() << query.exec();
-    }
 
 }
 
@@ -965,6 +976,7 @@ void MainWindow::refreshFoglio5()
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
     //eliminaRiga("clienti", rigadacancellare+1);
+    //razionalizzaTabella("clienti", rigadacancellare+1);
     eliminaRiga("clienti","nome",valoredacancellare);
     refreshTabelle();
 }

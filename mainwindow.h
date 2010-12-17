@@ -27,7 +27,6 @@ private:
     float n;
     int rigadacancellare;
     QString valoredacancellare;
-
     void caricaDb(QString nome);
     void creaTabelle();
     void apriDb(QString nome);
@@ -35,6 +34,7 @@ private:
     void showHide(QString show);
     void eliminaRiga(QString tabella, int numero);
     void eliminaRiga(QString tabella, QString colonna, QString valore);
+    void razionalizzaTabella(QString tabella, int nmancante);
     void popolaComboBox();
     void refreshFoglio2();
     void refreshFoglio3();
