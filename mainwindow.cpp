@@ -4,6 +4,7 @@
 /* TO BE FIXED
    - Chiusura del db
    - AGGIUNGERE IL SALVATAGGIO DELLA DATA!
+   - AGGIUNGERE LA PULIZIA PER GLI ALTRI FOGLI
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
@@ -254,6 +255,53 @@ void MainWindow::popolaComboBox()
 
 }
 
+void MainWindow::pulisciPreventivo()
+{
+    //foglio 1
+   ui->plainTextEdit_descrizione->clear();
+   ui->spinBox_foglio1_ncopie->clear();
+
+   //foglio 2
+   ui->spinBox_foglio2_lastre_n_1->setValue(0);
+   ui->spinBox_foglio2_lastre_n_2->setValue(0);
+   ui->spinBox_foglio2_lastre_n_3->setValue(0);
+   ui->spinBox_foglio2_lastre_n_4->setValue(0);
+   ui->spinBox_foglio2_lastre_n_5->setValue(0);
+   ui->spinBox_foglio2_lastre_n_6->setValue(0);
+
+   ui->doubleSpinBox_foglio2_lastre_prezzo_1->setValue(0);
+   ui->doubleSpinBox_foglio2_lastre_prezzo_2->setValue(0);
+   ui->doubleSpinBox_foglio2_lastre_prezzo_3->setValue(0);
+   ui->doubleSpinBox_foglio2_lastre_prezzo_4->setValue(0);
+   ui->doubleSpinBox_foglio2_lastre_prezzo_5->setValue(0);
+   ui->doubleSpinBox_foglio2_lastre_prezzo_6->setValue(0);
+
+   ui->spinBox_foglio2_risme_n_1->setValue(0);
+   ui->spinBox_foglio2_risme_n_2->setValue(0);
+   ui->spinBox_foglio2_risme_n_3->setValue(0);
+   ui->spinBox_foglio2_risme_n_4->setValue(0);
+   ui->spinBox_foglio2_risme_n_5->setValue(0);
+   ui->spinBox_foglio2_risme_n_6->setValue(0);
+
+   ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(0);
+   ui->doubleSpinBox_foglio2_risme_prezzo_2->setValue(0);
+   ui->doubleSpinBox_foglio2_risme_prezzo_3->setValue(0);
+   ui->doubleSpinBox_foglio2_risme_prezzo_4->setValue(0);
+   ui->doubleSpinBox_foglio2_risme_prezzo_5->setValue(0);
+   ui->doubleSpinBox_foglio2_risme_prezzo_6->setValue(0);
+
+   ui->doubleSpinBox_foglio2_lastreavviamenti_prime->setValue(0);
+   ui->doubleSpinBox_foglio2_lastreavviamenti_successive->setValue(0);
+   ui->doubleSpinBox_foglio2_stampa_prime->setValue(0);
+   ui->doubleSpinBox_foglio2_stampa_successive->setValue(0);
+   ui->doubleSpinBox_foglio2_stampadigitale_prime->setValue(0);
+   ui->doubleSpinBox_foglio2_stampadigitale_successive->setValue(0);
+   ui->doubleSpinBox_foglio2_percentuale->setValue(0);
+
+   //foglio3
+   //AGGIUNGERE QUI GLI ALTRI FOGLI
+
+}
 
 double MainWindow::formatoASuperficie(QString formato)
 {
@@ -1824,4 +1872,9 @@ void MainWindow::on_bottone_plastificazione_rimuovi_clicked()
 {
     eliminaRiga("plastificazione","formato",valoredacancellare);
     refreshTabelle();
+}
+
+void MainWindow::on_actionSalva_triggered()
+{
+    pulisciPreventivo();
 }

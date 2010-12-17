@@ -35,6 +35,7 @@ private:
     void eliminaRiga(QString tabella, int numero);
     void eliminaRiga(QString tabella, QString colonna, QString valore);
     void razionalizzaTabella(QString tabella, int nmancante);
+    void pulisciPreventivo();
     void popolaComboBox();
     void refreshFoglio2();
     void refreshFoglio3();
@@ -46,6 +47,7 @@ private:
 private slots:
 
 
+    void on_actionSalva_triggered();
     void on_bottone_plastificazione_rimuovi_clicked();
     void on_bottone_serigrafia_rimuovi_clicked();
     void on_bottone_carta_grammatura_rimuovi_clicked();
