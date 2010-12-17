@@ -303,6 +303,23 @@ void MainWindow::pulisciPreventivo()
 
 }
 
+
+void MainWindow::caricaPreventivo(int numero)
+{
+    QSqlQuery query;
+    QString str_numero;
+
+    str_numero.setNum(numero);
+
+    query = "SELECT cliente FROM preventivo WHERE numero = '"+str_numero+"'";
+    qDebug()<<query.exec();
+    query.next();
+   // ui->label_27->setText(query.value(0).toString());
+    ui->comboBox_clienti_seleziona->insertItem(0,query.value(0).toString());
+    ui->label_27->setText(query.value(0).toString());
+
+}
+
 double MainWindow::formatoASuperficie(QString formato)
 {
 
@@ -1876,5 +1893,5 @@ void MainWindow::on_bottone_plastificazione_rimuovi_clicked()
 
 void MainWindow::on_actionSalva_triggered()
 {
-    pulisciPreventivo();
+   caricaPreventivo(1);
 }

@@ -36,6 +36,7 @@ private:
     void eliminaRiga(QString tabella, QString colonna, QString valore);
     void razionalizzaTabella(QString tabella, int nmancante);
     void pulisciPreventivo();
+    void caricaPreventivo(int numero);
     void popolaComboBox();
     void refreshFoglio2();
     void refreshFoglio3();
