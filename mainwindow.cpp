@@ -413,26 +413,13 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     n=n+1.0;
     qDebug() << query.prepare("INSERT INTO serigrafia (formato, prezzo)"
                               "VALUES(:formato, :prezzo) ");
-    query.bindValue(":formato", "test");
+    query.bindValue(":formato", n);
     query.bindValue(":prezzo", n);
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
 }
 
-
-void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
-{
-    QSqlQuery query;
-    n=n+1.0;
-    qDebug() << query.prepare("INSERT INTO cartatipo (descrizione, prezzo)"
-                              "VALUES(:descrizione, :prezzo) ");
-    query.bindValue(":descrizione", "test");
-    query.bindValue(":prezzo", n);
-    qDebug() << query.exec();
-    query.clear();
-    refreshTabelle();
-}
 
 void MainWindow::on_bottone_clienti_aggiungi_clicked()
 {
@@ -473,14 +460,27 @@ void MainWindow::on_bottone_carta_grammatura_aggiungi_clicked()
     refreshTabelle();
 }
 
+void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
+{
+    QSqlQuery query;
+    n=n+1.0;
+    qDebug() << query.prepare("INSERT INTO cartatipo (descrizione, prezzo)"
+                              "VALUES(:descrizione, :prezzo) ");
+    query.bindValue(":descrizione", n);
+    query.bindValue(":prezzo", n);
+    qDebug() << query.exec();
+    query.clear();
+    refreshTabelle();
+}
+
 void MainWindow::on_bottone_salva_preventivo_clicked()
 {
 
     //Ricordarsi che manca la data
 
     QSqlQuery query;
-    query.prepare("INSERT INTO preventivo (numero, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2 real, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturanfogli, accoppiaturaeuro, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
-                  "VALUES(:numero, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2 real, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturanfogli, :accoppiaturaeuro, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ") ;
+    qDebug() << query.prepare("INSERT INTO preventivo (numero, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturanfogli, accoppiaturaeuro, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
+                  "VALUES(:numero, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturanfogli, :accoppiaturaeuro, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ");
     query.bindValue(":numero", ui->label_npreventivo->text().toInt() );
     query.bindValue(":cliente", ui->comboBox_clienti_seleziona->currentText() );
     query.bindValue(":descrizione", ui->plainTextEdit_descrizione->toPlainText() );
@@ -515,7 +515,7 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     query.bindValue(":stampasucc", ui->doubleSpinBox_foglio2_stampa_successive->value() );
     query.bindValue(":stampadigprime", ui->doubleSpinBox_foglio2_stampadigitale_prime->value() );
     query.bindValue(":stampadigsucc", ui->doubleSpinBox_foglio2_stampadigitale_successive->value() );
-    query.bindValue(":percf2 real", ui->doubleSpinBox_foglio2_percentuale->value() );
+    query.bindValue(":percf2", ui->doubleSpinBox_foglio2_percentuale->value() );
     query.bindValue(":tipo1", ui->comboBox_foglio3_carta_tipo_1->currentText() );
     query.bindValue(":tipo2", ui->comboBox_foglio3_carta_tipo_2->currentText() );
     query.bindValue(":tipo3", ui->comboBox_foglio3_carta_tipo_3->currentText() );
@@ -665,7 +665,7 @@ void MainWindow::eliminaRiga(QString tabella, QString colonna, QString valore)
 
     QSqlQuery query;
     QString stringa_query;
-    stringa_query = "DELETE FROM "+tabella+" WHERE "+colonna+"="+valore;
+    stringa_query = "DELETE FROM "+tabella+" WHERE "+colonna+"='"+valore+"'";
     qDebug() << query.prepare(stringa_query);
     qDebug() << query.exec();
     stringa_query.clear();
