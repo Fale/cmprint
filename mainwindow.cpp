@@ -315,10 +315,13 @@ void MainWindow::caricaPreventivo(int numero)
     qDebug()<<query.exec();
     query.next();
    // ui->label_27->setText(query.value(0).toString());
-    ui->comboBox_clienti_seleziona->insertItem(0,query.value(0).toString());
-    ui->label_27->setText(query.value(0).toString());
+    if (ui->comboBox_clienti_seleziona->findText(query.value(0).toString()) == -1)
+        ui->comboBox_clienti_seleziona->insertItem(0,query.value(0).toString());
+        else ui->comboBox_clienti_seleziona->setCurrentIndex( ui->comboBox_clienti_seleziona->findText(query.value(0).toString()));
+
 
 }
+
 
 double MainWindow::formatoASuperficie(QString formato)
 {
