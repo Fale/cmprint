@@ -123,6 +123,47 @@ void MainWindow::creaTabelle()
 
 }
 
+void MainWindow::caricaPreventivo(int numero)
+{
+    QSqlQuery query;
+    QString str_numero;
+    QSqlRecord campo;
+
+    str_numero.setNum(numero);
+    ui->label_npreventivo->setNum(numero);
+
+
+    query.clear();
+    query = "SELECT * FROM preventivo WHERE numero = '"+str_numero+"'";
+    qDebug()<<query.exec();
+    query.next();
+    campo= query.record();
+
+    if (ui->comboBox_clienti_seleziona->findText(campo.value(1).toString()) == -1)
+            ui->comboBox_clienti_seleziona->insertItem(0,campo.value(1).toString());
+    ui->comboBox_clienti_seleziona->setCurrentIndex( ui->comboBox_clienti_seleziona->findText(campo.value(1).toString()));
+
+
+    ui->plainTextEdit_descrizione->setPlainText(campo.value(2).toString());
+
+    ui->spinBox_foglio1_ncopie->setValue( campo.value(3).toInt());
+
+    ui->spinBox_foglio2_lastre_n_1->setValue( campo.value(4).toInt() );
+    ui->spinBox_foglio2_lastre_n_2->setValue( campo.value(5).toInt() );
+    ui->spinBox_foglio2_lastre_n_3->setValue( campo.value(6).toInt() );
+    ui->spinBox_foglio2_lastre_n_4->setValue( campo.value(7).toInt() );
+    ui->spinBox_foglio2_lastre_n_5->setValue( campo.value(8).toInt() );
+    ui->spinBox_foglio2_lastre_n_6->setValue( campo.value(9).toInt() );
+    ui->spinBox_foglio2_risme_n_1->setValue( campo.value(10).toInt() );
+    ui->spinBox_foglio2_risme_n_2->setValue( campo.value(11).toInt() );
+    ui->spinBox_foglio2_risme_n_3->setValue( campo.value(12).toInt() );
+    ui->spinBox_foglio2_risme_n_4->setValue( campo.value(13).toInt() );
+    ui->spinBox_foglio2_risme_n_5->setValue( campo.value(14).toInt() );
+    ui->spinBox_foglio2_risme_n_6->setValue( campo.value(15).toInt() );
+
+
+}
+
 void MainWindow::apriDb(QString nome)
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
@@ -304,23 +345,7 @@ void MainWindow::pulisciPreventivo()
 }
 
 
-void MainWindow::caricaPreventivo(int numero)
-{
-    QSqlQuery query;
-    QString str_numero;
 
-    str_numero.setNum(numero);
-
-    query = "SELECT cliente FROM preventivo WHERE numero = '"+str_numero+"'";
-    qDebug()<<query.exec();
-    query.next();
-   // ui->label_27->setText(query.value(0).toString());
-    if (ui->comboBox_clienti_seleziona->findText(query.value(0).toString()) == -1)
-        ui->comboBox_clienti_seleziona->insertItem(0,query.value(0).toString());
-        else ui->comboBox_clienti_seleziona->setCurrentIndex( ui->comboBox_clienti_seleziona->findText(query.value(0).toString()));
-
-
-}
 
 
 double MainWindow::formatoASuperficie(QString formato)
