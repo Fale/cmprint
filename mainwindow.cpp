@@ -188,7 +188,24 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio2_percentuale->setValue(campo.value(34).toDouble());
 
 //foglio3
-   // caricaComboBox(ui->comboBox_foglio3_carta_tipo_1, campo.value(35).toString())
+    caricaComboBox(ui->comboBox_foglio3_carta_tipo_1, campo.value(35));
+    caricaComboBox(ui->comboBox_foglio3_carta_tipo_2, campo.value(36));
+    caricaComboBox(ui->comboBox_foglio3_carta_tipo_3, campo.value(37));
+    caricaComboBox(ui->comboBox_foglio3_carta_tipo_4, campo.value(38));
+    caricaComboBox(ui->comboBox_foglio3_carta_tipo_5, campo.value(39));
+    ui->lineEdit_foglio3_tipocarta_1->setText(campo.value(40).toString());
+    ui->lineEdit_foglio3_tipocarta_2->setText(campo.value(41).toString());
+    ui->lineEdit_foglio3_tipocarta_3->setText(campo.value(42).toString());
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(43));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(44));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(45));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(46));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(47));
+
+    //BISOGNA CORREGGERE LA TABELLA! MANCANO DEI CAMPI!!
+
+
+
 
 
 }
