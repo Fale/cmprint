@@ -202,7 +202,7 @@ void MainWindow::caricaPreventivo(int numero)
     caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(46));
     caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(47));
 
-    //BISOGNA CORREGGERE LA TABELLA! MANCANO DEI CAMPI!!
+    //BISOGNA CORREGGERE LA TABELLA! MANCANO DEI CAMPI!! mancano i nfogli e la grammatura
 
 
 
