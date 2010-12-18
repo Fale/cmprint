@@ -5,6 +5,7 @@
    - Chiusura del db
    - AGGIUNGERE IL SALVATAGGIO DELLA DATA!
    - AGGIUNGERE LA PULIZIA PER GLI ALTRI FOGLI
+   - COMPLETARE IL CARICAMENTO PER TUTTI I FOGLI
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
@@ -148,6 +149,7 @@ void MainWindow::caricaPreventivo(int numero)
 
     ui->spinBox_foglio1_ncopie->setValue( campo.value(3).toInt());
 
+    //foglio2
     ui->spinBox_foglio2_lastre_n_1->setValue( campo.value(4).toInt() );
     ui->spinBox_foglio2_lastre_n_2->setValue( campo.value(5).toInt() );
     ui->spinBox_foglio2_lastre_n_3->setValue( campo.value(6).toInt() );
@@ -160,6 +162,26 @@ void MainWindow::caricaPreventivo(int numero)
     ui->spinBox_foglio2_risme_n_4->setValue( campo.value(13).toInt() );
     ui->spinBox_foglio2_risme_n_5->setValue( campo.value(14).toInt() );
     ui->spinBox_foglio2_risme_n_6->setValue( campo.value(15).toInt() );
+    ui->doubleSpinBox_foglio2_lastre_prezzo_1->setValue(campo.value(16).toDouble());
+    ui->doubleSpinBox_foglio2_lastre_prezzo_2->setValue(campo.value(17).toDouble());
+    ui->doubleSpinBox_foglio2_lastre_prezzo_3->setValue(campo.value(18).toDouble());
+    ui->doubleSpinBox_foglio2_lastre_prezzo_4->setValue(campo.value(19).toDouble());
+    ui->doubleSpinBox_foglio2_lastre_prezzo_5->setValue(campo.value(20).toDouble());
+    ui->doubleSpinBox_foglio2_lastre_prezzo_6->setValue(campo.value(21).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(22).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(23).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(24).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(25).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(26).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(27).toDouble());
+    ui->doubleSpinBox_foglio2_lastreavviamenti_prime->setValue(campo.value(28).toDouble());
+    ui->doubleSpinBox_foglio2_lastreavviamenti_successive->setValue(campo.value(29).toDouble());
+    ui->doubleSpinBox_foglio2_stampa_prime->setValue(campo.value(30).toDouble());
+    ui->doubleSpinBox_foglio2_stampa_successive->setValue(campo.value(31).toDouble());
+    ui->doubleSpinBox_foglio2_stampadigitale_prime->setValue(campo.value(32).toDouble());
+    ui->doubleSpinBox_foglio2_stampadigitale_successive->setValue(campo.value(33).toDouble());
+    ui->doubleSpinBox_foglio2_percentuale->setValue(campo.value(34).toDouble());
+
 
 
 }
