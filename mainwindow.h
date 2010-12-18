@@ -37,6 +37,7 @@ private:
     void razionalizzaTabella(QString tabella, int nmancante);
     void pulisciPreventivo();
     void caricaPreventivo(int numero);
+    void caricaComboBox( QComboBox *comboBox, QString valore);
     void popolaComboBox();
     void refreshFoglio2();
     void refreshFoglio3();
