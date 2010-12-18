@@ -124,11 +124,11 @@ void MainWindow::creaTabelle()
 
 }
 
-void MainWindow::caricaComboBox(QComboBox *comboBox, QString valore)
+void MainWindow::caricaComboBox(QComboBox *comboBox, QVariant valore)
 {
-    if (comboBox->findText(valore) == -1)
-            comboBox->insertItem(0,valore);
-    comboBox->setCurrentIndex( comboBox->findText(valore));
+    if (comboBox->findText(valore.toString()) == -1)
+            comboBox->insertItem(0,valore.toString());
+    comboBox->setCurrentIndex( comboBox->findText(valore.toString()));
 
 }
 
@@ -148,7 +148,7 @@ void MainWindow::caricaPreventivo(int numero)
     query.next();
     campo= query.record();
 
-    caricaComboBox(ui->comboBox_clienti_seleziona, campo.value(1).toString());
+    caricaComboBox(ui->comboBox_clienti_seleziona, campo.value(1));
 
     ui->plainTextEdit_descrizione->setPlainText(campo.value(2).toString());
 
@@ -188,6 +188,7 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio2_percentuale->setValue(campo.value(34).toDouble());
 
 //foglio3
+   // caricaComboBox(ui->comboBox_foglio3_carta_tipo_1, campo.value(35).toString())
 
 
 }
