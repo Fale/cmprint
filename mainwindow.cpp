@@ -7,10 +7,6 @@
    - AGGIUNGERE LA PULIZIA PER GLI ALTRI FOGLI
    - COMPLETARE IL CARICAMENTO PER TUTTI I FOGLI
 
-DA AGGIUNGERE
-
-grammatura1,2,3,4,5
-nfogli1,2,3,4,5 e correggere gli euro da grammtura
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
@@ -233,7 +229,7 @@ void MainWindow::caricaPreventivo(int numero)
 //foglio4
 
 
-    //BISOGNA CORREGGERE LA TABELLA! MANCANO DEI CAMPI!! mancano i nfogli e la grammatura
+
 
 
 
