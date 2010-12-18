@@ -204,10 +204,34 @@ void MainWindow::caricaPreventivo(int numero)
     ui->lineEdit_foglio3_tipocarta_2->setText(campo.value(41).toString());
     ui->lineEdit_foglio3_tipocarta_3->setText(campo.value(42).toString());
     caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(43));
-    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(44));
-    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(45));
-    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(46));
-    caricaComboBox(ui->comboBox_foglio3_carta_formato_1, campo.value(47));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_2, campo.value(44));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_3, campo.value(45));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_4, campo.value(46));
+    caricaComboBox(ui->comboBox_foglio3_carta_formato_5, campo.value(47));
+    caricaComboBox(ui->comboBox_foglio3_carta_grammatura_1, campo.value(48));
+    caricaComboBox(ui->comboBox_foglio3_carta_grammatura_2, campo.value(49));
+    caricaComboBox(ui->comboBox_foglio3_carta_grammatura_3, campo.value(50));
+    caricaComboBox(ui->comboBox_foglio3_carta_grammatura_4, campo.value(51));
+    caricaComboBox(ui->comboBox_foglio3_carta_grammatura_5, campo.value(52));
+    ui->spinBox_foglio3_nfogli_1->setValue(campo.value(53).toInt());
+    ui->spinBox_foglio3_nfogli_2->setValue(campo.value(54).toInt());
+    ui->spinBox_foglio3_nfogli_3->setValue(campo.value(55).toInt());
+    ui->spinBox_foglio3_nfogli_4->setValue(campo.value(56).toInt());
+    ui->spinBox_foglio3_nfogli_5->setValue(campo.value(57).toInt());
+    ui->doubleSpinBox_foglio3_euro_1->setValue(campo.value(58).toDouble());
+    ui->doubleSpinBox_foglio3_euro_2->setValue(campo.value(59).toDouble());
+    ui->doubleSpinBox_foglio3_euro_3->setValue(campo.value(60).toDouble());
+    ui->doubleSpinBox_foglio3_euro_4->setValue(campo.value(61).toDouble());
+    ui->doubleSpinBox_foglio3_euro_5->setValue(campo.value(62).toDouble());
+    ui->doubleSpinBox_foglio3_primencopie_1->setValue(campo.value(63).toDouble());
+    ui->doubleSpinBox_foglio3_primencopie_2->setValue(campo.value(64).toDouble());
+    ui->doubleSpinBox_foglio3_primencopie_3->setValue(campo.value(65).toDouble());
+    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(66).toDouble());
+    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(67).toDouble());
+    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(68).toDouble());
+    ui->doubleSpinBox_foglio3_percentuale->setValue(campo.value(69).toDouble());
+//foglio4
+
 
     //BISOGNA CORREGGERE LA TABELLA! MANCANO DEI CAMPI!! mancano i nfogli e la grammatura
 
