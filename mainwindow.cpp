@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
    //setAttribute(Qt::WA_DeleteOnClose);
     rigadacancellare = 0;
+    pulire = true;
     caricaDb("database.db"); //carica il file del database dalla cartella stessa dell'eseguibile
     n=0;
     ui->setupUi(this);
@@ -582,8 +583,7 @@ void MainWindow::pulisciPreventivo()
    refreshFoglio3();
    refreshFoglio4();
    refreshFoglio5();
-
-       }
+    }
 
 
 
@@ -1495,6 +1495,8 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
 
     ui->label_npreventivo->setNum(numtotale);
 
+    if (pulire)
+        pulisciPreventivo();
 
     ui->label_preventiv_cerca->hide();
     ui->bottone_preventivi_nuovo->hide();
@@ -1507,7 +1509,7 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     ui->tabWidget_preventivi->setCurrentIndex(0);
     ui->tabWidget_preventivi->show();
 
-
+    pulire = true;
 
 
 }
@@ -2347,12 +2349,14 @@ void MainWindow::on_bottone_preventivi_elimina_clicked()
 
 void MainWindow::on_bottone_preventivi_usamodello_clicked()
 {
+    pulire = false;
     caricaPreventivo(valoredacancellare.toInt());
     this->on_bottone_preventivi_nuovo_clicked();
 }
 
 void MainWindow::on_bottone_preventivi_modifica_clicked()
 {
+    pulire = false;
     this->on_bottone_preventivi_nuovo_clicked();
     caricaPreventivo(valoredacancellare.toInt());
 }

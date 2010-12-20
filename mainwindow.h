@@ -25,6 +25,7 @@ private:
     QSqlDatabase database;
     QSqlQueryModel queryModel;
     float n;
+    bool pulire;
     int rigadacancellare;
     QString valoredacancellare;
     void caricaDb(QString nome);
