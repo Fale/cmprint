@@ -150,7 +150,7 @@ private slots:
     void on_comboBox_foglio3_carta_grammatura_4_currentIndexChanged(QString );
     void on_comboBox_foglio3_carta_formato_4_currentIndexChanged(QString );
     void on_comboBox_foglio3_carta_grammatura_1_currentIndexChanged(QString );
-    void on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString formato);
+    void on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString );
     void on_doubleSpinBox_foglio2_percentuale_valueChanged(double );
     void on_doubleSpinBox_foglio2_stampadigitale_successive_valueChanged(double );
     void on_doubleSpinBox_foglio2_stampadigitale_prime_valueChanged(double );
@@ -191,43 +191,43 @@ private slots:
 
     //secondo foglio
     //lastre
-    void on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore);
-    void on_spinBox_foglio2_lastre_n_1_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double );
+    void on_spinBox_foglio2_lastre_n_1_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double valore);
-    void on_spinBox_foglio2_lastre_n_2_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double );
+    void on_spinBox_foglio2_lastre_n_2_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double valore);
-    void on_spinBox_foglio2_lastre_n_3_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double );
+    void on_spinBox_foglio2_lastre_n_3_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double valore);
-    void on_spinBox_foglio2_lastre_n_4_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double );
+    void on_spinBox_foglio2_lastre_n_4_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double valore);
-    void on_spinBox_foglio2_lastre_n_5_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double );
+    void on_spinBox_foglio2_lastre_n_5_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore);
-    void on_spinBox_foglio2_lastre_n_6_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double );
+    void on_spinBox_foglio2_lastre_n_6_valueChanged(int );
 
 
     //risme
-    void on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double valore);
-    void on_spinBox_foglio2_risme_n_1_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double );
+    void on_spinBox_foglio2_risme_n_1_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double valore);
-    void on_spinBox_foglio2_risme_n_2_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double );
+    void on_spinBox_foglio2_risme_n_2_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double valore);
-    void on_spinBox_foglio2_risme_n_3_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double );
+    void on_spinBox_foglio2_risme_n_3_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double valore);
-    void on_spinBox_foglio2_risme_n_4_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double );
+    void on_spinBox_foglio2_risme_n_4_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double valore);
-    void on_spinBox_foglio2_risme_n_5_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double );
+    void on_spinBox_foglio2_risme_n_5_valueChanged(int );
 
-    void on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double valore);
-    void on_spinBox_foglio2_risme_n_6_valueChanged(int valore);
+    void on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double );
+    void on_spinBox_foglio2_risme_n_6_valueChanged(int );
 
 
 

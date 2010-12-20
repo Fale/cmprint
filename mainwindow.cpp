@@ -294,13 +294,6 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio4_quinta_successivencopie->setValue(campo.value(134).toDouble());
     ui->doubleSpinBox_foglio4_percentuale->setValue(campo.value(135).toDouble());
 
-
-
-
-
-
-
-
 }
 
 void MainWindow::apriDb(QString nome)
@@ -1538,131 +1531,131 @@ void MainWindow::on_pushButton_plastificazione_clicked()
 }
 
 //lastre
-void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_lastre_n_1_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_1_valueChanged(double )
 {
     refreshFoglio2();
 }
 
 
-void MainWindow::on_spinBox_foglio2_lastre_n_2_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_lastre_n_2_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_2_valueChanged(double )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_spinBox_foglio2_lastre_n_3_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_lastre_n_3_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_3_valueChanged(double )
 {
    refreshFoglio2();
 }
 
 
-void MainWindow::on_spinBox_foglio2_lastre_n_4_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_lastre_n_4_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_lastre_n_5_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_4_valueChanged(double )
 {
     refreshFoglio2();
 }
 
 
-void MainWindow::on_spinBox_foglio2_lastre_n_6_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_lastre_n_5_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_5_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+
+void MainWindow::on_spinBox_foglio2_lastre_n_6_valueChanged(int )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_lastre_prezzo_6_valueChanged(double )
 {
     refreshFoglio2();
 }
 
 //risme
-void MainWindow::on_spinBox_foglio2_risme_n_1_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_risme_n_1_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-
-void MainWindow::on_spinBox_foglio2_risme_n_2_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_spinBox_foglio2_risme_n_3_valueChanged(int valore)
-{
-    refreshFoglio2();
-}
-
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_1_valueChanged(double )
 {
     refreshFoglio2();
 }
 
 
-void MainWindow::on_spinBox_foglio2_risme_n_4_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_risme_n_2_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_2_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_spinBox_foglio2_risme_n_3_valueChanged(int )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_3_valueChanged(double )
 {
     refreshFoglio2();
 }
 
 
-void MainWindow::on_spinBox_foglio2_risme_n_5_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_risme_n_4_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_4_valueChanged(double )
 {
     refreshFoglio2();
 }
 
 
-void MainWindow::on_spinBox_foglio2_risme_n_6_valueChanged(int valore)
+void MainWindow::on_spinBox_foglio2_risme_n_5_valueChanged(int )
 {
     refreshFoglio2();
 }
 
-void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double valore)
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_5_valueChanged(double )
+{
+    refreshFoglio2();
+}
+
+
+void MainWindow::on_spinBox_foglio2_risme_n_6_valueChanged(int )
+{
+    refreshFoglio2();
+}
+
+void MainWindow::on_doubleSpinBox_foglio2_risme_prezzo_6_valueChanged(double )
 {
     refreshFoglio2();
 }
@@ -1702,7 +1695,7 @@ void MainWindow::on_doubleSpinBox_foglio2_percentuale_valueChanged(double )
     refreshFoglio2();
 }
 
-void MainWindow::on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString formato)
+void MainWindow::on_comboBox_foglio3_carta_formato_1_currentIndexChanged(QString )
 {
     refreshFoglio3();
 }
