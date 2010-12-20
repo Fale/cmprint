@@ -35,7 +35,7 @@ private:
     void showHide(QString show);
     void eliminaRiga(QString tabella, int numero);
     void eliminaRiga(QString tabella, QString colonna, QString valore);
-    void razionalizzaTabella(QString tabella, int nmancante);
+    void razionalizzaTabella(QString tabella, QString colonna, int nmancante);
     void pulisciPreventivo();
     void caricaPreventivo(int numero);
     void caricaComboBox( QComboBox *comboBox, QVariant valore);

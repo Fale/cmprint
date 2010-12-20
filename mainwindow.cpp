@@ -1124,7 +1124,7 @@ QSqlQuery query;
     refreshTabelle();*/
 }
 
-void MainWindow::razionalizzaTabella(QString tabella, int nmancante)
+void MainWindow::razionalizzaTabella(QString tabella, QString colonna, int nmancante)
 {
     QSqlQuery query;
     QString stringa_query;
@@ -1134,7 +1134,11 @@ void MainWindow::razionalizzaTabella(QString tabella, int nmancante)
     str_numero2.setNum(nmancante+1);
 
     int numtotale(0);
-    stringa_query = "SELECT rowid FROM "+tabella;
+    //stringa_query = "SELECT rowid FROM "+tabella;
+    stringa_query = "SELECT ";
+    stringa_query.append(colonna);
+    stringa_query.append(" FROM ");
+    stringa_query.append(tabella);
     qDebug() << query.prepare(stringa_query);
     qDebug() << query.exec();
 
@@ -1149,7 +1153,8 @@ void MainWindow::razionalizzaTabella(QString tabella, int nmancante)
     for ( ; str_numero.toInt() < numtotale; str_numero.setNum( str_numero.toInt()+1 ) )
      {
         str_numero2.setNum(str_numero.toInt()+1);
-        stringa_query= "UPDATE "+tabella+" SET rowid='"+str_numero+"'WHERE rowid='"+str_numero2+"'";
+        //stringa_query= "UPDATE "+tabella+" SET rowid='"+str_numero+"'WHERE rowid='"+str_numero2+"'";
+        stringa_query= "UPDATE "+tabella+" SET "+colonna+"='"+str_numero+"'WHERE "+colonna+"='"+str_numero2+"'";
         qDebug() << query.prepare(stringa_query);
         qDebug() << query.exec();
      }
@@ -2361,6 +2366,7 @@ void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
 void MainWindow::on_bottone_preventivi_elimina_clicked()
 {
     eliminaRiga("preventivo", "numero", valoredacancellare);
+    razionalizzaTabella("preventivo","numero",valoredacancellare.toInt());
     refreshTabelle();
 }
 
