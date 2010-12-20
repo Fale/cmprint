@@ -1516,7 +1516,7 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
         campo = query.record();
     }
 
-   numtotale = campo.value(0).toInt()+1;
+    numtotale = campo.value(0).toInt()+1;
 
 
     ui->label_npreventivo->setNum(numtotale);
@@ -2368,7 +2368,7 @@ void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
 void MainWindow::on_bottone_preventivi_elimina_clicked()
 {
     eliminaRiga("preventivo", "numero", valoredacancellare);
-    razionalizzaTabella("preventivo","numero",valoredacancellare.toInt());
+    //razionalizzaTabella("preventivo","numero",valoredacancellare.toInt());
     refreshTabelle();
 }
 
