@@ -732,9 +732,14 @@ void MainWindow::refreshTabelle()
         filtro.append("'");
         tabella_preventivi->setFilter(filtro);
     }
-
     tabella_preventivi->select();
+    tabella_preventivi->setHeaderData(0, Qt::Horizontal, "Numero");
+    tabella_preventivi->setHeaderData(1, Qt::Horizontal, "Cliente");
+    tabella_preventivi->setHeaderData(2, Qt::Horizontal, "Descrizione");
     ui->tableView_preventivi->setModel(tabella_preventivi);
+
+    for (int i=3; i<135; i++)
+        ui->tableView_preventivi->hideColumn(i);
 
     popolaComboBox();
     //Aggiungere qui il refresh di altre tabelle
@@ -2356,7 +2361,6 @@ void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
 void MainWindow::on_bottone_preventivi_elimina_clicked()
 {
     eliminaRiga("preventivo", "numero", valoredacancellare);
-    ui->label_27->setText(valoredacancellare);
     refreshTabelle();
 }
 
