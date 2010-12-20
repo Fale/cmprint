@@ -666,7 +666,7 @@
     <item row="2" column="0">
      <widget class="QWidget" name="widget_preventivi" native="true">
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
+       <item row="0" column="1">
         <widget class="QLabel" name="label_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -687,27 +687,20 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
+       <item row="2" column="0" colspan="3">
         <widget class="QTableView" name="tableView_preventivi"/>
        </item>
-       <item row="0" column="1">
+       <item row="0" column="2">
         <widget class="QPushButton" name="bottone_preventivi_nuovo">
          <property name="text">
           <string>Nuovo</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="1" column="1" colspan="2">
         <widget class="QLineEdit" name="lineEdit_preventivi_cerca"/>
        </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="bottone_preventivi_cerca">
-         <property name="text">
-          <string>Cerca</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="2">
+       <item row="3" column="1" colspan="2">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
           <number>3</number>
@@ -819,8 +812,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>509</width>
-                <height>901</height>
+                <width>850</width>
+                <height>3085</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1493,7 +1486,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
+                <width>850</width>
                 <height>3085</height>
                </rect>
               </property>
@@ -2098,7 +2091,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
+                <width>868</width>
                 <height>3085</height>
                </rect>
               </property>
