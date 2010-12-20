@@ -472,9 +472,118 @@ void MainWindow::pulisciPreventivo()
    ui->doubleSpinBox_foglio2_percentuale->setValue(0);
 
    //foglio3
+
+   ui->comboBox_foglio3_carta_tipo_1->clear();
+   ui->comboBox_foglio3_carta_tipo_2->clear();
+   ui->comboBox_foglio3_carta_tipo_3->clear();
+   ui->comboBox_foglio3_carta_tipo_4->clear();
+   ui->comboBox_foglio3_carta_tipo_5->clear();
+   ui->lineEdit_foglio3_tipocarta_1->clear();
+   ui->lineEdit_foglio3_tipocarta_2->clear();
+   ui->lineEdit_foglio3_tipocarta_3->clear();
+   ui->comboBox_foglio3_carta_formato_1->clear();
+   ui->comboBox_foglio3_carta_formato_2->clear();
+   ui->comboBox_foglio3_carta_formato_3->clear();
+   ui->comboBox_foglio3_carta_formato_4->clear();
+   ui->comboBox_foglio3_carta_formato_5->clear();
+   ui->comboBox_foglio3_carta_grammatura_1->clear();
+   ui->comboBox_foglio3_carta_grammatura_2->clear();
+   ui->comboBox_foglio3_carta_grammatura_3->clear();
+   ui->comboBox_foglio3_carta_grammatura_4->clear();
+   ui->comboBox_foglio3_carta_grammatura_5->clear();
+   ui->spinBox_foglio3_nfogli_1->setValue(0);
+   ui->spinBox_foglio3_nfogli_2->setValue(0);
+   ui->spinBox_foglio3_nfogli_3->setValue(0);
+   ui->spinBox_foglio3_nfogli_4->setValue(0);
+   ui->spinBox_foglio3_nfogli_5->setValue(0);
+   ui->doubleSpinBox_foglio3_euro_1->setValue(0);
+   ui->doubleSpinBox_foglio3_euro_2->setValue(0);
+   ui->doubleSpinBox_foglio3_euro_3->setValue(0);
+   ui->doubleSpinBox_foglio3_euro_4->setValue(0);
+   ui->doubleSpinBox_foglio3_euro_5->setValue(0);
+   ui->doubleSpinBox_foglio3_primencopie_1->setValue(0);
+   ui->doubleSpinBox_foglio3_primencopie_2->setValue(0);
+   ui->doubleSpinBox_foglio3_primencopie_3->setValue(0);
+   ui->doubleSpinBox_foglio3_successivencopie_1->setValue(0);
+   ui->doubleSpinBox_foglio3_successivencopie_1->setValue(0);
+   ui->doubleSpinBox_foglio3_successivencopie_1->setValue(0);
+   ui->doubleSpinBox_foglio3_percentuale->setValue(0);
    //AGGIUNGERE QUI GLI ALTRI FOGLI
 
-}
+   ui->comboBox_foglio4_plastificazione_opaca_bianca->clear();
+   ui->spinBox_foglio4_plastificazione_opaca_bianca->setValue(0);
+   ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento->setValue(0);
+   ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->clear();
+   ui->spinBox_foglio4_plastificazione_opaca_bianca_volta->setValue(0);
+   ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento->setValue(0);
+   ui->comboBox_foglio4_plastificazione_lucida_bianca->clear();
+   ui->spinBox_foglio4_plastificazione_lucida_bianca->setValue(0);
+   ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento->setValue(0);
+   ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->clear();
+   ui->spinBox_foglio4_plastificazione_lucida_bianca_volta->setValue(0);
+   ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento->setValue(0);
+   ui->comboBox_foglio4_serigrafia->clear();
+
+   ui->spinBox_foglio4_serigrafia->setValue(0);
+   ui->doubleSpinBox_foglio4_serigrafia_avviamento->setValue(0);
+   ui->doubleSpinBox_foglio4_serigrafia_telaio->setValue(0);
+   ui->doubleSpinBox_fustella_primencopie->setValue(0);
+   ui->spinBox_foglio4_fustellatura_nfogli->setValue(0);
+   ui->doubleSpinBox_spinBox_foglio4_fustellatura_euro->setValue(0);
+   ui->doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento->setValue(0);
+   ui->doubleSpinBox_cordonatura_primencopie->setValue(0);
+   ui->doubleSpinBox_cordonatura_successivencopie->setValue(0);
+   ui->doubleSpinBox_cordonatura_avviamento->setValue(0);
+   ui->spinBox_foglio4_accoppiatura_fogli->setValue(0);
+   ui->doubleSpinBox_foglio4_accoppiatura_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_cliche_primencopie->setValue(0);
+   ui->spinBox_foglio4_piegacopie_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_piegacopie_euro->setValue(0);
+   ui->spinBox_foglio4_tagliocopie_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_tagliocopie_euro->setValue(0);
+   ui->spinBox_foglio4_puntometallico_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_puntometallico_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_puntometallico_avviamento->setValue(0);
+   ui->spinBox_foglio4_brosurafresata_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_brosurafresata_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_brosurafresata_avviamento->setValue(0);
+   ui->spinBox_foglio4_filo_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_filo_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_filo_avviamento->setValue(0);
+   ui->spinBox_foglio4_cartonato_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_cartonato_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_cartonato_avviamento->setValue(0);
+   ui->spinBox_foglio4_spiralatura_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_spiralatura_euro->setValue(0);
+   ui->spinBox_foglio4_pacchi_numero->setValue(0);
+   ui->doubleSpinBox_foglio4_pacchi_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_trasporto->setValue(0);
+   ui->lineEdit_foglio4_prima->clear();
+   ui->lineEdit_seconda->clear();
+   ui->lineEdit_foglio4_terza->clear();
+   ui->lineEdit_foglio4_quarta->clear();
+   ui->lineEdit_foglio4_quinta->clear();
+   ui->doubleSpinBox_foglio4_prima_primencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_seconda_primencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_terza_primencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_quarta_primencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_quinta_primencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_prima_successivencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_seconda_successivencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_terza_successivencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_quarta_successivencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_quinta_successivencopie->setValue(0);
+   ui->doubleSpinBox_foglio4_percentuale->setValue(0);
+
+   popolaComboBox();
+   refreshFoglio2();
+   refreshFoglio3();
+   refreshFoglio4();
+   refreshFoglio5();
+
+       }
 
 
 
@@ -1385,11 +1494,17 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     }
 
     ui->label_npreventivo->setNum(numtotale);
+
+
     ui->label_preventiv_cerca->hide();
     ui->bottone_preventivi_nuovo->hide();
     ui->lineEdit_preventivi_cerca->hide();
     ui->bottone_salva_preventivo->show();
     ui->tableView_preventivi->hide();
+    ui->bottone_preventivi_elimina->hide();
+    ui->bottone_preventivi_modifica->hide();
+    ui->bottone_preventivi_usamodello->hide();
+    ui->tabWidget_preventivi->setCurrentIndex(0);
     ui->tabWidget_preventivi->show();
 
 
@@ -2215,4 +2330,29 @@ void MainWindow::on_actionSalva_triggered()
 void MainWindow::on_lineEdit_preventivi_cerca_textChanged(QString )
 {
     refreshTabelle();
+}
+
+void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
+{
+    valoredacancellare = index.data(0).toString();
+}
+
+void MainWindow::on_bottone_preventivi_elimina_clicked()
+{
+    eliminaRiga("preventivo", "numero", valoredacancellare);
+    ui->label_27->setText(valoredacancellare);
+    refreshTabelle();
+}
+
+
+void MainWindow::on_bottone_preventivi_usamodello_clicked()
+{
+    caricaPreventivo(valoredacancellare.toInt());
+    this->on_bottone_preventivi_nuovo_clicked();
+}
+
+void MainWindow::on_bottone_preventivi_modifica_clicked()
+{
+    this->on_bottone_preventivi_nuovo_clicked();
+    caricaPreventivo(valoredacancellare.toInt());
 }

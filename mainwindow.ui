@@ -813,7 +813,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>874</width>
-                <height>3085</height>
+                <height>3084</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1487,7 +1487,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>874</width>
-                <height>3085</height>
+                <height>3084</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -2092,7 +2092,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>874</width>
-                <height>3085</height>
+                <height>3084</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
@@ -3503,23 +3503,23 @@
         </widget>
        </item>
        <item row="3" column="4">
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="bottone_preventivi_elimina">
          <property name="text">
-          <string>PushButton</string>
+          <string>Elimina</string>
          </property>
         </widget>
        </item>
        <item row="3" column="3">
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="bottone_preventivi_modifica">
          <property name="text">
-          <string>PushButton</string>
+          <string>Modifica</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="bottone_preventivi_usamodello">
          <property name="text">
-          <string>PushButton</string>
+          <string>Usa come modello</string>
          </property>
         </widget>
        </item>
