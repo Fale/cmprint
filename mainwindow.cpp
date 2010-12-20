@@ -512,6 +512,7 @@ void MainWindow::showHide(QString show)
         {
         ui->widget_preventivi->show();
         ui->bottone_preventivi_nuovo->show();
+        ui->label_preventiv_cerca->show();
         ui->lineEdit_preventivi_cerca->show();
         ui->tableView_preventivi->show();
         ui->tabWidget_preventivi->hide();
@@ -1384,7 +1385,7 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     }
 
     ui->label_npreventivo->setNum(numtotale);
-
+    ui->label_preventiv_cerca->hide();
     ui->bottone_preventivi_nuovo->hide();
     ui->lineEdit_preventivi_cerca->hide();
     ui->bottone_salva_preventivo->show();
