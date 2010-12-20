@@ -4,8 +4,6 @@
 /* TO BE FIXED
    - Chiusura del db
    - AGGIUNGERE IL SALVATAGGIO DELLA DATA!
-   - AGGIUNGERE LA PULIZIA PER GLI ALTRI FOGLI
-   - COMPLETARE IL CARICAMENTO PER TUTTI I FOGLI
 
 
    ANNOTAZIONI
@@ -1505,6 +1503,7 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
     QString stringa_query;
     QSqlQuery query;
+    QSqlRecord campo;
     int numtotale(0);
 
 
@@ -1514,13 +1513,16 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
 
     while ( query.next())
     {
-        numtotale++;
+        campo = query.record();
     }
+
+   numtotale = campo.value(0).toInt()+1;
+
 
     ui->label_npreventivo->setNum(numtotale);
 
     if (pulire)
-        pulisciPreventivo();
+       pulisciPreventivo();
 
     ui->label_preventiv_cerca->hide();
     ui->bottone_preventivi_nuovo->hide();
