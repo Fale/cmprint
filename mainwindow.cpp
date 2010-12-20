@@ -614,6 +614,20 @@ void MainWindow::refreshTabelle()
 
     QSqlTableModel *tabella_preventivi = new QSqlTableModel;
     tabella_preventivi->setTable("preventivo");
+
+    if (!ui->lineEdit_preventivi_cerca->text().isEmpty())
+    {
+        QString filtro;
+        filtro = "numero ='";
+        filtro.append(ui->lineEdit_preventivi_cerca->text());
+        filtro.append("' OR cliente='");
+        filtro.append(ui->lineEdit_preventivi_cerca->text());
+        filtro.append("' OR descrizione='");
+        filtro.append(ui->lineEdit_preventivi_cerca->text());
+        filtro.append("'");
+        tabella_preventivi->setFilter(filtro);
+    }
+
     tabella_preventivi->select();
     ui->tableView_preventivi->setModel(tabella_preventivi);
 
@@ -2204,4 +2218,9 @@ void MainWindow::on_bottone_plastificazione_rimuovi_clicked()
 void MainWindow::on_actionSalva_triggered()
 {
    caricaPreventivo(1);
+}
+
+void MainWindow::on_lineEdit_preventivi_cerca_textChanged(QString )
+{
+    refreshTabelle();
 }

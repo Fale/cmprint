@@ -49,6 +49,7 @@ private:
 private slots:
 
 
+    void on_lineEdit_preventivi_cerca_textChanged(QString );
     void on_actionSalva_triggered();
     void on_bottone_plastificazione_rimuovi_clicked();
     void on_bottone_serigrafia_rimuovi_clicked();
