@@ -226,7 +226,73 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(67).toDouble());
     ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(68).toDouble());
     ui->doubleSpinBox_foglio3_percentuale->setValue(campo.value(69).toDouble());
-//foglio4
+
+    //foglio4
+    caricaComboBox(ui->comboBox_foglio4_plastificazione_opaca_bianca,campo.value(70));
+    ui->spinBox_foglio4_plastificazione_opaca_bianca->setValue(campo.value(71).toInt());
+    ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento->setValue(campo.value(72).toDouble());
+    caricaComboBox(ui->comboBox_foglio4_plastificazione_opaca_bianca_volta,campo.value(73));
+    ui->spinBox_foglio4_plastificazione_opaca_bianca_volta->setValue(campo.value(74).toInt());
+    ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento->setValue(campo.value(75).toDouble());
+    caricaComboBox(ui->comboBox_foglio4_plastificazione_lucida_bianca,campo.value(76));
+    ui->spinBox_foglio4_plastificazione_lucida_bianca->setValue(campo.value(77).toInt());
+    ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento->setValue(campo.value(78).toInt());
+    caricaComboBox(ui->comboBox_foglio4_plastificazione_lucida_bianca_volta,campo.value(79));
+    ui->spinBox_foglio4_plastificazione_lucida_bianca_volta->setValue(campo.value(80).toInt());
+    ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento->setValue(campo.value(81).toDouble());
+    caricaComboBox(ui->comboBox_foglio4_serigrafia,campo.value(82));
+    ui->spinBox_foglio4_serigrafia->setValue(campo.value(83).toInt());
+    ui->doubleSpinBox_foglio4_serigrafia_avviamento->setValue(campo.value(84).toDouble());
+    ui->doubleSpinBox_foglio4_serigrafia_telaio->setValue(campo.value(85).toDouble());
+    ui->doubleSpinBox_fustella_primencopie->setValue(campo.value(86).toDouble());
+    ui->spinBox_foglio4_fustellatura_nfogli->setValue(campo.value(87).toInt());
+    ui->doubleSpinBox_spinBox_foglio4_fustellatura_euro->setValue(campo.value(88).toDouble());
+    ui->doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento->setValue(campo.value(89).toDouble());
+    ui->doubleSpinBox_cordonatura_primencopie->setValue(campo.value(90).toDouble());
+    ui->doubleSpinBox_cordonatura_successivencopie->setValue(campo.value(91).toDouble());
+    ui->doubleSpinBox_cordonatura_avviamento->setValue(campo.value(92).toDouble());
+    ui->spinBox_foglio4_accoppiatura_fogli->setValue(campo.value(93).toInt());
+    ui->doubleSpinBox_foglio4_accoppiatura_euro->setValue(campo.value(94).toDouble());
+    ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->setValue(campo.value(95).toDouble());
+    ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->setValue(campo.value(96).toDouble());
+    ui->doubleSpinBox_foglio4_cliche_primencopie->setValue(campo.value(97).toDouble());
+    ui->spinBox_foglio4_piegacopie_numero->setValue(campo.value(98).toInt());
+    ui->doubleSpinBox_foglio4_piegacopie_euro->setValue(campo.value(99).toDouble());
+    ui->spinBox_foglio4_tagliocopie_numero->setValue(campo.value(101).toInt());
+    ui->doubleSpinBox_foglio4_tagliocopie_euro->setValue(campo.value(102).toDouble());
+    ui->spinBox_foglio4_puntometallico_numero->setValue(campo.value(103).toInt());
+    ui->doubleSpinBox_foglio4_puntometallico_euro->setValue(campo.value(104).toDouble());
+    ui->doubleSpinBox_foglio4_puntometallico_avviamento->setValue(campo.value(105).toDouble());
+    ui->spinBox_foglio4_brosurafresata_numero->setValue(campo.value(106).toInt());
+    ui->doubleSpinBox_foglio4_brosurafresata_euro->setValue(campo.value(107).toDouble());
+    ui->doubleSpinBox_foglio4_brosurafresata_avviamento->setValue(campo.value(108).toDouble());
+    ui->spinBox_foglio4_filo_numero->setValue(campo.value(109).toInt());
+    ui->doubleSpinBox_foglio4_filo_euro->setValue(campo.value(110).toDouble());
+    ui->doubleSpinBox_foglio4_filo_avviamento->setValue(campo.value(111).toDouble());
+    ui->spinBox_foglio4_cartonato_numero->setValue(campo.value(112).toInt());
+    ui->doubleSpinBox_foglio4_cartonato_euro->setValue(campo.value(113).toDouble());
+    ui->doubleSpinBox_foglio4_cartonato_avviamento->setValue(campo.value(114).toDouble());
+    ui->spinBox_foglio4_spiralatura_numero->setValue(campo.value(115).toInt());
+    ui->doubleSpinBox_foglio4_spiralatura_euro->setValue(campo.value(116).toDouble());
+    ui->spinBox_foglio4_pacchi_numero->setValue(campo.value(117).toInt());
+    ui->doubleSpinBox_foglio4_pacchi_euro->setValue(campo.value(118).toInt());
+    ui->doubleSpinBox_foglio4_trasporto->setValue(campo.value(119).toDouble());
+    ui->lineEdit_foglio4_prima->setText(campo.value(120).toString());
+    ui->lineEdit_seconda->setText(campo.value(121).toString());
+    ui->lineEdit_foglio4_terza->setText(campo.value(122).toString());
+    ui->lineEdit_foglio4_quarta->setText(campo.value(123).toString());
+    ui->lineEdit_foglio4_quinta->setText(campo.value(124).toString());
+    ui->doubleSpinBox_foglio4_prima_primencopie->setValue(campo.value(125).toDouble());
+    ui->doubleSpinBox_foglio4_seconda_primencopie->setValue(campo.value(126).toDouble());
+    ui->doubleSpinBox_foglio4_terza_primencopie->setValue(campo.value(127).toDouble());
+    ui->doubleSpinBox_foglio4_quarta_primencopie->setValue(campo.value(128).toDouble());
+    ui->doubleSpinBox_foglio4_quinta_primencopie->setValue(campo.value(129).toDouble());
+    ui->doubleSpinBox_foglio4_prima_successivencopie->setValue(campo.value(130).toDouble());
+    ui->doubleSpinBox_foglio4_seconda_successivencopie->setValue(campo.value(131).toDouble());
+    ui->doubleSpinBox_foglio4_terza_successivencopie->setValue(campo.value(132).toDouble());
+    ui->doubleSpinBox_foglio4_quarta_successivencopie->setValue(campo.value(133).toDouble());
+    ui->doubleSpinBox_foglio4_quinta_successivencopie->setValue(campo.value(134).toDouble());
+    ui->doubleSpinBox_foglio4_percentuale->setValue(campo.value(135).toDouble());
 
 
 

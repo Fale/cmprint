@@ -710,7 +710,7 @@
        <item row="3" column="0" colspan="2">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -819,8 +819,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3085</height>
+                <width>509</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
