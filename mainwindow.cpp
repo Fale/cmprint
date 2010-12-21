@@ -103,6 +103,12 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
+    query = "CREATE TABLE npreventivo (numero int)";
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
+
 
     //manca la data!!
 
@@ -734,6 +740,7 @@ void MainWindow::refreshTabelle()
     tabella_preventivi->setHeaderData(0, Qt::Horizontal, "Numero");
     tabella_preventivi->setHeaderData(1, Qt::Horizontal, "Cliente");
     tabella_preventivi->setHeaderData(2, Qt::Horizontal, "Descrizione");
+
     ui->tableView_preventivi->setModel(tabella_preventivi);
 
     for (int i=3; i<135; i++)
@@ -840,9 +847,18 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     qDebug()<<query.exec();
     query.next();
     campo= query.record();
+
     if (!campo.value(0).isNull())
     {
         eliminaRiga("preventivo","numero",ui->label_npreventivo->text());
+    }
+    else
+    {
+        qDebug() << query.prepare("INSERT INTO npreventivo (numero)"
+                                  "VALUES(:numero) ");
+        query.bindValue(":numero", ui->label_npreventivo->text().toInt());
+        qDebug() << query.exec();
+        query.clear();
     }
         query.clear();
 
@@ -1503,20 +1519,21 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
     QString stringa_query;
     QSqlQuery query;
-    QSqlRecord campo;
-    int numtotale(0);
+    //QSqlRecord campo;
+    int numtotale(1);
 
 
-    stringa_query = "SELECT numero FROM preventivo";
+    stringa_query = "SELECT numero FROM npreventivo";
     qDebug() << query.prepare(stringa_query);
     qDebug() << query.exec();
 
     while ( query.next())
     {
-        campo = query.record();
+        numtotale++;
     }
 
-    numtotale = campo.value(0).toInt()+1;
+    //numtotale = campo.value(0).toInt()+1;
+
 
 
     ui->label_npreventivo->setNum(numtotale);
@@ -1534,6 +1551,8 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     ui->bottone_preventivi_usamodello->hide();
     ui->tabWidget_preventivi->setCurrentIndex(0);
     ui->tabWidget_preventivi->show();
+
+
 
     pulire = true;
 
@@ -2363,6 +2382,7 @@ void MainWindow::on_lineEdit_preventivi_cerca_textChanged(QString )
 void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
 {
     valoredacancellare = index.data(0).toString();
+     ui->label_27->setText(valoredacancellare);
 }
 
 void MainWindow::on_bottone_preventivi_elimina_clicked()

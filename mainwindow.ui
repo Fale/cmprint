@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>934</width>
-    <height>45000</height>
+    <width>931</width>
+    <height>1906</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,6 +15,12 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>1906</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Cmprint - Generatore preventivi</string>
@@ -689,6 +695,33 @@
        </item>
        <item row="2" column="0" colspan="5">
         <widget class="QTableView" name="tableView_preventivi">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>false</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
          <attribute name="horizontalHeaderStretchLastSection">
           <bool>true</bool>
          </attribute>
@@ -816,8 +849,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3084</height>
+                <width>854</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1490,8 +1523,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3084</height>
+                <width>854</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -2095,8 +2128,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>874</width>
-                <height>3084</height>
+                <width>854</width>
+                <height>2193</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
@@ -3601,7 +3634,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>934</width>
+     <width>931</width>
      <height>25</height>
     </rect>
    </property>
