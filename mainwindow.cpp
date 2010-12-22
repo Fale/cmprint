@@ -1511,6 +1511,42 @@ void MainWindow::refreshFoglio5()
                                                        );
 
 
+/* IN CASO CHE VUOLE I COSTI SOLO MODIFICANDO IL NUMERO DI COPIE
+ui->label_foglio5_prime_500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_500->value());
+ui->label_foglio5_prime_1000->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_1000->value());
+ui->label_foglio5_prime_1500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_1500->value());
+ui->label_foglio5_prime_2000->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_2000->value());
+ui->label_foglio5_prime_2500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_2500->value());
+ui->label_foglio5_prime_3000->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_3000->value());
+
+ui->label_foglio5_succ_500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble()*ui->spinBox_foglio5_500->value());
+ui->label_foglio5_succ_1000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble()*ui->spinBox_foglio5_1000->value());
+ui->label_foglio5_succ_1500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble()*ui->spinBox_foglio5_1500->value());
+ui->label_foglio5_succ_2000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble()*ui->spinBox_foglio5_2000->value());
+ui->label_foglio5_succ_2500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble()*ui->spinBox_foglio5_2500->value());
+ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble()*ui->spinBox_foglio5_3000->value());
+*/
+
+   double valore, valore2;
+   valore2 = ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble();
+   valore = ( ui->label_foglio5_prezzoacopia_primencopie->text().toDouble() - valore2 ) * ui->spinBox_foglio1_ncopie->value();
+
+   ui->label_foglio5_prime_500->setNum((valore/ui->spinBox_foglio5_500->value())+valore2);
+   ui->label_foglio5_prime_1000->setNum((valore/ui->spinBox_foglio5_1000->value())+valore2);
+   ui->label_foglio5_prime_1500->setNum((valore/ui->spinBox_foglio5_1500->value())+valore2);
+   ui->label_foglio5_prime_2000->setNum((valore/ui->spinBox_foglio5_2000->value())+valore2);
+   ui->label_foglio5_prime_2500->setNum((valore/ui->spinBox_foglio5_2500->value())+valore2);
+   ui->label_foglio5_prime_3000->setNum((valore/ui->spinBox_foglio5_3000->value())+valore2);
+
+
+   ui->label_foglio5_succ_500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_1000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_1500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_2000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_2500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+
+
 
 
 }
