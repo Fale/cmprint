@@ -32,6 +32,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->logo_grimp->setPixmap(QPixmap("grimp.png"));
     MainWindow::on_bottone_benvenuto_clicked();
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
+   QString a;
+    a.setNum(8.00, 'f', 3 );
+    //ui->label_27->setText(QString::setNum);
     /*QString data;
     data = "25/12/2011";
 
@@ -102,7 +105,7 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    query = "CREATE TABLE cartatipo (descrizione char(30), prezzo real)";
+    query = "CREATE TABLE cartatipo (descrizione char(30))";
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
     creazione.clear();
@@ -606,7 +609,7 @@ double MainWindow::formatoASuperficie(QString formato)
     QString secondoValore;
     primoValore = formato.section("x",0,0);
     secondoValore = formato.section("x",1,1);
-    return ( ( primoValore.toDouble()*secondoValore.toDouble() ) /10000);
+    return ( ( primoValore.toDouble()*secondoValore.toDouble() ) /1000000);
 
 }
 
@@ -723,7 +726,7 @@ void MainWindow::refreshTabelle()
     tabella_carta_tipo->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_carta_tipo->select();
     tabella_carta_tipo->setHeaderData(0, Qt::Horizontal, "Descrizione");
-    tabella_carta_tipo->setHeaderData(1, Qt::Horizontal, "Prezzo");
+
     ui->tableView_carta_tipo->setModel(tabella_carta_tipo);
 
 
@@ -837,10 +840,9 @@ void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
 {
     QSqlQuery query;
     n=n+1.0;
-    qDebug() << query.prepare("INSERT INTO cartatipo (descrizione, prezzo)"
-                              "VALUES(:descrizione, :prezzo) ");
+    qDebug() << query.prepare("INSERT INTO cartatipo (descrizione)"
+                              "VALUES(:descrizione) ");
     query.bindValue(":descrizione", n);
-    query.bindValue(":prezzo", n);
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();

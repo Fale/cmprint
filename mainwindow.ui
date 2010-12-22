@@ -740,7 +740,7 @@
        <item row="4" column="0" colspan="5">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -1556,7 +1556,20 @@
                 </widget>
                </item>
                <item row="1" column="2" colspan="3">
-                <widget class="QComboBox" name="comboBox_foglio3_carta_formato_1"/>
+                <widget class="QComboBox" name="comboBox_foglio3_carta_formato_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="5">
                 <widget class="QComboBox" name="comboBox_foglio3_carta_grammatura_1"/>
