@@ -3,7 +3,8 @@
 
 /* TO BE FIXED
    - Chiusura del db
-   - AGGIUNGERE IL SALVATAGGIO DELLA DATA!
+   - NUMERO DI CIFRE
+   - CONTROLLARE SALVATAGGIO/CARICAMENTO foglio2
 
 
    ANNOTAZIONI
@@ -683,11 +684,11 @@ void MainWindow::refreshTabelle()
     tabella_plastificazione->setTable("plastificazione");
     tabella_plastificazione->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_plastificazione->select();
-    tabella_plastificazione->setHeaderData(0, Qt::Horizontal, "Formato");
-    tabella_plastificazione->setHeaderData(1, Qt::Horizontal, "Lucida Bianca");
-    tabella_plastificazione->setHeaderData(2, Qt::Horizontal, "Lucida Bianca/Volta");
-    tabella_plastificazione->setHeaderData(3, Qt::Horizontal, "Opaca Bianca");
-    tabella_plastificazione->setHeaderData(4, Qt::Horizontal, "Opaca Bianca/Volta");
+    tabella_plastificazione->setHeaderData(0, Qt::Horizontal, "Formato (mm)");
+    tabella_plastificazione->setHeaderData(1, Qt::Horizontal, "Lucida Bianca Euro");
+    tabella_plastificazione->setHeaderData(2, Qt::Horizontal, "Lucida Bianca/Volta Euro");
+    tabella_plastificazione->setHeaderData(3, Qt::Horizontal, "Opaca Bianca Euro");
+    tabella_plastificazione->setHeaderData(4, Qt::Horizontal, "Opaca Bianca/Volta Euro");
     ui->tableView_plastificazione->setModel(tabella_plastificazione);
 
     QSqlTableModel *tabella_clienti = new QSqlTableModel;
@@ -702,7 +703,7 @@ void MainWindow::refreshTabelle()
     tabella_carta_formato->setTable("cartaformato");
     tabella_carta_formato->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_carta_formato->select();
-    tabella_carta_formato->setHeaderData(0, Qt::Horizontal, "Formato");
+    tabella_carta_formato->setHeaderData(0, Qt::Horizontal, "Formato (mm)");
     ui->tableView_carta_formato->setModel(tabella_carta_formato);
 
     QSqlTableModel *tabella_carta_grammatura = new QSqlTableModel;
@@ -716,8 +717,8 @@ void MainWindow::refreshTabelle()
     tabella_serigrafia->setTable("serigrafia");
     tabella_serigrafia->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_serigrafia->select();
-    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Formato");
-    tabella_serigrafia->setHeaderData(1, Qt::Horizontal, "Prezzo");
+    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Formato (mm)");
+    tabella_serigrafia->setHeaderData(1, Qt::Horizontal, "Prezzo Euro");
     ui->tableView_serigrafia->setModel(tabella_serigrafia);
 
     QSqlTableModel *tabella_carta_tipo = new QSqlTableModel;
@@ -1511,7 +1512,7 @@ void MainWindow::refreshFoglio5()
                                                        );
 
 
-/* IN CASO CHE VUOLE I COSTI SOLO MODIFICANDO IL NUMERO DI COPIE
+/* IN CASO CHE VOGLIA I COSTI SOLO MODIFICANDO IL NUMERO DI COPIE
 ui->label_foglio5_prime_500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_500->value());
 ui->label_foglio5_prime_1000->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_1000->value());
 ui->label_foglio5_prime_1500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_1500->value());
