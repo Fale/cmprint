@@ -740,7 +740,7 @@
        <item row="4" column="0" colspan="5">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -849,7 +849,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>509</width>
+                <width>854</width>
                 <height>901</height>
                </rect>
               </property>
@@ -1370,8 +1370,11 @@
                </item>
                <item row="1" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_1">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
@@ -1523,7 +1526,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>611</width>
+                <width>854</width>
                 <height>901</height>
                </rect>
               </property>
@@ -2128,7 +2131,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>668</width>
+                <width>854</width>
                 <height>2193</height>
                </rect>
               </property>
