@@ -50,6 +50,8 @@ private:
 private slots:
 
 
+    void on_doubleSpinBox_foglio4_accoppiatura_succ_valueChanged(double );
+    void on_doubleSpinBox_foglio4_accoppiatura_prime_valueChanged(double );
     void on_bottone_preventivi_modifica_clicked();
     void on_bottone_preventivi_usamodello_clicked();
     void on_tableView_preventivi_clicked(QModelIndex index);
@@ -104,8 +106,6 @@ private slots:
     void on_doubleSpinBox_foglio4_cliche_primencopie_valueChanged(double );
     void on_doubleSpinBox_foglio4_stampaacaldo_successivencopie_valueChanged(double );
     void on_doubleSpinBox_foglio4_stampaacaldo_primencopie_valueChanged(double );
-    void on_doubleSpinBox_foglio4_accoppiatura_euro_valueChanged(double );
-    void on_spinBox_foglio4_accoppiatura_fogli_valueChanged(int );
     void on_doubleSpinBox_cordonatura_avviamento_valueChanged(double );
     void on_doubleSpinBox_cordonatura_successivencopie_valueChanged(double );
     void on_doubleSpinBox_cordonatura_primencopie_valueChanged(double );

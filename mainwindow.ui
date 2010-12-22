@@ -740,7 +740,7 @@
        <item row="4" column="0" colspan="5">
         <widget class="QTabWidget" name="tabWidget_preventivi">
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -2146,13 +2146,13 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-937</y>
                 <width>854</width>
                 <height>2193</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
-               <item row="1" column="0" colspan="13">
+               <item row="1" column="0" colspan="14">
                 <widget class="QLabel" name="label_12">
                  <property name="text">
                   <string>Plastificazione opaca in bianca</string>
@@ -2166,14 +2166,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0" colspan="5">
+               <item row="3" column="0" colspan="6">
                 <widget class="QLabel" name="label_61">
                  <property name="text">
                   <string>Avviamento</string>
                  </property>
                 </widget>
                </item>
-               <item row="6" column="0" colspan="13">
+               <item row="6" column="0" colspan="14">
                 <widget class="QLabel" name="label_60">
                  <property name="text">
                   <string>Plastificazione opaca in bianca e volta</string>
@@ -2187,7 +2187,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="11" column="0" colspan="13">
+               <item row="11" column="0" colspan="14">
                 <widget class="QLabel" name="label_70">
                  <property name="text">
                   <string>Plastificazione lucida in bianca</string>
@@ -2201,7 +2201,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="13" column="0" colspan="5">
+               <item row="13" column="0" colspan="6">
                 <widget class="QLabel" name="label_67">
                  <property name="text">
                   <string>Avviamento</string>
@@ -2215,7 +2215,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="21" column="0" colspan="13">
+               <item row="21" column="0" colspan="14">
                 <widget class="QLabel" name="label_84">
                  <property name="text">
                   <string>Serigrafia</string>
@@ -2292,14 +2292,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="43" column="0" colspan="5">
+               <item row="43" column="0" colspan="6">
                 <widget class="QLabel" name="label_101">
                  <property name="text">
                   <string>Stampa a caldo</string>
                  </property>
                 </widget>
                </item>
-               <item row="46" column="0" colspan="5">
+               <item row="46" column="0" colspan="6">
                 <widget class="QLabel" name="label_102">
                  <property name="text">
                   <string>Cliche'</string>
@@ -2320,7 +2320,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="50" column="18">
+               <item row="50" column="19">
                 <widget class="QLabel" name="label_foglio4_tagliocopie_successivencopie">
                  <property name="text">
                   <string>0</string>
@@ -2341,7 +2341,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="57" column="18">
+               <item row="57" column="19">
                 <widget class="QLabel" name="label_foglio4_brosurafresata_successivencopie">
                  <property name="text">
                   <string>0</string>
@@ -2362,7 +2362,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="61" column="18">
+               <item row="61" column="19">
                 <widget class="QLabel" name="label_foglio4_filo_successivencopie">
                  <property name="text">
                   <string>0</string>
@@ -2383,7 +2383,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="65" column="18">
+               <item row="65" column="19">
                 <widget class="QLabel" name="label_foglio4_cartonato_successivencopie">
                  <property name="text">
                   <string>0</string>
@@ -2404,7 +2404,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="70" column="18">
+               <item row="70" column="19">
                 <widget class="QLabel" name="label_foglio4_pacchi_successivencopie">
                  <property name="text">
                   <string>0</string>
@@ -2418,31 +2418,31 @@
                  </property>
                 </widget>
                </item>
-               <item row="73" column="0" colspan="15">
+               <item row="73" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_prima"/>
                </item>
-               <item row="74" column="0" colspan="15">
+               <item row="74" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_seconda"/>
                </item>
-               <item row="74" column="18">
+               <item row="74" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_seconda_successivencopie"/>
                </item>
-               <item row="75" column="0" colspan="15">
+               <item row="75" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_terza"/>
                </item>
-               <item row="75" column="18">
+               <item row="75" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_terza_successivencopie"/>
                </item>
-               <item row="76" column="0" colspan="15">
+               <item row="76" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_quarta"/>
                </item>
-               <item row="76" column="18">
+               <item row="76" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quarta_successivencopie"/>
                </item>
-               <item row="77" column="0" colspan="15">
+               <item row="77" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_quinta"/>
                </item>
-               <item row="77" column="18">
+               <item row="77" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_successivencopie"/>
                </item>
                <item row="79" column="0" colspan="3">
@@ -2452,250 +2452,236 @@
                  </property>
                 </widget>
                </item>
-               <item row="79" column="18">
+               <item row="79" column="19">
                 <widget class="QLabel" name="label_foglio4_pretotale_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="18">
+               <item row="0" column="19">
                 <widget class="QLabel" name="label_foglio4_successivencopie">
                  <property name="text">
                   <string>Successiva copia</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="17">
+               <item row="0" column="18">
                 <widget class="QLabel" name="label_foglio4_ncopie">
                  <property name="text">
                   <string>Prima copia          </string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="18">
+               <item row="2" column="19">
                 <widget class="QLabel" name="label_foglio4_plastificazione_opaca_bianca_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="17">
+               <item row="2" column="18">
                 <widget class="QLabel" name="label_foglio4_plastificazione_opaca_bianca_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="18">
+               <item row="7" column="19">
                 <widget class="QLabel" name="label_foglio4_plastificazione_opaca_bianca_volta_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="17">
+               <item row="7" column="18">
                 <widget class="QLabel" name="label_foglio4_plastificazione_opaca_bianca_volta_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="12" column="18">
+               <item row="12" column="19">
                 <widget class="QLabel" name="label_foglio4_plastificazione_lucida_bianca_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="12" column="17">
+               <item row="12" column="18">
                 <widget class="QLabel" name="label_foglio4_plastificazione_lucida_bianca_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="17" column="18">
+               <item row="17" column="19">
                 <widget class="QLabel" name="label_foglio4_plastificazione_lucida_bianca_volta_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="17" column="17">
+               <item row="17" column="18">
                 <widget class="QLabel" name="label_foglio4_plastificazione_lucida_bianca_volta_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="22" column="18">
+               <item row="22" column="19">
                 <widget class="QLabel" name="label_foglio4_serigrafia_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="22" column="17">
+               <item row="22" column="18">
                 <widget class="QLabel" name="label_foglio4_serigrafia_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="29" column="17">
+               <item row="29" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_fustella_primencopie"/>
                </item>
-               <item row="32" column="18">
+               <item row="32" column="19">
                 <widget class="QLabel" name="label_spinBox_foglio4_fustellatura_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="32" column="17">
+               <item row="32" column="18">
                 <widget class="QLabel" name="label_spinBox_foglio4_fustellatura_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="34" column="17">
+               <item row="34" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento"/>
                </item>
-               <item row="36" column="18">
+               <item row="36" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_successivencopie"/>
                </item>
-               <item row="36" column="17">
+               <item row="36" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_primencopie"/>
                </item>
-               <item row="37" column="17">
+               <item row="37" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_avviamento"/>
                </item>
-               <item row="40" column="18">
-                <widget class="QLabel" name="label_foglio4_accoppiatura_successivencopie">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="40" column="17">
-                <widget class="QLabel" name="label_foglio4_accoppiatura_primencopie">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="43" column="18">
+               <item row="43" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_stampaacaldo_successivencopie"/>
                </item>
-               <item row="43" column="17">
+               <item row="43" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_stampaacaldo_primencopie"/>
                </item>
-               <item row="46" column="17">
+               <item row="46" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cliche_primencopie"/>
                </item>
-               <item row="48" column="18">
+               <item row="48" column="19">
                 <widget class="QLabel" name="label_foglio4_piegacopie_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="48" column="17">
+               <item row="48" column="18">
                 <widget class="QLabel" name="label_foglio4_piegacopie_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="50" column="17">
+               <item row="50" column="18">
                 <widget class="QLabel" name="label_foglio4_tagliocopie_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="52" column="17">
+               <item row="52" column="18">
                 <widget class="QLabel" name="label_foglio4_puntometallico_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="54" column="17">
+               <item row="54" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_puntometallico_avviamento"/>
                </item>
-               <item row="57" column="17">
+               <item row="57" column="18">
                 <widget class="QLabel" name="label_foglio4_brosurafresata_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="58" column="17">
+               <item row="58" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_brosurafresata_avviamento"/>
                </item>
-               <item row="61" column="17">
+               <item row="61" column="18">
                 <widget class="QLabel" name="label_foglio4_filo_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="62" column="17">
+               <item row="62" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_avviamento"/>
                </item>
-               <item row="65" column="17">
+               <item row="65" column="18">
                 <widget class="QLabel" name="label_foglio4_cartonato_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="66" column="17">
+               <item row="66" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_avviamento"/>
                </item>
-               <item row="69" column="17">
+               <item row="69" column="18">
                 <widget class="QLabel" name="label_foglio4_spiralatura_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="69" column="18">
+               <item row="69" column="19">
                 <widget class="QLabel" name="label_foglio4_spiralatura_successivencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="70" column="17">
+               <item row="70" column="18">
                 <widget class="QLabel" name="label_foglio4_pacchi_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
                </item>
-               <item row="73" column="18">
+               <item row="73" column="19">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_prima_successivencopie"/>
                </item>
-               <item row="73" column="17">
+               <item row="73" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_prima_primencopie"/>
                </item>
-               <item row="74" column="17">
+               <item row="74" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_seconda_primencopie"/>
                </item>
-               <item row="75" column="17">
+               <item row="75" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_terza_primencopie"/>
                </item>
-               <item row="76" column="17">
+               <item row="76" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quarta_primencopie"/>
                </item>
-               <item row="77" column="17">
+               <item row="77" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_primencopie"/>
                </item>
-               <item row="81" column="18">
+               <item row="81" column="19">
                 <widget class="QLabel" name="label_foglio4_totale_successivencopie">
                  <property name="text">
                   <string>0</string>
@@ -2716,7 +2702,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="79" column="17">
+               <item row="79" column="18">
                 <widget class="QLabel" name="label_foglio4_pretotale_primencopie">
                  <property name="text">
                   <string>0</string>
@@ -2739,7 +2725,7 @@
                  </property>
                 </spacer>
                </item>
-               <item row="8" column="0" colspan="5">
+               <item row="8" column="0" colspan="6">
                 <widget class="QLabel" name="label_63">
                  <property name="text">
                   <string>Avviamento</string>
@@ -2765,7 +2751,7 @@
                <item row="2" column="2">
                 <widget class="QComboBox" name="comboBox_foglio4_plastificazione_opaca_bianca"/>
                </item>
-               <item row="16" column="0" colspan="12">
+               <item row="16" column="0" colspan="13">
                 <widget class="QLabel" name="label_77">
                  <property name="text">
                   <string>Plastificazione lucida in bianca e volta</string>
@@ -2782,50 +2768,50 @@
                <item row="17" column="2">
                 <widget class="QComboBox" name="comboBox_foglio4_plastificazione_lucida_bianca_volta"/>
                </item>
-               <item row="17" column="3">
+               <item row="17" column="4">
                 <widget class="QLabel" name="label_73">
                  <property name="text">
                   <string>Fogli</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="3">
+               <item row="2" column="4">
                 <widget class="QLabel" name="label_46">
                  <property name="text">
                   <string>Fogli</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="4">
+               <item row="2" column="5">
                 <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_opaca_bianca"/>
                </item>
                <item row="7" column="2">
                 <widget class="QComboBox" name="comboBox_foglio4_plastificazione_opaca_bianca_volta"/>
                </item>
-               <item row="7" column="3">
+               <item row="7" column="4">
                 <widget class="QLabel" name="label_49">
                  <property name="text">
                   <string>Fogli</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="4">
+               <item row="7" column="5">
                 <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_opaca_bianca_volta"/>
                </item>
-               <item row="12" column="3">
+               <item row="12" column="4">
                 <widget class="QLabel" name="label_65">
                  <property name="text">
                   <string>Fogli</string>
                  </property>
                 </widget>
                </item>
-               <item row="12" column="4">
+               <item row="12" column="5">
                 <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_lucida_bianca"/>
                </item>
-               <item row="17" column="4">
+               <item row="17" column="5">
                 <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_lucida_bianca_volta"/>
                </item>
-               <item row="22" column="3">
+               <item row="22" column="4">
                 <widget class="QLabel" name="label_79">
                  <property name="text">
                   <string>Fogli</string>
@@ -2835,20 +2821,20 @@
                <item row="22" column="2">
                 <widget class="QComboBox" name="comboBox_foglio4_serigrafia"/>
                </item>
-               <item row="22" column="4">
+               <item row="22" column="5">
                 <widget class="QSpinBox" name="spinBox_foglio4_serigrafia"/>
                </item>
                <item row="32" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_fustellatura_nfogli"/>
                </item>
-               <item row="32" column="3">
+               <item row="32" column="4">
                 <widget class="QLabel" name="label_94">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="32" column="4">
+               <item row="32" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_spinBox_foglio4_fustellatura_euro"/>
                </item>
                <item row="39" column="0">
@@ -3027,43 +3013,30 @@
                  </property>
                 </spacer>
                </item>
-               <item row="40" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_accoppiatura_fogli"/>
-               </item>
-               <item row="40" column="3">
-                <widget class="QLabel" name="label_98">
-                 <property name="text">
-                  <string>x €</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="40" column="4">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_euro"/>
-               </item>
                <item row="48" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_piegacopie_numero"/>
                </item>
-               <item row="48" column="3">
+               <item row="48" column="4">
                 <widget class="QLabel" name="label_104">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="48" column="4">
+               <item row="48" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_piegacopie_euro"/>
                </item>
                <item row="50" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_tagliocopie_numero"/>
                </item>
-               <item row="50" column="3">
+               <item row="50" column="4">
                 <widget class="QLabel" name="label_108">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="50" column="4">
+               <item row="50" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_tagliocopie_euro"/>
                </item>
                <item row="52" column="0" colspan="2">
@@ -3076,66 +3049,66 @@
                <item row="52" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_puntometallico_numero"/>
                </item>
-               <item row="52" column="3">
+               <item row="52" column="4">
                 <widget class="QLabel" name="label_138">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="52" column="4">
+               <item row="52" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_puntometallico_euro"/>
                </item>
                <item row="57" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_brosurafresata_numero"/>
                </item>
-               <item row="57" column="3">
+               <item row="57" column="4">
                 <widget class="QLabel" name="label_143">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="57" column="4">
+               <item row="57" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_brosurafresata_euro"/>
                </item>
                <item row="61" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_filo_numero"/>
                </item>
-               <item row="61" column="3">
+               <item row="61" column="4">
                 <widget class="QLabel" name="label_177">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="61" column="4">
+               <item row="61" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_euro"/>
                </item>
                <item row="65" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_cartonato_numero"/>
                </item>
-               <item row="65" column="3">
+               <item row="65" column="4">
                 <widget class="QLabel" name="label_182">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="65" column="4">
+               <item row="65" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_euro"/>
                </item>
                <item row="69" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_spiralatura_numero"/>
                </item>
-               <item row="69" column="3">
+               <item row="69" column="4">
                 <widget class="QLabel" name="label_188">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="69" column="4">
+               <item row="69" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_spiralatura_euro"/>
                </item>
                <item row="70" column="0" colspan="2">
@@ -3148,17 +3121,17 @@
                <item row="70" column="2">
                 <widget class="QSpinBox" name="spinBox_foglio4_pacchi_numero"/>
                </item>
-               <item row="70" column="3">
+               <item row="70" column="4">
                 <widget class="QLabel" name="label_192">
                  <property name="text">
                   <string>x €</string>
                  </property>
                 </widget>
                </item>
-               <item row="70" column="4">
+               <item row="70" column="5">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_pacchi_euro"/>
                </item>
-               <item row="73" column="15">
+               <item row="73" column="16">
                 <spacer name="horizontalSpacer_9">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -3171,7 +3144,7 @@
                  </property>
                 </spacer>
                </item>
-               <item row="74" column="15">
+               <item row="74" column="16">
                 <spacer name="horizontalSpacer_10">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -3184,7 +3157,7 @@
                  </property>
                 </spacer>
                </item>
-               <item row="75" column="15">
+               <item row="75" column="16">
                 <spacer name="horizontalSpacer_12">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -3197,7 +3170,7 @@
                  </property>
                 </spacer>
                </item>
-               <item row="76" column="15">
+               <item row="76" column="16">
                 <spacer name="horizontalSpacer_13">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -3210,7 +3183,7 @@
                  </property>
                 </spacer>
                </item>
-               <item row="77" column="15">
+               <item row="77" column="16">
                 <spacer name="horizontalSpacer_14">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -3271,22 +3244,22 @@
                  </property>
                 </spacer>
                </item>
-               <item row="24" column="17">
+               <item row="24" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_serigrafia_telaio"/>
                </item>
-               <item row="23" column="17">
+               <item row="23" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_serigrafia_avviamento"/>
                </item>
-               <item row="18" column="17">
+               <item row="18" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento"/>
                </item>
-               <item row="13" column="17">
+               <item row="13" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento"/>
                </item>
-               <item row="8" column="17">
+               <item row="8" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento"/>
                </item>
-               <item row="3" column="17">
+               <item row="3" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento"/>
                </item>
                <item row="35" column="0">
@@ -3353,7 +3326,7 @@
                  </property>
                 </spacer>
                </item>
-               <item row="80" column="17" colspan="2">
+               <item row="80" column="18" colspan="2">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_percentuale">
                  <property name="value">
                   <double>20.000000000000000</double>
@@ -3363,15 +3336,21 @@
                <item row="12" column="2">
                 <widget class="QComboBox" name="comboBox_foglio4_plastificazione_lucida_bianca"/>
                </item>
-               <item row="71" column="17">
+               <item row="71" column="18">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_trasporto"/>
                </item>
-               <item row="81" column="17">
+               <item row="81" column="18">
                 <widget class="QLabel" name="label_foglio4_totale_primencopie">
                  <property name="text">
                   <string>0</string>
                  </property>
                 </widget>
+               </item>
+               <item row="40" column="19">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_succ"/>
+               </item>
+               <item row="40" column="18">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_prime"/>
                </item>
               </layout>
              </widget>

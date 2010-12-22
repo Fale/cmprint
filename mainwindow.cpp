@@ -129,7 +129,7 @@ void MainWindow::creaTabelle()
     query.append("tipo1 char(30), tipo2 char(30), tipo3 char(30), tipo4 char(30), tipo5 char(30), tipo6 char(30), tipo7 char(30), tipo8 char(30), formato1 char(30), formato2 char(30), formato3 char(30), formato4 char(30), formato5 char(30), grammatura1 real, grammatura2 real, grammatura3 real, grammatura4 real, grammatura5 real, nfogli1 int, nfogli2 int, nfogli3 int, nfogli4 int, nfogli5 int, euro1 real, euro2 real, euro3 real, euro4 real, euro5 real, europrime1 real, europrime2 real, europrime3 real, eurosucc1 real, eurosucc2 real, eurosucc3 real, percf3 real, ");
 
     //foglio4
-    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturanfogli int, accoppiaturaeuro real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real, riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real");
+    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturaprime int, accoppiaturasucc real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real, riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real");
     query.append(")");
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
@@ -264,8 +264,8 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_cordonatura_primencopie->setValue(campo.value(91).toDouble());
     ui->doubleSpinBox_cordonatura_successivencopie->setValue(campo.value(92).toDouble());
     ui->doubleSpinBox_cordonatura_avviamento->setValue(campo.value(93).toDouble());
-    ui->spinBox_foglio4_accoppiatura_fogli->setValue(campo.value(94).toInt());
-    ui->doubleSpinBox_foglio4_accoppiatura_euro->setValue(campo.value(95).toDouble());
+    ui->doubleSpinBox_foglio4_accoppiatura_prime->setValue(campo.value(94).toInt());
+    ui->doubleSpinBox_foglio4_accoppiatura_succ->setValue(campo.value(95).toDouble());
     ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->setValue(campo.value(96).toDouble());
     ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->setValue(campo.value(97).toDouble());
     ui->doubleSpinBox_foglio4_cliche_primencopie->setValue(campo.value(98).toDouble());
@@ -445,7 +445,7 @@ void MainWindow::pulisciPreventivo()
 {
     //foglio 1
    ui->plainTextEdit_descrizione->clear();
-   ui->spinBox_foglio1_ncopie->clear();
+   ui->spinBox_foglio1_ncopie->setValue(1);
    ui->dateEdit_foglio1->setDate(QDate::currentDate());
 
    //foglio 2
@@ -522,7 +522,6 @@ void MainWindow::pulisciPreventivo()
    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(0);
    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(0);
    ui->doubleSpinBox_foglio3_percentuale->setValue(0);
-   //AGGIUNGERE QUI GLI ALTRI FOGLI
 
    ui->comboBox_foglio4_plastificazione_opaca_bianca->clear();
    ui->spinBox_foglio4_plastificazione_opaca_bianca->setValue(0);
@@ -548,8 +547,8 @@ void MainWindow::pulisciPreventivo()
    ui->doubleSpinBox_cordonatura_primencopie->setValue(0);
    ui->doubleSpinBox_cordonatura_successivencopie->setValue(0);
    ui->doubleSpinBox_cordonatura_avviamento->setValue(0);
-   ui->spinBox_foglio4_accoppiatura_fogli->setValue(0);
-   ui->doubleSpinBox_foglio4_accoppiatura_euro->setValue(0);
+   ui->doubleSpinBox_foglio4_accoppiatura_prime->setValue(0);
+   ui->doubleSpinBox_foglio4_accoppiatura_succ->setValue(0);
    ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->setValue(0);
    ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->setValue(0);
    ui->doubleSpinBox_foglio4_cliche_primencopie->setValue(0);
@@ -875,8 +874,8 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     }
         query.clear();
 
-        qDebug() << query.prepare("INSERT INTO preventivo (numero, data, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, grammatura1, grammatura2, grammatura3, grammatura4, grammatura5, nfogli1, nfogli2, nfogli3, nfogli4, nfogli5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturanfogli, accoppiaturaeuro, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
-                      "VALUES(:numero, :data, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :grammatura1, :grammatura2, :grammatura3, :grammatura4, :grammatura5, :nfogli1, :nfogli2, :nfogli3, :nfogli4, :nfogli5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturanfogli, :accoppiaturaeuro, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ");
+        qDebug() << query.prepare("INSERT INTO preventivo (numero, data, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, grammatura1, grammatura2, grammatura3, grammatura4, grammatura5, nfogli1, nfogli2, nfogli3, nfogli4, nfogli5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturaprime, accoppiaturasucc, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
+                      "VALUES(:numero, :data, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :grammatura1, :grammatura2, :grammatura3, :grammatura4, :grammatura5, :nfogli1, :nfogli2, :nfogli3, :nfogli4, :nfogli5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturaprime, :accoppiaturasucc, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ");
         query.bindValue(":numero", ui->label_npreventivo->text().toInt() );
         query.bindValue(":data", ui->dateEdit_foglio1->date().toString("dd/MM/yyyy") );
         query.bindValue(":cliente", ui->comboBox_clienti_seleziona->currentText() );
@@ -971,8 +970,8 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
         query.bindValue(":cordonaturaprime", ui->doubleSpinBox_cordonatura_primencopie->value() );
         query.bindValue(":cordonaturasucc", ui->doubleSpinBox_cordonatura_successivencopie->value() );
         query.bindValue(":cordonaturaavv", ui->doubleSpinBox_cordonatura_avviamento->value() );
-        query.bindValue(":accoppiaturanfogli", ui->spinBox_foglio4_accoppiatura_fogli->value() );
-        query.bindValue(":accoppiaturaeuro", ui->doubleSpinBox_foglio4_accoppiatura_euro->value() );
+        query.bindValue(":accoppiaturaprime", ui->doubleSpinBox_foglio4_accoppiatura_prime->value() );
+        query.bindValue(":accoppiaturasucc", ui->doubleSpinBox_foglio4_accoppiatura_succ->value() );
         query.bindValue(":stampacaldoprime", ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->value() );
         query.bindValue(":stampacaldosucc", ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->value() );
         query.bindValue(":cliche", ui->doubleSpinBox_foglio4_cliche_primencopie->value() );
@@ -1303,11 +1302,11 @@ void MainWindow::refreshFoglio3()
     //aggiungere qui tutti gli altri calcoli
 
     //prime
-    ui->label_foglio3_primencopie_1->setNum( ui->spinBox_foglio3_nfogli_1->value() * ui->label_foglio3_kg_1->text().toDouble() * ui->doubleSpinBox_foglio3_euro_1->value() * ui->spinBox_foglio1_ncopie->value());
-    ui->label_foglio3_primencopie_2->setNum( ui->spinBox_foglio3_nfogli_2->value() * ui->label_foglio3_kg_2->text().toDouble() * ui->doubleSpinBox_foglio3_euro_2->value() * ui->spinBox_foglio1_ncopie->value());
-    ui->label_foglio3_primencopie_3->setNum( ui->spinBox_foglio3_nfogli_3->value() * ui->label_foglio3_kg_3->text().toDouble() * ui->doubleSpinBox_foglio3_euro_3->value() * ui->spinBox_foglio1_ncopie->value());
-    ui->label_foglio3_primencopie_4->setNum( ui->spinBox_foglio3_nfogli_4->value() * ui->label_foglio3_kg_4->text().toDouble() * ui->doubleSpinBox_foglio3_euro_4->value() * ui->spinBox_foglio1_ncopie->value());
-    ui->label_foglio3_primencopie_5->setNum( ui->spinBox_foglio3_nfogli_5->value() * ui->label_foglio3_kg_5->text().toDouble() * ui->doubleSpinBox_foglio3_euro_5->value() * ui->spinBox_foglio1_ncopie->value());
+    ui->label_foglio3_primencopie_1->setNum( ui->spinBox_foglio3_nfogli_1->value() * ui->label_foglio3_kg_1->text().toDouble() * ui->doubleSpinBox_foglio3_euro_1->value() );
+    ui->label_foglio3_primencopie_2->setNum( ui->spinBox_foglio3_nfogli_2->value() * ui->label_foglio3_kg_2->text().toDouble() * ui->doubleSpinBox_foglio3_euro_2->value() );
+    ui->label_foglio3_primencopie_3->setNum( ui->spinBox_foglio3_nfogli_3->value() * ui->label_foglio3_kg_3->text().toDouble() * ui->doubleSpinBox_foglio3_euro_3->value() );
+    ui->label_foglio3_primencopie_4->setNum( ui->spinBox_foglio3_nfogli_4->value() * ui->label_foglio3_kg_4->text().toDouble() * ui->doubleSpinBox_foglio3_euro_4->value() );
+    ui->label_foglio3_primencopie_5->setNum( ui->spinBox_foglio3_nfogli_5->value() * ui->label_foglio3_kg_5->text().toDouble() * ui->doubleSpinBox_foglio3_euro_5->value() );
 
     //successive
     ui->label_foglio3_successivencopie_1->setText( ui->label_foglio3_primencopie_1->text() );
@@ -1396,8 +1395,6 @@ void MainWindow::refreshFoglio4()
     ui->label_spinBox_foglio4_fustellatura_primencopie->setNum( ui->spinBox_foglio4_fustellatura_nfogli->value() * ui->doubleSpinBox_spinBox_foglio4_fustellatura_euro->value() );
     ui->label_spinBox_foglio4_fustellatura_successivencopie->setText(ui->label_spinBox_foglio4_fustellatura_primencopie->text());
 
-    ui->label_foglio4_accoppiatura_primencopie->setNum( ui->spinBox_foglio4_accoppiatura_fogli->value() * ui->doubleSpinBox_foglio4_accoppiatura_euro->value());
-    ui->label_foglio4_accoppiatura_successivencopie->setText(ui->label_foglio4_accoppiatura_primencopie->text());
 
     ui->label_foglio4_piegacopie_primencopie->setNum( ui->spinBox_foglio4_piegacopie_numero->value() * ui->doubleSpinBox_foglio4_piegacopie_euro->value());
     ui->label_foglio4_piegacopie_successivencopie->setText(  ui->label_foglio4_piegacopie_primencopie->text() );
@@ -1439,7 +1436,7 @@ void MainWindow::refreshFoglio4()
                                                      + ui->doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento->value()
                                                      + ui->doubleSpinBox_cordonatura_primencopie->value()
                                                      + ui->doubleSpinBox_cordonatura_avviamento->value()
-                                                     + ui->label_foglio4_accoppiatura_primencopie->text().toDouble()
+                                                     + ui->doubleSpinBox_foglio4_accoppiatura_prime->value()
                                                      + ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->value()
                                                      + ui->doubleSpinBox_foglio4_cliche_primencopie->value()
                                                      + ui->label_foglio4_piegacopie_primencopie->text().toDouble()
@@ -1469,7 +1466,7 @@ void MainWindow::refreshFoglio4()
                                                           + ui->label_foglio4_serigrafia_successivencopie->text().toDouble()
                                                           + ui->label_spinBox_foglio4_fustellatura_successivencopie->text().toDouble()
                                                           + ui->doubleSpinBox_cordonatura_successivencopie->value()
-                                                          + ui->label_foglio4_accoppiatura_successivencopie->text().toDouble()
+                                                          + ui->doubleSpinBox_foglio4_accoppiatura_succ->value()
                                                           + ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->value()
                                                           + ui->label_foglio4_piegacopie_successivencopie->text().toDouble()
                                                           + ui->label_foglio4_tagliocopie_successivencopie->text().toDouble()
@@ -1493,10 +1490,10 @@ void MainWindow::refreshFoglio4()
 void MainWindow::refreshFoglio5()
 {
    ui->label_foglio5_stampa_primencopie->setText( ui->label_foglio2_totale_prime->text() );
-   ui->label_foglio5_stampa_successivencopie->setText(ui->label_foglio2_totale_successive->text());
+   ui->label_foglio5_stampa_successivencopie->setText(ui->label_foglio2_totale_successive->text() );
 
-   ui->label_foglio5_carta_primencopie->setText( ui->label_foglio3_totale_primencopie->text());
-   ui->label_foglio5_carta_successivencopie->setText( ui->label_foglio3_totale_successivencopie->text());
+   ui->label_foglio5_carta_primencopie->setNum( ui->label_foglio3_totale_primencopie->text().toDouble() * ui->spinBox_foglio1_ncopie->value());
+   ui->label_foglio5_carta_successivencopie->setNum( ui->label_foglio3_totale_successivencopie->text().toDouble() * ui->spinBox_foglio1_ncopie->value());
 
    ui->label_foglio5_lavorazioni_primencopie->setText( ui->label_foglio4_totale_primencopie->text());
    ui->label_foglio5_lavorazioni_successivencopie->setText(ui->label_foglio4_totale_successivencopie->text());
@@ -2123,16 +2120,6 @@ void MainWindow::on_doubleSpinBox_cordonatura_avviamento_valueChanged(double )
     refreshFoglio4();
 }
 
-void MainWindow::on_spinBox_foglio4_accoppiatura_fogli_valueChanged(int )
-{
-    refreshFoglio4();
-}
-
-void MainWindow::on_doubleSpinBox_foglio4_accoppiatura_euro_valueChanged(double )
-{
-    refreshFoglio4();
-}
-
 void MainWindow::on_doubleSpinBox_foglio4_stampaacaldo_primencopie_valueChanged(double )
 {
     refreshFoglio4();
@@ -2421,4 +2408,14 @@ void MainWindow::on_bottone_preventivi_modifica_clicked()
     pulire = false;
     this->on_bottone_preventivi_nuovo_clicked();
     caricaPreventivo(valoredacancellare.toInt());
+}
+
+void MainWindow::on_doubleSpinBox_foglio4_accoppiatura_prime_valueChanged(double )
+{
+    refreshFoglio4();
+}
+
+void MainWindow::on_doubleSpinBox_foglio4_accoppiatura_succ_valueChanged(double )
+{
+    refreshFoglio4();
 }
