@@ -849,7 +849,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>854</width>
+                <width>509</width>
                 <height>901</height>
                </rect>
               </property>
@@ -1523,7 +1523,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>854</width>
+                <width>611</width>
                 <height>901</height>
                </rect>
               </property>
@@ -2128,7 +2128,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>854</width>
+                <width>668</width>
                 <height>2193</height>
                </rect>
               </property>
@@ -3586,19 +3586,6 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_19">
        <item row="0" column="1">
-        <widget class="QLabel" name="label_31">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Sviluppato da</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
         <widget class="QLabel" name="logo_grimp">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
