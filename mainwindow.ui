@@ -1380,8 +1380,11 @@
                </item>
                <item row="2" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_1">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
