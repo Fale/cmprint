@@ -50,6 +50,12 @@ private:
 private slots:
 
 
+    void on_spinBox_foglio5_3000_valueChanged(int );
+    void on_spinBox_foglio5_2500_valueChanged(int );
+    void on_spinBox_foglio5_2000_valueChanged(int );
+    void on_spinBox_foglio5_1500_valueChanged(int );
+    void on_spinBox_foglio5_1000_valueChanged(int );
+    void on_spinBox_foglio5_500_valueChanged(int );
     void on_doubleSpinBox_foglio4_accoppiatura_succ_valueChanged(double );
     void on_doubleSpinBox_foglio4_accoppiatura_prime_valueChanged(double );
     void on_bottone_preventivi_modifica_clicked();

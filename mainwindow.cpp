@@ -5,9 +5,9 @@
    - Chiusura del db
    - NUMERO DI CIFRE
    - CONTROLLARE SALVATAGGIO/CARICAMENTO foglio2
-   - REFRESH FOGLIO 5
    - MIGLIORARE RICERCA
    - RISOLVERE PROBLEMA SELEZIONE
+   - AGGIUNGERE SCROLL FOGLIO 5?
 
 
    ANNOTAZIONI
@@ -2458,4 +2458,34 @@ void MainWindow::on_doubleSpinBox_foglio4_accoppiatura_prime_valueChanged(double
 void MainWindow::on_doubleSpinBox_foglio4_accoppiatura_succ_valueChanged(double )
 {
     refreshFoglio4();
+}
+
+void MainWindow::on_spinBox_foglio5_500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_1000_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_1500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_2000_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_2500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_3000_valueChanged(int )
+{
+    refreshFoglio5();
 }
