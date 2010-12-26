@@ -755,7 +755,7 @@
           <enum>QTabWidget::Rounded</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -864,7 +864,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>854</width>
+                <width>560</width>
                 <height>901</height>
                </rect>
               </property>
@@ -1664,7 +1664,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>854</width>
+                <width>654</width>
                 <height>901</height>
                </rect>
               </property>
@@ -2378,8 +2378,8 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-586</y>
-                <width>854</width>
+                <y>0</y>
+                <width>722</width>
                 <height>2193</height>
                </rect>
               </property>
@@ -3940,356 +3940,375 @@
            <string>Foglio 5</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_18">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_62">
-             <property name="text">
-              <string>Riepilogo Costi</string>
+           <item row="9" column="0">
+            <widget class="QScrollArea" name="scrollArea_4">
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <spacer name="horizontalSpacer_15">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>531</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_foglio5_ncopie">
-             <property name="text">
-              <string>Prima copia          </string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QLabel" name="label_foglio5_successivencopie">
-             <property name="text">
-              <string>Successiva copia</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_64">
-             <property name="text">
-              <string>Stampa</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="label_foglio5_stampa_primencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="3">
-            <widget class="QLabel" name="label_foglio5_stampa_successivencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_71">
-             <property name="text">
-              <string>Carta</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_78">
-             <property name="text">
-              <string>Lavorazioni</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="2">
-            <widget class="QLabel" name="label_foglio5_lavorazioni_primencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="3">
-            <widget class="QLabel" name="label_foglio5_lavorazioni_successivencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2">
-            <widget class="QLabel" name="label_foglio5_carta_primencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="3">
-            <widget class="QLabel" name="label_foglio5_carta_successivencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <spacer name="verticalSpacer_41">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>82</width>
-               <height>30</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="7" column="0">
-            <widget class="QLabel" name="label_199">
-             <property name="text">
-              <string>Prezzo a copia</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="2">
-            <widget class="QLabel" name="label_foglio5_prezzoacopia_primencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="3">
-            <widget class="QLabel" name="label_foglio5_prezzoacopia_successivencopie">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="10" column="0">
-            <widget class="QSpinBox" name="spinBox_foglio5_500">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>27</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>999999</number>
-             </property>
-             <property name="value">
-              <number>500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <spacer name="verticalSpacer_7">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::MinimumExpanding</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>100</width>
-               <height>30</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="8" column="0">
-            <spacer name="verticalSpacer_42">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::MinimumExpanding</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>82</width>
-               <height>30</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="11" column="0">
-            <widget class="QSpinBox" name="spinBox_foglio5_1000">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>27</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>999999</number>
-             </property>
-             <property name="value">
-              <number>1000</number>
-             </property>
-            </widget>
-           </item>
-           <item row="12" column="0">
-            <widget class="QSpinBox" name="spinBox_foglio5_1500">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>27</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>999999</number>
-             </property>
-             <property name="value">
-              <number>1500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="13" column="0">
-            <widget class="QSpinBox" name="spinBox_foglio5_2000">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>27</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>999999</number>
-             </property>
-             <property name="value">
-              <number>2000</number>
-             </property>
-            </widget>
-           </item>
-           <item row="14" column="0">
-            <widget class="QSpinBox" name="spinBox_foglio5_2500">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>27</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>999999</number>
-             </property>
-             <property name="value">
-              <number>2500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="10" column="2">
-            <widget class="QLabel" name="label_foglio5_prime_500">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="11" column="2">
-            <widget class="QLabel" name="label_foglio5_prime_1000">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="12" column="2">
-            <widget class="QLabel" name="label_foglio5_prime_1500">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="13" column="2">
-            <widget class="QLabel" name="label_foglio5_prime_2000">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="14" column="2">
-            <widget class="QLabel" name="label_foglio5_prime_2500">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="10" column="3">
-            <widget class="QLabel" name="label_foglio5_succ_500">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="11" column="3">
-            <widget class="QLabel" name="label_foglio5_succ_1000">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="12" column="3">
-            <widget class="QLabel" name="label_foglio5_succ_1500">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="13" column="3">
-            <widget class="QLabel" name="label_foglio5_succ_2000">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="14" column="3">
-            <widget class="QLabel" name="label_foglio5_succ_2500">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="15" column="0">
-            <widget class="QSpinBox" name="spinBox_foglio5_3000">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>27</height>
-              </size>
-             </property>
-             <property name="maximum">
-              <number>999999</number>
-             </property>
-             <property name="value">
-              <number>3000</number>
-             </property>
-            </widget>
-           </item>
-           <item row="15" column="2">
-            <widget class="QLabel" name="label_foglio5_prime_3000">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="15" column="3">
-            <widget class="QLabel" name="label_foglio5_succ_3000">
-             <property name="text">
-              <string>0</string>
-             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_4">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>854</width>
+                <height>448</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_20">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_62">
+                 <property name="text">
+                  <string>Riepilogo Costi</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <spacer name="horizontalSpacer_15">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>491</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_foglio5_ncopie">
+                 <property name="text">
+                  <string>Prima copia          </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_foglio5_successivencopie">
+                 <property name="text">
+                  <string>Successiva copia</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_41">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_64">
+                 <property name="text">
+                  <string>Stampa</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_foglio5_stampa_primencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QLabel" name="label_foglio5_stampa_successivencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_71">
+                 <property name="text">
+                  <string>Carta</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="label_foglio5_carta_primencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="3">
+                <widget class="QLabel" name="label_foglio5_carta_successivencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_78">
+                 <property name="text">
+                  <string>Lavorazioni</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLabel" name="label_foglio5_lavorazioni_primencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="3">
+                <widget class="QLabel" name="label_foglio5_lavorazioni_successivencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::MinimumExpanding</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>100</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_199">
+                 <property name="text">
+                  <string>Prezzo a copia</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2">
+                <widget class="QLabel" name="label_foglio5_prezzoacopia_primencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="3">
+                <widget class="QLabel" name="label_foglio5_prezzoacopia_successivencopie">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <spacer name="verticalSpacer_42">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::MinimumExpanding</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>82</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="8" column="0">
+                <widget class="QSpinBox" name="spinBox_foglio5_500">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                 <property name="value">
+                  <number>500</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="2">
+                <widget class="QLabel" name="label_foglio5_prime_500">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="3">
+                <widget class="QLabel" name="label_foglio5_succ_500">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QSpinBox" name="spinBox_foglio5_1000">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                 <property name="value">
+                  <number>1000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="2">
+                <widget class="QLabel" name="label_foglio5_prime_1000">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="3">
+                <widget class="QLabel" name="label_foglio5_succ_1000">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QSpinBox" name="spinBox_foglio5_1500">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                 <property name="value">
+                  <number>1500</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="2">
+                <widget class="QLabel" name="label_foglio5_prime_1500">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="3">
+                <widget class="QLabel" name="label_foglio5_succ_1500">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0">
+                <widget class="QSpinBox" name="spinBox_foglio5_2000">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                 <property name="value">
+                  <number>2000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="2">
+                <widget class="QLabel" name="label_foglio5_prime_2000">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="3">
+                <widget class="QLabel" name="label_foglio5_succ_2000">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QSpinBox" name="spinBox_foglio5_2500">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                 <property name="value">
+                  <number>2500</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="2">
+                <widget class="QLabel" name="label_foglio5_prime_2500">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="3">
+                <widget class="QLabel" name="label_foglio5_succ_2500">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="0">
+                <widget class="QSpinBox" name="spinBox_foglio5_3000">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                 <property name="value">
+                  <number>3000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="2">
+                <widget class="QLabel" name="label_foglio5_prime_3000">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="3">
+                <widget class="QLabel" name="label_foglio5_succ_3000">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
