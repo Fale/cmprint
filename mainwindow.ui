@@ -746,7 +746,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -831,7 +831,7 @@
            <item row="4" column="1" colspan="2">
             <widget class="QSpinBox" name="spinBox_foglio1_ncopie">
              <property name="maximum">
-              <number>99999</number>
+              <number>1000000</number>
              </property>
              <property name="value">
               <number>1</number>
@@ -882,7 +882,11 @@
                 </widget>
                </item>
                <item row="1" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_1"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_1">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="4" colspan="2">
                 <widget class="QLabel" name="label_10">
@@ -906,7 +910,11 @@
                 </widget>
                </item>
                <item row="2" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_1"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_1">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="4" colspan="2">
                 <widget class="QLabel" name="label_13">
@@ -953,7 +961,11 @@
                 </widget>
                </item>
                <item row="4" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_2"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_2">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="4" column="4" colspan="2">
                 <widget class="QLabel" name="label_17">
@@ -977,7 +989,11 @@
                 </widget>
                </item>
                <item row="5" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_2"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_2">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="5" column="4" colspan="2">
                 <widget class="QLabel" name="label_18">
@@ -1024,7 +1040,11 @@
                 </widget>
                </item>
                <item row="7" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_3"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_3">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="7" column="4" colspan="2">
                 <widget class="QLabel" name="label_19">
@@ -1048,7 +1068,11 @@
                 </widget>
                </item>
                <item row="8" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_3"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_3">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="8" column="4" colspan="2">
                 <widget class="QLabel" name="label_20">
@@ -1095,7 +1119,11 @@
                 </widget>
                </item>
                <item row="10" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_4"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_4">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="10" column="4">
                 <widget class="QLabel" name="label_114">
@@ -1119,7 +1147,11 @@
                 </widget>
                </item>
                <item row="11" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_4"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_4">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="11" column="4">
                 <widget class="QLabel" name="label_111">
@@ -1166,7 +1198,11 @@
                 </widget>
                </item>
                <item row="13" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_5"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_5">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="13" column="4" colspan="2">
                 <widget class="QLabel" name="label_121">
@@ -1190,7 +1226,11 @@
                 </widget>
                </item>
                <item row="14" column="3">
-                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_5"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_5">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="14" column="4" colspan="2">
                 <widget class="QLabel" name="label_118">
@@ -1237,7 +1277,11 @@
                 </widget>
                </item>
                <item row="16" column="2" colspan="2">
-                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_6"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_lastre_n_6">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="16" column="4">
                 <widget class="QLabel" name="label_128">
@@ -1254,7 +1298,11 @@
                 </widget>
                </item>
                <item row="17" column="2" colspan="2">
-                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_6"/>
+                <widget class="QSpinBox" name="spinBox_foglio2_risme_n_6">
+                 <property name="maximum">
+                  <number>999999</number>
+                 </property>
+                </widget>
                </item>
                <item row="17" column="4">
                 <widget class="QLabel" name="label_125">
@@ -1327,6 +1375,9 @@
                </item>
                <item row="24" column="8" colspan="2">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_percentuale">
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
                  <property name="value">
                   <double>20.000000000000000</double>
                  </property>
@@ -1417,7 +1468,7 @@
                <item row="8" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_3">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1427,7 +1478,7 @@
                <item row="10" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_4">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1437,7 +1488,7 @@
                <item row="11" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_4">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1447,7 +1498,7 @@
                <item row="13" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_5">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1457,7 +1508,7 @@
                <item row="14" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_5">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1467,7 +1518,7 @@
                <item row="16" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_6">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1477,7 +1528,7 @@
                <item row="17" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_6">
                  <property name="decimals">
-                 <number>3</number>
+                  <number>3</number>
                  </property>
                  <property name="maximum">
                   <double>1000000.000000000000000</double>
@@ -1517,22 +1568,61 @@
                 </spacer>
                </item>
                <item row="19" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastreavviamenti_prime"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastreavviamenti_prime">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="20" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampa_prime"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampa_prime">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="21" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_prime"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_prime">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                </widget>
                </item>
                <item row="19" column="9">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastreavviamenti_successive"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastreavviamenti_successive">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="20" column="9">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampa_successive"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampa_successive">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="21" column="9">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_successive"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_successive">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_1">
@@ -1631,7 +1721,11 @@
                 </widget>
                </item>
                <item row="2" column="1">
-                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_1"/>
+                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_1">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_135">
@@ -1692,7 +1786,11 @@
                 </widget>
                </item>
                <item row="5" column="1">
-                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_2"/>
+                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_2">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="5" column="2">
                 <widget class="QLabel" name="label_148">
@@ -1769,7 +1867,11 @@
                 </widget>
                </item>
                <item row="8" column="1">
-                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_3"/>
+                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_3">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="8" column="2">
                 <widget class="QLabel" name="label_153">
@@ -1846,7 +1948,11 @@
                 </widget>
                </item>
                <item row="11" column="1">
-                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_4"/>
+                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_4">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="11" column="2">
                 <widget class="QLabel" name="label_158">
@@ -1923,7 +2029,11 @@
                 </widget>
                </item>
                <item row="14" column="1">
-                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_5"/>
+                <widget class="QSpinBox" name="spinBox_foglio3_nfogli_5">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="14" column="2">
                 <widget class="QLabel" name="label_163">
@@ -2043,6 +2153,9 @@
                </item>
                <item row="23" column="7" colspan="2">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_percentuale">
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
                  <property name="value">
                   <double>20.000000000000000</double>
                  </property>
@@ -2127,37 +2240,111 @@
                 </spacer>
                </item>
                <item row="2" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_1"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_1">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="5" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_2"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_2">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="8" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_3"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_3">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="11" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_4"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_4">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="14" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_5"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_euro_5">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="16" column="7">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_1"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_1">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="16" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_1"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_1">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                </widget>
                </item>
                <item row="18" column="7">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_2"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_2">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="18" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_2"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_2">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="20" column="8">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_3"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_successivencopie_3">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="20" column="7">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_3"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio3_primencopie_3">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="1">
                 <widget class="QComboBox" name="comboBox_foglio3_carta_tipo_1"/>
@@ -2182,7 +2369,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-586</y>
                 <width>854</width>
                 <height>2193</height>
                </rect>
@@ -2461,25 +2648,53 @@
                 <widget class="QLineEdit" name="lineEdit_seconda"/>
                </item>
                <item row="74" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_seconda_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_seconda_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="75" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_terza"/>
                </item>
                <item row="75" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_terza_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_terza_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="76" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_quarta"/>
                </item>
                <item row="76" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quarta_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quarta_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="77" column="0" colspan="16">
                 <widget class="QLineEdit" name="lineEdit_foglio4_quinta"/>
                </item>
                <item row="77" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="79" column="0" colspan="3">
                 <widget class="QLabel" name="label_288">
@@ -2580,7 +2795,14 @@
                 </widget>
                </item>
                <item row="29" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_fustella_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_fustella_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="32" column="19">
                 <widget class="QLabel" name="label_spinBox_foglio4_fustellatura_successivencopie">
@@ -2597,25 +2819,74 @@
                 </widget>
                </item>
                <item row="34" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="36" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="36" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="37" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_cordonatura_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="43" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_stampaacaldo_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_stampaacaldo_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="43" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_stampaacaldo_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_stampaacaldo_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="46" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cliche_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cliche_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="48" column="19">
                 <widget class="QLabel" name="label_foglio4_piegacopie_successivencopie">
@@ -2646,7 +2917,14 @@
                 </widget>
                </item>
                <item row="54" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_puntometallico_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_puntometallico_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="57" column="18">
                 <widget class="QLabel" name="label_foglio4_brosurafresata_primencopie">
@@ -2656,7 +2934,14 @@
                 </widget>
                </item>
                <item row="58" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_brosurafresata_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_brosurafresata_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="61" column="18">
                 <widget class="QLabel" name="label_foglio4_filo_primencopie">
@@ -2666,7 +2951,14 @@
                 </widget>
                </item>
                <item row="62" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="65" column="18">
                 <widget class="QLabel" name="label_foglio4_cartonato_primencopie">
@@ -2676,7 +2968,14 @@
                 </widget>
                </item>
                <item row="66" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="69" column="18">
                 <widget class="QLabel" name="label_foglio4_spiralatura_primencopie">
@@ -2700,22 +2999,64 @@
                 </widget>
                </item>
                <item row="73" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_prima_successivencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_prima_successivencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="73" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_prima_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_prima_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="74" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_seconda_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_seconda_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="75" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_terza_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_terza_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="76" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quarta_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quarta_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="77" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_primencopie"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_quinta_primencopie">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="81" column="19">
                 <widget class="QLabel" name="label_foglio4_totale_successivencopie">
@@ -2819,7 +3160,11 @@
                 </widget>
                </item>
                <item row="2" column="5">
-                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_opaca_bianca"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_opaca_bianca">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="7" column="2">
                 <widget class="QComboBox" name="comboBox_foglio4_plastificazione_opaca_bianca_volta"/>
@@ -2832,7 +3177,11 @@
                 </widget>
                </item>
                <item row="7" column="5">
-                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_opaca_bianca_volta"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_opaca_bianca_volta">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="12" column="4">
                 <widget class="QLabel" name="label_65">
@@ -2842,10 +3191,18 @@
                 </widget>
                </item>
                <item row="12" column="5">
-                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_lucida_bianca"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_lucida_bianca">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="17" column="5">
-                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_lucida_bianca_volta"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_plastificazione_lucida_bianca_volta">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="22" column="4">
                 <widget class="QLabel" name="label_79">
@@ -2858,10 +3215,18 @@
                 <widget class="QComboBox" name="comboBox_foglio4_serigrafia"/>
                </item>
                <item row="22" column="5">
-                <widget class="QSpinBox" name="spinBox_foglio4_serigrafia"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_serigrafia">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="32" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_fustellatura_nfogli"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_fustellatura_nfogli">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="32" column="4">
                 <widget class="QLabel" name="label_94">
@@ -2871,7 +3236,14 @@
                 </widget>
                </item>
                <item row="32" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_spinBox_foglio4_fustellatura_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_spinBox_foglio4_fustellatura_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="39" column="0">
                 <spacer name="verticalSpacer_27">
@@ -3050,7 +3422,11 @@
                 </spacer>
                </item>
                <item row="48" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_piegacopie_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_piegacopie_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="48" column="4">
                 <widget class="QLabel" name="label_104">
@@ -3060,10 +3436,21 @@
                 </widget>
                </item>
                <item row="48" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_piegacopie_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_piegacopie_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="50" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_tagliocopie_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_tagliocopie_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="50" column="4">
                 <widget class="QLabel" name="label_108">
@@ -3073,7 +3460,14 @@
                 </widget>
                </item>
                <item row="50" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_tagliocopie_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_tagliocopie_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="52" column="0" colspan="2">
                 <widget class="QLabel" name="label_140">
@@ -3083,7 +3477,11 @@
                 </widget>
                </item>
                <item row="52" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_puntometallico_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_puntometallico_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="52" column="4">
                 <widget class="QLabel" name="label_138">
@@ -3093,10 +3491,21 @@
                 </widget>
                </item>
                <item row="52" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_puntometallico_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_puntometallico_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="57" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_brosurafresata_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_brosurafresata_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="57" column="4">
                 <widget class="QLabel" name="label_143">
@@ -3106,10 +3515,21 @@
                 </widget>
                </item>
                <item row="57" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_brosurafresata_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_brosurafresata_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="61" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_filo_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_filo_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="61" column="4">
                 <widget class="QLabel" name="label_177">
@@ -3119,10 +3539,21 @@
                 </widget>
                </item>
                <item row="61" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_filo_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="65" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_cartonato_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_cartonato_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="65" column="4">
                 <widget class="QLabel" name="label_182">
@@ -3132,10 +3563,27 @@
                 </widget>
                </item>
                <item row="65" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_cartonato_euro">
+                 <property name="prefix">
+                  <string/>
+                 </property>
+                 <property name="suffix">
+                  <string/>
+                 </property>
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="69" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_spiralatura_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_spiralatura_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="69" column="4">
                 <widget class="QLabel" name="label_188">
@@ -3145,7 +3593,14 @@
                 </widget>
                </item>
                <item row="69" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_spiralatura_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_spiralatura_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="70" column="0" colspan="2">
                 <widget class="QLabel" name="label_190">
@@ -3155,7 +3610,11 @@
                 </widget>
                </item>
                <item row="70" column="2">
-                <widget class="QSpinBox" name="spinBox_foglio4_pacchi_numero"/>
+                <widget class="QSpinBox" name="spinBox_foglio4_pacchi_numero">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                </widget>
                </item>
                <item row="70" column="4">
                 <widget class="QLabel" name="label_192">
@@ -3165,7 +3624,14 @@
                 </widget>
                </item>
                <item row="70" column="5">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_pacchi_euro"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_pacchi_euro">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="73" column="16">
                 <spacer name="horizontalSpacer_9">
@@ -3281,22 +3747,64 @@
                 </spacer>
                </item>
                <item row="24" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_serigrafia_telaio"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_serigrafia_telaio">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="23" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_serigrafia_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_serigrafia_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="18" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="13" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="8" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="35" column="0">
                 <spacer name="verticalSpacer_28">
@@ -3364,6 +3872,9 @@
                </item>
                <item row="80" column="18" colspan="2">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_percentuale">
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
                  <property name="value">
                   <double>20.000000000000000</double>
                  </property>
@@ -3373,7 +3884,14 @@
                 <widget class="QComboBox" name="comboBox_foglio4_plastificazione_lucida_bianca"/>
                </item>
                <item row="71" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_trasporto"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_trasporto">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="81" column="18">
                 <widget class="QLabel" name="label_foglio4_totale_primencopie">
@@ -3383,10 +3901,24 @@
                 </widget>
                </item>
                <item row="40" column="19">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_succ"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_succ">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
                <item row="40" column="18">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_prime"/>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio4_accoppiatura_prime">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
