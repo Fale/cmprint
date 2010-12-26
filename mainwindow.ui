@@ -739,8 +739,14 @@
        </item>
        <item row="4" column="0" colspan="5">
         <widget class="QTabWidget" name="tabWidget_preventivi">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>27</height>
+          </size>
+         </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -849,8 +855,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>871</width>
-                <height>3282</height>
+                <width>854</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1529,8 +1535,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>871</width>
-                <height>3282</height>
+                <width>854</width>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -2147,8 +2153,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>871</width>
-                <height>3282</height>
+                <width>854</width>
+                <height>2193</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
@@ -3505,6 +3511,12 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>27</height>
+              </size>
+             </property>
              <property name="maximum">
               <number>999999</number>
              </property>
@@ -3518,10 +3530,13 @@
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::MinimumExpanding</enum>
+             </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>100</width>
-               <height>2895</height>
+               <height>30</height>
               </size>
              </property>
             </spacer>
@@ -3532,7 +3547,7 @@
               <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
+              <enum>QSizePolicy::MinimumExpanding</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3544,6 +3559,12 @@
            </item>
            <item row="11" column="0">
             <widget class="QSpinBox" name="spinBox_foglio5_1000">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>27</height>
+              </size>
+             </property>
              <property name="maximum">
               <number>999999</number>
              </property>
@@ -3554,6 +3575,12 @@
            </item>
            <item row="12" column="0">
             <widget class="QSpinBox" name="spinBox_foglio5_1500">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>27</height>
+              </size>
+             </property>
              <property name="maximum">
               <number>999999</number>
              </property>
@@ -3564,6 +3591,12 @@
            </item>
            <item row="13" column="0">
             <widget class="QSpinBox" name="spinBox_foglio5_2000">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>27</height>
+              </size>
+             </property>
              <property name="maximum">
               <number>999999</number>
              </property>
@@ -3574,6 +3607,12 @@
            </item>
            <item row="14" column="0">
             <widget class="QSpinBox" name="spinBox_foglio5_2500">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>27</height>
+              </size>
+             </property>
              <property name="maximum">
               <number>999999</number>
              </property>
@@ -3654,6 +3693,12 @@
            </item>
            <item row="15" column="0">
             <widget class="QSpinBox" name="spinBox_foglio5_3000">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>27</height>
+              </size>
+             </property>
              <property name="maximum">
               <number>999999</number>
              </property>

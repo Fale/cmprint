@@ -4,8 +4,7 @@
 /* TO BE FIXED
    - Chiusura del db
    - NUMERO DI CIFRE
-   - CONTROLLARE SALVATAGGIO/CARICAMENTO foglio2
-   - MIGLIORARE RICERCA
+   - MIGLIORARE RICERCA (Like non va)
    - RISOLVERE PROBLEMA SELEZIONE
    - AGGIUNGERE SCROLL FOGLIO 5?
 
@@ -194,11 +193,11 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio2_lastre_prezzo_5->setValue(campo.value(21).toDouble());
     ui->doubleSpinBox_foglio2_lastre_prezzo_6->setValue(campo.value(22).toDouble());
     ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(23).toDouble());
-    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(24).toDouble());
-    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(25).toDouble());
-    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(26).toDouble());
-    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(27).toDouble());
-    ui->doubleSpinBox_foglio2_risme_prezzo_1->setValue(campo.value(28).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_2->setValue(campo.value(24).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_3->setValue(campo.value(25).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_4->setValue(campo.value(26).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_5->setValue(campo.value(27).toDouble());
+    ui->doubleSpinBox_foglio2_risme_prezzo_6->setValue(campo.value(28).toDouble());
     ui->doubleSpinBox_foglio2_lastreavviamenti_prime->setValue(campo.value(29).toDouble());
     ui->doubleSpinBox_foglio2_lastreavviamenti_successive->setValue(campo.value(30).toDouble());
     ui->doubleSpinBox_foglio2_stampa_prime->setValue(campo.value(31).toDouble());
@@ -240,8 +239,8 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio3_primencopie_2->setValue(campo.value(65).toDouble());
     ui->doubleSpinBox_foglio3_primencopie_3->setValue(campo.value(66).toDouble());
     ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(67).toDouble());
-    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(68).toDouble());
-    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(campo.value(69).toDouble());
+    ui->doubleSpinBox_foglio3_successivencopie_2->setValue(campo.value(68).toDouble());
+    ui->doubleSpinBox_foglio3_successivencopie_3->setValue(campo.value(69).toDouble());
     ui->doubleSpinBox_foglio3_percentuale->setValue(campo.value(70).toDouble());
 
     //foglio4
@@ -745,7 +744,7 @@ void MainWindow::refreshTabelle()
         filtro.append(ui->lineEdit_preventivi_cerca->text());
         filtro.append("' OR descrizione='");
         filtro.append(ui->lineEdit_preventivi_cerca->text());
-        filtro.append("' OR data='");
+        filtro.append("' OR data ='");
         filtro.append(ui->lineEdit_preventivi_cerca->text());
         filtro.append("'");
         tabella_preventivi->setFilter(filtro);
@@ -758,9 +757,11 @@ void MainWindow::refreshTabelle()
     tabella_preventivi->setHeaderData(3, Qt::Horizontal, "Descrizione lavoro");
 
     ui->tableView_preventivi->setModel(tabella_preventivi);
+
+    /* nascondi altre colonne
     for (int i=4; i<136; i++)
         ui->tableView_preventivi->hideColumn(i);
-
+*/
 
 
     popolaComboBox();
