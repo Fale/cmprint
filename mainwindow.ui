@@ -1406,57 +1406,81 @@
                </item>
                <item row="7" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_3">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="8" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_3">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="10" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_4">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="11" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_4">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="13" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_5">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="14" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_5">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="16" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_6">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="17" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_6">
+                 <property name="decimals">
+                 <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
