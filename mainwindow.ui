@@ -1384,8 +1384,8 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_1">
+               <item row="4" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_2">
                  <property name="decimals">
                   <number>3</number>
                  </property>
@@ -1394,17 +1394,13 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="6">
-                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_lastre_prezzo_2">
-                 <property name="maximum">
-                  <double>9999.989999999999782</double>
-                 </property>
-                </widget>
-               </item>
                <item row="5" column="6">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_2">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
                  <property name="maximum">
-                  <double>9999.989999999999782</double>
+                  <double>1000000.000000000000000</double>
                  </property>
                 </widget>
                </item>
@@ -1513,6 +1509,16 @@
                </item>
                <item row="21" column="9">
                 <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_stampadigitale_successive"/>
+               </item>
+               <item row="2" column="6">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_foglio2_risme_prezzo_1">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
