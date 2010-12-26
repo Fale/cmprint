@@ -36,6 +36,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
    QString a;
     a.setNum(8.00, 'f', 3 );
+    QString b;
+    b = "6,123";
+    ui->label_27->setNum(b.toDouble()*2);
     //ui->label_27->setText(QString::setNum);
     /*QString data;
     data = "25/12/2011";
@@ -757,10 +760,9 @@ void MainWindow::refreshTabelle()
 
     ui->tableView_preventivi->setModel(tabella_preventivi);
 
-    /* nascondi altre colonne
     for (int i=4; i<136; i++)
         ui->tableView_preventivi->hideColumn(i);
-*/
+
 
 
     popolaComboBox();
