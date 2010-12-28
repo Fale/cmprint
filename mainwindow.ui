@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>931</width>
-    <height>6000</height>
+    <height>1672</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,7 +19,7 @@
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>6000</height>
+    <height>1672</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -864,8 +864,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>560</width>
-                <height>901</height>
+                <width>871</width>
+                <height>2711</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1664,8 +1664,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>654</width>
-                <height>901</height>
+                <width>871</width>
+                <height>2711</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -2379,8 +2379,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>722</width>
-                <height>2193</height>
+                <width>871</width>
+                <height>2711</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
@@ -3950,8 +3950,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>854</width>
-                <height>448</height>
+                <width>871</width>
+                <height>436</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_20">
@@ -4498,6 +4498,190 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>dateEdit_foglio1</tabstop>
+  <tabstop>comboBox_clienti_seleziona</tabstop>
+  <tabstop>bottone_tab1_aggiungi_clienti</tabstop>
+  <tabstop>plainTextEdit_descrizione</tabstop>
+  <tabstop>spinBox_foglio1_ncopie</tabstop>
+  <tabstop>spinBox_foglio2_lastre_n_1</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastre_prezzo_1</tabstop>
+  <tabstop>spinBox_foglio2_risme_n_1</tabstop>
+  <tabstop>doubleSpinBox_foglio2_risme_prezzo_1</tabstop>
+  <tabstop>spinBox_foglio2_lastre_n_2</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastre_prezzo_2</tabstop>
+  <tabstop>spinBox_foglio2_risme_n_2</tabstop>
+  <tabstop>doubleSpinBox_foglio2_risme_prezzo_2</tabstop>
+  <tabstop>spinBox_foglio2_lastre_n_3</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastre_prezzo_3</tabstop>
+  <tabstop>spinBox_foglio2_risme_n_3</tabstop>
+  <tabstop>doubleSpinBox_foglio2_risme_prezzo_3</tabstop>
+  <tabstop>spinBox_foglio2_lastre_n_4</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastre_prezzo_4</tabstop>
+  <tabstop>spinBox_foglio2_risme_n_4</tabstop>
+  <tabstop>doubleSpinBox_foglio2_risme_prezzo_4</tabstop>
+  <tabstop>spinBox_foglio2_lastre_n_5</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastre_prezzo_5</tabstop>
+  <tabstop>spinBox_foglio2_risme_n_5</tabstop>
+  <tabstop>doubleSpinBox_foglio2_risme_prezzo_5</tabstop>
+  <tabstop>spinBox_foglio2_lastre_n_6</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastre_prezzo_6</tabstop>
+  <tabstop>spinBox_foglio2_risme_n_6</tabstop>
+  <tabstop>doubleSpinBox_foglio2_risme_prezzo_6</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastreavviamenti_prime</tabstop>
+  <tabstop>doubleSpinBox_foglio2_lastreavviamenti_successive</tabstop>
+  <tabstop>doubleSpinBox_foglio2_stampa_prime</tabstop>
+  <tabstop>doubleSpinBox_foglio2_stampa_successive</tabstop>
+  <tabstop>doubleSpinBox_foglio2_stampadigitale_prime</tabstop>
+  <tabstop>doubleSpinBox_foglio2_stampadigitale_successive</tabstop>
+  <tabstop>doubleSpinBox_foglio2_percentuale</tabstop>
+  <tabstop>comboBox_foglio3_carta_tipo_1</tabstop>
+  <tabstop>comboBox_foglio3_carta_formato_1</tabstop>
+  <tabstop>comboBox_foglio3_carta_grammatura_1</tabstop>
+  <tabstop>spinBox_foglio3_nfogli_1</tabstop>
+  <tabstop>doubleSpinBox_foglio3_euro_1</tabstop>
+  <tabstop>comboBox_foglio3_carta_tipo_2</tabstop>
+  <tabstop>comboBox_foglio3_carta_formato_2</tabstop>
+  <tabstop>comboBox_foglio3_carta_grammatura_2</tabstop>
+  <tabstop>spinBox_foglio3_nfogli_2</tabstop>
+  <tabstop>doubleSpinBox_foglio3_euro_2</tabstop>
+  <tabstop>comboBox_foglio3_carta_tipo_3</tabstop>
+  <tabstop>comboBox_foglio3_carta_formato_3</tabstop>
+  <tabstop>comboBox_foglio3_carta_grammatura_3</tabstop>
+  <tabstop>spinBox_foglio3_nfogli_3</tabstop>
+  <tabstop>doubleSpinBox_foglio3_euro_3</tabstop>
+  <tabstop>comboBox_foglio3_carta_tipo_4</tabstop>
+  <tabstop>comboBox_foglio3_carta_formato_4</tabstop>
+  <tabstop>comboBox_foglio3_carta_grammatura_4</tabstop>
+  <tabstop>spinBox_foglio3_nfogli_4</tabstop>
+  <tabstop>doubleSpinBox_foglio3_euro_4</tabstop>
+  <tabstop>comboBox_foglio3_carta_tipo_5</tabstop>
+  <tabstop>comboBox_foglio3_carta_formato_5</tabstop>
+  <tabstop>comboBox_foglio3_carta_grammatura_5</tabstop>
+  <tabstop>spinBox_foglio3_nfogli_5</tabstop>
+  <tabstop>doubleSpinBox_foglio3_euro_5</tabstop>
+  <tabstop>lineEdit_foglio3_tipocarta_1</tabstop>
+  <tabstop>doubleSpinBox_foglio3_primencopie_1</tabstop>
+  <tabstop>doubleSpinBox_foglio3_successivencopie_1</tabstop>
+  <tabstop>lineEdit_foglio3_tipocarta_2</tabstop>
+  <tabstop>doubleSpinBox_foglio3_primencopie_2</tabstop>
+  <tabstop>doubleSpinBox_foglio3_successivencopie_2</tabstop>
+  <tabstop>lineEdit_foglio3_tipocarta_3</tabstop>
+  <tabstop>doubleSpinBox_foglio3_primencopie_3</tabstop>
+  <tabstop>doubleSpinBox_foglio3_successivencopie_3</tabstop>
+  <tabstop>doubleSpinBox_foglio3_percentuale</tabstop>
+  <tabstop>comboBox_foglio4_plastificazione_opaca_bianca</tabstop>
+  <tabstop>spinBox_foglio4_plastificazione_opaca_bianca</tabstop>
+  <tabstop>doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento</tabstop>
+  <tabstop>comboBox_foglio4_plastificazione_opaca_bianca_volta</tabstop>
+  <tabstop>spinBox_foglio4_plastificazione_opaca_bianca_volta</tabstop>
+  <tabstop>doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento</tabstop>
+  <tabstop>comboBox_foglio4_plastificazione_lucida_bianca</tabstop>
+  <tabstop>spinBox_foglio4_plastificazione_lucida_bianca</tabstop>
+  <tabstop>doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento</tabstop>
+  <tabstop>comboBox_foglio4_plastificazione_lucida_bianca_volta</tabstop>
+  <tabstop>spinBox_foglio4_plastificazione_lucida_bianca_volta</tabstop>
+  <tabstop>doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento</tabstop>
+  <tabstop>comboBox_foglio4_serigrafia</tabstop>
+  <tabstop>spinBox_foglio4_serigrafia</tabstop>
+  <tabstop>doubleSpinBox_foglio4_serigrafia_avviamento</tabstop>
+  <tabstop>doubleSpinBox_foglio4_serigrafia_telaio</tabstop>
+  <tabstop>doubleSpinBox_fustella_primencopie</tabstop>
+  <tabstop>spinBox_foglio4_fustellatura_nfogli</tabstop>
+  <tabstop>doubleSpinBox_spinBox_foglio4_fustellatura_euro</tabstop>
+  <tabstop>doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento</tabstop>
+  <tabstop>doubleSpinBox_cordonatura_primencopie</tabstop>
+  <tabstop>doubleSpinBox_cordonatura_successivencopie</tabstop>
+  <tabstop>doubleSpinBox_cordonatura_avviamento</tabstop>
+  <tabstop>doubleSpinBox_foglio4_accoppiatura_prime</tabstop>
+  <tabstop>doubleSpinBox_foglio4_accoppiatura_succ</tabstop>
+  <tabstop>doubleSpinBox_foglio4_stampaacaldo_primencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_stampaacaldo_successivencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_cliche_primencopie</tabstop>
+  <tabstop>spinBox_foglio4_piegacopie_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_piegacopie_euro</tabstop>
+  <tabstop>spinBox_foglio4_tagliocopie_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_tagliocopie_euro</tabstop>
+  <tabstop>spinBox_foglio4_puntometallico_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_puntometallico_euro</tabstop>
+  <tabstop>doubleSpinBox_foglio4_puntometallico_avviamento</tabstop>
+  <tabstop>spinBox_foglio4_brosurafresata_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_brosurafresata_euro</tabstop>
+  <tabstop>doubleSpinBox_foglio4_brosurafresata_avviamento</tabstop>
+  <tabstop>spinBox_foglio4_filo_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_filo_euro</tabstop>
+  <tabstop>doubleSpinBox_foglio4_filo_avviamento</tabstop>
+  <tabstop>spinBox_foglio4_cartonato_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_cartonato_euro</tabstop>
+  <tabstop>doubleSpinBox_foglio4_cartonato_avviamento</tabstop>
+  <tabstop>spinBox_foglio4_spiralatura_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_spiralatura_euro</tabstop>
+  <tabstop>spinBox_foglio4_pacchi_numero</tabstop>
+  <tabstop>doubleSpinBox_foglio4_pacchi_euro</tabstop>
+  <tabstop>doubleSpinBox_foglio4_trasporto</tabstop>
+  <tabstop>lineEdit_foglio4_prima</tabstop>
+  <tabstop>doubleSpinBox_foglio4_prima_primencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_prima_successivencopie</tabstop>
+  <tabstop>lineEdit_seconda</tabstop>
+  <tabstop>doubleSpinBox_foglio4_seconda_primencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_seconda_successivencopie</tabstop>
+  <tabstop>lineEdit_foglio4_terza</tabstop>
+  <tabstop>doubleSpinBox_foglio4_terza_primencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_terza_successivencopie</tabstop>
+  <tabstop>lineEdit_foglio4_quarta</tabstop>
+  <tabstop>doubleSpinBox_foglio4_quarta_primencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_quarta_successivencopie</tabstop>
+  <tabstop>lineEdit_foglio4_quinta</tabstop>
+  <tabstop>doubleSpinBox_foglio4_quinta_primencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_quinta_successivencopie</tabstop>
+  <tabstop>doubleSpinBox_foglio4_percentuale</tabstop>
+  <tabstop>spinBox_foglio5_500</tabstop>
+  <tabstop>spinBox_foglio5_1000</tabstop>
+  <tabstop>spinBox_foglio5_1500</tabstop>
+  <tabstop>spinBox_foglio5_2000</tabstop>
+  <tabstop>spinBox_foglio5_2500</tabstop>
+  <tabstop>spinBox_foglio5_3000</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>tableView_serigrafia</tabstop>
+  <tabstop>bottone_serigrafia_rimuovi</tabstop>
+  <tabstop>bottone_clienti_rimuovi</tabstop>
+  <tabstop>tableView_preventivi</tabstop>
+  <tabstop>bottone_benvenuto</tabstop>
+  <tabstop>bottone_preventivi_nuovo</tabstop>
+  <tabstop>pushButton_serigrafia</tabstop>
+  <tabstop>pushButton_clienti</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>tableView_plastificazione</tabstop>
+  <tabstop>bottone_clienti_aggiungi</tabstop>
+  <tabstop>tableView_carta_formato</tabstop>
+  <tabstop>bottone_salva_preventivo</tabstop>
+  <tabstop>pushButton_preventivi</tabstop>
+  <tabstop>bottone_carta_grammatura_aggiungi</tabstop>
+  <tabstop>tableView_clienti</tabstop>
+  <tabstop>tabWidget_preventivi</tabstop>
+  <tabstop>bottone_carta_formato_rimuovi</tabstop>
+  <tabstop>bottone_carta_tipo_aggiungi</tabstop>
+  <tabstop>bottone_torna_preventivo</tabstop>
+  <tabstop>bottone_plastificazione_aggiungi</tabstop>
+  <tabstop>bottone_carta_tipo_rimuovi</tabstop>
+  <tabstop>pushButton_carta_formato</tabstop>
+  <tabstop>bottone_serigrafia_aggiungi</tabstop>
+  <tabstop>bottone_carta_formato_aggiungi</tabstop>
+  <tabstop>lineEdit_preventivi_cerca</tabstop>
+  <tabstop>tableView_carta_grammatura</tabstop>
+  <tabstop>pushButton_carta_grammatura</tabstop>
+  <tabstop>scrollArea_4</tabstop>
+  <tabstop>scrollArea_3</tabstop>
+  <tabstop>pushButton_plastificazione</tabstop>
+  <tabstop>tableView_carta_tipo</tabstop>
+  <tabstop>bottone_carta_grammatura_rimuovi</tabstop>
+  <tabstop>bottone_plastificazione_rimuovi</tabstop>
+  <tabstop>pushButton_carta_tipo</tabstop>
+  <tabstop>bottone_preventivi_elimina</tabstop>
+  <tabstop>bottone_preventivi_modifica</tabstop>
+  <tabstop>bottone_preventivi_usamodello</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

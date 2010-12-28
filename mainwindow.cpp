@@ -5,8 +5,7 @@
    - Chiusura del db
    - MIGLIORARE RICERCA (Like non va)
    - RISOLVERE PROBLEMA SELEZIONE
-   - AGGIUNGERE SCROLL FOGLIO 5?
-
+    - ordine dei tab
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
@@ -34,17 +33,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->logo_grimp->setPixmap(QPixmap("grimp.png"));
     MainWindow::on_bottone_benvenuto_clicked();
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
-   QString a;
-    a.setNum(8.00, 'f', 3 );
-    QString b;
-    b = "6,123";
-    ui->label_27->setNum(b.toDouble()*2);
-    //ui->label_27->setText(QString::setNum);
-    /*QString data;
-    data = "25/12/2011";
 
-    ;
-    */
+    /*esempio su come visualizzare le label con 3 cifre dopo la virgola
+    QString a;
+    a.setNum(8.00, 'f', 3 );
+*/
+
     ui->bottone_torna_preventivo->hide();
     ui->bottone_salva_preventivo->hide();
     popolaComboBox();
@@ -776,10 +770,10 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     query.prepare("INSERT INTO plastificazione (formato, lucidabianca, lucidabiancavolta, opacabianca, opacabiancavolta)"
                   "VALUES(:formato, :lucidabianca, :lucidabiancavolta, :opacabianca, :opacabiancavolta) ") ;
     query.bindValue(":formato", n);
-    query.bindValue(":lucidabianca", 0);
-    query.bindValue(":lucidabiancavolta", 0);
-    query.bindValue(":opacabianca", 0);
-    query.bindValue(":opacabiancavolta", 0);
+    query.bindValue(":lucidabianca", "0,000");
+    query.bindValue(":lucidabiancavolta", "0,000");
+    query.bindValue(":opacabianca", "0,000");
+    query.bindValue(":opacabiancavolta", "0,000");
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
@@ -795,7 +789,7 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     qDebug() << query.prepare("INSERT INTO serigrafia (formato, prezzo)"
                               "VALUES(:formato, :prezzo) ");
     query.bindValue(":formato", n);
-    query.bindValue(":prezzo", n);
+    query.bindValue(":prezzo", "0,000");
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
