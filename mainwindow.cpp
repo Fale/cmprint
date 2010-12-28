@@ -5,7 +5,6 @@
    - Chiusura del db
    - MIGLIORARE RICERCA (Like non va)
    - RISOLVERE PROBLEMA SELEZIONE
-    - ordine dei tab
 
    ANNOTAZIONI
    - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
