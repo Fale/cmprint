@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>931</width>
-    <height>1672</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,7 +19,7 @@
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>1672</height>
+    <height>1024</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -865,7 +865,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>871</width>
-                <height>2711</height>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
@@ -1665,7 +1665,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>871</width>
-                <height>2711</height>
+                <height>901</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
@@ -2380,7 +2380,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>871</width>
-                <height>2711</height>
+                <height>2193</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
