@@ -35,8 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     stampante.setOutputFormat(QPrinter::PdfFormat);
     stampante.setOutputFileName("bb.pdf");
-    documento.setHtml("<b>bold</b> text");
-    documento.print(&stampante);
+
 
     /*esempio su come visualizzare le label con 3 cifre dopo la virgola
     QString a;
@@ -310,6 +309,32 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio4_quinta_successivencopie->setValue(campo.value(134).toDouble());
     ui->doubleSpinBox_foglio4_percentuale->setValue(campo.value(135).toDouble());
 
+}
+
+QString MainWindow::creaHtml(int numero)
+{
+    QSqlQuery query;
+    QString str_numero;
+    QSqlRecord campo;
+    QString completo("<html><body>");
+    QString foglio1;
+    str_numero.setNum(numero);
+
+    foglio1 = "Numero preventivo:&nbsp; NUMEROPREVENTIVO<br>Data: DATA<br>Cliente: CLIENTE<br>Descrizione: DESCRIZIONE<br>Numero copie: NUMEROCOPIE<br>";
+    foglio1.replace("NUMEROPREVENTIVO",str_numero);
+
+    query.clear();
+    query = "SELECT * FROM preventivo WHERE numero = '"+str_numero+"'";
+    qDebug()<<query.exec();
+    query.next();
+    campo= query.record();
+    foglio1.replace("DATA", campo.value(1).toString());
+    foglio1.replace("CLIENTE", campo.value(2).toString());
+    foglio1.replace("DESCRIZIONE", campo.value(3).toString());
+    foglio1.replace("NUMEROCOPIE", campo.value(4).toString());
+    completo.append(foglio1);
+    completo.append("</body></html>");
+return completo;
 }
 
 void MainWindow::apriDb(QString nome)
@@ -2488,4 +2513,10 @@ void MainWindow::on_spinBox_foglio5_2500_valueChanged(int )
 void MainWindow::on_spinBox_foglio5_3000_valueChanged(int )
 {
     refreshFoglio5();
+}
+
+void MainWindow::on_bottone_pdf_clicked()
+{
+    documento.setHtml(creaHtml(valoredacancellare.toInt()));
+    documento.print(&stampante);
 }

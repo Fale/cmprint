@@ -41,6 +41,7 @@ private:
     void razionalizzaTabella(QString tabella, QString colonna, int nmancante);
     void pulisciPreventivo();
     void caricaPreventivo(int numero);
+    QString creaHtml(int numero);
     void caricaComboBox( QComboBox *comboBox, QVariant valore);
     void popolaComboBox();
     void refreshFoglio2();
@@ -53,6 +54,7 @@ private:
 private slots:
 
 
+    void on_bottone_pdf_clicked();
     void on_spinBox_foglio5_3000_valueChanged(int );
     void on_spinBox_foglio5_2500_valueChanged(int );
     void on_spinBox_foglio5_2000_valueChanged(int );
