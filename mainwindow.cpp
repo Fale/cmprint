@@ -33,6 +33,11 @@ MainWindow::MainWindow(QWidget *parent) :
     MainWindow::on_bottone_benvenuto_clicked();
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
 
+    stampante.setOutputFormat(QPrinter::PdfFormat);
+    stampante.setOutputFileName("bb.pdf");
+    documento.setHtml("<b>bold</b> text");
+    documento.print(&stampante);
+
     /*esempio su come visualizzare le label con 3 cifre dopo la virgola
     QString a;
     a.setNum(8.00, 'f', 3 );

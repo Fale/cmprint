@@ -4,9 +4,10 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QFile>
+#include <QTextDocument>
 #include <QPixmap>
 #include <QString>
-
+#include <QPrinter>
 namespace Ui {
     class MainWindow;
 }
@@ -28,6 +29,8 @@ private:
     bool pulire;
     int rigadacancellare;
     QString valoredacancellare;
+    QTextDocument documento;
+    QPrinter stampante;
     void caricaDb(QString nome);
     void creaTabelle();
     void apriDb(QString nome);
