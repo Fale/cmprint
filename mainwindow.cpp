@@ -371,9 +371,50 @@ foglio2 = "<div style=";
     foglio2.append(">Prime NCOPIE copie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Successive NCOPIE copie<br><br></div>");
 
 */
+
     //molto poco elegante farlo con gli spazi, calcolare la lunghezza del numero da sostituire alla X ed eventualmente aggiungere spazi per migliorare l'impaginazione
-    foglio2 = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie";
+    foglio2 = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
     foglio2.replace("X", campo.value(4).toString());
+
+    int j = 5; //Nlastre parte da 5
+    int k = 11; //Nrisme parte da 11
+    int q = 17;
+    int y = 23;
+
+    QString cast;
+
+    for (int i = 0; i<6; i=i++)
+    {
+        if (prime[i] != 0)
+        {
+            foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
+        }
+        foglio2.replace("NLASTRE", campo.value(j).toString());
+        foglio2.replace("NRISME", campo.value(k).toString());
+        foglio2.replace("EUROLASTRE",campo.value(q).toString());
+        foglio2.replace("EURORISME", campo.value(y).toString());
+        foglio2.replace("LASTREPRIME", cast.setNum(prime[i]));
+        foglio2.replace("RISMEPRIME", cast.setNum(prime[i+6]));
+        foglio2.replace("RISMESUCC", cast.setNum(successive[i]));
+        y++;
+        q++;
+        k++;
+        j++;
+    }
+
+    foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br> <br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>");
+    foglio2.replace("LASTRAVVPRIME", campo.value(29).toString() );
+    foglio2.replace("LASTRAVVSUCC", campo.value(30).toString());
+    foglio2.replace("STAMPAPRIME", campo.value(31).toString());
+    foglio2.replace("STAMPASUCC", campo.value(32).toString());
+    foglio2.replace("DIGPRIME", campo.value(33).toString());
+    foglio2.replace("DIGSUCC", campo.value(34).toString());
+    foglio2.replace("PERC", campo.value(35).toString());
+    foglio2.replace("PRETOTPRIME", ui->label_foglio2_pretotale_prime->text());
+    foglio2.replace("PRETOTSUCC", ui->label_foglio2_pretotale_successive->text());
+    foglio2.replace("label_foglio2_totale_prime", ui->label_foglio2_totale_prime->text());
+    foglio2.replace("TOTSUCC", ui->label_foglio2_totale_successive->text());
+
     completo.append(foglio1);
     completo.append(foglio2);
 
