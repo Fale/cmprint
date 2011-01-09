@@ -371,6 +371,9 @@ foglio2 = "<div style=";
     foglio2.append(">Prime NCOPIE copie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Successive NCOPIE copie<br><br></div>");
 
 */
+    //molto poco elegante farlo con gli spazi, calcolare la lunghezza del numero da sostituire alla X ed eventualmente aggiungere spazi per migliorare l'impaginazione
+    foglio2 = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie";
+    foglio2.replace("X", campo.value(4).toString());
     completo.append(foglio1);
     completo.append(foglio2);
 
