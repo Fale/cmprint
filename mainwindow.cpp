@@ -313,11 +313,39 @@ void MainWindow::caricaPreventivo(int numero)
 
 QString MainWindow::creaHtml(int numero)
 {
+
+    caricaPreventivo(valoredacancellare.toInt());
     QSqlQuery query;
     QString str_numero;
     QSqlRecord campo;
     QString completo("<html><body>");
     QString foglio1;
+    QString foglio2;
+    double prime[12];
+    double successive[6];
+
+    prime[0] = ui->label_foglio2_lastre_prime_1->text().toDouble();
+    prime[1] = ui->label_foglio2_lastre_prime_2->text().toDouble();
+    prime[2] = ui->label_foglio2_lastre_prime_3->text().toDouble();
+    prime[3] = ui->label_foglio2_lastre_prime_4->text().toDouble();
+    prime[4] = ui->label_foglio2_lastre_prime_5->text().toDouble();
+    prime[5] = ui->label_foglio2_lastre_prime_6->text().toDouble();
+
+    prime[6] = ui->label_foglio2_risme_prime_1->text().toDouble();
+    prime[7] = ui->label_foglio2_risme_prime_2->text().toDouble();
+    prime[8] = ui->label_foglio2_risme_prime_3->text().toDouble();
+    prime[9] = ui->label_foglio2_risme_prime_4->text().toDouble();
+    prime[10] = ui->label_foglio2_risme_prime_5->text().toDouble();
+    prime[11] = ui->label_foglio2_lastre_prime_6->text().toDouble();
+
+    successive[0] = ui->label_foglio2_risme_successive_1->text().toDouble();
+    successive[1] = ui->label_foglio2_risme_successive_2->text().toDouble();
+    successive[2] = ui->label_foglio2_risme_successive_3->text().toDouble();
+    successive[3] = ui->label_foglio2_risme_successive_4->text().toDouble();
+    successive[4] = ui->label_foglio2_risme_successive_5->text().toDouble();
+    successive[5] = ui->label_foglio2_risme_successive_6->text().toDouble();
+
+
     str_numero.setNum(numero);
 
     foglio1 = "Numero preventivo:&nbsp; NUMEROPREVENTIVO<br>Data: DATA<br>Cliente: CLIENTE<br>Descrizione: DESCRIZIONE<br>Numero copie: NUMEROCOPIE<br>";
@@ -327,14 +355,27 @@ QString MainWindow::creaHtml(int numero)
     query = "SELECT * FROM preventivo WHERE numero = '"+str_numero+"'";
     qDebug()<<query.exec();
     query.next();
-    campo= query.record();
+    campo = query.record();
     foglio1.replace("DATA", campo.value(1).toString());
     foglio1.replace("CLIENTE", campo.value(2).toString());
     foglio1.replace("DESCRIZIONE", campo.value(3).toString());
     foglio1.replace("NUMEROCOPIE", campo.value(4).toString());
+
+    //foglio2
+
+    /* nella stampa pdf non funziona l'align right
+foglio2 = "<div style=";
+    foglio2.append('"');
+    foglio2.append("text-align: right;");
+    foglio2.append('"');
+    foglio2.append(">Prime NCOPIE copie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Successive NCOPIE copie<br><br></div>");
+
+*/
     completo.append(foglio1);
+    completo.append(foglio2);
+
     completo.append("</body></html>");
-return completo;
+    return completo;
 }
 
 void MainWindow::apriDb(QString nome)
@@ -1263,6 +1304,7 @@ Questa funzione fa svolgere ogni volta un sacco di calcoli inutili ma garantisce
 che l'interfaccia sia sempre tutta aggiornata
 */
 
+
     ui->label_foglio2_lastre_prime_1->setNum( ui->spinBox_foglio2_lastre_n_1->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_1->value());
     ui->label_foglio2_lastre_prime_2->setNum( ui->spinBox_foglio2_lastre_n_2->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_2->value());
     ui->label_foglio2_lastre_prime_3->setNum( ui->spinBox_foglio2_lastre_n_3->value() * ui->doubleSpinBox_foglio2_lastre_prezzo_3->value());
@@ -1276,6 +1318,7 @@ che l'interfaccia sia sempre tutta aggiornata
     ui->label_foglio2_risme_prime_4->setNum( ui->spinBox_foglio2_risme_n_4->value() * ui->doubleSpinBox_foglio2_risme_prezzo_4->value());
     ui->label_foglio2_risme_prime_5->setNum( ui->spinBox_foglio2_risme_n_5->value() * ui->doubleSpinBox_foglio2_risme_prezzo_5->value());
     ui->label_foglio2_risme_prime_6->setNum( ui->spinBox_foglio2_risme_n_6->value() * ui->doubleSpinBox_foglio2_risme_prezzo_6->value());
+
 
    ui->label_foglio2_risme_successive_1->setText(ui->label_foglio2_risme_prime_1->text());
    ui->label_foglio2_risme_successive_2->setText(ui->label_foglio2_risme_prime_2->text());
