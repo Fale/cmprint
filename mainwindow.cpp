@@ -411,10 +411,7 @@ foglio2 = "<div style=";
 
     foglio2 = intestazione;
 
-    int j = 5;
-    int k = 11;
-    int q = 17;
-    int y = 23;
+    int k;
 
     QString cast;
 
@@ -423,20 +420,16 @@ foglio2 = "<div style=";
         if (prime[i] != 0)
         {
             foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
-            foglio2.replace("NLASTRE", campo.value(j).toString());
-            foglio2.replace("NRISME", campo.value(k).toString());
-            foglio2.replace("EUROLASTRE",campo.value(q).toString());
-            foglio2.replace("EURORISME", campo.value(y).toString());
+            foglio2.replace("NLASTRE", campo.value(i+5).toString());
+            foglio2.replace("NRISME", campo.value(i+11).toString());
+            foglio2.replace("EUROLASTRE",campo.value(i+17).toString());
+            foglio2.replace("EURORISME", campo.value(i+23).toString());
             foglio2.replace("LASTREPRIME", cast.setNum(prime[i]));
             foglio2.replace("RISMEPRIME", cast.setNum(prime[i+6]));
             foglio2.replace("RISMESUCC", cast.setNum(successive[i]));
 
         }
 
-        y++;
-        q++;
-        k++;
-        j++;
     }
     totali = "<br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>";
     foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br>");
