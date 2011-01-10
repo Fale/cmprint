@@ -324,6 +324,7 @@ QString MainWindow::creaHtml(int numero)
     QString foglio1;
     QString foglio2;
     QString foglio3;
+    QString foglio4;
 
     double prime[12];
     double successive[6];
@@ -479,7 +480,6 @@ foglio2 = "<div style=";
             foglio3.replace("TIPO", campo.value(k+41).toString());
             foglio3.replace("PRIME", campo.value(k+64).toString());
             foglio3.replace("SUCC", campo.value(k+67).toString());
-
         }
 
     }
@@ -491,9 +491,15 @@ foglio2 = "<div style=";
     foglio3.replace("TOTPRIME", ui->label_foglio3_totale_primencopie->text());
     foglio3.replace("TOTSUCC", ui->label_foglio3_totale_successivencopie->text());
 
+    //foglio4
+    foglio4 = intestazione;
+
+
+
     completo.append(foglio1);
     completo.append(foglio2);
     completo.append(foglio3);
+    completo.append(foglio4);
     completo.append("</body></html>");
     return completo;
 }
