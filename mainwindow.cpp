@@ -319,10 +319,17 @@ QString MainWindow::creaHtml(int numero)
     QString str_numero;
     QSqlRecord campo;
     QString completo("<html><body>");
+    QString intestazione;
+    QString totali;
     QString foglio1;
     QString foglio2;
+    QString foglio3;
+
     double prime[12];
     double successive[6];
+    double primef3[5];
+    double successivef3[5];
+    double kg[5];
 
     prime[0] = ui->label_foglio2_lastre_prime_1->text().toDouble();
     prime[1] = ui->label_foglio2_lastre_prime_2->text().toDouble();
@@ -345,6 +352,26 @@ QString MainWindow::creaHtml(int numero)
     successive[4] = ui->label_foglio2_risme_successive_5->text().toDouble();
     successive[5] = ui->label_foglio2_risme_successive_6->text().toDouble();
 
+    primef3[0] = ui->label_foglio3_primencopie_1->text().toDouble();
+    primef3[1] = ui->label_foglio3_primencopie_2->text().toDouble();
+    primef3[2] = ui->label_foglio3_primencopie_3->text().toDouble();
+    primef3[3] = ui->label_foglio3_primencopie_4->text().toDouble();
+    primef3[4] = ui->label_foglio3_primencopie_5->text().toDouble();
+
+    successivef3[0] = ui->label_foglio3_successivencopie_1->text().toDouble();
+    successivef3[1] = ui->label_foglio3_successivencopie_2->text().toDouble();
+    successivef3[2] = ui->label_foglio3_successivencopie_3->text().toDouble();
+    successivef3[3] = ui->label_foglio3_successivencopie_4->text().toDouble();
+    successivef3[4] = ui->label_foglio3_successivencopie_5->text().toDouble();
+
+
+    kg[0] = ui->label_foglio3_kg_1->text().toDouble();
+    kg[1] = ui->label_foglio3_kg_2->text().toDouble();
+    kg[2] = ui->label_foglio3_kg_3->text().toDouble();
+    kg[3] = ui->label_foglio3_kg_4->text().toDouble();
+    kg[4] = ui->label_foglio3_kg_5->text().toDouble();
+
+
 
     str_numero.setNum(numero);
 
@@ -361,6 +388,11 @@ QString MainWindow::creaHtml(int numero)
     foglio1.replace("DESCRIZIONE", campo.value(3).toString());
     foglio1.replace("NUMEROCOPIE", campo.value(4).toString());
 
+    for (int s = 0; s < 35; s++)
+    {
+        foglio1.append("<br>");
+    }
+
     //foglio2
 
     /* nella stampa pdf non funziona l'align right
@@ -373,51 +405,102 @@ foglio2 = "<div style=";
 */
 
     //molto poco elegante farlo con gli spazi, calcolare la lunghezza del numero da sostituire alla X ed eventualmente aggiungere spazi per migliorare l'impaginazione
-    foglio2 = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
-    foglio2.replace("X", campo.value(4).toString());
 
-    int j = 5; //Nlastre parte da 5
-    int k = 11; //Nrisme parte da 11
+    intestazione = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
+    intestazione.replace("X", campo.value(4).toString());
+
+    foglio2 = intestazione;
+
+    int j = 5;
+    int k = 11;
     int q = 17;
     int y = 23;
 
     QString cast;
 
-    for (int i = 0; i<6; i=i++)
+    for (int i = 0; i<6; i++)
     {
         if (prime[i] != 0)
         {
             foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
+            foglio2.replace("NLASTRE", campo.value(j).toString());
+            foglio2.replace("NRISME", campo.value(k).toString());
+            foglio2.replace("EUROLASTRE",campo.value(q).toString());
+            foglio2.replace("EURORISME", campo.value(y).toString());
+            foglio2.replace("LASTREPRIME", cast.setNum(prime[i]));
+            foglio2.replace("RISMEPRIME", cast.setNum(prime[i+6]));
+            foglio2.replace("RISMESUCC", cast.setNum(successive[i]));
+
         }
-        foglio2.replace("NLASTRE", campo.value(j).toString());
-        foglio2.replace("NRISME", campo.value(k).toString());
-        foglio2.replace("EUROLASTRE",campo.value(q).toString());
-        foglio2.replace("EURORISME", campo.value(y).toString());
-        foglio2.replace("LASTREPRIME", cast.setNum(prime[i]));
-        foglio2.replace("RISMEPRIME", cast.setNum(prime[i+6]));
-        foglio2.replace("RISMESUCC", cast.setNum(successive[i]));
+
         y++;
         q++;
         k++;
         j++;
     }
-
-    foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br> <br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>");
+    totali = "<br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>";
+    foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br>");
     foglio2.replace("LASTRAVVPRIME", campo.value(29).toString() );
     foglio2.replace("LASTRAVVSUCC", campo.value(30).toString());
     foglio2.replace("STAMPAPRIME", campo.value(31).toString());
     foglio2.replace("STAMPASUCC", campo.value(32).toString());
     foglio2.replace("DIGPRIME", campo.value(33).toString());
     foglio2.replace("DIGSUCC", campo.value(34).toString());
+
+    foglio2.append(totali);
     foglio2.replace("PERC", campo.value(35).toString());
     foglio2.replace("PRETOTPRIME", ui->label_foglio2_pretotale_prime->text());
     foglio2.replace("PRETOTSUCC", ui->label_foglio2_pretotale_successive->text());
-    foglio2.replace("label_foglio2_totale_prime", ui->label_foglio2_totale_prime->text());
+    foglio2.replace("TOTPRIME", ui->label_foglio2_totale_prime->text());
     foglio2.replace("TOTSUCC", ui->label_foglio2_totale_successive->text());
+
+
+    //foglio 3
+
+    foglio3 = intestazione;
+
+
+
+    for (k = 0; k<5; k++)
+    {
+        if (primef3[k] != 0)
+        {
+            foglio3.append("<br>Tipo carta: TIPO FORMATO Grammatura: GRAMMATURA<br>Fogli: NFOGLI Kg KILI X EuroEURO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
+            foglio3.replace("TIPO", campo.value(k+36).toString());
+            foglio3.replace("FORMATO", campo.value(k+44).toString());
+            foglio3.replace("GRAMMATURA", campo.value(k+49).toString());
+            foglio3.replace("NFOGLI", campo.value(k+54).toString());
+            foglio3.replace("EURO", campo.value(k+59).toString());
+            foglio3.replace("KILI", cast.setNum(kg[k]));
+            foglio3.replace("PRIME", cast.setNum(primef3[k]));
+            foglio3.replace("SUCC", cast.setNum(successivef3[k]));
+        }
+
+    }
+
+    for (k = 0; k<3; k++)
+    {
+        if (!campo.value(k+41).toString().isEmpty())
+        {
+            foglio3.append("<br>Tipo carta: TIPO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
+            foglio3.replace("TIPO", campo.value(k+41).toString());
+            foglio3.replace("PRIME", campo.value(k+64).toString());
+            foglio3.replace("SUCC", campo.value(k+67).toString());
+
+        }
+
+    }
+
+    foglio3.append(totali);
+    foglio3.replace("PERC", campo.value(70).toString());
+    foglio3.replace("PRETOTPRIME", ui->label_foglio3_pretotale_primencopie->text());
+    foglio3.replace("PRETOTSUCC", ui->label_foglio3_pretotale_successivencopie->text());
+    foglio3.replace("TOTPRIME", ui->label_foglio3_totale_primencopie->text());
+    foglio3.replace("TOTSUCC", ui->label_foglio3_totale_successivencopie->text());
 
     completo.append(foglio1);
     completo.append(foglio2);
-
+    completo.append(foglio3);
     completo.append("</body></html>");
     return completo;
 }
