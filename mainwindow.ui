@@ -755,7 +755,7 @@
           <enum>QTabWidget::Rounded</enum>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="foglio1">
           <attribute name="title">
@@ -2386,7 +2386,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>722</width>
+                <width>1183</width>
                 <height>2193</height>
                </rect>
               </property>

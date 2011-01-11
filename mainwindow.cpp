@@ -494,7 +494,84 @@ foglio2 = "<div style=";
     //foglio4
     foglio4 = intestazione;
 
+    if (ui->label_foglio4_plastificazione_opaca_bianca_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Plastificazione opaca in bianca<br>Formato: FORMATO&nbsp; Fogli: FOGLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br><br>");
+        foglio4.replace("FORMATO", campo.value(71).toString());
+        foglio4.replace("FOGLI", campo.value(72).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(73).toString());
+        foglio4.replace("PRIME", ui->label_foglio4_plastificazione_opaca_bianca_primencopie->text() );
+        foglio4.replace("SUCC", ui->label_foglio4_plastificazione_opaca_bianca_successivencopie->text());
+    }
 
+    if (ui->label_foglio4_plastificazione_opaca_bianca_volta_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Plastificazione opaca in bianca e volta<br>Formato: FORMATO&nbsp; Fogli: FOGLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br><br>");
+        foglio4.replace("FORMATO", campo.value(74).toString());
+        foglio4.replace("FOGLI", campo.value(75).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(76).toString());
+        foglio4.replace("PRIME", ui->label_foglio4_plastificazione_opaca_bianca_volta_primencopie->text() );
+        foglio4.replace("SUCC", ui->label_foglio4_plastificazione_opaca_bianca_volta_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Plastificazione lucida in bianca<br>Formato: FORMATO&nbsp; Fogli: FOGLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br><br>");
+        foglio4.replace("FORMATO", campo.value(77).toString());
+        foglio4.replace("FOGLI", campo.value(78).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(79).toString());
+        foglio4.replace("PRIME", ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text() );
+        foglio4.replace("SUCC", ui->label_foglio4_plastificazione_lucida_bianca_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Plastificazione lucida in bianca e volta<br>Formato: FORMATO&nbsp; Fogli: FOGLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br><br>");
+        foglio4.replace("FORMATO", campo.value(80).toString());
+        foglio4.replace("FOGLI", campo.value(81).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(82).toString());
+        foglio4.replace("PRIME", ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text() );
+        foglio4.replace("SUCC", ui->label_foglio4_plastificazione_lucida_bianca_volta_successivencopie->text());
+    }
+
+
+    if (ui->label_foglio4_serigrafia_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Serigrafia<br>Formato: FORMATO&nbsp; FogliFOGLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br>Telaio&nbsp;&nbsp;&nbsp;&nbsp; TELAIO<br><br>");
+        foglio4.replace("FORMATO", campo.value(83).toString());
+        foglio4.replace("FOGLI", campo.value(84).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(85).toString());
+        foglio4.replace("TELAIO", campo.value(86).toString());
+        foglio4.replace("PRIME", ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text() );
+        foglio4.replace("SUCC", ui->label_foglio4_plastificazione_lucida_bianca_volta_successivencopie->text());
+    }
+
+    foglio4.append("<br>Confezione:<br>");
+
+    if (!campo.value(87).toString().isEmpty())
+    {
+        foglio4.append("Fustella:&nbsp;&nbsp;&nbsp;&nbsp; FUSTELLA<br>");
+        foglio4.replace("FUSTELLA", campo.value(87).toString());
+
+    }
+
+    if (ui->label_spinBox_foglio4_fustellatura_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Fustellatura&nbsp;&nbsp;&nbsp;&nbsp; fogli: FOGLI x Euro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br><br>");
+        foglio4.replace("FOGLI", campo.value(88).toString());
+        foglio4.replace("EURO", campo.value(89).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(90).toString());
+        foglio4.replace("PRIME", ui->label_spinBox_foglio4_fustellatura_primencopie->text());
+        foglio4.replace("SUCC", ui->label_spinBox_foglio4_fustellatura_successivencopie->text());
+    }
+
+    if (!campo.value(91).toString().isEmpty())
+    {
+        foglio4.append("<br>Cordonatura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br>");
+        foglio4.replace("PRIME", campo.value(91).toString());
+        foglio4.replace("SUCC", campo.value(92).toString());
+        foglio4.replace("AVVIAMENTO", campo.value(93).toString());
+    }
 
     completo.append(foglio1);
     completo.append(foglio2);
