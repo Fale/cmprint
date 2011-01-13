@@ -573,6 +573,132 @@ foglio2 = "<div style=";
         foglio4.replace("AVVIAMENTO", campo.value(93).toString());
     }
 
+    if (!campo.value(94).toString().isEmpty())
+    {
+        foglio4.append("Accoppiatura &nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>");
+        foglio4.replace("PRIME", campo.value(94).toDouble());
+        foglio4.replace("SUCC", campo.value(95).toDouble());
+    }
+
+    if (!campo.value(96).toString().isEmpty())
+    {
+        foglio4.append("Stampa a caldo &nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>");
+        foglio4.replace("PRIME", campo.value(96).toDouble());
+        foglio4.replace("SUCC", campo.value(97).toDouble());
+    }
+
+    if (!campo.value(98).toString().isEmpty())
+    {
+        foglio4.append("Cliche' &nbsp;&nbsp; PRIME<br>");
+        foglio4.replace("PRIME", campo.value(98).toDouble());
+    }
+
+
+    if (ui->label_foglio4_piegacopie_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("<br>Piega&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
+        foglio4.replace("COPIE", campo.value(99).toDouble());
+        foglio4.replace("EURO", campo.value(100).toDouble());
+        foglio4.replace("PRIME",  ui->label_foglio4_piegacopie_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_piegacopie_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_tagliocopie_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("<brTaglio&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
+        foglio4.replace("COPIE", campo.value(101).toDouble());
+        foglio4.replace("EURO", campo.value(102).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_tagliocopie_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_tagliocopie_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_puntometallico_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("<br>Punto metallico&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
+        foglio4.replace("COPIE", campo.value(103).toDouble());
+        foglio4.replace("EURO", campo.value(104).toDouble());
+        foglio4.replace("AVVIAMENTO", campo.value(105).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_puntometallico_primencopie->text());
+    }
+
+    if (ui->label_foglio4_brosurafresata_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Brosura fresata&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
+        foglio4.replace("COPIE", campo.value(106).toDouble());
+        foglio4.replace("EURO", campo.value(107).toDouble());
+        foglio4.replace("AVVIAMENTO", campo.value(108).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_brosurafresata_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_brosurafresata_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_filo_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Brosura filo refe&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
+        foglio4.replace("COPIE", campo.value(109).toDouble());
+        foglio4.replace("EURO", campo.value(110).toDouble());
+        foglio4.replace("AVVIAMENTO", campo.value(111).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_filo_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_filo_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_cartonato_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Cartonato&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
+        foglio4.replace("COPIE", campo.value(112).toDouble());
+        foglio4.replace("EURO", campo.value(113).toDouble());
+        foglio4.replace("AVVIAMENTO", campo.value(114).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_cartonato_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_cartonato_successivencopie->text());
+    }
+
+
+    if (ui->label_foglio4_spiralatura_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Spiralatura&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
+        foglio4.replace("COPIE", campo.value(115).toDouble());
+        foglio4.replace("EURO", campo.value(116).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_spiralatura_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_spiralatura_successivencopie->text());
+    }
+
+    if (ui->label_foglio4_pacchi_primencopie->text().toDouble() != 0)
+    {
+        foglio4.append("Pacchi politenati&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
+        foglio4.replace("COPIE", campo.value(117).toDouble());
+        foglio4.replace("EURO", campo.value(118).toDouble());
+        foglio4.replace("PRIME", ui->label_foglio4_pacchi_primencopie->text());
+        foglio4.replace("SUCC", ui->label_foglio4_pacchi_successivencopie->text());
+    }
+
+    if (!campo.value(119).toString().isEmpty())
+    {
+        foglio4.append("Trasporto&nbsp;&nbsp;&nbsp;&nbsp; TRASPORTO<br>");
+        foglio4.replace("TRASPORTO", campo.value(119).toString());
+    }
+
+    for (k = 0; k<5; k++)
+    {
+        if (!campo.value(k+120).toString().isEmpty())
+        {
+            foglio3.append("TIPO &nbsp; &nbsp; PRIME SUCC<br>");
+            foglio3.replace("TIPO", campo.value(k+120).toString());
+            foglio3.replace("PRIME", campo.value(k+125).toString());
+            foglio3.replace("SUCC", campo.value(k+130).toString());
+        }
+    }
+
+    foglio4.append(totali);
+    foglio4.replace("PERC", campo.value(135).toString());
+    foglio4.replace("PRETOTPRIME", ui->label_foglio4_pretotale_primencopie->text());
+    foglio4.replace("PRETOTSUCC", ui->label_foglio4_pretotale_successivencopie->text());
+    foglio4.replace("TOTPRIME", ui->label_foglio4_totale_primencopie->text());
+    foglio4.replace("TOTSUCC", ui->label_foglio4_totale_successivencopie->text());
+
+
+
+
+
+
     completo.append(foglio1);
     completo.append(foglio2);
     completo.append(foglio3);
