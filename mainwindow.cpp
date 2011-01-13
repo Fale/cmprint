@@ -411,7 +411,7 @@ foglio2 = "<div style=";
     //intestazione = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
     //intestazione = "<table style=\"text-align: left; width: 500px; margin-left: auto; margin-right: 0px;\" border=\"1\" cellpadding=\"2\" cellspacing=\"2\"> <tbody> <tr> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Prime X copie<br> </td> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Successive X copie<br> </td> </tr> </tbody></table><br>";
     intestazione = "<table align=\"right\"> <tbody><tr> <td width=\"150\">Prime X copie</td> <td width=\"150\">Successive X copie</td> </tr></tbody></table><br>";
-    intestazione.append("<table align=\"right\"> <tbody><tr> <td width=\"150\">X</td> <td width=\"150\">X</td> </tr></tbody></table><br>");
+    //intestazione.append("<table align=\"right\"> <tbody><tr> <td width=\"150\">X</td> <td width=\"150\">X</td> </tr></tbody></table><br>");
     intestazione.replace("X", campo.value(4).toString());
 
     foglio2 = intestazione;
@@ -424,7 +424,8 @@ foglio2 = "<div style=";
     {
         if (prime[i] != 0)
         {
-            foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
+            //foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
+            foglio2.append("<table align=\"right\"> <tbody><tr> <td>Lastre</td> <td>NLASTRE</td> <td> X Euro</td> <td> EUROLASTRE</td> <td width=\"100\"> </td> <td width=\"150\">LASTREPRIME<td> <td width=\"150\"> </td> </tr> <tr> <td>Risme</td> <td> NRISME</td> <td> X Euro</td> <td> EURORISME</td> <td width=\"100\"> </td> <td width=\"150\">RISMEPRIME<td> <td width=\"150\">RISMESUCC</td></tr></tbody></table><br>");
             foglio2.replace("NLASTRE", campo.value(i+5).toString());
             foglio2.replace("NRISME", campo.value(i+11).toString());
             foglio2.replace("EUROLASTRE",campo.value(i+17).toString());
