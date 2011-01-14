@@ -410,7 +410,7 @@ foglio2 = "<div style=";
 
     //intestazione = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
     //intestazione = "<table style=\"text-align: left; width: 500px; margin-left: auto; margin-right: 0px;\" border=\"1\" cellpadding=\"2\" cellspacing=\"2\"> <tbody> <tr> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Prime X copie<br> </td> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Successive X copie<br> </td> </tr> </tbody></table><br>";
-    intestazione = "<table align=\"right\"> <tbody><tr> <td width=\"150\">Prime X copie</td> <td width=\"150\">Successive X copie</td> </tr></tbody></table><br>";
+    intestazione = "<table align=\"right\"> <tbody><tr> <td width=\"130\">Prime X cp.</td> <td width=\"140\">Successive X cp.</td> </tr></tbody></table><br>";
     //intestazione.append("<table align=\"right\"> <tbody><tr> <td width=\"150\">X</td> <td width=\"150\">X</td> </tr></tbody></table><br>");
     intestazione.replace("X", campo.value(4).toString());
 
@@ -425,7 +425,7 @@ foglio2 = "<div style=";
         if (prime[i] != 0)
         {
             //foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
-            foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"50\">Lastre</td> <td width=\"75\">NLASTRE</td> <td width=\"50\">X Euro</td> <td width=\"60\" >EUROLASTRE</td> <td width=\"60\"> </td> <td width=\"150\">LASTREPRIME</td> <td width=\"150\"> </td> </tr> <tr> <td>Risme</td> <td> NRISME</td> <td> X Euro</td> <td> EURORISME</td> <td width=\"100\"> </td> <td width=\"150\">RISMEPRIME</td> <td width=\"150\">RISMESUCC</td></tr></tbody></table><br>");
+            foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"50\">Lastre</td> <td width=\"75\">NLASTRE</td> <td width=\"50\">X Euro</td> <td width=\"60\" >EUROLASTRE</td> <td width=\"90\"> </td> <td width=\"130\">LASTREPRIME</td> <td width=\"140\"> </td> </tr> <tr> <td>Risme</td> <td> NRISME</td> <td> X Euro</td> <td> EURORISME</td> <td width=\"100\"> </td> <td width=\"130\">RISMEPRIME</td> <td width=\"140\">RISMESUCC</td></tr></tbody></table><br>");
             foglio2.replace("NLASTRE", campo.value(i+5).toString());
             foglio2.replace("NRISME", campo.value(i+11).toString());
             foglio2.replace("EUROLASTRE",campo.value(i+17).toString());
@@ -439,7 +439,7 @@ foglio2 = "<div style=";
     }
 
     //foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br>");
-    foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"300\">Lastre + avviamenti</td><td width=\"150\">LASTRAVVPRIME</td><td width=\"150\">LASTRAVVSUCC</td></tr><tr><td>Stampa</td><td>STAMPAPRIME</td><td>STAMPASUCC</td></tr><tr><td>Stampa digitale</td><td>DIGPRIME</td><td>DIGSUCC</td></tr></tbody></table><br>");
+    foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"330\">Lastre + avviamenti</td><td width=\"130\">LASTRAVVPRIME</td><td width=\"140\">LASTRAVVSUCC</td></tr><tr><td>Stampa</td><td>STAMPAPRIME</td><td>STAMPASUCC</td></tr><tr><td>Stampa digitale</td><td>DIGPRIME</td><td>DIGSUCC</td></tr></tbody></table><br>");
     foglio2.replace("LASTRAVVPRIME", campo.value(29).toString() );
     foglio2.replace("LASTRAVVSUCC", campo.value(30).toString());
     foglio2.replace("STAMPAPRIME", campo.value(31).toString());
@@ -448,7 +448,7 @@ foglio2 = "<div style=";
     foglio2.replace("DIGSUCC", campo.value(34).toString());
 
    // totali = "<br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>";
-    totali = "<table align=\"right\" > <tbody><tr> <td width=\"300\">Totale</td><td width=\"150\">PRETOTPRIME</td><td width=\"150\">PRETOTSUCC</td></tr><tr><td>%</td><td>PERC</td><td></td></tr><tr><td>Totale</td><td>TOTPRIME</td><td>TOTSUCC</td></tr></tbody></table><br>";
+    totali = "<table align=\"right\" > <tbody><tr> <td width=\"330\">Totale</td><td width=\"130\">PRETOTPRIME</td><td width=\"140\">PRETOTSUCC</td></tr><tr><td>%</td><td>PERC</td><td></td></tr><tr><td>Totale</td><td>TOTPRIME</td><td>TOTSUCC</td></tr></tbody></table><br>";
     foglio2.append(totali);
 
     foglio2.replace("PERC", campo.value(35).toString());
@@ -468,7 +468,8 @@ foglio2 = "<div style=";
     {
         if (primef3[k] != 0)
         {
-            foglio3.append("<br>Tipo carta: TIPO FORMATO Grammatura: GRAMMATURA<br>Fogli: NFOGLI Kg KILI X EuroEURO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
+           //foglio3.append("<br>Tipo carta: TIPO FORMATO Grammatura: GRAMMATURA<br>Fogli: NFOGLI Kg KILI X EuroEURO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
+            foglio3.append("<table align=\"right\" > <tbody><tr><td width=\"45\">Carta:</td><td width=\"120\">TIPO</td><td width=\"55\">FORMATO</td><td width=\"20\">gr.</td><td width=\"60\">GRAMMATURA</td><td width=\"150\"></td><td width=\"150\"></td></tr></tbody></table><table align=\"right\"> <tbody><tr><td>Fogli:</td><td>NFOGLI</td><td width=\"15\">Kg</td><td width=\"100\">KILI</td><td width=\"50\">X Euro</td><td width=\"100\">EURO</td><td width=\"150\" >PRIME</td><td width=\"150\" >SUCC</td></tr></tbody></table><br>");
             foglio3.replace("TIPO", campo.value(k+36).toString());
             foglio3.replace("FORMATO", campo.value(k+44).toString());
             foglio3.replace("GRAMMATURA", campo.value(k+49).toString());
