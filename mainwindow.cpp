@@ -486,7 +486,8 @@ foglio2 = "<div style=";
     {
         if (!campo.value(k+41).toString().isEmpty())
         {
-            foglio3.append("<br>Tipo carta: TIPO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
+            //foglio3.append("<br>Tipo carta: TIPO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
+            foglio3.append("<table align=\"right\" > <tbody><tr> <td width=\"330\">Tipo di carta: TIPO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table><br>");
             foglio3.replace("TIPO", campo.value(k+41).toString());
             foglio3.replace("PRIME", campo.value(k+64).toString());
             foglio3.replace("SUCC", campo.value(k+67).toString());
