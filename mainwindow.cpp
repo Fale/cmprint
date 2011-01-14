@@ -390,7 +390,7 @@ QString MainWindow::creaHtml(int numero)
     foglio1.replace("DESCRIZIONE", campo.value(3).toString());
     foglio1.replace("NUMEROCOPIE", campo.value(4).toString());
 
-    for (int s = 0; s < 35; s++)
+    for (int s = 0; s < 48; s++)
     {
         foglio1.append("<br>");
     }
@@ -425,7 +425,7 @@ foglio2 = "<div style=";
         if (prime[i] != 0)
         {
             //foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
-            foglio2.append("<table align=\"right\"> <tbody><tr> <td>Lastre</td> <td>NLASTRE</td> <td> X Euro</td> <td> EUROLASTRE</td> <td width=\"100\"> </td> <td width=\"150\">LASTREPRIME<td> <td width=\"150\"> </td> </tr> <tr> <td>Risme</td> <td> NRISME</td> <td> X Euro</td> <td> EURORISME</td> <td width=\"100\"> </td> <td width=\"150\">RISMEPRIME<td> <td width=\"150\">RISMESUCC</td></tr></tbody></table><br>");
+            foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"50\">Lastre</td> <td width=\"75\">NLASTRE</td> <td width=\"50\">X Euro</td> <td width=\"60\" >EUROLASTRE</td> <td width=\"60\"> </td> <td width=\"150\">LASTREPRIME</td> <td width=\"150\"> </td> </tr> <tr> <td>Risme</td> <td> NRISME</td> <td> X Euro</td> <td> EURORISME</td> <td width=\"100\"> </td> <td width=\"150\">RISMEPRIME</td> <td width=\"150\">RISMESUCC</td></tr></tbody></table><br>");
             foglio2.replace("NLASTRE", campo.value(i+5).toString());
             foglio2.replace("NRISME", campo.value(i+11).toString());
             foglio2.replace("EUROLASTRE",campo.value(i+17).toString());
@@ -437,8 +437,9 @@ foglio2 = "<div style=";
         }
 
     }
-    totali = "<br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>";
-    foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br>");
+
+    //foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br>");
+    foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"300\">Lastre + avviamenti</td><td width=\"150\">LASTRAVVPRIME</td><td width=\"150\">LASTRAVVSUCC</td></tr><tr><td>Stampa</td><td>STAMPAPRIME</td><td>STAMPASUCC</td></tr><tr><td>Stampa digitale</td><td>DIGPRIME</td><td>DIGSUCC</td></tr></tbody></table><br>");
     foglio2.replace("LASTRAVVPRIME", campo.value(29).toString() );
     foglio2.replace("LASTRAVVSUCC", campo.value(30).toString());
     foglio2.replace("STAMPAPRIME", campo.value(31).toString());
@@ -446,7 +447,10 @@ foglio2 = "<div style=";
     foglio2.replace("DIGPRIME", campo.value(33).toString());
     foglio2.replace("DIGSUCC", campo.value(34).toString());
 
+   // totali = "<br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>";
+    totali = "<table align=\"right\" > <tbody><tr> <td width=\"300\">Totale</td><td width=\"150\">PRETOTPRIME</td><td width=\"150\">PRETOTSUCC</td></tr><tr><td>%</td><td>PERC</td><td></td></tr><tr><td>Totale</td><td>TOTPRIME</td><td>TOTSUCC</td></tr></tbody></table><br>";
     foglio2.append(totali);
+
     foglio2.replace("PERC", campo.value(35).toString());
     foglio2.replace("PRETOTPRIME", ui->label_foglio2_pretotale_prime->text());
     foglio2.replace("PRETOTSUCC", ui->label_foglio2_pretotale_successive->text());
