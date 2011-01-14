@@ -469,7 +469,7 @@ foglio2 = "<div style=";
         if (primef3[k] != 0)
         {
            //foglio3.append("<br>Tipo carta: TIPO FORMATO Grammatura: GRAMMATURA<br>Fogli: NFOGLI Kg KILI X EuroEURO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
-            foglio3.append("<table align=\"right\" > <tbody><tr><td width=\"45\">Carta:</td><td width=\"120\">TIPO</td><td width=\"55\">FORMATO</td><td width=\"20\">gr.</td><td width=\"60\">GRAMMATURA</td><td width=\"150\"></td><td width=\"150\"></td></tr></tbody></table><table align=\"right\"> <tbody><tr><td>Fogli:</td><td>NFOGLI</td><td width=\"15\">Kg</td><td width=\"100\">KILI</td><td width=\"50\">X Euro</td><td width=\"100\">EURO</td><td width=\"150\" >PRIME</td><td width=\"150\" >SUCC</td></tr></tbody></table><br>");
+            foglio3.append("<table align=\"right\" > <tbody><tr><td width=\"45\">Carta:</td><td width=\"120\">TIPO</td><td width=\"85\">FORMATO</td><td width=\"20\">gr.</td><td width=\"60\">GRAMMATURA</td><td width=\"130\"></td><td width=\"140\"></td></tr></tbody></table><table align=\"right\"> <tbody><tr><td width=\"45\">Fogli:</td><td width=\"70\">NFOGLI</td><td width=\"20\">Kg</td><td width=\"80\">KILI</td><td width=\"50\">X Euro</td><td width=\"75\">EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table><br>");
             foglio3.replace("TIPO", campo.value(k+36).toString());
             foglio3.replace("FORMATO", campo.value(k+44).toString());
             foglio3.replace("GRAMMATURA", campo.value(k+49).toString());
