@@ -390,11 +390,7 @@ QString MainWindow::creaHtml(int numero)
     foglio1.replace("DESCRIZIONE", campo.value(3).toString());
     foglio1.replace("NUMEROCOPIE", campo.value(4).toString());
 
-    for (int s = 0; s < 48; s++)
-    {
-        foglio1.append("<br>");
-    }
-
+    foglio1.append("<p STYLE=\"page-break-before: always\"></p>");
     //foglio2
 
     /* nella stampa pdf non funziona l'align right
@@ -457,11 +453,10 @@ foglio2 = "<div style=";
     foglio2.replace("TOTPRIME", ui->label_foglio2_totale_prime->text());
     foglio2.replace("TOTSUCC", ui->label_foglio2_totale_successive->text());
 
-
+    foglio2.append("<p STYLE=\"page-break-before: always\"></p>");
     //foglio 3
 
     foglio3 = intestazione;
-
 
 
     for (k = 0; k<5; k++)
@@ -501,6 +496,7 @@ foglio2 = "<div style=";
     foglio3.replace("PRETOTSUCC", ui->label_foglio3_pretotale_successivencopie->text());
     foglio3.replace("TOTPRIME", ui->label_foglio3_totale_primencopie->text());
     foglio3.replace("TOTSUCC", ui->label_foglio3_totale_successivencopie->text());
+    foglio3.append("<p STYLE=\"page-break-before: always\"></p>");
 
     //foglio4
     //FORTEMENTE CONSIGLIATO DI IMPLEMENTARE UNA TABELLA UNICA ..com'è ora è una mezza porcata ma cos funziona e..il tempo stringe!
@@ -743,6 +739,7 @@ foglio2 = "<div style=";
     foglio4.replace("TOTPRIME", ui->label_foglio4_totale_primencopie->text());
     foglio4.replace("TOTSUCC", ui->label_foglio4_totale_successivencopie->text());
 
+    foglio4.append("<p STYLE=\"page-break-before: always\"></p>");
     //foglio5
     foglio5 = intestazione;
 
