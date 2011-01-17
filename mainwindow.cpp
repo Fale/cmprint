@@ -507,9 +507,11 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_opaca_bianca_primencopie->text().toDouble() != 0)
     {
-        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca</td></tr></tbody></table>");
+        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
+        */
+        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FORMATO", campo.value(71).toString());
         foglio4.replace("FOGLI", campo.value(72).toString());
         foglio4.replace("AVVIAMENTO", campo.value(73).toString());
@@ -519,9 +521,11 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_opaca_bianca_volta_primencopie->text().toDouble() != 0)
     {
-        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca e volta</td></tr></tbody></table>");
+        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca e volta</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
+        */
+        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca e volta</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FORMATO", campo.value(74).toString());
         foglio4.replace("FOGLI", campo.value(75).toString());
         foglio4.replace("AVVIAMENTO", campo.value(76).toString());
@@ -531,10 +535,12 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text().toDouble() != 0)
     {
-        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca</td></tr></tbody></table>");
+        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
         foglio4.replace("FORMATO", campo.value(77).toString());
+        */
+        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FOGLI", campo.value(78).toString());
         foglio4.replace("AVVIAMENTO", campo.value(79).toString());
         foglio4.replace("PRIME", ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text() );
@@ -543,9 +549,11 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text().toDouble() != 0)
     {
-        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca e volta</td></tr></tbody></table>");
+        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca e volta</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
+        */
+        foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca e volta</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FORMATO", campo.value(80).toString());
         foglio4.replace("FOGLI", campo.value(81).toString());
         foglio4.replace("AVVIAMENTO", campo.value(82).toString());
@@ -584,7 +592,7 @@ foglio2 = "<div style=";
         foglio4.replace("SUCC", ui->label_spinBox_foglio4_fustellatura_successivencopie->text());
     }
 
-    if (!campo.value(91).toString().isEmpty())
+    if (campo.value(91).toDouble() != 0)
     {
         foglio4.append("<br>Cordonatura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br>");
         foglio4.replace("PRIME", campo.value(91).toString());
@@ -592,21 +600,21 @@ foglio2 = "<div style=";
         foglio4.replace("AVVIAMENTO", campo.value(93).toString());
     }
 
-    if (!campo.value(94).toString().isEmpty())
+    if (campo.value(94).toDouble() != 0)
     {
         foglio4.append("Accoppiatura &nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>");
         foglio4.replace("PRIME", campo.value(94).toString());
         foglio4.replace("SUCC", campo.value(95).toString());
     }
 
-    if (!campo.value(96).toString().isEmpty())
+    if (campo.value(96).toDouble() != 0)
     {
         foglio4.append("Stampa a caldo &nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>");
         foglio4.replace("PRIME", campo.value(96).toString());
         foglio4.replace("SUCC", campo.value(97).toString());
     }
 
-    if (!campo.value(98).toString().isEmpty())
+    if (campo.value(98).toDouble() != 0)
     {
         foglio4.append("Cliche' &nbsp;&nbsp; PRIME<br>");
         foglio4.replace("PRIME", campo.value(98).toString());
