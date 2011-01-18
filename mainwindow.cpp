@@ -40,7 +40,9 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 
-    database.close();  //chiudo il database! ma non funziona
+    //chiudo il database! ma non funziona
+    database.removeDatabase(database.connectionName());
+    database.close();
     delete ui;
 }
 
