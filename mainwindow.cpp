@@ -5,11 +5,6 @@
    - Chiusura del db
    - MIGLIORARE RICERCA (Like non va)
    - RISOLVERE PROBLEMA SELEZIONE
-
-   ANNOTAZIONI
-   - forse questa gestione a widget dove tutti sono creati e caricati all'avvio occupa parecchia ram e un avvio più lento.
-     bisogna valutare se ciò costituisce un problema. Per ora appena avviato sono 4.3Mb e 5.2 dopo che carica il db
-
 */
 
 /*
@@ -22,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-   //setAttribute(Qt::WA_DeleteOnClose);
+    //setAttribute(Qt::WA_DeleteOnClose);
     rigadacancellare = 0;
     pulire = true;
     caricaDb("database.db"); //carica il file del database dalla cartella stessa dell'eseguibile
@@ -36,12 +31,6 @@ MainWindow::MainWindow(QWidget *parent) :
     stampante.setOutputFormat(QPrinter::PdfFormat);
     stampante.setOutputFileName("bb.pdf");
 
-
-    /*esempio su come visualizzare le label con 3 cifre dopo la virgola
-    QString a;
-    a.setNum(8.00, 'f', 3 );
-*/
-
     ui->bottone_torna_preventivo->hide();
     ui->bottone_salva_preventivo->hide();
     popolaComboBox();
@@ -50,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+
     database.close();  //chiudo il database! ma non funziona
     delete ui;
 }
@@ -120,7 +110,6 @@ void MainWindow::creaTabelle()
     query.clear();
 
 
-    //manca la data!!
 
     //foglio1
     query = "CREATE TABLE preventivo (numero int, data char(10), cliente char(30), descrizione char(100), ncopie int, ";
@@ -140,8 +129,6 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    //Aggiungere qui le altre tabelle necessarie
-
 }
 
 void MainWindow::caricaComboBox(QComboBox *comboBox, QVariant valore)
@@ -160,7 +147,6 @@ void MainWindow::caricaPreventivo(int numero)
 
     str_numero.setNum(numero);
     ui->label_npreventivo->setNum(numero);
-
 
     query.clear();
     query = "SELECT * FROM preventivo WHERE numero = '"+str_numero+"'";
@@ -401,24 +387,11 @@ QString MainWindow::creaHtml(int numero)
     foglio1.replace("DESCRIZIONE", campo.value(3).toString());
     foglio1.replace("NUMEROCOPIE", campo.value(4).toString());
 
+    //interruzione di pagina
     foglio1.append("<p STYLE=\"page-break-before: always\"></p>");
+
     //foglio2
-
-    /* nella stampa pdf non funziona l'align right
-foglio2 = "<div style=";
-    foglio2.append('"');
-    foglio2.append("text-align: right;");
-    foglio2.append('"');
-    foglio2.append(">Prime NCOPIE copie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Successive NCOPIE copie<br><br></div>");
-
-*/
-
-    //molto poco elegante farlo con gli spazi, calcolare la lunghezza del numero da sostituire alla X ed eventualmente aggiungere spazi per migliorare l'impaginazione
-
-    //intestazione = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
-    //intestazione = "<table style=\"text-align: left; width: 500px; margin-left: auto; margin-right: 0px;\" border=\"1\" cellpadding=\"2\" cellspacing=\"2\"> <tbody> <tr> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Prime X copie<br> </td> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Successive X copie<br> </td> </tr> </tbody></table><br>";
     intestazione = "<table align=\"right\"> <tbody><tr> <td width=\"130\">PRIME</td> <td width=\"140\">SUCC</td> </tr></tbody></table><br>";
-    //intestazione.append("<table align=\"right\"> <tbody><tr> <td width=\"150\">X</td> <td width=\"150\">X</td> </tr></tbody></table><br>");
     intestazione.replace("PRIME", ui->label_foglio2_ncopie->text());
     intestazione.replace("SUCC", ui->label_foglio2_successivencopie->text());
     //in questo caso se è una sola mantiene "copia" ;)
@@ -434,7 +407,6 @@ foglio2 = "<div style=";
     {
         if (prime[i] != 0)
         {
-            //foglio2.append("Lastre NLASTRE X Euro EUROLASTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTREPRIME<br> Risme NRISME X Euro EURORISME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMEPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RISMESUCC<br><br>");
             foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"50\">Lastre</td> <td width=\"75\">NLASTRE</td> <td width=\"50\">X Euro</td> <td width=\"60\" >EUROLASTRE</td> <td width=\"90\"> </td> <td width=\"130\">LASTREPRIME</td> <td width=\"140\"> </td> </tr> <tr> <td>Risme</td> <td> NRISME</td> <td> X Euro</td> <td> EURORISME</td> <td width=\"100\"> </td> <td width=\"130\">RISMEPRIME</td> <td width=\"140\">RISMESUCC</td></tr></tbody></table><br>");
             foglio2.replace("NLASTRE", campo.value(i+5).toString());
             foglio2.replace("NRISME", campo.value(i+11).toString());
@@ -448,7 +420,6 @@ foglio2 = "<div style=";
 
     }
 
-    //foglio2.append("<br>Lastre + avviamenti LASTRAVVPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LASTRAVVSUCC<br> Stampa STAMPAPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAMPASUCC<br> Stampa digitale DIGPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIGSUCC<br>");
     foglio2.append("<table align=\"right\" > <tbody><tr> <td width=\"330\">Lastre + avviamenti</td><td width=\"130\">LASTRAVVPRIME</td><td width=\"140\">LASTRAVVSUCC</td></tr><tr><td>Stampa</td><td>STAMPAPRIME</td><td>STAMPASUCC</td></tr><tr><td>Stampa digitale</td><td>DIGPRIME</td><td>DIGSUCC</td></tr></tbody></table><br>");
     foglio2.replace("LASTRAVVPRIME", campo.value(29).toString() );
     foglio2.replace("LASTRAVVSUCC", campo.value(30).toString());
@@ -457,7 +428,6 @@ foglio2 = "<div style=";
     foglio2.replace("DIGPRIME", campo.value(33).toString());
     foglio2.replace("DIGSUCC", campo.value(34).toString());
 
-   // totali = "<br> Totale PRETOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRETOTSUCC<br> %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERC<br> Totale TOTPRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTSUCC<br> <br>";
     totali = "<table align=\"right\" > <tbody><tr> <td width=\"330\">Totale</td><td width=\"130\">PRETOTPRIME</td><td width=\"140\">PRETOTSUCC</td></tr><tr><td>%</td><td>PERC</td><td></td></tr><tr><td>Totale</td><td>TOTPRIME</td><td>TOTSUCC</td></tr></tbody></table><br>";
     foglio2.append(totali);
 
@@ -477,8 +447,6 @@ foglio2 = "<div style=";
     {
         if (primef3[k] != 0)
         {
-           //foglio3.append("<br>Tipo carta: TIPO FORMATO Grammatura: GRAMMATURA<br>Fogli: NFOGLI Kg KILI X EuroEURO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
-            //foglio3.append("<table align=\"right\" > <tbody><tr><td width=\"45\">Carta:</td><td width=\"120\">TIPO</td><td width=\"85\">FORMATO</td><td width=\"20\">gr.</td><td width=\"60\">GRAMMATURA</td><td width=\"130\"></td><td width=\"140\"></td></tr></tbody></table><table align=\"right\"> <tbody><tr><td width=\"45\">Fogli:</td><td width=\"70\">NFOGLI</td><td width=\"20\">Kg</td><td width=\"80\">KILI</td><td width=\"50\">X Euro</td><td width=\"75\">EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table><br>");
             foglio3.append("<table align=\"right\"> <tbody><tr><td width=\"330\">Carta TIPO &nbsp;FORMATO &nbsp;gr.&nbsp;GRAMMATURA</tr><tr><td>Fogli: NFOGLI &nbsp;Kg.&nbsp;KILI &nbsp;X Euro EURO<td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table><br>");
             foglio3.replace("TIPO", campo.value(k+36).toString());
             foglio3.replace("FORMATO", campo.value(k+44).toString());
@@ -496,7 +464,6 @@ foglio2 = "<div style=";
     {
         if (!campo.value(k+41).toString().isEmpty())
         {
-            //foglio3.append("<br>Tipo carta: TIPO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME SUCC<br>");
             foglio3.append("<table align=\"right\" > <tbody><tr> <td width=\"330\">Tipo di carta: TIPO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table><br>");
             foglio3.replace("TIPO", campo.value(k+41).toString());
             foglio3.replace("PRIME", campo.value(k+64).toString());
@@ -518,10 +485,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_opaca_bianca_primencopie->text().toDouble() != 0)
     {
-        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
-        */
         foglio4.append("<table align=\"right\"><tbody><tr><td>Plastificazione opaca in bianca</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FORMATO", campo.value(71).toString());
         foglio4.replace("FOGLI", campo.value(72).toString());
@@ -533,10 +496,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_opaca_bianca_volta_primencopie->text().toDouble() != 0)
     {
-        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione opaca in bianca e volta</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
-        */
         foglio4.append("<table align=\"right\"><tbody><tr><td>Plastificazione opaca in bianca e volta</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FORMATO", campo.value(74).toString());
         foglio4.replace("FOGLI", campo.value(75).toString());
@@ -548,10 +507,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text().toDouble() != 0)
     {
-        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
-        */
         foglio4.append("<table align=\"right\"><tbody><tr><td>Plastificazione lucida in bianca</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FOGLI", campo.value(78).toString());
         foglio4.replace("FORMATO", campo.value(77).toString());
@@ -563,10 +518,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text().toDouble() != 0)
     {
-        /*foglio4.append("<table align=\"left\"><tbody><tr><td>Plastificazione lucida in bianca e volta</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"70\">Formato:</td><td width=\"100\">FORMATO</td><td width=\"50\">Fogli:</td><td width=\"110\">FOGLI</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
-        foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Avviamento:</td><td width=\"130\">AVVIAMENTO</td><td width=\"140\"></td></tr></tbody></table><br><br>");
-        */
         foglio4.append("<table align=\"right\"><tbody><tr><td>Plastificazione lucida in bianca e volta</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tbody></table>");
         foglio4.replace("FORMATO", campo.value(80).toString());
         foglio4.replace("FOGLI", campo.value(81).toString());
@@ -579,7 +530,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_serigrafia_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Serigrafia<br>Formato: FORMATO&nbsp; FogliFOGLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br>Telaio&nbsp;&nbsp;&nbsp;&nbsp; TELAIO<br><br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td>Serigrafia</td><td width=\"130\"></td><td width=\"140\"></td></tr></tr><tr><td width=\"330\">Formato: FORMATO &nbsp; Fogli: FOGLI</td><td>PRIME</td><td>SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td><td></td></tr><tr><td>Telaio:</td><td>TELAIO</td><td></td></tr></tbody></table>");
         foglio4.replace("FORMATO", campo.value(83).toString());
         foglio4.replace("FOGLI", campo.value(84).toString());
@@ -593,7 +543,6 @@ foglio2 = "<div style=";
 
     if (campo.value(87).toDouble() != 0)
     {
-        //foglio4.append("Fustella:&nbsp;&nbsp;&nbsp;&nbsp; FUSTELLA<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Fustella</td><td width=\"130\">FUSTELLA</td><td width=\"140\"></td></tr></tbody></table>");
         foglio4.replace("FUSTELLA", campo.value(87).toString());
 
@@ -601,7 +550,6 @@ foglio2 = "<div style=";
 
     if (ui->label_spinBox_foglio4_fustellatura_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Fustellatura&nbsp;&nbsp;&nbsp;&nbsp; fogli: FOGLI x Euro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br><br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Fustellatura fogli: FOGLI &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td></tr></tbody></table>");
         foglio4.replace("FOGLI", campo.value(88).toString());
         foglio4.replace("EURO", campo.value(89).toString());
@@ -612,7 +560,6 @@ foglio2 = "<div style=";
 
     if (campo.value(91).toDouble() != 0)
     {
-        //foglio4.append("<br>Cordonatura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AVVIAMENTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Cordonatura</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td></tr></tbody></table>");
         foglio4.replace("PRIME", campo.value(91).toString());
         foglio4.replace("SUCC", campo.value(92).toString());
@@ -621,7 +568,6 @@ foglio2 = "<div style=";
 
     if (campo.value(94).toDouble() != 0)
     {
-        //foglio4.append("Accoppiatura &nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Accoppiatura</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.replace("PRIME", campo.value(94).toString());
         foglio4.replace("SUCC", campo.value(95).toString());
@@ -629,7 +575,6 @@ foglio2 = "<div style=";
 
     if (campo.value(96).toDouble() != 0)
     {
-        //foglio4.append("Stampa a caldo &nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUCC<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Stampa a caldo</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.replace("PRIME", campo.value(96).toString());
         foglio4.replace("SUCC", campo.value(97).toString());
@@ -637,7 +582,6 @@ foglio2 = "<div style=";
 
     if (campo.value(98).toDouble() != 0)
     {
-        //foglio4.append("Cliche' &nbsp;&nbsp; PRIME<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Cliche'</td><td width=\"130\">PRIME</td><td width=\"140\"></td></tr></tbody></table>");
         foglio4.replace("PRIME", campo.value(98).toString());
     }
@@ -645,7 +589,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_piegacopie_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("<br>Piega&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Piega copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(99).toString());
         foglio4.replace("EURO", campo.value(100).toString());
@@ -655,7 +598,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_tagliocopie_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("<brTaglio&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Taglio copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(101).toString());
         foglio4.replace("EURO", campo.value(102).toString());
@@ -665,7 +607,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_puntometallico_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("<br>Punto metallico&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Punto metallico copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\"></td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(103).toString());
         foglio4.replace("EURO", campo.value(104).toString());
@@ -675,7 +616,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_brosurafresata_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Brosura fresata&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Brosura fresata copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(106).toString());
         foglio4.replace("EURO", campo.value(107).toString());
@@ -686,7 +626,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_filo_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Brosura filo refe&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Brosura filo refe: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(109).toString());
         foglio4.replace("EURO", campo.value(110).toString());
@@ -697,7 +636,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_cartonato_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Cartonato&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>Avviamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVVIAMENTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Cartonato copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr><tr><td>Avviamento:</td><td>AVVIAMENTO</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(112).toString());
         foglio4.replace("EURO", campo.value(113).toString());
@@ -709,7 +647,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_spiralatura_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Spiralatura&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Spiralatura copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(115).toString());
         foglio4.replace("EURO", campo.value(116).toString());
@@ -719,7 +656,6 @@ foglio2 = "<div style=";
 
     if (ui->label_foglio4_pacchi_primencopie->text().toDouble() != 0)
     {
-        //foglio4.append("Pacchi politenati&nbsp; &nbsp;&nbsp;&nbsp; copie: COPIE xEuro:EURO&nbsp;&nbsp;&nbsp;&nbsp;PRIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUCC<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Pacchi politenati copie: COPIE &nbsp; X Euro: EURO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
         foglio4.replace("COPIE", campo.value(117).toString());
         foglio4.replace("EURO", campo.value(118).toString());
@@ -729,7 +665,6 @@ foglio2 = "<div style=";
 
     if (campo.value(119).toDouble() != 0)
     {
-        //foglio4.append("Trasporto&nbsp;&nbsp;&nbsp;&nbsp; TRASPORTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Trasporto</td><td width=\"130\">TRASPORTO</td><td width=\"140\"></td></tr></tbody></table>");
         foglio4.replace("TRASPORTO", campo.value(119).toString());
     }
@@ -738,7 +673,6 @@ foglio2 = "<div style=";
     {
         if (!campo.value(k+120).toString().isEmpty())
         {
-            //foglio3.append("TIPO &nbsp; &nbsp; PRIME SUCC<br>");
             foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">TIPO</td><td width=\"130\">PRIME</td><td width=\"140\">SUCC</td></tr></tbody></table>");
             foglio4.replace("TIPO", campo.value(k+120).toString());
             foglio4.replace("PRIME", campo.value(k+125).toString());
@@ -754,9 +688,9 @@ foglio2 = "<div style=";
     foglio4.replace("TOTSUCC", ui->label_foglio4_totale_successivencopie->text());
 
     foglio4.append("<p STYLE=\"page-break-before: always\"></p>");
+
     //foglio5
     foglio5 = intestazione;
-    //foglio5.append("")
     foglio5.append("<table align=\"right\"><tbody><tr><td width=\"330\"><b>Riepilogo costi</b></td><td width=\"130\"></td><td width=\"140\"></td></tr>");
     foglio5.append("<tr><td>Stampa</td><td>STAMPAPRIME</td><td>STAMPASUCC</td></tr>");
     foglio5.append("<tr><td>Carta</td><td>CARTAPRIME</td><td>CARTASUCC</td></tr>");
@@ -1265,10 +1199,7 @@ void MainWindow::refreshTabelle()
     for (int i=4; i<142; i++)
         ui->tableView_preventivi->hideColumn(i);
 
-
-
     popolaComboBox();
-    //Aggiungere qui il refresh di altre tabelle
 }
 
 void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
@@ -1357,9 +1288,6 @@ void MainWindow::on_bottone_carta_tipo_aggiungi_clicked()
 
 void MainWindow::on_bottone_salva_preventivo_clicked()
 {
-
-
-    //Ricordarsi che manca la data
     QSqlQuery query;
     QSqlRecord campo;
 
@@ -1531,140 +1459,6 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
         qDebug() << query.exec();
         query.clear();
         refreshTabelle();
-
-    /*
-DA CANCELLARE QUANDO SARO' CERTO CHE L'ALTRA FUNZIONA BENE
-QSqlQuery query;
-    qDebug() << query.prepare("INSERT INTO preventivo (numero, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturanfogli, accoppiaturaeuro, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
-                  "VALUES(:numero, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturanfogli, :accoppiaturaeuro, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ");
-    query.bindValue(":numero", ui->label_npreventivo->text().toInt() );
-    query.bindValue(":cliente", ui->comboBox_clienti_seleziona->currentText() );
-    query.bindValue(":descrizione", ui->plainTextEdit_descrizione->toPlainText() );
-    query.bindValue(":ncopie", ui->spinBox_foglio1_ncopie->value());
-    query.bindValue(":lastren1", ui->spinBox_foglio2_lastre_n_1->value() );
-    query.bindValue(":lastren2", ui->spinBox_foglio2_lastre_n_2->value() );
-    query.bindValue(":lastren3", ui->spinBox_foglio2_lastre_n_3->value() );
-    query.bindValue(":lastren4", ui->spinBox_foglio2_lastre_n_4->value() );
-    query.bindValue(":lastren5", ui->spinBox_foglio2_lastre_n_5->value() );
-    query.bindValue(":lastren6", ui->spinBox_foglio2_lastre_n_6->value() );
-    query.bindValue(":rismen1", ui->spinBox_foglio2_risme_n_1->value() );
-    query.bindValue(":rismen2", ui->spinBox_foglio2_risme_n_2->value() );
-    query.bindValue(":rismen3", ui->spinBox_foglio2_risme_n_3->value() );
-    query.bindValue(":rismen4", ui->spinBox_foglio2_risme_n_4->value() );
-    query.bindValue(":rismen5", ui->spinBox_foglio2_risme_n_5->value() );
-    query.bindValue(":rismen6", ui->spinBox_foglio2_risme_n_6->value() );
-    query.bindValue(":lastreeuro1", ui->doubleSpinBox_foglio2_lastre_prezzo_1->value() );
-    query.bindValue(":lastreeuro2", ui->doubleSpinBox_foglio2_lastre_prezzo_2->value() );
-    query.bindValue(":lastreeuro3", ui->doubleSpinBox_foglio2_lastre_prezzo_3->value() );
-    query.bindValue(":lastreeuro4", ui->doubleSpinBox_foglio2_lastre_prezzo_4->value() );
-    query.bindValue(":lastreeuro5", ui->doubleSpinBox_foglio2_lastre_prezzo_5->value() );
-    query.bindValue(":lastreeuro6", ui->doubleSpinBox_foglio2_lastre_prezzo_6->value() );
-    query.bindValue(":rismeeuro1", ui->doubleSpinBox_foglio2_risme_prezzo_1->value() );
-    query.bindValue(":rismeeuro2", ui->doubleSpinBox_foglio2_risme_prezzo_2->value() );
-    query.bindValue(":rismeeuro3", ui->doubleSpinBox_foglio2_risme_prezzo_3->value() );
-    query.bindValue(":rismeeuro4", ui->doubleSpinBox_foglio2_risme_prezzo_4->value() );
-    query.bindValue(":rismeeuro5", ui->doubleSpinBox_foglio2_risme_prezzo_5->value() );
-    query.bindValue(":rismeeuro6", ui->doubleSpinBox_foglio2_risme_prezzo_6->value() );
-    query.bindValue(":lastravvprime", ui->doubleSpinBox_foglio2_lastreavviamenti_prime->value() );
-    query.bindValue(":lastravvsucc", ui->doubleSpinBox_foglio2_lastreavviamenti_successive->value() );
-    query.bindValue(":stampaprime", ui->doubleSpinBox_foglio2_stampa_prime->value() );
-    query.bindValue(":stampasucc", ui->doubleSpinBox_foglio2_stampa_successive->value() );
-    query.bindValue(":stampadigprime", ui->doubleSpinBox_foglio2_stampadigitale_prime->value() );
-    query.bindValue(":stampadigsucc", ui->doubleSpinBox_foglio2_stampadigitale_successive->value() );
-    query.bindValue(":percf2", ui->doubleSpinBox_foglio2_percentuale->value() );
-    query.bindValue(":tipo1", ui->comboBox_foglio3_carta_tipo_1->currentText() );
-    query.bindValue(":tipo2", ui->comboBox_foglio3_carta_tipo_2->currentText() );
-    query.bindValue(":tipo3", ui->comboBox_foglio3_carta_tipo_3->currentText() );
-    query.bindValue(":tipo4", ui->comboBox_foglio3_carta_tipo_4->currentText() );
-    query.bindValue(":tipo5", ui->comboBox_foglio3_carta_tipo_5->currentText() );
-    query.bindValue(":tipo6", ui->lineEdit_foglio3_tipocarta_1->text() );
-    query.bindValue(":tipo7", ui->lineEdit_foglio3_tipocarta_2->text() );
-    query.bindValue(":tipo8", ui->lineEdit_foglio3_tipocarta_3->text() );
-    query.bindValue(":formato1", ui->comboBox_foglio3_carta_formato_1->currentText() );
-    query.bindValue(":formato2", ui->comboBox_foglio3_carta_formato_2->currentText() );
-    query.bindValue(":formato3", ui->comboBox_foglio3_carta_formato_3->currentText() );
-    query.bindValue(":formato4", ui->comboBox_foglio3_carta_formato_4->currentText() );
-    query.bindValue(":formato5", ui->comboBox_foglio3_carta_formato_5->currentText() );
-    query.bindValue(":euro1", ui->comboBox_foglio3_carta_grammatura_1->currentText().toDouble() );
-    query.bindValue(":euro2", ui->comboBox_foglio3_carta_grammatura_2->currentText().toDouble() );
-    query.bindValue(":euro3", ui->comboBox_foglio3_carta_grammatura_3->currentText().toDouble() );
-    query.bindValue(":euro4", ui->comboBox_foglio3_carta_grammatura_4->currentText().toDouble() );
-    query.bindValue(":euro5", ui->comboBox_foglio3_carta_grammatura_5->currentText().toDouble() );
-    query.bindValue(":europrime1", ui->doubleSpinBox_foglio3_primencopie_1->value() );
-    query.bindValue(":europrime2", ui->doubleSpinBox_foglio3_primencopie_2->value() );
-    query.bindValue(":europrime3", ui->doubleSpinBox_foglio3_primencopie_3->value() );
-    query.bindValue(":eurosucc1", ui->doubleSpinBox_foglio3_successivencopie_1->value() );
-    query.bindValue(":eurosucc2", ui->doubleSpinBox_foglio3_successivencopie_2->value() );
-    query.bindValue(":eurosucc3", ui->doubleSpinBox_foglio3_successivencopie_3->value() );
-    query.bindValue(":percf3", ui->doubleSpinBox_foglio3_percentuale->value() );
-    query.bindValue(":plopbformato", ui->comboBox_foglio4_plastificazione_opaca_bianca->currentText() );
-    query.bindValue(":plopbnfogli", ui->spinBox_foglio4_plastificazione_opaca_bianca->value() );
-    query.bindValue(":plopbavv", ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_avviamento->value() );
-    query.bindValue(":plopbvformato", ui->comboBox_foglio4_plastificazione_opaca_bianca_volta->currentText() );
-    query.bindValue(":plopbvnfogli", ui->spinBox_foglio4_plastificazione_opaca_bianca_volta->value() );
-    query.bindValue(":plopbvavv", ui->doubleSpinBox_foglio4_plastificazione_opaca_bianca_volta_avviamento->value() );
-    query.bindValue(":pllubformato", ui->comboBox_foglio4_plastificazione_lucida_bianca->currentText() );
-    query.bindValue(":pllubnfogli", ui->spinBox_foglio4_plastificazione_lucida_bianca->value() );
-    query.bindValue(":pllubavv", ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_avviamento->value() );
-    query.bindValue(":pllubvformato", ui->comboBox_foglio4_plastificazione_lucida_bianca_volta->currentText() );
-    query.bindValue(":pllubvnfogli", ui->spinBox_foglio4_plastificazione_lucida_bianca_volta->value() );
-    query.bindValue(":pllubvavv", ui->doubleSpinBox_foglio4_plastificazione_lucida_bianca_volta_avviamento->value() );
-    query.bindValue(":serformato", ui->comboBox_foglio4_serigrafia->currentText() );
-    query.bindValue(":sernfogli", ui->spinBox_foglio4_serigrafia->value() );
-    query.bindValue(":seravv", ui->doubleSpinBox_foglio4_serigrafia_avviamento->value() );
-    query.bindValue(":sertelaio", ui->doubleSpinBox_foglio4_serigrafia_telaio->value() );
-    query.bindValue(":fustella", ui->doubleSpinBox_fustella_primencopie->value() );
-    query.bindValue(":fustellaturanfogli", ui->spinBox_foglio4_fustellatura_nfogli->value() );
-    query.bindValue(":fustellaturaeuro", ui->doubleSpinBox_spinBox_foglio4_fustellatura_euro->value() );
-    query.bindValue(":fustellaturaavv", ui->doubleSpinBox_label_spinBox_foglio4_fustellatura_avviamento->value() );
-    query.bindValue(":cordonaturaprime", ui->doubleSpinBox_cordonatura_primencopie->value() );
-    query.bindValue(":cordonaturasucc", ui->doubleSpinBox_cordonatura_successivencopie->value() );
-    query.bindValue(":cordonaturaavv", ui->doubleSpinBox_cordonatura_avviamento->value() );
-    query.bindValue(":accoppiaturanfogli", ui->spinBox_foglio4_accoppiatura_fogli->value() );
-    query.bindValue(":accoppiaturaeuro", ui->doubleSpinBox_foglio4_accoppiatura_euro->value() );
-    query.bindValue(":stampacaldoprime", ui->doubleSpinBox_foglio4_stampaacaldo_primencopie->value() );
-    query.bindValue(":stampacaldosucc", ui->doubleSpinBox_foglio4_stampaacaldo_successivencopie->value() );
-    query.bindValue(":cliche", ui->doubleSpinBox_foglio4_cliche_primencopie->value() );
-    query.bindValue(":piegacopien", ui->spinBox_foglio4_piegacopie_numero->value() );
-    query.bindValue(":piegacopieeuro", ui->doubleSpinBox_foglio4_piegacopie_euro->value() );
-    query.bindValue(":tagliocopien", ui->spinBox_foglio4_tagliocopie_numero->value() );
-    query.bindValue(":tagliocopieeuro", ui->doubleSpinBox_foglio4_tagliocopie_euro->value() );
-    query.bindValue(":puntometncopie", ui->spinBox_foglio4_puntometallico_numero->value() );
-    query.bindValue(":puntometeuro", ui->doubleSpinBox_foglio4_puntometallico_euro->value() );
-    query.bindValue(":puntometavv", ui->doubleSpinBox_foglio4_puntometallico_avviamento->value() );
-    query.bindValue(":brosfresncopie", ui->spinBox_foglio4_brosurafresata_numero->value() );
-    query.bindValue(":brosfreseuro", ui->doubleSpinBox_foglio4_brosurafresata_euro->value() );
-    query.bindValue(":brosfresavv", ui->doubleSpinBox_foglio4_brosurafresata_avviamento->value() );
-    query.bindValue(":brosfiloncopie", ui->spinBox_foglio4_filo_numero->value() );
-    query.bindValue(":brosfiloeuro", ui->doubleSpinBox_foglio4_filo_euro->value() );
-    query.bindValue(":brosfiloavv", ui->doubleSpinBox_foglio4_filo_avviamento->value() );
-    query.bindValue(":cartncopie", ui->spinBox_foglio4_cartonato_numero->value() );
-    query.bindValue(":carteuro", ui->doubleSpinBox_foglio4_cartonato_euro->value() );
-    query.bindValue(":cartavv", ui->doubleSpinBox_foglio4_cartonato_avviamento->value() );
-    query.bindValue(":spirncopie", ui->spinBox_foglio4_spiralatura_numero->value() );
-    query.bindValue(":spireuro", ui->doubleSpinBox_foglio4_spiralatura_euro->value() );
-    query.bindValue(":pacchipolincopie", ui->spinBox_foglio4_pacchi_numero->value() );
-    query.bindValue(":pacchipolieuro", ui->doubleSpinBox_foglio4_pacchi_euro->value() );
-    query.bindValue(":trasporto", ui->doubleSpinBox_foglio4_trasporto->value() );
-    query.bindValue(":riga1", ui->lineEdit_foglio4_prima->text() );
-    query.bindValue(":riga2", ui->lineEdit_seconda->text() );
-    query.bindValue(":riga3", ui->lineEdit_foglio4_terza->text() );
-    query.bindValue(":riga4", ui->lineEdit_foglio4_quarta->text() );
-    query.bindValue(":riga5", ui->lineEdit_foglio4_quinta->text() );
-    query.bindValue(":riga1prime", ui->doubleSpinBox_foglio4_prima_primencopie->value() );
-    query.bindValue(":riga2prime", ui->doubleSpinBox_foglio4_seconda_primencopie->value() );
-    query.bindValue(":riga3prime", ui->doubleSpinBox_foglio4_terza_primencopie->value() );
-    query.bindValue(":riga4prime", ui->doubleSpinBox_foglio4_quarta_primencopie->value() );
-    query.bindValue(":riga5prime", ui->doubleSpinBox_foglio4_quinta_primencopie->value() );
-    query.bindValue(":riga1succ", ui->doubleSpinBox_foglio4_prima_successivencopie->value() );
-    query.bindValue(":riga2succ", ui->doubleSpinBox_foglio4_seconda_successivencopie->value() );
-    query.bindValue(":riga3succ", ui->doubleSpinBox_foglio4_terza_successivencopie->value() );
-    query.bindValue(":riga4succ", ui->doubleSpinBox_foglio4_quarta_successivencopie->value() );
-    query.bindValue(":riga5succ", ui->doubleSpinBox_foglio4_quinta_successivencopie->value() );
-    query.bindValue(":percf4", ui->doubleSpinBox_foglio4_percentuale->value() );
-    qDebug() << query.exec();
-    query.clear();
-    refreshTabelle();*/
 }
 
 void MainWindow::razionalizzaTabella(QString tabella, QString colonna, int nmancante)
@@ -1677,7 +1471,6 @@ void MainWindow::razionalizzaTabella(QString tabella, QString colonna, int nmanc
     str_numero2.setNum(nmancante+1);
 
     int numtotale(0);
-    //stringa_query = "SELECT rowid FROM "+tabella;
     stringa_query = "SELECT ";
     stringa_query.append(colonna);
     stringa_query.append(" FROM ");
@@ -1696,7 +1489,6 @@ void MainWindow::razionalizzaTabella(QString tabella, QString colonna, int nmanc
     for ( ; str_numero.toInt() < numtotale; str_numero.setNum( str_numero.toInt()+1 ) )
      {
         str_numero2.setNum(str_numero.toInt()+1);
-        //stringa_query= "UPDATE "+tabella+" SET rowid='"+str_numero+"'WHERE rowid='"+str_numero2+"'";
         stringa_query= "UPDATE "+tabella+" SET "+colonna+"='"+str_numero+"'WHERE "+colonna+"='"+str_numero2+"'";
         qDebug() << query.prepare(stringa_query);
         qDebug() << query.exec();
@@ -1853,10 +1645,6 @@ void MainWindow::refreshFoglio3()
 
     ui->label_foglio3_totale_primencopie->setNum(ui->label_foglio3_pretotale_primencopie->text().toDouble() + (ui->label_foglio3_pretotale_primencopie->text().toDouble()/100 * ui->doubleSpinBox_foglio3_percentuale->value()));
     ui->label_foglio3_totale_successivencopie->setNum(ui->label_foglio3_pretotale_successivencopie->text().toDouble() + (ui->label_foglio3_pretotale_successivencopie->text().toDouble()/100 * ui->doubleSpinBox_foglio3_percentuale->value()));
-
-
-
-
 }
 
 
@@ -2027,7 +1815,8 @@ void MainWindow::refreshFoglio5()
                                                        );
 
 
-/* IN CASO CHE VOGLIA I COSTI SOLO MODIFICANDO IL NUMERO DI COPIE
+/*non ho ancora cancellato questo commento perchè ancora non sono ancora sicuro di come lo vuole
+IN CASO CHE VOGLIA I COSTI SOLO MODIFICANDO IL NUMERO DI COPIE
 ui->label_foglio5_prime_500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_500->value());
 ui->label_foglio5_prime_1000->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_1000->value());
 ui->label_foglio5_prime_1500->setNum(ui->label_foglio5_prezzoacopia_primencopie->text().toDouble()*ui->spinBox_foglio5_1500->value());
@@ -2062,9 +1851,6 @@ ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivenco
    ui->label_foglio5_succ_2500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
    ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
 
-
-
-
 }
 
 
@@ -2072,8 +1858,6 @@ ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivenco
 
 void MainWindow::on_bottone_clienti_rimuovi_clicked()
 {
-    //eliminaRiga("clienti", rigadacancellare+1);
-    //razionalizzaTabella("clienti", rigadacancellare+1);
     eliminaRiga("clienti","nome",valoredacancellare);
     refreshTabelle();
 }
@@ -2084,7 +1868,6 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
     QString stringa_query;
     QSqlQuery query;
-    //QSqlRecord campo;
     int numtotale(1);
 
 
@@ -2096,10 +1879,6 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     {
         numtotale++;
     }
-
-    //numtotale = campo.value(0).toInt()+1;
-
-
 
     ui->label_npreventivo->setNum(numtotale);
 
@@ -2117,10 +1896,7 @@ void MainWindow::on_bottone_preventivi_nuovo_clicked()
     ui->tabWidget_preventivi->setCurrentIndex(0);
     ui->tabWidget_preventivi->show();
 
-
-
     pulire = true;
-
 
 }
 
@@ -2856,8 +2632,6 @@ void MainWindow::on_tabWidget_preventivi_currentChanged(int index)
 }
 
 
-
-
 void MainWindow::on_tableView_clienti_clicked(QModelIndex index)
 {
     rigadacancellare = index.row();
@@ -2943,7 +2717,6 @@ void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
 void MainWindow::on_bottone_preventivi_elimina_clicked()
 {
     eliminaRiga("preventivo", "numero", valoredacancellare);
-    //razionalizzaTabella("preventivo","numero",valoredacancellare.toInt());
     refreshTabelle();
 }
 
