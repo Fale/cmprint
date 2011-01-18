@@ -2711,7 +2711,6 @@ void MainWindow::on_lineEdit_preventivi_cerca_textChanged(QString )
 void MainWindow::on_tableView_preventivi_clicked(QModelIndex index)
 {
     valoredacancellare = index.data(0).toString();
-     ui->label_27->setText(valoredacancellare);
 }
 
 void MainWindow::on_bottone_preventivi_elimina_clicked()
@@ -2779,4 +2778,5 @@ void MainWindow::on_bottone_pdf_clicked()
 {
     documento.setHtml(creaHtml(valoredacancellare.toInt()));
     documento.print(&stampante);
+
 }
