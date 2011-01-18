@@ -417,9 +417,12 @@ foglio2 = "<div style=";
 
     //intestazione = " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Prime X Copie &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Successive X Copie<br>";
     //intestazione = "<table style=\"text-align: left; width: 500px; margin-left: auto; margin-right: 0px;\" border=\"1\" cellpadding=\"2\" cellspacing=\"2\"> <tbody> <tr> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Prime X copie<br> </td> <td style=\"vertical-align: top; width: 240px; text-align: center;\">Successive X copie<br> </td> </tr> </tbody></table><br>";
-    intestazione = "<table align=\"right\"> <tbody><tr> <td width=\"130\">Prime X cp.</td> <td width=\"140\">Successive X cp.</td> </tr></tbody></table><br>";
+    intestazione = "<table align=\"right\"> <tbody><tr> <td width=\"130\">PRIME</td> <td width=\"140\">SUCC</td> </tr></tbody></table><br>";
     //intestazione.append("<table align=\"right\"> <tbody><tr> <td width=\"150\">X</td> <td width=\"150\">X</td> </tr></tbody></table><br>");
-    intestazione.replace("X", campo.value(4).toString());
+    intestazione.replace("PRIME", ui->label_foglio2_ncopie->text());
+    intestazione.replace("SUCC", ui->label_foglio2_successivencopie->text());
+    //in questo caso se è una sola mantiene "copia" ;)
+    intestazione.replace("copie", "cp.");
 
     foglio2 = intestazione;
 
