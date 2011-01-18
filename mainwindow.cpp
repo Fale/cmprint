@@ -131,7 +131,9 @@ void MainWindow::creaTabelle()
     query.append("tipo1 char(30), tipo2 char(30), tipo3 char(30), tipo4 char(30), tipo5 char(30), tipo6 char(30), tipo7 char(30), tipo8 char(30), formato1 char(30), formato2 char(30), formato3 char(30), formato4 char(30), formato5 char(30), grammatura1 real, grammatura2 real, grammatura3 real, grammatura4 real, grammatura5 real, nfogli1 int, nfogli2 int, nfogli3 int, nfogli4 int, nfogli5 int, euro1 real, euro2 real, euro3 real, euro4 real, euro5 real, europrime1 real, europrime2 real, europrime3 real, eurosucc1 real, eurosucc2 real, eurosucc3 real, percf3 real, ");
 
     //foglio4
-    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturaprime int, accoppiaturasucc real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real, riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real");
+    query.append("plopbformato char(30), plopbnfogli int, plopbavv real, plopbvformato char(30), plopbvnfogli int, plopbvavv real, pllubformato char(30), pllubnfogli int, pllubavv real, pllubvformato char(30), pllubvnfogli int, pllubvavv real, serformato char(30), sernfogli int, seravv real, sertelaio real, fustella real, fustellaturanfogli int, fustellaturaeuro real, fustellaturaavv real, cordonaturaprime real, cordonaturasucc real, cordonaturaavv real, accoppiaturaprime int, accoppiaturasucc real, stampacaldoprime real, stampacaldosucc real, cliche real, piegacopien int, piegacopieeuro real, tagliocopien int, tagliocopieeuro real, puntometncopie int, puntometeuro real, puntometavv real, brosfresncopie int, brosfreseuro real, brosfresavv real, brosfiloncopie int, brosfiloeuro real, brosfiloavv real, cartncopie int, carteuro real, cartavv real, spirncopie int, spireuro real, pacchipolincopie int, pacchipolieuro real, trasporto real, riga1 char(30), riga2 char(30), riga3 char(30), riga4 char(30), riga5 char(30), riga1prime real, riga2prime real, riga3prime real, riga4prime real, riga5prime real, riga1succ real, riga2succ real, riga3succ real, riga4succ real, riga5succ real, percf4 real, ");
+    //foglio5
+    query.append("primef5 int, secondef5 int, terzef5 int, quartef5 int, quintef5 int, sestef5 int");
     query.append(")");
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
@@ -308,6 +310,15 @@ void MainWindow::caricaPreventivo(int numero)
     ui->doubleSpinBox_foglio4_quarta_successivencopie->setValue(campo.value(133).toDouble());
     ui->doubleSpinBox_foglio4_quinta_successivencopie->setValue(campo.value(134).toDouble());
     ui->doubleSpinBox_foglio4_percentuale->setValue(campo.value(135).toDouble());
+
+    //foglio5
+    ui->spinBox_foglio5_500->setValue(campo.value(136).toInt());
+    ui->spinBox_foglio5_1000->setValue(campo.value(137).toInt());
+    ui->spinBox_foglio5_1500->setValue(campo.value(138).toInt());
+    ui->spinBox_foglio5_2000->setValue(campo.value(139).toInt());
+    ui->spinBox_foglio5_2500->setValue(campo.value(140).toInt());
+    ui->spinBox_foglio5_3000->setValue(campo.value(141).toInt());
+
 
 }
 
@@ -713,7 +724,7 @@ foglio2 = "<div style=";
         foglio4.replace("SUCC", ui->label_foglio4_pacchi_successivencopie->text());
     }
 
-    if (!campo.value(119).toString().isEmpty())
+    if (campo.value(119).toDouble() != 0)
     {
         //foglio4.append("Trasporto&nbsp;&nbsp;&nbsp;&nbsp; TRASPORTO<br>");
         foglio4.append("<table align=\"right\"><tbody><tr><td width=\"330\">Trasporto</td><td width=\"130\">TRASPORTO</td><td width=\"140\"></td></tr></tbody></table>");
@@ -742,8 +753,47 @@ foglio2 = "<div style=";
     foglio4.append("<p STYLE=\"page-break-before: always\"></p>");
     //foglio5
     foglio5 = intestazione;
+    //foglio5.append("")
+    foglio5.append("<table align=\"right\"><tbody><tr><td width=\"330\"><b>Riepilogo costi</b></td><td width=\"130\"></td><td width=\"140\"></td></tr>");
+    foglio5.append("<tr><td>Stampa</td><td>STAMPAPRIME</td><td>STAMPASUCC</td></tr>");
+    foglio5.append("<tr><td>Carta</td><td>CARTAPRIME</td><td>CARTASUCC</td></tr>");
+    foglio5.append("<tr><td>Lavorazioni</td><td>LAVORAZIONIPRIME</td><td>LAVORAZIONISUCC</td></tr>");
+    foglio5.append("<tr><td>Prezzo a copia</td><td>ACOPIAPRIME</td><td>ACOPIASUCC</td></tr>");
+    foglio5.append("<tr><td>500</td><td>500PRIME</td><td>500SUCC</td></td>");
+    foglio5.append("<tr><td>1000</td><td>500PRIME</td><td>1000SUCC</td></td>");
+    foglio5.append("<tr><td>1500</td><td>500PRIME</td><td>1500SUCC</td></td>");
+    foglio5.append("<tr><td>2000</td><td>500PRIME</td><td>2000SUCC</td></td>");
+    foglio5.append("<tr><td>2500</td><td>500PRIME</td><td>2500SUCC</td></td>");
+    foglio5.append("<tr><td>3000</td><td>500PRIME</td><td>3000SUCC</td></td>");
+    foglio5.append("</tbody></table>");
 
+    foglio5.replace("STAMPAPRIME", ui->label_foglio5_stampa_primencopie->text());
+    foglio5.replace("STAMPASUCC", ui->label_foglio5_stampa_successivencopie->text());
+    foglio5.replace("CARTAPRIME", ui->label_foglio5_carta_primencopie->text());
+    foglio5.replace("CARTASUCC", ui->label_foglio5_carta_successivencopie->text());
+    foglio5.replace("LAVORAZIONIPRIME", ui->label_foglio5_lavorazioni_primencopie->text());
+    foglio5.replace("LAVORAZIONISUCC", ui->label_foglio5_lavorazioni_successivencopie->text());
+    foglio5.replace("ACOPIAPRIME", ui->label_foglio5_prezzoacopia_primencopie->text());
+    foglio5.replace("ACOPIASUCC", ui->label_foglio5_prezzoacopia_successivencopie->text());
+    foglio5.replace("500PRIME", ui->label_foglio5_prime_500->text());
+    foglio5.replace("500SUCC", ui->label_foglio5_succ_500->text());
+    foglio5.replace("1000PRIME", ui->label_foglio5_prime_1000->text());
+    foglio5.replace("1000SUCC", ui->label_foglio5_succ_1000->text());
+    foglio5.replace("1500PRIME", ui->label_foglio5_prime_1500->text());
+    foglio5.replace("1500SUCC", ui->label_foglio5_succ_1500->text());
+    foglio5.replace("2000PRIME", ui->label_foglio5_prime_2000->text());
+    foglio5.replace("2000SUCC", ui->label_foglio5_succ_2000->text());
+    foglio5.replace("2500PRIME", ui->label_foglio5_prime_2500->text());
+    foglio5.replace("2500SUCC", ui->label_foglio5_succ_2500->text());
+    foglio5.replace("3000PRIME", ui->label_foglio5_prime_3000->text());
+    foglio5.replace("3000SUCC", ui->label_foglio5_succ_3000->text());
 
+    foglio5.replace("1000", campo.value(137).toString());
+    foglio5.replace("1500", campo.value(138).toString());
+    foglio5.replace("2000", campo.value(139).toString());
+    foglio5.replace("2500", campo.value(140).toString());
+    foglio5.replace("3000", campo.value(141).toString());
+    foglio5.replace("500", campo.value(136).toString());
 
     completo.append(foglio1);
     completo.append(foglio2);
@@ -1035,6 +1085,15 @@ void MainWindow::pulisciPreventivo()
    ui->doubleSpinBox_foglio4_quinta_successivencopie->setValue(0);
    ui->doubleSpinBox_foglio4_percentuale->setValue(0);
 
+   //foglio5
+   ui->spinBox_foglio5_500->setValue(500);
+   ui->spinBox_foglio5_1000->setValue(1000);
+   ui->spinBox_foglio5_1500->setValue(1500);
+   ui->spinBox_foglio5_2000->setValue(2000);
+   ui->spinBox_foglio5_2500->setValue(2500);
+   ui->spinBox_foglio5_3000->setValue(3000);
+
+
    popolaComboBox();
    refreshFoglio2();
    refreshFoglio3();
@@ -1200,7 +1259,7 @@ void MainWindow::refreshTabelle()
 
     ui->tableView_preventivi->setModel(tabella_preventivi);
 
-    for (int i=4; i<136; i++)
+    for (int i=4; i<142; i++)
         ui->tableView_preventivi->hideColumn(i);
 
 
@@ -1320,8 +1379,8 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     }
         query.clear();
 
-        qDebug() << query.prepare("INSERT INTO preventivo (numero, data, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, grammatura1, grammatura2, grammatura3, grammatura4, grammatura5, nfogli1, nfogli2, nfogli3, nfogli4, nfogli5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturaprime, accoppiaturasucc, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4)"
-                      "VALUES(:numero, :data, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :grammatura1, :grammatura2, :grammatura3, :grammatura4, :grammatura5, :nfogli1, :nfogli2, :nfogli3, :nfogli4, :nfogli5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturaprime, :accoppiaturasucc, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4) ");
+        qDebug() << query.prepare("INSERT INTO preventivo (numero, data, cliente, descrizione, ncopie, lastren1, lastren2, lastren3, lastren4, lastren5, lastren6, rismen1, rismen2, rismen3, rismen4, rismen5, rismen6, lastreeuro1, lastreeuro2, lastreeuro3, lastreeuro4, lastreeuro5, lastreeuro6, rismeeuro1, rismeeuro2, rismeeuro3, rismeeuro4, rismeeuro5, rismeeuro6, lastravvprime, lastravvsucc, stampaprime, stampasucc, stampadigprime, stampadigsucc, percf2, tipo1, tipo2, tipo3, tipo4, tipo5, tipo6, tipo7, tipo8, formato1, formato2, formato3, formato4, formato5, grammatura1, grammatura2, grammatura3, grammatura4, grammatura5, nfogli1, nfogli2, nfogli3, nfogli4, nfogli5, euro1, euro2, euro3, euro4, euro5, europrime1, europrime2, europrime3, eurosucc1, eurosucc2, eurosucc3, percf3, plopbformato, plopbnfogli, plopbavv, plopbvformato, plopbvnfogli, plopbvavv, pllubformato, pllubnfogli, pllubavv, pllubvformato, pllubvnfogli, pllubvavv, serformato, sernfogli, seravv, sertelaio, fustella, fustellaturanfogli, fustellaturaeuro, fustellaturaavv, cordonaturaprime, cordonaturasucc, cordonaturaavv, accoppiaturaprime, accoppiaturasucc, stampacaldoprime, stampacaldosucc, cliche, piegacopien, piegacopieeuro, tagliocopien, tagliocopieeuro, puntometncopie, puntometeuro, puntometavv, brosfresncopie, brosfreseuro, brosfresavv, brosfiloncopie, brosfiloeuro, brosfiloavv, cartncopie, carteuro, cartavv, spirncopie, spireuro, pacchipolincopie, pacchipolieuro, trasporto, riga1, riga2, riga3, riga4, riga5, riga1prime, riga2prime, riga3prime, riga4prime, riga5prime, riga1succ, riga2succ, riga3succ, riga4succ, riga5succ, percf4, primef5, secondef5, terzef5, quartef5, quintef5, sestef5)"
+                      "VALUES(:numero, :data, :cliente, :descrizione, :ncopie, :lastren1, :lastren2, :lastren3, :lastren4, :lastren5, :lastren6, :rismen1, :rismen2, :rismen3, :rismen4, :rismen5, :rismen6, :lastreeuro1, :lastreeuro2, :lastreeuro3, :lastreeuro4, :lastreeuro5, :lastreeuro6, :rismeeuro1, :rismeeuro2, :rismeeuro3, :rismeeuro4, :rismeeuro5, :rismeeuro6, :lastravvprime, :lastravvsucc, :stampaprime, :stampasucc, :stampadigprime, :stampadigsucc, :percf2, :tipo1, :tipo2, :tipo3, :tipo4, :tipo5, :tipo6, :tipo7, :tipo8, :formato1, :formato2, :formato3, :formato4, :formato5, :grammatura1, :grammatura2, :grammatura3, :grammatura4, :grammatura5, :nfogli1, :nfogli2, :nfogli3, :nfogli4, :nfogli5, :euro1, :euro2, :euro3, :euro4, :euro5, :europrime1, :europrime2, :europrime3, :eurosucc1, :eurosucc2, :eurosucc3, :percf3, :plopbformato, :plopbnfogli, :plopbavv, :plopbvformato, :plopbvnfogli, :plopbvavv, :pllubformato, :pllubnfogli, :pllubavv, :pllubvformato, :pllubvnfogli, :pllubvavv, :serformato, :sernfogli, :seravv, :sertelaio, :fustella, :fustellaturanfogli, :fustellaturaeuro, :fustellaturaavv, :cordonaturaprime, :cordonaturasucc, :cordonaturaavv, :accoppiaturaprime, :accoppiaturasucc, :stampacaldoprime, :stampacaldosucc, :cliche, :piegacopien, :piegacopieeuro, :tagliocopien, :tagliocopieeuro, :puntometncopie, :puntometeuro, :puntometavv, :brosfresncopie, :brosfreseuro, :brosfresavv, :brosfiloncopie, :brosfiloeuro, :brosfiloavv, :cartncopie, :carteuro, :cartavv, :spirncopie, :spireuro, :pacchipolincopie, :pacchipolieuro, :trasporto, :riga1, :riga2, :riga3, :riga4, :riga5, :riga1prime, :riga2prime, :riga3prime, :riga4prime, :riga5prime, :riga1succ, :riga2succ, :riga3succ, :riga4succ, :riga5succ, :percf4, :primef5, :secondef5, :terzef5, :quartef5, :quintef5, :sestef5) ");
         query.bindValue(":numero", ui->label_npreventivo->text().toInt() );
         query.bindValue(":data", ui->dateEdit_foglio1->date().toString("dd/MM/yyyy") );
         query.bindValue(":cliente", ui->comboBox_clienti_seleziona->currentText() );
@@ -1458,6 +1517,12 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
         query.bindValue(":riga4succ", ui->doubleSpinBox_foglio4_quarta_successivencopie->value() );
         query.bindValue(":riga5succ", ui->doubleSpinBox_foglio4_quinta_successivencopie->value() );
         query.bindValue(":percf4", ui->doubleSpinBox_foglio4_percentuale->value() );
+        query.bindValue(":primef5", ui->spinBox_foglio5_500->value());
+        query.bindValue(":secondef5", ui->spinBox_foglio5_1000->value());
+        query.bindValue(":terzef5", ui->spinBox_foglio5_1500->value());
+        query.bindValue(":quartef5", ui->spinBox_foglio5_2000->value());
+        query.bindValue(":quintef5", ui->spinBox_foglio5_2500->value());
+        query.bindValue(":sestef5", ui->spinBox_foglio5_3000->value());
 
 
         qDebug() << query.exec();
