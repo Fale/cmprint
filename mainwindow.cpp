@@ -1053,7 +1053,7 @@ double MainWindow::formatoASuperficie(QString formato)
     QString secondoValore;
     primoValore = formato.section("x",0,0);
     secondoValore = formato.section("x",1,1);
-    return ( ( primoValore.toDouble()*secondoValore.toDouble() ) /1000000);
+    return ( ( primoValore.toDouble()*secondoValore.toDouble() ) /10000);
 
 }
 
@@ -1128,7 +1128,7 @@ void MainWindow::refreshTabelle()
     tabella_plastificazione->setTable("plastificazione");
     tabella_plastificazione->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_plastificazione->select();
-    tabella_plastificazione->setHeaderData(0, Qt::Horizontal, "Formato (mm)");
+    tabella_plastificazione->setHeaderData(0, Qt::Horizontal, "Formato (cm)");
     tabella_plastificazione->setHeaderData(1, Qt::Horizontal, "Lucida Bianca Euro");
     tabella_plastificazione->setHeaderData(2, Qt::Horizontal, "Lucida Bianca/Volta Euro");
     tabella_plastificazione->setHeaderData(3, Qt::Horizontal, "Opaca Bianca Euro");
@@ -1147,7 +1147,7 @@ void MainWindow::refreshTabelle()
     tabella_carta_formato->setTable("cartaformato");
     tabella_carta_formato->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_carta_formato->select();
-    tabella_carta_formato->setHeaderData(0, Qt::Horizontal, "Formato (mm)");
+    tabella_carta_formato->setHeaderData(0, Qt::Horizontal, "Formato (cm)");
     ui->tableView_carta_formato->setModel(tabella_carta_formato);
 
     QSqlTableModel *tabella_carta_grammatura = new QSqlTableModel;
@@ -1161,7 +1161,7 @@ void MainWindow::refreshTabelle()
     tabella_serigrafia->setTable("serigrafia");
     tabella_serigrafia->setEditStrategy(QSqlTableModel::OnFieldChange);
     tabella_serigrafia->select();
-    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Formato (mm)");
+    tabella_serigrafia->setHeaderData(0, Qt::Horizontal, "Formato (cm)");
     tabella_serigrafia->setHeaderData(1, Qt::Horizontal, "Prezzo Euro");
     ui->tableView_serigrafia->setModel(tabella_serigrafia);
 
