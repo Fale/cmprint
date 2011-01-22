@@ -493,8 +493,9 @@ QString MainWindow::creaHtml(int numero)
         foglio4.replace("AVVIAMENTO", campo.value(73).toString());
         foglio4.replace("PRIME", ui->label_foglio4_plastificazione_opaca_bianca_primencopie->text() );
         foglio4.replace("SUCC", ui->label_foglio4_plastificazione_opaca_bianca_successivencopie->text());
-    }
         foglio4.append("<br>");
+    }
+
 
     if (ui->label_foglio4_plastificazione_opaca_bianca_volta_primencopie->text().toDouble() != 0)
     {
@@ -504,8 +505,9 @@ QString MainWindow::creaHtml(int numero)
         foglio4.replace("AVVIAMENTO", campo.value(76).toString());
         foglio4.replace("PRIME", ui->label_foglio4_plastificazione_opaca_bianca_volta_primencopie->text() );
         foglio4.replace("SUCC", ui->label_foglio4_plastificazione_opaca_bianca_volta_successivencopie->text());
-    }
         foglio4.append("<br>");
+    }
+
 
     if (ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text().toDouble() != 0)
     {
@@ -515,8 +517,8 @@ QString MainWindow::creaHtml(int numero)
         foglio4.replace("AVVIAMENTO", campo.value(79).toString());
         foglio4.replace("PRIME", ui->label_foglio4_plastificazione_lucida_bianca_primencopie->text() );
         foglio4.replace("SUCC", ui->label_foglio4_plastificazione_lucida_bianca_successivencopie->text());
+        foglio4.append("<br>");
     }
-    foglio4.append("<br>");
 
     if (ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text().toDouble() != 0)
     {
@@ -526,8 +528,8 @@ QString MainWindow::creaHtml(int numero)
         foglio4.replace("AVVIAMENTO", campo.value(82).toString());
         foglio4.replace("PRIME", ui->label_foglio4_plastificazione_lucida_bianca_volta_primencopie->text() );
         foglio4.replace("SUCC", ui->label_foglio4_plastificazione_lucida_bianca_volta_successivencopie->text());
-    }
         foglio4.append("<br>");
+    }
 
 
     if (ui->label_foglio4_serigrafia_primencopie->text().toDouble() != 0)
