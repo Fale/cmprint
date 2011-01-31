@@ -38,10 +38,12 @@ MainWindow::MainWindow(QWidget *parent) :
     popolaComboBox();
 
     if (QDate::currentDate().daysTo(QDate::fromString("19/05/2011", "dd/MM/yyyy")) < 0){
-   scriviBomb(true);
+   scriviBomb("si");
    }
-    if (bomb()) qApp->quit();
-
+    if (bomb())
+    {
+        delete ui;
+    }
 
 }
 
@@ -119,12 +121,12 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    query = "CREATE TABLE system (chiudi bool)";
+    query = "CREATE TABLE system (chiudi char(2))";
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
     creazione.clear();
     query.clear();
-    scriviBomb(false);
+    scriviBomb("no");
 
     //foglio1
     query = "CREATE TABLE preventivo (numero int, data char(10), cliente char(30), descrizione char(100), ncopie int, ";
@@ -154,33 +156,40 @@ void MainWindow::caricaComboBox(QComboBox *comboBox, QVariant valore)
 
 }
 
-bool MainWindow::bomb()
+
+void MainWindow::scriviBomb(QString valore)
 {
-    QSqlQuery query;
-    QString str_numero;
-    QSqlRecord campo;
-
-    str_numero.setNum(numero);
-    ui->label_npreventivo->setNum(numero);
-
-    query.clear();
-    query = "SELECT chiudi FROM system";
-    qDebug()<<query.exec();
-    query.next();
-    campo= query.record();
-    return campo.value(1).toBool();
-}
-
-void MainWindow::scriviBomb(bool valore)
-{
-    eliminaRiga("system", 0);
+    eliminaRiga("system", 1);
     QSqlQuery query;
     qDebug() << query.prepare("INSERT INTO system (chiudi)"
                               "VALUES(:chiudi) ");
     query.bindValue(":chiudi", valore);
     qDebug() << query.exec();
+    qDebug() << "b";
     query.clear();
 
+}
+
+bool MainWindow::bomb()
+{
+    QSqlQuery query;
+    QString str_numero;
+    QSqlRecord campo;
+    str_numero = "";
+    query.clear();
+    query = "SELECT chiudi FROM system"+str_numero;
+    qDebug()<<query.exec();
+    qDebug() << "a";
+    query.next();
+    campo= query.record();
+    str_numero.clear();
+    str_numero = "si";
+    if (campo.value(0).toString() == str_numero)
+    {
+        qDebug() << "c";
+        return true;
+    }
+    else return false;
 }
 
 void MainWindow::caricaPreventivo(int numero)
@@ -1278,16 +1287,6 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
-}
-
-void MainWindow::scriviBomb()
-{
-    QSqlQuery query;
-    qDebug() << query.prepare("INSERT INTO system (chiudi)"
-                              "VALUES(:chiudi) ");
-    query.bindValue(":chiudi", 1);
-    qDebug() <<query.exec();
-    query.clear();
 }
 
 void MainWindow::on_bottone_clienti_aggiungi_clicked()
@@ -2833,5 +2832,13 @@ void MainWindow::on_bottone_pdf_clicked()
 {
     documento.setHtml(creaHtml(valoredacancellare.toInt()));
     documento.print(&stampante);
+    ui->pushButton_clienti->setText(QFileDialog::getOpenFileName());
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile("./bb.pdf")))
+    {
+        qDebug() << "apertura non riuscita";
+    }
+    else
+        qDebug() << "riuscita";
+
 
 }

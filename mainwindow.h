@@ -8,6 +8,10 @@
 #include <QPixmap>
 #include <QString>
 #include <QPrinter>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QFileDialog>
+
 namespace Ui {
     class MainWindow;
 }
@@ -27,7 +31,7 @@ private:
     float n;
     bool pulire;
     bool bomb();
-    void scriviBomb(bool valore);
+    void scriviBomb(QString valore);
     int rigadacancellare;
     QString valoredacancellare;
     QTextDocument documento;
