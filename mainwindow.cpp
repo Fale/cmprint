@@ -2832,7 +2832,7 @@ void MainWindow::on_bottone_pdf_clicked()
 {
     documento.setHtml(creaHtml(valoredacancellare.toInt()));
     documento.print(&stampante);
-    ui->pushButton_clienti->setText(QFileDialog::getOpenFileName());
+
     if (!QDesktopServices::openUrl(QUrl::fromLocalFile("./bb.pdf")))
     {
         qDebug() << "apertura non riuscita";
