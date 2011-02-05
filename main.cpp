@@ -10,5 +10,4 @@ int main(int argc, char *argv[])
     w.show();
     //w.showMaximized();
     return a.exec();
-        qDebug() << QFileDialog::getOpenFileName();
 }

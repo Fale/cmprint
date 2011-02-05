@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dateEdit_foglio1->setDate(QDate::currentDate());
 
     stampante.setOutputFormat(QPrinter::PdfFormat);
-    stampante.setOutputFileName("bb.pdf");
+    stampante.setOutputFileName("preventivo.pdf");
 
     ui->bottone_torna_preventivo->hide();
     ui->bottone_salva_preventivo->hide();
@@ -2833,7 +2833,10 @@ void MainWindow::on_bottone_pdf_clicked()
     documento.setHtml(creaHtml(valoredacancellare.toInt()));
     documento.print(&stampante);
 
-    if (!QDesktopServices::openUrl(QUrl::fromLocalFile("./bb.pdf")))
+    //if (!QDesktopServices::openUrl(QUrl::fromLocalFile("preventivo.pdf")))
+
+    // su linux funziona la striga sottostante..forse su windows è meglio quella commentata scritta sopra
+    if (!QDesktopServices::openUrl( QUrl("preventivo.pdf")))
     {
         qDebug() << "apertura non riuscita";
     }
