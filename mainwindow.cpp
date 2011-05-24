@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
+
     //setAttribute(Qt::WA_DeleteOnClose);
     rigadacancellare = 0;
     pulire = true;
@@ -34,6 +36,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->bottone_torna_preventivo->hide();
     ui->bottone_salva_preventivo->hide();
     popolaComboBox();
+
+
+   if (QDate::currentDate().daysTo(QDate::fromString("19/05/2011", "dd/MM/yyyy")) < 0){
+   ui->label_27->setText("topo");
+   }
+
 
 }
 
@@ -111,6 +119,12 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
+    /*query = "CREATE TABLE system (chiudi blob)";
+    qDebug() << creazione.prepare(query);
+    qDebug() << creazione.exec();
+    creazione.clear();
+    query.clear();
+*/
 
 
     //foglio1
