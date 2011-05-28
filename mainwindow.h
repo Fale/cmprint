@@ -22,11 +22,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
     QSqlDatabase database;
     QSqlQueryModel queryModel;
     float n;
     bool pulire;
+    bool bomb();
+    void scriviBomb(bool valore);
     int rigadacancellare;
     QString valoredacancellare;
     QTextDocument documento;

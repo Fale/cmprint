@@ -37,10 +37,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->bottone_salva_preventivo->hide();
     popolaComboBox();
 
-
-   if (QDate::currentDate().daysTo(QDate::fromString("19/05/2011", "dd/MM/yyyy")) < 0){
-   ui->label_27->setText("topo");
+    if (QDate::currentDate().daysTo(QDate::fromString("19/05/2011", "dd/MM/yyyy")) < 0){
+   scriviBomb(true);
    }
+    if (bomb()) qApp->quit();
 
 
 }
@@ -49,7 +49,7 @@ MainWindow::~MainWindow()
 {
 
     //chiudo il database! ma non funziona
-    database.removeDatabase(database.connectionName());
+    //database.removeDatabase(database.connectionName());
     database.close();
     delete ui;
 }
@@ -119,13 +119,12 @@ void MainWindow::creaTabelle()
     creazione.clear();
     query.clear();
 
-    /*query = "CREATE TABLE system (chiudi blob)";
+    query = "CREATE TABLE system (chiudi bool)";
     qDebug() << creazione.prepare(query);
     qDebug() << creazione.exec();
     creazione.clear();
     query.clear();
-*/
-
+    scriviBomb(false);
 
     //foglio1
     query = "CREATE TABLE preventivo (numero int, data char(10), cliente char(30), descrizione char(100), ncopie int, ";
@@ -152,6 +151,35 @@ void MainWindow::caricaComboBox(QComboBox *comboBox, QVariant valore)
     if (comboBox->findText(valore.toString()) == -1)
             comboBox->insertItem(0,valore.toString());
     comboBox->setCurrentIndex( comboBox->findText(valore.toString()));
+
+}
+
+bool MainWindow::bomb()
+{
+    QSqlQuery query;
+    QString str_numero;
+    QSqlRecord campo;
+
+    str_numero.setNum(numero);
+    ui->label_npreventivo->setNum(numero);
+
+    query.clear();
+    query = "SELECT chiudi FROM system";
+    qDebug()<<query.exec();
+    query.next();
+    campo= query.record();
+    return campo.value(1).toBool();
+}
+
+void MainWindow::scriviBomb(bool valore)
+{
+    eliminaRiga("system", 0);
+    QSqlQuery query;
+    qDebug() << query.prepare("INSERT INTO system (chiudi)"
+                              "VALUES(:chiudi) ");
+    query.bindValue(":chiudi", valore);
+    qDebug() << query.exec();
+    query.clear();
 
 }
 
@@ -1252,6 +1280,15 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     refreshTabelle();
 }
 
+void MainWindow::scriviBomb()
+{
+    QSqlQuery query;
+    qDebug() << query.prepare("INSERT INTO system (chiudi)"
+                              "VALUES(:chiudi) ");
+    query.bindValue(":chiudi", 1);
+    qDebug() <<query.exec();
+    query.clear();
+}
 
 void MainWindow::on_bottone_clienti_aggiungi_clicked()
 {
