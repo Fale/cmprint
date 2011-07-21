@@ -69,12 +69,20 @@ private slots:
 
 
     void on_bottone_pdf_clicked();
-    void on_spinBox_foglio5_3000_valueChanged(int );
-    void on_spinBox_foglio5_2500_valueChanged(int );
-    void on_spinBox_foglio5_2000_valueChanged(int );
-    void on_spinBox_foglio5_1500_valueChanged(int );
-    void on_spinBox_foglio5_1000_valueChanged(int );
     void on_spinBox_foglio5_500_valueChanged(int );
+    void on_spinBox_foglio5_1000_valueChanged(int );
+    void on_spinBox_foglio5_1500_valueChanged(int );
+    void on_spinBox_foglio5_2000_valueChanged(int );
+    void on_spinBox_foglio5_2500_valueChanged(int );
+    void on_spinBox_foglio5_3000_valueChanged(int );
+    void on_spinBox_foglio5_3500_valueChanged(int );
+    void on_spinBox_foglio5_4000_valueChanged(int );
+    void on_spinBox_foglio5_4500_valueChanged(int );
+    void on_spinBox_foglio5_5000_valueChanged(int );
+    void on_spinBox_foglio5_5500_valueChanged(int );
+    void on_spinBox_foglio5_6000_valueChanged(int );
+    void on_spinBox_foglio5_6500_valueChanged(int );
+    void on_spinBox_foglio5_7000_valueChanged(int );
     void on_doubleSpinBox_foglio4_accoppiatura_succ_valueChanged(double );
     void on_doubleSpinBox_foglio4_accoppiatura_prime_valueChanged(double );
     void on_bottone_preventivi_modifica_clicked();

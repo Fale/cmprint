@@ -1352,7 +1352,6 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
     qDebug()<<query.exec();
     query.next();
     campo= query.record();
-
     if (!campo.value(0).isNull())
     {
         eliminaRiga("preventivo","numero",ui->label_npreventivo->text());
@@ -1899,6 +1898,14 @@ ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivenco
    ui->label_foglio5_prime_2000->setNum((valore/ui->spinBox_foglio5_2000->value())+valore2);
    ui->label_foglio5_prime_2500->setNum((valore/ui->spinBox_foglio5_2500->value())+valore2);
    ui->label_foglio5_prime_3000->setNum((valore/ui->spinBox_foglio5_3000->value())+valore2);
+   ui->label_foglio5_prime_3500->setNum((valore/ui->spinBox_foglio5_3500->value())+valore2);
+   ui->label_foglio5_prime_4000->setNum((valore/ui->spinBox_foglio5_4000->value())+valore2);
+   ui->label_foglio5_prime_4500->setNum((valore/ui->spinBox_foglio5_4500->value())+valore2);
+   ui->label_foglio5_prime_5000->setNum((valore/ui->spinBox_foglio5_5000->value())+valore2);
+   ui->label_foglio5_prime_5500->setNum((valore/ui->spinBox_foglio5_5500->value())+valore2);
+   ui->label_foglio5_prime_6000->setNum((valore/ui->spinBox_foglio5_6000->value())+valore2);
+   ui->label_foglio5_prime_6500->setNum((valore/ui->spinBox_foglio5_6500->value())+valore2);
+   ui->label_foglio5_prime_7000->setNum((valore/ui->spinBox_foglio5_7000->value())+valore2);
 
 
    ui->label_foglio5_succ_500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
@@ -1907,6 +1914,14 @@ ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivenco
    ui->label_foglio5_succ_2000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
    ui->label_foglio5_succ_2500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
    ui->label_foglio5_succ_3000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_3500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_4000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_4500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_5000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_5500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_6000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_6500->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
+   ui->label_foglio5_succ_7000->setNum(ui->label_foglio5_prezzoacopia_successivencopie->text().toDouble());
 
 }
 
@@ -2831,6 +2846,46 @@ void MainWindow::on_spinBox_foglio5_2500_valueChanged(int )
 }
 
 void MainWindow::on_spinBox_foglio5_3000_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_3500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_4000_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_4500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_5000_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_5500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_6000_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_6500_valueChanged(int )
+{
+    refreshFoglio5();
+}
+
+void MainWindow::on_spinBox_foglio5_7000_valueChanged(int )
 {
     refreshFoglio5();
 }
