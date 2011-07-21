@@ -2,7 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSql>
+//#include <QtSql/QtSql>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlQueryModel>
+#include <QComboBox>
+#include <QDebug>
+#include <QtSql/QSqlRecord>
+#include <QtSql/QSqlTableModel>
+
+//#include <QtSql>
 #include <QFile>
 #include <QTextDocument>
 #include <QPixmap>
@@ -149,11 +158,11 @@ private slots:
     void on_spinBox_foglio3_nfogli_1_valueChanged(int );
     void on_doubleSpinBox_foglio3_percentuale_valueChanged(double );
     void on_doubleSpinBox_foglio3_successivencopie_3_valueChanged(double );
-    void on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double );
+    void on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double valore);
     void on_doubleSpinBox_foglio3_successivencopie_2_valueChanged(double );
-    void on_doubleSpinBox_foglio3_primencopie_2_valueChanged(double );
+    void on_doubleSpinBox_foglio3_primencopie_2_valueChanged(double valore);
     void on_doubleSpinBox_foglio3_successivencopie_1_valueChanged(double );
-    void on_doubleSpinBox_foglio3_primencopie_1_valueChanged(double );
+    void on_doubleSpinBox_foglio3_primencopie_1_valueChanged(double valore);
     void on_doubleSpinBox_foglio3_euro_5_valueChanged(QString );
     void on_spinBox_foglio3_nfogli_5_valueChanged(QString );
     void on_doubleSpinBox_foglio3_euro_4_valueChanged(QString );

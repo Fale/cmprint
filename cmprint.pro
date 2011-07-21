@@ -6,6 +6,8 @@
 
 QT       += core gui sql
 
+CONFIG += static
+
 TARGET = cmprint
 TEMPLATE = app
 

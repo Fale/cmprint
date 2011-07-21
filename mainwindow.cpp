@@ -37,13 +37,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->bottone_salva_preventivo->hide();
     popolaComboBox();
 
-    if (QDate::currentDate().daysTo(QDate::fromString("19/05/2011", "dd/MM/yyyy")) < 0){
+    /*if (QDate::currentDate().daysTo(QDate::fromString("19/05/2011", "dd/MM/yyyy")) < 0){
    scriviBomb("si");
    }
     if (bomb())
     {
         delete ui;
-    }
+    }*/
 
 }
 
@@ -200,6 +200,7 @@ void MainWindow::caricaPreventivo(int numero)
 
     str_numero.setNum(numero);
     ui->label_npreventivo->setNum(numero);
+    ui->bottone_pdf->hide();
 
     query.clear();
     query = "SELECT * FROM preventivo WHERE numero = '"+str_numero+"'";
@@ -1110,8 +1111,8 @@ double MainWindow::formatoASuperficie(QString formato)
 
 void MainWindow::showHide(QString show)
 {
-
-    ui->widget_navigazione->show();
+    if (show != "benvenuto")
+        ui->widget_navigazione->show();
 
     //refresh di TUTTE le tabelle
     refreshTabelle();
@@ -1122,6 +1123,7 @@ void MainWindow::showHide(QString show)
         ui->bottone_salva_preventivo->hide();
         ui->widget_benvenuto->show();
         ui->widget_navigazione->hide(); //poco elegante il show/hide delle stesso widget ma molto più veloce nell'implementazione
+        //ui->centralWidget->resize(1024,600);
     }
         else
         ui->widget_benvenuto->hide();
@@ -1136,7 +1138,8 @@ void MainWindow::showHide(QString show)
         ui->bottone_preventivi_elimina->show();
         ui->bottone_preventivi_modifica->show();
         ui->bottone_preventivi_usamodello->show();
-        }
+        ui->bottone_pdf->show();
+    }
     else
         ui->widget_preventivi->hide();
     if ( show == "carta_formato" )
@@ -1264,10 +1267,10 @@ void MainWindow::on_bottone_plastificazione_aggiungi_clicked()
     query.prepare("INSERT INTO plastificazione (formato, lucidabianca, lucidabiancavolta, opacabianca, opacabiancavolta)"
                   "VALUES(:formato, :lucidabianca, :lucidabiancavolta, :opacabianca, :opacabiancavolta) ") ;
     query.bindValue(":formato", n);
-    query.bindValue(":lucidabianca", "0,000");
-    query.bindValue(":lucidabiancavolta", "0,000");
-    query.bindValue(":opacabianca", "0,000");
-    query.bindValue(":opacabiancavolta", "0,000");
+    query.bindValue(":lucidabianca", "0,0000");
+    query.bindValue(":lucidabiancavolta", "0,0000");
+    query.bindValue(":opacabianca", "0,0000");
+    query.bindValue(":opacabiancavolta", "0,0000");
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
@@ -1283,7 +1286,7 @@ void MainWindow::on_bottone_serigrafia_aggiungi_clicked()
     qDebug() << query.prepare("INSERT INTO serigrafia (formato, prezzo)"
                               "VALUES(:formato, :prezzo) ");
     query.bindValue(":formato", n);
-    query.bindValue(":prezzo", "0,000");
+    query.bindValue(":prezzo", "0,0000");
     qDebug() << query.exec();
     query.clear();
     refreshTabelle();
@@ -1850,8 +1853,8 @@ void MainWindow::refreshFoglio5()
    ui->label_foglio5_stampa_primencopie->setText( ui->label_foglio2_totale_prime->text() );
    ui->label_foglio5_stampa_successivencopie->setText(ui->label_foglio2_totale_successive->text() );
 
-   ui->label_foglio5_carta_primencopie->setNum( ui->label_foglio3_totale_primencopie->text().toDouble() * ui->spinBox_foglio1_ncopie->value());
-   ui->label_foglio5_carta_successivencopie->setNum( ui->label_foglio3_totale_successivencopie->text().toDouble() * ui->spinBox_foglio1_ncopie->value());
+   ui->label_foglio5_carta_primencopie->setNum( ui->label_foglio3_totale_primencopie->text().toDouble() );//* ui->spinBox_foglio1_ncopie->value());
+   ui->label_foglio5_carta_successivencopie->setNum( ui->label_foglio3_totale_successivencopie->text().toDouble() );//* ui->spinBox_foglio1_ncopie->value());
 
    ui->label_foglio5_lavorazioni_primencopie->setText( ui->label_foglio4_totale_primencopie->text());
    ui->label_foglio5_lavorazioni_successivencopie->setText(ui->label_foglio4_totale_successivencopie->text());
@@ -1920,10 +1923,11 @@ void MainWindow::on_bottone_clienti_rimuovi_clicked()
 
 void MainWindow::on_bottone_preventivi_nuovo_clicked()
 {
+
     QString stringa_query;
     QSqlQuery query;
     int numtotale(1);
-
+    ui->bottone_pdf->hide();
 
     stringa_query = "SELECT numero FROM npreventivo";
     qDebug() << query.prepare(stringa_query);
@@ -2341,9 +2345,10 @@ void MainWindow::on_doubleSpinBox_foglio3_euro_5_valueChanged(QString )
     refreshFoglio3();
 }
 
-void MainWindow::on_doubleSpinBox_foglio3_primencopie_1_valueChanged(double )
+void MainWindow::on_doubleSpinBox_foglio3_primencopie_1_valueChanged(double valore )
 {
     refreshFoglio3();
+    ui->doubleSpinBox_foglio3_successivencopie_1->setValue(valore);
 }
 
 void MainWindow::on_doubleSpinBox_foglio3_successivencopie_1_valueChanged(double )
@@ -2351,9 +2356,10 @@ void MainWindow::on_doubleSpinBox_foglio3_successivencopie_1_valueChanged(double
     refreshFoglio3();
 }
 
-void MainWindow::on_doubleSpinBox_foglio3_primencopie_2_valueChanged(double )
+void MainWindow::on_doubleSpinBox_foglio3_primencopie_2_valueChanged(double valore)
 {
     refreshFoglio3();
+    ui->doubleSpinBox_foglio3_successivencopie_2->setValue(valore);
 }
 
 void MainWindow::on_doubleSpinBox_foglio3_successivencopie_2_valueChanged(double )
@@ -2361,9 +2367,10 @@ void MainWindow::on_doubleSpinBox_foglio3_successivencopie_2_valueChanged(double
     refreshFoglio3();
 }
 
-void MainWindow::on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double )
+void MainWindow::on_doubleSpinBox_foglio3_primencopie_3_valueChanged(double valore)
 {
     refreshFoglio3();
+    ui->doubleSpinBox_foglio3_successivencopie_3->setValue(valore);
 }
 
 void MainWindow::on_doubleSpinBox_foglio3_successivencopie_3_valueChanged(double )
@@ -2842,6 +2849,6 @@ void MainWindow::on_bottone_pdf_clicked()
     }
     else
         qDebug() << "riuscita";
-
+ui->bottone_pdf->show();
 
 }
