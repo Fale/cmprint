@@ -1515,6 +1515,16 @@ void MainWindow::on_bottone_salva_preventivo_clicked()
         qDebug() << query.exec();
         query.clear();
         refreshTabelle();
+
+	ui->label_preventiv_cerca->show();
+	ui->bottone_preventivi_nuovo->show();
+	ui->lineEdit_preventivi_cerca->show();
+	ui->bottone_salva_preventivo->hide();
+	ui->tableView_preventivi->show();
+	ui->bottone_preventivi_elimina->show();
+	ui->bottone_preventivi_modifica->show();
+	ui->bottone_preventivi_usamodello->show();
+	ui->tabWidget_preventivi->hide();
 }
 
 void MainWindow::razionalizzaTabella(QString tabella, QString colonna, int nmancante)
